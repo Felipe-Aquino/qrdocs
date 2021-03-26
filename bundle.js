@@ -1,9 +1,19473 @@
-var app=function(){"use strict";function e(){}function t(e,t){for(const n in t)e[n]=t[n];return e}function n(e){return e()}function r(){return Object.create(null)}function a(e){e.forEach(n)}function i(e){return"function"==typeof e}function o(e,t){return e!=e?t==t:e!==t||e&&"object"==typeof e||"function"==typeof e}function s(e,n,r){return e[1]?t({},t(n.$$scope.ctx,e[1](r?r(n):{}))):n.$$scope.ctx}function l(e){return null==e?"":e}function c(e,t){e.appendChild(t)}function u(e,t,n){e.insertBefore(t,n||null)}function d(e){e.parentNode.removeChild(e)}function p(e,t){for(let n=0;n<e.length;n+=1)e[n]&&e[n].d(t)}function h(e){return document.createElement(e)}function g(e){return document.createTextNode(e)}function f(){return g(" ")}function m(){return g("")}function b(e,t,n,r){return e.addEventListener(t,n,r),()=>e.removeEventListener(t,n,r)}function _(e,t,n){null==n?e.removeAttribute(t):e.setAttribute(t,n)}function v(e,t){for(const n in t)"style"===n?e.style.cssText=t[n]:n in e?e[n]=t[n]:_(e,n,t[n])}function w(e,t,n){t in e?e[t]=n:_(e,t,n)}function y(e,t){t=""+t,e.data!==t&&(e.data=t)}function k(e,t){(null!=t||e.value)&&(e.value=t)}function x(e,t,n,r){e.style.setProperty(t,n,r?"important":"")}function E(e,t){for(let n=0;n<e.options.length;n+=1){const r=e.options[n];if(r.__value===t)return void(r.selected=!0)}}function S(e,t,n){e.classList[n?"add":"remove"](t)}class ${constructor(e,t=null){this.e=h("div"),this.a=t,this.u(e)}m(e,t=null){for(let n=0;n<this.n.length;n+=1)u(e,this.n[n],t);this.t=e}u(e){this.e.innerHTML=e,this.n=Array.from(this.e.childNodes)}p(e){this.d(),this.u(e),this.m(this.t,this.a)}d(){this.n.forEach(d)}}let I;function C(e){I=e}function L(){if(!I)throw new Error("Function called outside component initialization");return I}function T(e){L().$$.before_update.push(e)}function O(e){L().$$.on_mount.push(e)}function M(e){L().$$.on_destroy.push(e)}function j(){const e=I;return(t,n)=>{const r=e.$$.callbacks[t];if(r){const a=function(e,t){const n=document.createEvent("CustomEvent");return n.initCustomEvent(e,!1,!1,t),n}(t,n);r.slice().forEach(t=>{t.call(e,a)})}}}const A=[],P=[],N=[],R=[],H=Promise.resolve();let z=!1;function q(){z||(z=!0,H.then(V))}function D(){return q(),H}function B(e){N.push(e)}function V(){const e=new Set;do{for(;A.length;){const e=A.shift();C(e),F(e.$$)}for(;P.length;)P.pop()();for(let t=0;t<N.length;t+=1){const n=N[t];e.has(n)||(n(),e.add(n))}N.length=0}while(A.length);for(;R.length;)R.pop()();z=!1}function F(e){e.fragment&&(e.update(e.dirty),a(e.before_update),e.fragment.p(e.dirty,e.ctx),e.dirty=null,e.after_update.forEach(B))}const U=new Set;let G,W;function K(){G={r:0,c:[],p:G}}function J(){G.r||a(G.c),G=G.p}function Z(e,t){e&&e.i&&(U.delete(e),e.i(t))}function Q(e,t,n,r){if(e&&e.o){if(U.has(e))return;U.add(e),G.c.push(()=>{U.delete(e),r&&(n&&e.d(1),r())}),e.o(t)}}function X(e,t){Q(e,1,1,()=>{t.delete(e.key)})}function Y(e,t){const n={},r={},a={$$scope:1};let i=e.length;for(;i--;){const o=e[i],s=t[i];if(s){for(const e in o)e in s||(r[e]=1);for(const e in s)a[e]||(n[e]=s[e],a[e]=1);e[i]=s}else for(const e in o)a[e]=1}for(const e in r)e in n||(n[e]=void 0);return n}function ee(e,t,r){const{fragment:o,on_mount:s,on_destroy:l,after_update:c}=e.$$;o.m(t,r),B(()=>{const t=s.map(n).filter(i);l?l.push(...t):a(t),e.$$.on_mount=[]}),c.forEach(B)}function te(e,t){e.$$.fragment&&(a(e.$$.on_destroy),e.$$.fragment.d(t),e.$$.on_destroy=e.$$.fragment=null,e.$$.ctx={})}function ne(t,n,i,o,s,l){const c=I;C(t);const u=n.props||{},d=t.$$={fragment:null,ctx:null,props:l,update:e,not_equal:s,bound:r(),on_mount:[],on_destroy:[],before_update:[],after_update:[],context:new Map(c?c.$$.context:[]),callbacks:r(),dirty:null};let p=!1;d.ctx=i?i(t,u,(e,n,a=n)=>(d.ctx&&s(d.ctx[e],d.ctx[e]=a)&&(d.bound[e]&&d.bound[e](a),p&&function(e,t){e.$$.dirty||(A.push(e),q(),e.$$.dirty=r()),e.$$.dirty[t]=!0}(t,e)),n)):u,d.update(),p=!0,a(d.before_update),d.fragment=o(d.ctx),n.target&&(n.hydrate?d.fragment.l(function(e){return Array.from(e.childNodes)}(n.target)):d.fragment.c(),n.intro&&Z(t.$$.fragment),ee(t,n.target,n.anchor),V()),C(c)}"undefined"!=typeof HTMLElement&&(W=class extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"})}connectedCallback(){for(const e in this.$$.slotted)this.appendChild(this.$$.slotted[e])}attributeChangedCallback(e,t,n){this[e]=n}$destroy(){te(this,1),this.$destroy=e}$on(e,t){const n=this.$$.callbacks[e]||(this.$$.callbacks[e]=[]);return n.push(t),()=>{const e=n.indexOf(t);-1!==e&&n.splice(e,1)}}$set(){}});class re{$destroy(){te(this,1),this.$destroy=e}$on(e,t){const n=this.$$.callbacks[e]||(this.$$.callbacks[e]=[]);return n.push(t),()=>{const e=n.indexOf(t);-1!==e&&n.splice(e,1)}}$set(){}}function ae(t){var n,r,a,i,o,s,l,p,m=t.request.method+"",b=t.request.name+"";return{c(){n=h("a"),r=h("strong"),a=g(m),o=f(),s=h("span"),l=g(b),_(r,"class",i=t.request.method.toLowerCase()),_(n,"href",p="#"+t.request._id),_(n,"class","sidebar-list-link name")},m(e,t){u(e,n,t),c(n,r),c(r,a),c(n,o),c(n,s),c(s,l)},p(e,t){e.request&&m!==(m=t.request.method+"")&&y(a,m),e.request&&i!==(i=t.request.method.toLowerCase())&&_(r,"class",i),e.request&&b!==(b=t.request.name+"")&&y(l,b),e.request&&p!==(p="#"+t.request._id)&&_(n,"href",p)},i:e,o:e,d(e){e&&d(n)}}}function ie(e,t,n){let{request:r}=t;return e.$set=e=>{"request"in e&&n("request",r=e.request)},{request:r}}class oe extends re{constructor(e){super(),ne(this,e,ie,ae,o,["request"])}}function se(e,t,n){const r=Object.create(e);return r.request=t[n],r}function le(e,t,n){const r=Object.create(e);return r.child=t[n],r}function ce(e){var t,n,r,a;return{c(){t=h("a"),n=h("span"),r=g(e.name),_(t,"href","javascript:;"),_(t,"class","sidebar-list-link name svelte-1banbqx"),S(t,"expanded",e.expanded),a=b(t,"click",e.toggle)},m(e,a){u(e,t,a),c(t,n),c(n,r)},p(e,n){e.name&&y(r,n.name),e.expanded&&S(t,"expanded",n.expanded)},d(e){e&&d(t),a()}}}function ue(e){var t,n,r;let a=e.children,i=[];for(let t=0;t<a.length;t+=1)i[t]=de(le(e,a,t));const o=e=>Q(i[e],1,1,()=>{i[e]=null});let s=e.requests,l=[];for(let t=0;t<s.length;t+=1)l[t]=pe(se(e,s,t));const g=e=>Q(l[e],1,1,()=>{l[e]=null});return{c(){t=h("ul");for(let e=0;e<i.length;e+=1)i[e].c();n=f();for(let e=0;e<l.length;e+=1)l[e].c();_(t,"class","svelte-1banbqx")},m(e,a){u(e,t,a);for(let e=0;e<i.length;e+=1)i[e].m(t,null);c(t,n);for(let e=0;e<l.length;e+=1)l[e].m(t,null);r=!0},p(e,r){if(e.children){let s;for(a=r.children,s=0;s<a.length;s+=1){const o=le(r,a,s);i[s]?(i[s].p(e,o),Z(i[s],1)):(i[s]=de(o),i[s].c(),Z(i[s],1),i[s].m(t,n))}for(K(),s=a.length;s<i.length;s+=1)o(s);J()}if(e.requests){let n;for(s=r.requests,n=0;n<s.length;n+=1){const a=se(r,s,n);l[n]?(l[n].p(e,a),Z(l[n],1)):(l[n]=pe(a),l[n].c(),Z(l[n],1),l[n].m(t,null))}for(K(),n=s.length;n<l.length;n+=1)g(n);J()}},i(e){if(!r){for(let e=0;e<a.length;e+=1)Z(i[e]);for(let e=0;e<s.length;e+=1)Z(l[e]);r=!0}},o(e){i=i.filter(Boolean);for(let e=0;e<i.length;e+=1)Q(i[e]);l=l.filter(Boolean);for(let e=0;e<l.length;e+=1)Q(l[e]);r=!1},d(e){e&&d(t),p(i,e),p(l,e)}}}function de(e){var n,r,a=[e.child];let i={};for(var o=0;o<a.length;o+=1)i=t(i,a[o]);var s=new fe({props:i});return{c(){n=h("li"),s.$$.fragment.c(),_(n,"class","folder")},m(e,t){u(e,n,t),ee(s,n,null),r=!0},p(e,t){var n,r=e.children?Y(a,[(n=t.child,"object"==typeof n&&null!==n?n:{})]):{};s.$set(r)},i(e){r||(Z(s.$$.fragment,e),r=!0)},o(e){Q(s.$$.fragment,e),r=!1},d(e){e&&d(n),te(s)}}}function pe(e){var t,n,r=new oe({props:{request:e.request}});return{c(){t=h("li"),r.$$.fragment.c(),_(t,"class","request")},m(e,a){u(e,t,a),ee(r,t,null),n=!0},p(e,t){var n={};e.requests&&(n.request=t.request),r.$set(n)},i(e){n||(Z(r.$$.fragment,e),n=!0)},o(e){Q(r.$$.fragment,e),n=!1},d(e){e&&d(t),te(r)}}}function he(e){var t,n,r,a=!e.root&&ce(e),i=e.expanded&&ue(e);return{c(){a&&a.c(),t=f(),i&&i.c(),n=m()},m(e,o){a&&a.m(e,o),u(e,t,o),i&&i.m(e,o),u(e,n,o),r=!0},p(e,r){r.root?a&&(a.d(1),a=null):a?a.p(e,r):((a=ce(r)).c(),a.m(t.parentNode,t)),r.expanded?i?(i.p(e,r),Z(i,1)):((i=ue(r)).c(),Z(i,1),i.m(n.parentNode,n)):i&&(K(),Q(i,1,1,()=>{i=null}),J())},i(e){r||(Z(i),r=!0)},o(e){Q(i),r=!1},d(e){a&&a.d(e),e&&d(t),i&&i.d(e),e&&d(n)}}}function ge(e,t,n){let{root:r=!1,expanded:a=!1,name:i,children:o,requests:s}=t;return e.$set=e=>{"root"in e&&n("root",r=e.root),"expanded"in e&&n("expanded",a=e.expanded),"name"in e&&n("name",i=e.name),"children"in e&&n("children",o=e.children),"requests"in e&&n("requests",s=e.requests)},{root:r,expanded:a,name:i,children:o,requests:s,toggle:function(){n("expanded",a=!a)}}}class fe extends re{constructor(e){super(),ne(this,e,ge,he,o,["root","expanded","name","children","requests"])}}function me(e){var t,n,r=new fe({props:{name:e.workspace.name,children:e.groups,requests:e.requests,root:!0,expanded:!0}});return{c(){t=h("aside"),r.$$.fragment.c(),_(t,"class","svelte-1jtqzbx"),S(t,"visible",e.visible)},m(e,a){u(e,t,a),ee(r,t,null),n=!0},p(e,n){var a={};e.workspace&&(a.name=n.workspace.name),e.groups&&(a.children=n.groups),e.requests&&(a.requests=n.requests),r.$set(a),e.visible&&S(t,"visible",n.visible)},i(e){n||(Z(r.$$.fragment,e),n=!0)},o(e){Q(r.$$.fragment,e),n=!1},d(e){e&&d(t),te(r)}}}function be(e,t,n){let{requests:r,groups:a,workspace:i,visible:o}=t;return e.$set=e=>{"requests"in e&&n("requests",r=e.requests),"groups"in e&&n("groups",a=e.groups),"workspace"in e&&n("workspace",i=e.workspace),"visible"in e&&n("visible",o=e.visible)},{requests:r,groups:a,workspace:i,visible:o}}class _e extends re{constructor(e){super(),ne(this,e,be,me,o,["requests","groups","workspace","visible"])}}function ve(e){return e instanceof Map?e.clear=e.delete=e.set=function(){throw new Error("map is read-only")}:e instanceof Set&&(e.add=e.clear=e.delete=function(){throw new Error("set is read-only")}),Object.freeze(e),Object.getOwnPropertyNames(e).forEach((function(t){var n=e[t];"object"!=typeof n||Object.isFrozen(n)||ve(n)})),e}var we=ve,ye=ve;we.default=ye;class ke{constructor(e){void 0===e.data&&(e.data={}),this.data=e.data}ignoreMatch(){this.ignore=!0}}function xe(e){return e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#x27;")}function Ee(e,...t){const n=Object.create(null);for(const t in e)n[t]=e[t];return t.forEach((function(e){for(const t in e)n[t]=e[t]})),n}function Se(e){return e.nodeName.toLowerCase()}var $e=Object.freeze({__proto__:null,escapeHTML:xe,inherit:Ee,nodeStream:function(e){const t=[];return function e(n,r){for(let a=n.firstChild;a;a=a.nextSibling)3===a.nodeType?r+=a.nodeValue.length:1===a.nodeType&&(t.push({event:"start",offset:r,node:a}),r=e(a,r),Se(a).match(/br|hr|img|input/)||t.push({event:"stop",offset:r,node:a}));return r}(e,0),t},mergeStreams:function(e,t,n){let r=0,a="";const i=[];function o(){return e.length&&t.length?e[0].offset!==t[0].offset?e[0].offset<t[0].offset?e:t:"start"===t[0].event?e:t:e.length?e:t}function s(e){a+="<"+Se(e)+[].map.call(e.attributes,(function(e){return" "+e.nodeName+'="'+xe(e.value)+'"'})).join("")+">"}function l(e){a+="</"+Se(e)+">"}function c(e){("start"===e.event?s:l)(e.node)}for(;e.length||t.length;){let t=o();if(a+=xe(n.substring(r,t[0].offset)),r=t[0].offset,t===e){i.reverse().forEach(l);do{c(t.splice(0,1)[0]),t=o()}while(t===e&&t.length&&t[0].offset===r);i.reverse().forEach(s)}else"start"===t[0].event?i.push(t[0].node):i.pop(),c(t.splice(0,1)[0])}return a+xe(n.substr(r))}});const Ie=e=>!!e.kind;class Ce{constructor(e,t){this.buffer="",this.classPrefix=t.classPrefix,e.walk(this)}addText(e){this.buffer+=xe(e)}openNode(e){if(!Ie(e))return;let t=e.kind;e.sublanguage||(t=`${this.classPrefix}${t}`),this.span(t)}closeNode(e){Ie(e)&&(this.buffer+="</span>")}value(){return this.buffer}span(e){this.buffer+=`<span class="${e}">`}}class Le{constructor(){this.rootNode={children:[]},this.stack=[this.rootNode]}get top(){return this.stack[this.stack.length-1]}get root(){return this.rootNode}add(e){this.top.children.push(e)}openNode(e){const t={kind:e,children:[]};this.add(t),this.stack.push(t)}closeNode(){if(this.stack.length>1)return this.stack.pop()}closeAllNodes(){for(;this.closeNode(););}toJSON(){return JSON.stringify(this.rootNode,null,4)}walk(e){return this.constructor._walk(e,this.rootNode)}static _walk(e,t){return"string"==typeof t?e.addText(t):t.children&&(e.openNode(t),t.children.forEach(t=>this._walk(e,t)),e.closeNode(t)),e}static _collapse(e){"string"!=typeof e&&e.children&&(e.children.every(e=>"string"==typeof e)?e.children=[e.children.join("")]:e.children.forEach(e=>{Le._collapse(e)}))}}class Te extends Le{constructor(e){super(),this.options=e}addKeyword(e,t){""!==e&&(this.openNode(t),this.addText(e),this.closeNode())}addText(e){""!==e&&this.add(e)}addSublanguage(e,t){const n=e.root;n.kind=t,n.sublanguage=!0,this.add(n)}toHTML(){return new Ce(this,this.options).value()}finalize(){return!0}}function Oe(e){return e?"string"==typeof e?e:e.source:null}const Me="(-?)(\\b0[xX][a-fA-F0-9]+|(\\b\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)",je={begin:"\\\\[\\s\\S]",relevance:0},Ae={className:"string",begin:"'",end:"'",illegal:"\\n",contains:[je]},Pe={className:"string",begin:'"',end:'"',illegal:"\\n",contains:[je]},Ne={begin:/\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b/},Re=function(e,t,n={}){const r=Ee({className:"comment",begin:e,end:t,contains:[]},n);return r.contains.push(Ne),r.contains.push({className:"doctag",begin:"(?:TODO|FIXME|NOTE|BUG|OPTIMIZE|HACK|XXX):",relevance:0}),r},He=Re("//","$"),ze=Re("/\\*","\\*/"),qe=Re("#","$"),De={className:"number",begin:"\\b\\d+(\\.\\d+)?",relevance:0},Be={className:"number",begin:Me,relevance:0},Ve={className:"number",begin:"\\b(0b[01]+)",relevance:0},Fe={className:"number",begin:"\\b\\d+(\\.\\d+)?(%|em|ex|ch|rem|vw|vh|vmin|vmax|cm|mm|in|pt|pc|px|deg|grad|rad|turn|s|ms|Hz|kHz|dpi|dpcm|dppx)?",relevance:0},Ue={begin:/(?=\/[^/\n]*\/)/,contains:[{className:"regexp",begin:/\//,end:/\/[gimuy]*/,illegal:/\n/,contains:[je,{begin:/\[/,end:/\]/,relevance:0,contains:[je]}]}]},Ge={className:"title",begin:"[a-zA-Z]\\w*",relevance:0},We={className:"title",begin:"[a-zA-Z_]\\w*",relevance:0},Ke={begin:"\\.\\s*[a-zA-Z_]\\w*",relevance:0};var Je=Object.freeze({__proto__:null,IDENT_RE:"[a-zA-Z]\\w*",UNDERSCORE_IDENT_RE:"[a-zA-Z_]\\w*",NUMBER_RE:"\\b\\d+(\\.\\d+)?",C_NUMBER_RE:Me,BINARY_NUMBER_RE:"\\b(0b[01]+)",RE_STARTERS_RE:"!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|-|-=|/=|/|:|;|<<|<<=|<=|<|===|==|=|>>>=|>>=|>=|>>>|>>|>|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~",SHEBANG:(e={})=>{const t=/^#![ ]*\//;return e.binary&&(e.begin=function(...e){return e.map(e=>Oe(e)).join("")}(t,/.*\b/,e.binary,/\b.*/)),Ee({className:"meta",begin:t,end:/$/,relevance:0,"on:begin":(e,t)=>{0!==e.index&&t.ignoreMatch()}},e)},BACKSLASH_ESCAPE:je,APOS_STRING_MODE:Ae,QUOTE_STRING_MODE:Pe,PHRASAL_WORDS_MODE:Ne,COMMENT:Re,C_LINE_COMMENT_MODE:He,C_BLOCK_COMMENT_MODE:ze,HASH_COMMENT_MODE:qe,NUMBER_MODE:De,C_NUMBER_MODE:Be,BINARY_NUMBER_MODE:Ve,CSS_NUMBER_MODE:Fe,REGEXP_MODE:Ue,TITLE_MODE:Ge,UNDERSCORE_TITLE_MODE:We,METHOD_GUARD:Ke,END_SAME_AS_BEGIN:function(e){return Object.assign(e,{"on:begin":(e,t)=>{t.data._beginMatch=e[1]},"on:end":(e,t)=>{t.data._beginMatch!==e[1]&&t.ignoreMatch()}})}});const Ze=["of","and","for","in","not","or","if","then","parent","list","value"];function Qe(e){function t(t,n){return new RegExp(Oe(t),"m"+(e.case_insensitive?"i":"")+(n?"g":""))}class n{constructor(){this.matchIndexes={},this.regexes=[],this.matchAt=1,this.position=0}addRule(e,t){t.position=this.position++,this.matchIndexes[this.matchAt]=t,this.regexes.push([t,e]),this.matchAt+=function(e){return new RegExp(e.toString()+"|").exec("").length-1}(e)+1}compile(){0===this.regexes.length&&(this.exec=()=>null);const e=this.regexes.map(e=>e[1]);this.matcherRe=t(function(e,t="|"){const n=/\[(?:[^\\\]]|\\.)*\]|\(\??|\\([1-9][0-9]*)|\\./;let r=0,a="";for(let i=0;i<e.length;i++){r+=1;const o=r;let s=Oe(e[i]);for(i>0&&(a+=t),a+="(";s.length>0;){const e=n.exec(s);if(null==e){a+=s;break}a+=s.substring(0,e.index),s=s.substring(e.index+e[0].length),"\\"===e[0][0]&&e[1]?a+="\\"+String(Number(e[1])+o):(a+=e[0],"("===e[0]&&r++)}a+=")"}return a}(e),!0),this.lastIndex=0}exec(e){this.matcherRe.lastIndex=this.lastIndex;const t=this.matcherRe.exec(e);if(!t)return null;const n=t.findIndex((e,t)=>t>0&&void 0!==e),r=this.matchIndexes[n];return t.splice(0,n),Object.assign(t,r)}}class r{constructor(){this.rules=[],this.multiRegexes=[],this.count=0,this.lastIndex=0,this.regexIndex=0}getMatcher(e){if(this.multiRegexes[e])return this.multiRegexes[e];const t=new n;return this.rules.slice(e).forEach(([e,n])=>t.addRule(e,n)),t.compile(),this.multiRegexes[e]=t,t}resumingScanAtSamePosition(){return 0!==this.regexIndex}considerAll(){this.regexIndex=0}addRule(e,t){this.rules.push([e,t]),"begin"===t.type&&this.count++}exec(e){const t=this.getMatcher(this.regexIndex);t.lastIndex=this.lastIndex;let n=t.exec(e);if(this.resumingScanAtSamePosition())if(n&&n.index===this.lastIndex);else{const t=this.getMatcher(0);t.lastIndex=this.lastIndex+1,n=t.exec(e)}return n&&(this.regexIndex+=n.position+1,this.regexIndex===this.count&&this.considerAll()),n}}function a(e,t){"."===e.input[e.index-1]&&t.ignoreMatch()}if(e.contains&&e.contains.includes("self"))throw new Error("ERR: contains `self` is not supported at the top-level of a language.  See documentation.");return e.classNameAliases=Ee(e.classNameAliases||{}),function n(i,o){const s=i;if(i.compiled)return s;i.compiled=!0,i.__beforeBegin=null,i.keywords=i.keywords||i.beginKeywords;let l=null;if("object"==typeof i.keywords&&(l=i.keywords.$pattern,delete i.keywords.$pattern),i.keywords&&(i.keywords=function(e,t){const n={};"string"==typeof e?r("keyword",e):Object.keys(e).forEach((function(t){r(t,e[t])}));return n;function r(e,r){t&&(r=r.toLowerCase()),r.split(" ").forEach((function(t){const r=t.split("|");n[r[0]]=[e,Xe(r[0],r[1])]}))}}(i.keywords,e.case_insensitive)),i.lexemes&&l)throw new Error("ERR: Prefer `keywords.$pattern` to `mode.lexemes`, BOTH are not allowed. (see mode reference) ");return s.keywordPatternRe=t(i.lexemes||l||/\w+/,!0),o&&(i.beginKeywords&&(i.begin="\\b("+i.beginKeywords.split(" ").join("|")+")(?!\\.)(?=\\b|\\s)",i.__beforeBegin=a),i.begin||(i.begin=/\B|\b/),s.beginRe=t(i.begin),i.endSameAsBegin&&(i.end=i.begin),i.end||i.endsWithParent||(i.end=/\B|\b/),i.end&&(s.endRe=t(i.end)),s.terminator_end=Oe(i.end)||"",i.endsWithParent&&o.terminator_end&&(s.terminator_end+=(i.end?"|":"")+o.terminator_end)),i.illegal&&(s.illegalRe=t(i.illegal)),void 0===i.relevance&&(i.relevance=1),i.contains||(i.contains=[]),i.contains=[].concat(...i.contains.map((function(e){return function(e){e.variants&&!e.cached_variants&&(e.cached_variants=e.variants.map((function(t){return Ee(e,{variants:null},t)})));if(e.cached_variants)return e.cached_variants;if(function e(t){return!!t&&(t.endsWithParent||e(t.starts))}(e))return Ee(e,{starts:e.starts?Ee(e.starts):null});if(Object.isFrozen(e))return Ee(e);return e}("self"===e?i:e)}))),i.contains.forEach((function(e){n(e,s)})),i.starts&&n(i.starts,o),s.matcher=function(e){const t=new r;return e.contains.forEach(e=>t.addRule(e.begin,{rule:e,type:"begin"})),e.terminator_end&&t.addRule(e.terminator_end,{type:"end"}),e.illegal&&t.addRule(e.illegal,{type:"illegal"}),t}(s),s}(e)}function Xe(e,t){return t?Number(t):function(e){return Ze.includes(e.toLowerCase())}(e)?0:1}function Ye(e){const t={props:["language","code","autodetect"],data:function(){return{detectedLanguage:"",unknownLanguage:!1}},computed:{className(){return this.unknownLanguage?"":"hljs "+this.detectedLanguage},highlighted(){if(!this.autoDetect&&!e.getLanguage(this.language))return console.warn(`The language "${this.language}" you specified could not be found.`),this.unknownLanguage=!0,xe(this.code);let t;return this.autoDetect?(t=e.highlightAuto(this.code),this.detectedLanguage=t.language):(t=e.highlight(this.language,this.code,this.ignoreIllegals),this.detectedLanguage=this.language),t.value},autoDetect(){return!this.language||(e=this.autodetect,Boolean(e||""===e));var e},ignoreIllegals:()=>!0},render(e){return e("pre",{},[e("code",{class:this.className,domProps:{innerHTML:this.highlighted}})])}};return{Component:t,VuePlugin:{install(e){e.component("highlightjs",t)}}}}const et=xe,tt=Ee,{nodeStream:nt,mergeStreams:rt}=$e,at=Symbol("nomatch");var it=function(e){const t=[],n=Object.create(null),r=Object.create(null),a=[];let i=!0;const o=/(^(<[^>]+>|\t|)+|\n)/gm,s="Could not find the language '{}', did you forget to load/include a language module?",l={disableAutodetect:!0,name:"Plain text",contains:[]};let c={noHighlightRe:/^(no-?highlight)$/i,languageDetectRe:/\blang(?:uage)?-([\w-]+)\b/i,classPrefix:"hljs-",tabReplace:null,useBR:!1,languages:null,__emitter:Te};function u(e){return c.noHighlightRe.test(e)}function d(e,t,n,r){const a={code:t,language:e};w("before:highlight",a);const i=a.result?a.result:p(a.language,a.code,n,r);return i.code=a.code,w("after:highlight",i),i}function p(e,t,r,a){const o=t;function l(e,t){const n=w.case_insensitive?t[0].toLowerCase():t[0];return Object.prototype.hasOwnProperty.call(e.keywords,n)&&e.keywords[n]}function u(){null!=x.subLanguage?function(){if(""===$)return;let e=null;if("string"==typeof x.subLanguage){if(!n[x.subLanguage])return void S.addText($);e=p(x.subLanguage,$,!0,E[x.subLanguage]),E[x.subLanguage]=e.top}else e=h($,x.subLanguage.length?x.subLanguage:null);x.relevance>0&&(I+=e.relevance),S.addSublanguage(e.emitter,e.language)}():function(){if(!x.keywords)return void S.addText($);let e=0;x.keywordPatternRe.lastIndex=0;let t=x.keywordPatternRe.exec($),n="";for(;t;){n+=$.substring(e,t.index);const r=l(x,t);if(r){const[e,a]=r;S.addText(n),n="",I+=a;const i=w.classNameAliases[e]||e;S.addKeyword(t[0],i)}else n+=t[0];e=x.keywordPatternRe.lastIndex,t=x.keywordPatternRe.exec($)}n+=$.substr(e),S.addText(n)}(),$=""}function d(e){return e.className&&S.openNode(w.classNameAliases[e.className]||e.className),x=Object.create(e,{parent:{value:x}}),x}function g(e){return 0===x.matcher.regexIndex?($+=e[0],1):(T=!0,0)}function f(e){const t=e[0],n=e.rule,r=new ke(n),a=[n.__beforeBegin,n["on:begin"]];for(const n of a)if(n&&(n(e,r),r.ignore))return g(t);return n&&n.endSameAsBegin&&(n.endRe=new RegExp(t.replace(/[-/\\^$*+?.()|[\]{}]/g,"\\$&"),"m")),n.skip?$+=t:(n.excludeBegin&&($+=t),u(),n.returnBegin||n.excludeBegin||($=t)),d(n),n.returnBegin?0:t.length}function m(e){const t=e[0],n=o.substr(e.index),r=function e(t,n,r){let a=function(e,t){const n=e&&e.exec(t);return n&&0===n.index}(t.endRe,r);if(a){if(t["on:end"]){const e=new ke(t);t["on:end"](n,e),e.ignore&&(a=!1)}if(a){for(;t.endsParent&&t.parent;)t=t.parent;return t}}if(t.endsWithParent)return e(t.parent,n,r)}(x,e,n);if(!r)return at;const a=x;a.skip?$+=t:(a.returnEnd||a.excludeEnd||($+=t),u(),a.excludeEnd&&($=t));do{x.className&&S.closeNode(),x.skip||x.subLanguage||(I+=x.relevance),x=x.parent}while(x!==r.parent);return r.starts&&(r.endSameAsBegin&&(r.starts.endRe=r.endRe),d(r.starts)),a.returnEnd?0:t.length}let _={};function v(t,n){const a=n&&n[0];if($+=t,null==a)return u(),0;if("begin"===_.type&&"end"===n.type&&_.index===n.index&&""===a){if($+=o.slice(n.index,n.index+1),!i){const t=new Error("0 width match regex");throw t.languageName=e,t.badRule=_.rule,t}return 1}if(_=n,"begin"===n.type)return f(n);if("illegal"===n.type&&!r){const e=new Error('Illegal lexeme "'+a+'" for mode "'+(x.className||"<unnamed>")+'"');throw e.mode=x,e}if("end"===n.type){const e=m(n);if(e!==at)return e}if("illegal"===n.type&&""===a)return 1;if(L>1e5&&L>3*n.index){throw new Error("potential infinite loop, way more iterations than matches")}return $+=a,a.length}const w=b(e);if(!w)throw console.error(s.replace("{}",e)),new Error('Unknown language: "'+e+'"');const y=Qe(w);let k="",x=a||y;const E={},S=new c.__emitter(c);!function(){const e=[];for(let t=x;t!==w;t=t.parent)t.className&&e.unshift(t.className);e.forEach(e=>S.openNode(e))}();let $="",I=0,C=0,L=0,T=!1;try{for(x.matcher.considerAll();;){L++,T?T=!1:x.matcher.considerAll(),x.matcher.lastIndex=C;const e=x.matcher.exec(o);if(!e)break;const t=v(o.substring(C,e.index),e);C=e.index+t}return v(o.substr(C)),S.closeAllNodes(),S.finalize(),k=S.toHTML(),{relevance:I,value:k,language:e,illegal:!1,emitter:S,top:x}}catch(t){if(t.message&&t.message.includes("Illegal"))return{illegal:!0,illegalBy:{msg:t.message,context:o.slice(C-100,C+100),mode:t.mode},sofar:k,relevance:0,value:et(o),emitter:S};if(i)return{illegal:!1,relevance:0,value:et(o),emitter:S,language:e,top:x,errorRaised:t};throw t}}function h(e,t){t=t||c.languages||Object.keys(n);const r=function(e){const t={relevance:0,emitter:new c.__emitter(c),value:et(e),illegal:!1,top:l};return t.emitter.addText(e),t}(e),a=t.filter(b).filter(v).map(t=>p(t,e,!1));a.unshift(r);const i=a.sort((e,t)=>{if(e.relevance!==t.relevance)return t.relevance-e.relevance;if(e.language&&t.language){if(b(e.language).supersetOf===t.language)return 1;if(b(t.language).supersetOf===e.language)return-1}return 0}),[o,s]=i,u=o;return u.second_best=s,u}function g(e){return c.tabReplace||c.useBR?e.replace(o,e=>"\n"===e?c.useBR?"<br>":e:c.tabReplace?e.replace(/\t/g,c.tabReplace):e):e}function f(e){let t=null;const n=function(e){let t=e.className+" ";t+=e.parentNode?e.parentNode.className:"";const n=c.languageDetectRe.exec(t);if(n){const t=b(n[1]);return t||(console.warn(s.replace("{}",n[1])),console.warn("Falling back to no-highlight mode for this block.",e)),t?n[1]:"no-highlight"}return t.split(/\s+/).find(e=>u(e)||b(e))}(e);if(u(n))return;w("before:highlightBlock",{block:e,language:n}),c.useBR?(t=document.createElement("div"),t.innerHTML=e.innerHTML.replace(/\n/g,"").replace(/<br[ /]*>/g,"\n")):t=e;const a=t.textContent,i=n?d(n,a,!0):h(a),o=nt(t);if(o.length){const e=document.createElement("div");e.innerHTML=i.value,i.value=rt(o,nt(e),a)}i.value=g(i.value),w("after:highlightBlock",{block:e,result:i}),e.innerHTML=i.value,e.className=function(e,t,n){const a=t?r[t]:n,i=[e.trim()];return e.match(/\bhljs\b/)||i.push("hljs"),e.includes(a)||i.push(a),i.join(" ").trim()}(e.className,n,i.language),e.result={language:i.language,re:i.relevance,relavance:i.relevance},i.second_best&&(e.second_best={language:i.second_best.language,re:i.second_best.relevance,relavance:i.second_best.relevance})}const m=()=>{if(m.called)return;m.called=!0;const e=document.querySelectorAll("pre code");t.forEach.call(e,f)};function b(e){return e=(e||"").toLowerCase(),n[e]||n[r[e]]}function _(e,{languageName:t}){"string"==typeof e&&(e=[e]),e.forEach(e=>{r[e]=t})}function v(e){const t=b(e);return t&&!t.disableAutodetect}function w(e,t){const n=e;a.forEach((function(e){e[n]&&e[n](t)}))}Object.assign(e,{highlight:d,highlightAuto:h,fixMarkup:function(e){return console.warn("fixMarkup is deprecated and will be removed entirely in v11.0"),console.warn("Please see https://github.com/highlightjs/highlight.js/issues/2534"),g(e)},highlightBlock:f,configure:function(e){e.useBR&&(console.warn("'useBR' option is deprecated and will be removed entirely in v11.0"),console.warn("Please see https://github.com/highlightjs/highlight.js/issues/2559")),c=tt(c,e)},initHighlighting:m,initHighlightingOnLoad:function(){window.addEventListener("DOMContentLoaded",m,!1)},registerLanguage:function(t,r){let a=null;try{a=r(e)}catch(e){if(console.error("Language definition for '{}' could not be registered.".replace("{}",t)),!i)throw e;console.error(e),a=l}a.name||(a.name=t),n[t]=a,a.rawDefinition=r.bind(null,e),a.aliases&&_(a.aliases,{languageName:t})},listLanguages:function(){return Object.keys(n)},getLanguage:b,registerAliases:_,requireLanguage:function(e){console.warn("requireLanguage is deprecated and will be removed entirely in the future."),console.warn("Please see https://github.com/highlightjs/highlight.js/pull/2844");const t=b(e);if(t)return t;throw new Error("The '{}' language is required, but not loaded.".replace("{}",e))},autoDetection:v,inherit:tt,addPlugin:function(e){a.push(e)},vuePlugin:Ye(e).VuePlugin}),e.debugMode=function(){i=!1},e.safeMode=function(){i=!0},e.versionString="10.4.1";for(const e in Je)"object"==typeof Je[e]&&we(Je[e]);return Object.assign(e,Je),e}({});const ot=["as","in","of","if","for","while","finally","var","new","function","do","return","void","else","break","catch","instanceof","with","throw","case","default","try","switch","continue","typeof","delete","let","yield","const","class","debugger","async","await","static","import","from","export","extends"],st=["true","false","null","undefined","NaN","Infinity"],lt=[].concat(["setInterval","setTimeout","clearInterval","clearTimeout","require","exports","eval","isFinite","isNaN","parseFloat","parseInt","decodeURI","decodeURIComponent","encodeURI","encodeURIComponent","escape","unescape"],["arguments","this","super","console","window","document","localStorage","module","global"],["Intl","DataView","Number","Math","Date","String","RegExp","Object","Function","Boolean","Error","Symbol","Set","Map","WeakSet","WeakMap","Proxy","Reflect","JSON","Promise","Float64Array","Int16Array","Int32Array","Int8Array","Uint16Array","Uint32Array","Float32Array","Array","Uint8Array","Uint8ClampedArray","ArrayBuffer"],["EvalError","InternalError","RangeError","ReferenceError","SyntaxError","TypeError","URIError"]);function ct(e){return ut("(?=",e,")")}function ut(...e){return e.map(e=>{return(t=e)?"string"==typeof t?t:t.source:null;var t}).join("")}var dt=function(e){const t="[A-Za-z$_][0-9A-Za-z$_]*",n="<>",r="</>",a={begin:/<[A-Za-z0-9\\._:-]+/,end:/\/[A-Za-z0-9\\._:-]+>|\/>/,isTrulyOpeningTag:(e,t)=>{const n=e[0].length+e.index,r=e.input[n];"<"!==r?">"===r&&(((e,{after:t})=>{const n="</"+e[0].slice(1);return-1!==e.input.indexOf(n,t)})(e,{after:n})||t.ignoreMatch()):t.ignoreMatch()}},i={$pattern:"[A-Za-z$_][0-9A-Za-z$_]*",keyword:ot.join(" "),literal:st.join(" "),built_in:lt.join(" ")},o="\\.([0-9](_?[0-9])*)",s={className:"number",variants:[{begin:`(\\b(0|[1-9](_?[0-9])*|0[0-7]*[89][0-9]*)((${o})|\\.)?|(${o}))`+"[eE][+-]?([0-9](_?[0-9])*)\\b"},{begin:`\\b(0|[1-9](_?[0-9])*|0[0-7]*[89][0-9]*)\\b((${o})\\b|\\.)?|(${o})\\b`},{begin:"\\b(0|[1-9](_?[0-9])*)n\\b"},{begin:"\\b0[xX][0-9a-fA-F](_?[0-9a-fA-F])*n?\\b"},{begin:"\\b0[bB][0-1](_?[0-1])*n?\\b"},{begin:"\\b0[oO][0-7](_?[0-7])*n?\\b"},{begin:"\\b0[0-7]+n?\\b"}],relevance:0},l={className:"subst",begin:"\\$\\{",end:"\\}",keywords:i,contains:[]},c={begin:"html`",end:"",starts:{end:"`",returnEnd:!1,contains:[e.BACKSLASH_ESCAPE,l],subLanguage:"xml"}},u={begin:"css`",end:"",starts:{end:"`",returnEnd:!1,contains:[e.BACKSLASH_ESCAPE,l],subLanguage:"css"}},d={className:"string",begin:"`",end:"`",contains:[e.BACKSLASH_ESCAPE,l]},p={className:"comment",variants:[e.COMMENT("/\\*\\*","\\*/",{relevance:0,contains:[{className:"doctag",begin:"@[A-Za-z]+",contains:[{className:"type",begin:"\\{",end:"\\}",relevance:0},{className:"variable",begin:t+"(?=\\s*(-)|$)",endsParent:!0,relevance:0},{begin:/(?=[^\n])\s/,relevance:0}]}]}),e.C_BLOCK_COMMENT_MODE,e.C_LINE_COMMENT_MODE]},h=[e.APOS_STRING_MODE,e.QUOTE_STRING_MODE,c,u,d,s,e.REGEXP_MODE];l.contains=h.concat({begin:/\{/,end:/\}/,keywords:i,contains:["self"].concat(h)});const g=[].concat(p,l.contains),f=g.concat([{begin:/\(/,end:/\)/,keywords:i,contains:["self"].concat(g)}]),m={className:"params",begin:/\(/,end:/\)/,excludeBegin:!0,excludeEnd:!0,keywords:i,contains:f};return{name:"Javascript",aliases:["js","jsx","mjs","cjs"],keywords:i,exports:{PARAMS_CONTAINS:f},illegal:/#(?![$_A-z])/,contains:[e.SHEBANG({label:"shebang",binary:"node",relevance:5}),{label:"use_strict",className:"meta",relevance:10,begin:/^\s*['"]use (strict|asm)['"]/},e.APOS_STRING_MODE,e.QUOTE_STRING_MODE,c,u,d,p,s,{begin:ut(/[{,\n]\s*/,ct(ut(/(((\/\/.*$)|(\/\*(\*[^/]|[^*])*\*\/))\s*)*/,t+"\\s*:"))),relevance:0,contains:[{className:"attr",begin:t+ct("\\s*:"),relevance:0}]},{begin:"("+e.RE_STARTERS_RE+"|\\b(case|return|throw)\\b)\\s*",keywords:"return throw case",contains:[p,e.REGEXP_MODE,{className:"function",begin:"(\\([^()]*(\\([^()]*(\\([^()]*\\)[^()]*)*\\)[^()]*)*\\)|"+e.UNDERSCORE_IDENT_RE+")\\s*=>",returnBegin:!0,end:"\\s*=>",contains:[{className:"params",variants:[{begin:e.UNDERSCORE_IDENT_RE,relevance:0},{className:null,begin:/\(\s*\)/,skip:!0},{begin:/\(/,end:/\)/,excludeBegin:!0,excludeEnd:!0,keywords:i,contains:f}]}]},{begin:/,/,relevance:0},{className:"",begin:/\s/,end:/\s*/,skip:!0},{variants:[{begin:n,end:r},{begin:a.begin,"on:begin":a.isTrulyOpeningTag,end:a.end}],subLanguage:"xml",contains:[{begin:a.begin,end:a.end,skip:!0,contains:["self"]}]}],relevance:0},{className:"function",beginKeywords:"function",end:/[{;]/,excludeEnd:!0,keywords:i,contains:["self",e.inherit(e.TITLE_MODE,{begin:t}),m],illegal:/%/},{beginKeywords:"while if switch catch for"},{className:"function",begin:e.UNDERSCORE_IDENT_RE+"\\([^()]*(\\([^()]*(\\([^()]*\\)[^()]*)*\\)[^()]*)*\\)\\s*\\{",returnBegin:!0,contains:[m,e.inherit(e.TITLE_MODE,{begin:t})]},{variants:[{begin:"\\."+t},{begin:"\\$"+t}],relevance:0},{className:"class",beginKeywords:"class",end:/[{;=]/,excludeEnd:!0,illegal:/[:"[\]]/,contains:[{beginKeywords:"extends"},e.UNDERSCORE_TITLE_MODE]},{begin:/\b(?=constructor)/,end:/[{;]/,excludeEnd:!0,contains:[e.inherit(e.TITLE_MODE,{begin:t}),"self",m]},{begin:"(get|set)\\s+(?="+t+"\\()",end:/\{/,keywords:"get set",contains:[e.inherit(e.TITLE_MODE,{begin:t}),{begin:/\(\)/},m]},{begin:/\$[(.]/}]}};var pt=function(e){const t={keyword:["and","as","assert","async","await","break","class","continue","def","del","elif","else","except","finally","for","","from","global","if","import","in","is","lambda","nonlocal|10","not","or","pass","raise","return","try","while","with","yield"].join(" "),built_in:["__import__","abs","all","any","ascii","bin","bool","breakpoint","bytearray","bytes","callable","chr","classmethod","compile","complex","delattr","dict","dir","divmod","enumerate","eval","exec","filter","float","format","frozenset","getattr","globals","hasattr","hash","help","hex","id","input","int","isinstance","issubclass","iter","len","list","locals","map","max","memoryview","min","next","object","oct","open","ord","pow","print","property","range","repr","reversed","round","set","setattr","slice","sorted","staticmethod","str","sum","super","tuple","type","vars","zip"].join(" "),literal:["__debug__","Ellipsis","False","None","NotImplemented","True"].join(" ")},n={className:"meta",begin:/^(>>>|\.\.\.) /},r={className:"subst",begin:/\{/,end:/\}/,keywords:t,illegal:/#/},a={begin:/\{\{/,relevance:0},i={className:"string",contains:[e.BACKSLASH_ESCAPE],variants:[{begin:/([uU]|[bB]|[rR]|[bB][rR]|[rR][bB])?'''/,end:/'''/,contains:[e.BACKSLASH_ESCAPE,n],relevance:10},{begin:/([uU]|[bB]|[rR]|[bB][rR]|[rR][bB])?"""/,end:/"""/,contains:[e.BACKSLASH_ESCAPE,n],relevance:10},{begin:/([fF][rR]|[rR][fF]|[fF])'''/,end:/'''/,contains:[e.BACKSLASH_ESCAPE,n,a,r]},{begin:/([fF][rR]|[rR][fF]|[fF])"""/,end:/"""/,contains:[e.BACKSLASH_ESCAPE,n,a,r]},{begin:/([uU]|[rR])'/,end:/'/,relevance:10},{begin:/([uU]|[rR])"/,end:/"/,relevance:10},{begin:/([bB]|[bB][rR]|[rR][bB])'/,end:/'/},{begin:/([bB]|[bB][rR]|[rR][bB])"/,end:/"/},{begin:/([fF][rR]|[rR][fF]|[fF])'/,end:/'/,contains:[e.BACKSLASH_ESCAPE,a,r]},{begin:/([fF][rR]|[rR][fF]|[fF])"/,end:/"/,contains:[e.BACKSLASH_ESCAPE,a,r]},e.APOS_STRING_MODE,e.QUOTE_STRING_MODE]},o="[0-9](_?[0-9])*",s=`(\\b(${o}))?\\.(${o})|\\b(${o})\\.`,l={className:"number",relevance:0,variants:[{begin:`(\\b(${o})|(${s}))[eE][+-]?(${o})[jJ]?\\b`},{begin:`(${s})[jJ]?`},{begin:"\\b([1-9](_?[0-9])*|0+(_?0)*)[lLjJ]?\\b"},{begin:"\\b0[bB](_?[01])+[lL]?\\b"},{begin:"\\b0[oO](_?[0-7])+[lL]?\\b"},{begin:"\\b0[xX](_?[0-9a-fA-F])+[lL]?\\b"},{begin:`\\b(${o})[jJ]\\b`}]},c={className:"params",variants:[{begin:/\(\s*\)/,skip:!0,className:null},{begin:/\(/,end:/\)/,excludeBegin:!0,excludeEnd:!0,keywords:t,contains:["self",n,l,i,e.HASH_COMMENT_MODE]}]};return r.contains=[i,l,n],{name:"Python",aliases:["py","gyp","ipython"],keywords:t,illegal:/(<\/|->|\?)|=>/,contains:[n,l,{begin:/\bself\b/},{beginKeywords:"if",relevance:0},i,e.HASH_COMMENT_MODE,{variants:[{className:"function",beginKeywords:"def"},{className:"class",beginKeywords:"class"}],end:/:/,illegal:/[${=;\n,]/,contains:[e.UNDERSCORE_TITLE_MODE,c,{begin:/->/,endsWithParent:!0,keywords:"None"}]},{className:"meta",begin:/^[\t ]*@/,end:/(?=#)|$/,contains:[l,c,i]},{begin:/\b(print|exec)\(/}]}};function ht(...e){return e.map(e=>{return(t=e)?"string"==typeof t?t:t.source:null;var t}).join("")}var gt=function(e){const t={},n={begin:/\$\{/,end:/\}/,contains:["self",{begin:/:-/,contains:[t]}]};Object.assign(t,{className:"variable",variants:[{begin:ht(/\$[\w\d#@][\w\d_]*/,"(?![\\w\\d])(?![$])")},n]});const r={className:"subst",begin:/\$\(/,end:/\)/,contains:[e.BACKSLASH_ESCAPE]},a={begin:/<<-?\s*(?=\w+)/,starts:{contains:[e.END_SAME_AS_BEGIN({begin:/(\w+)/,end:/(\w+)/,className:"string"})]}},i={className:"string",begin:/"/,end:/"/,contains:[e.BACKSLASH_ESCAPE,t,r]};r.contains.push(i);const o={begin:/\$\(\(/,end:/\)\)/,contains:[{begin:/\d+#[0-9a-f]+/,className:"number"},e.NUMBER_MODE,t]},s=e.SHEBANG({binary:`(${["fish","bash","zsh","sh","csh","ksh","tcsh","dash","scsh"].join("|")})`,relevance:10}),l={className:"function",begin:/\w[\w\d_]*\s*\(\s*\)\s*\{/,returnBegin:!0,contains:[e.inherit(e.TITLE_MODE,{begin:/\w[\w\d_]*/})],relevance:0};return{name:"Bash",aliases:["sh","zsh"],keywords:{$pattern:/\b[a-z._-]+\b/,keyword:"if then else elif fi for while in do done case esac function",literal:"true false",built_in:"break cd continue eval exec exit export getopts hash pwd readonly return shift test times trap umask unset alias bind builtin caller command declare echo enable help let local logout mapfile printf read readarray source type typeset ulimit unalias set shopt autoload bg bindkey bye cap chdir clone comparguments compcall compctl compdescribe compfiles compgroups compquote comptags comptry compvalues dirs disable disown echotc echoti emulate fc fg float functions getcap getln history integer jobs kill limit log noglob popd print pushd pushln rehash sched setcap setopt stat suspend ttyctl unfunction unhash unlimit unsetopt vared wait whence where which zcompile zformat zftp zle zmodload zparseopts zprof zpty zregexparse zsocket zstyle ztcp"},contains:[s,e.SHEBANG(),l,o,e.HASH_COMMENT_MODE,a,i,{className:"",begin:/\\"/},{className:"string",begin:/'/,end:/'/},t]}};function ft(...e){return e.map(e=>{return(t=e)?"string"==typeof t?t:t.source:null;var t}).join("")}var mt=function(e){var t,n="([a-zA-Z_]\\w*[!?=]?|[-+~]@|<<|>>|=~|===?|<=>|[<>]=?|\\*\\*|[-/+%^&*~`|]|\\[\\]=?)",r={keyword:"and then defined module in return redo if BEGIN retry end for self when next until do begin unless END rescue else break undef not super class case require yield alias while ensure elsif or include attr_reader attr_writer attr_accessor __FILE__",built_in:"proc lambda",literal:"true false nil"},a={className:"doctag",begin:"@[A-Za-z]+"},i={begin:"#<",end:">"},o=[e.COMMENT("#","$",{contains:[a]}),e.COMMENT("^=begin","^=end",{contains:[a],relevance:10}),e.COMMENT("^__END__","\\n$")],s={className:"subst",begin:/#\{/,end:/\}/,keywords:r},l={className:"string",contains:[e.BACKSLASH_ESCAPE,s],variants:[{begin:/'/,end:/'/},{begin:/"/,end:/"/},{begin:/`/,end:/`/},{begin:/%[qQwWx]?\(/,end:/\)/},{begin:/%[qQwWx]?\[/,end:/\]/},{begin:/%[qQwWx]?\{/,end:/\}/},{begin:/%[qQwWx]?</,end:/>/},{begin:/%[qQwWx]?\//,end:/\//},{begin:/%[qQwWx]?%/,end:/%/},{begin:/%[qQwWx]?-/,end:/-/},{begin:/%[qQwWx]?\|/,end:/\|/},{begin:/\B\?(\\\d{1,3}|\\x[A-Fa-f0-9]{1,2}|\\u[A-Fa-f0-9]{4}|\\?\S)\b/},{begin:/<<[-~]?'?(\w+)\n(?:[^\n]*\n)*?\s*\1\b/,returnBegin:!0,contains:[{begin:/<<[-~]?'?/},e.END_SAME_AS_BEGIN({begin:/(\w+)/,end:/(\w+)/,contains:[e.BACKSLASH_ESCAPE,s]})]}]},c={className:"number",relevance:0,variants:[{begin:"\\b([1-9](_?[0-9])*|0)(\\.([0-9](_?[0-9])*))?([eE][+-]?([0-9](_?[0-9])*)|r)?i?\\b"},{begin:"\\b0[dD][0-9](_?[0-9])*r?i?\\b"},{begin:"\\b0[bB][0-1](_?[0-1])*r?i?\\b"},{begin:"\\b0[oO][0-7](_?[0-7])*r?i?\\b"},{begin:"\\b0[xX][0-9a-fA-F](_?[0-9a-fA-F])*r?i?\\b"},{begin:"\\b0(_?[0-7])+r?i?\\b"}]},u={className:"params",begin:"\\(",end:"\\)",endsParent:!0,keywords:r},d=[l,{className:"class",beginKeywords:"class module",end:"$|;",illegal:/=/,contains:[e.inherit(e.TITLE_MODE,{begin:"[A-Za-z_]\\w*(::\\w+)*(\\?|!)?"}),{begin:"<\\s*",contains:[{begin:"("+e.IDENT_RE+"::)?"+e.IDENT_RE}]}].concat(o)},{className:"function",begin:ft(/def\s*/,(t=n+"\\s*(\\(|;|$)",ft("(?=",t,")"))),keywords:"def",end:"$|;",contains:[e.inherit(e.TITLE_MODE,{begin:n}),u].concat(o)},{begin:e.IDENT_RE+"::"},{className:"symbol",begin:e.UNDERSCORE_IDENT_RE+"(!|\\?)?:",relevance:0},{className:"symbol",begin:":(?!\\s)",contains:[l,{begin:n}],relevance:0},c,{className:"variable",begin:"(\\$\\W)|((\\$|@@?)(\\w+))(?=[^@$?])(?![A-Za-z])(?![@$?'])"},{className:"params",begin:/\|/,end:/\|/,relevance:0,keywords:r},{begin:"("+e.RE_STARTERS_RE+"|unless)\\s*",keywords:"unless",contains:[{className:"regexp",contains:[e.BACKSLASH_ESCAPE,s],illegal:/\n/,variants:[{begin:"/",end:"/[a-z]*"},{begin:/%r\{/,end:/\}[a-z]*/},{begin:"%r\\(",end:"\\)[a-z]*"},{begin:"%r!",end:"![a-z]*"},{begin:"%r\\[",end:"\\][a-z]*"}]}].concat(i,o),relevance:0}].concat(i,o);s.contains=d,u.contains=d;var p=[{begin:/^\s*=>/,starts:{end:"$",contains:d}},{className:"meta",begin:"^([>?]>|[\\w#]+\\(\\w+\\):\\d+:\\d+>|(\\w+-)?\\d+\\.\\d+\\.\\d+(p\\d+)?[^\\d][^>]+>)(?=[ ])",starts:{end:"$",contains:d}}];return o.unshift(i),{name:"Ruby",aliases:["rb","gemspec","podspec","thor","irb"],keywords:r,illegal:/\/\*/,contains:[e.SHEBANG({binary:"ruby"})].concat(p).concat(o).concat(d)}};var bt=function(e){const t={keyword:"break default func interface select case map struct chan else goto package switch const fallthrough if range type continue for import return var go defer bool byte complex64 complex128 float32 float64 int8 int16 int32 int64 string uint8 uint16 uint32 uint64 int uint uintptr rune",literal:"true false iota nil",built_in:"append cap close complex copy imag len make new panic print println real recover delete"};return{name:"Go",aliases:["golang"],keywords:t,illegal:"</",contains:[e.C_LINE_COMMENT_MODE,e.C_BLOCK_COMMENT_MODE,{className:"string",variants:[e.QUOTE_STRING_MODE,e.APOS_STRING_MODE,{begin:"`",end:"`"}]},{className:"number",variants:[{begin:e.C_NUMBER_RE+"[i]",relevance:1},e.C_NUMBER_MODE]},{begin:/:=/},{className:"function",beginKeywords:"func",end:"\\s*(\\{|$)",excludeEnd:!0,contains:[e.TITLE_MODE,{className:"params",begin:/\(/,end:/\)/,keywords:t,illegal:/["']/}]}]}};var _t=function(e){const t={className:"variable",begin:"\\$+[a-zA-Z_-ÿ][a-zA-Z0-9_-ÿ]*(?![A-Za-z0-9])(?![$])"},n={className:"meta",variants:[{begin:/<\?php/,relevance:10},{begin:/<\?[=]?/},{begin:/\?>/}]},r={className:"subst",variants:[{begin:/\$\w+/},{begin:/\{\$/,end:/\}/}]},a=e.inherit(e.APOS_STRING_MODE,{illegal:null}),i=e.inherit(e.QUOTE_STRING_MODE,{illegal:null,contains:e.QUOTE_STRING_MODE.contains.concat(r)}),o=e.END_SAME_AS_BEGIN({begin:/<<<[ \t]*(\w+)\n/,end:/[ \t]*(\w+)\b/,contains:e.QUOTE_STRING_MODE.contains.concat(r)}),s={className:"string",contains:[e.BACKSLASH_ESCAPE,n],variants:[e.inherit(a,{begin:"b'",end:"'"}),e.inherit(i,{begin:'b"',end:'"'}),i,a,o]},l={variants:[e.BINARY_NUMBER_MODE,e.C_NUMBER_MODE]},c={keyword:"__CLASS__ __DIR__ __FILE__ __FUNCTION__ __LINE__ __METHOD__ __NAMESPACE__ __TRAIT__ die echo exit include include_once print require require_once array abstract and as binary bool boolean break callable case catch class clone const continue declare default do double else elseif empty enddeclare endfor endforeach endif endswitch endwhile eval extends final finally float for foreach from global goto if implements instanceof insteadof int integer interface isset iterable list match|0 new object or private protected public real return string switch throw trait try unset use var void while xor yield",literal:"false null true",built_in:"Error|0 AppendIterator ArgumentCountError ArithmeticError ArrayIterator ArrayObject AssertionError BadFunctionCallException BadMethodCallException CachingIterator CallbackFilterIterator CompileError Countable DirectoryIterator DivisionByZeroError DomainException EmptyIterator ErrorException Exception FilesystemIterator FilterIterator GlobIterator InfiniteIterator InvalidArgumentException IteratorIterator LengthException LimitIterator LogicException MultipleIterator NoRewindIterator OutOfBoundsException OutOfRangeException OuterIterator OverflowException ParentIterator ParseError RangeException RecursiveArrayIterator RecursiveCachingIterator RecursiveCallbackFilterIterator RecursiveDirectoryIterator RecursiveFilterIterator RecursiveIterator RecursiveIteratorIterator RecursiveRegexIterator RecursiveTreeIterator RegexIterator RuntimeException SeekableIterator SplDoublyLinkedList SplFileInfo SplFileObject SplFixedArray SplHeap SplMaxHeap SplMinHeap SplObjectStorage SplObserver SplObserver SplPriorityQueue SplQueue SplStack SplSubject SplSubject SplTempFileObject TypeError UnderflowException UnexpectedValueException ArrayAccess Closure Generator Iterator IteratorAggregate Serializable Throwable Traversable WeakReference Directory __PHP_Incomplete_Class parent php_user_filter self static stdClass"};return{aliases:["php","php3","php4","php5","php6","php7","php8"],case_insensitive:!0,keywords:c,contains:[e.HASH_COMMENT_MODE,e.COMMENT("//","$",{contains:[n]}),e.COMMENT("/\\*","\\*/",{contains:[{className:"doctag",begin:"@[A-Za-z]+"}]}),e.COMMENT("__halt_compiler.+?;",!1,{endsWithParent:!0,keywords:"__halt_compiler"}),n,{className:"keyword",begin:/\$this\b/},t,{begin:/(::|->)+[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*/},{className:"function",relevance:0,beginKeywords:"fn function",end:/[;{]/,excludeEnd:!0,illegal:"[$%\\[]",contains:[e.UNDERSCORE_TITLE_MODE,{begin:"=>"},{className:"params",begin:"\\(",end:"\\)",excludeBegin:!0,excludeEnd:!0,keywords:c,contains:["self",t,e.C_BLOCK_COMMENT_MODE,s,l]}]},{className:"class",beginKeywords:"class interface",relevance:0,end:/\{/,excludeEnd:!0,illegal:/[:($"]/,contains:[{beginKeywords:"extends implements"},e.UNDERSCORE_TITLE_MODE]},{beginKeywords:"namespace",relevance:0,end:";",illegal:/[.']/,contains:[e.UNDERSCORE_TITLE_MODE]},{beginKeywords:"use",relevance:0,end:";",contains:[e.UNDERSCORE_TITLE_MODE]},s,l]}};it.registerLanguage("javascript",dt),it.registerLanguage("node",dt),it.registerLanguage("python",pt),it.registerLanguage("curl",gt),it.registerLanguage("ruby",mt),it.registerLanguage("go",bt),it.registerLanguage("php",_t);var vt="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:{};function wt(e,t){return e(t={exports:{}},t.exports),t.exports}var yt,kt=wt((function(e,t){
-/*!
+
+(function(l, i, v, e) { v = l.createElement(i); v.async = 1; v.src = '//' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; e = l.getElementsByTagName(i)[0]; e.parentNode.insertBefore(v, e)})(document, 'script');
+var app = (function () {
+    'use strict';
+
+    function noop() { }
+    function assign(tar, src) {
+        // @ts-ignore
+        for (const k in src)
+            tar[k] = src[k];
+        return tar;
+    }
+    function add_location(element, file, line, column, char) {
+        element.__svelte_meta = {
+            loc: { file, line, column, char }
+        };
+    }
+    function run(fn) {
+        return fn();
+    }
+    function blank_object() {
+        return Object.create(null);
+    }
+    function run_all(fns) {
+        fns.forEach(run);
+    }
+    function is_function(thing) {
+        return typeof thing === 'function';
+    }
+    function safe_not_equal(a, b) {
+        return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
+    }
+    function create_slot(definition, ctx, fn) {
+        if (definition) {
+            const slot_ctx = get_slot_context(definition, ctx, fn);
+            return definition[0](slot_ctx);
+        }
+    }
+    function get_slot_context(definition, ctx, fn) {
+        return definition[1]
+            ? assign({}, assign(ctx.$$scope.ctx, definition[1](fn ? fn(ctx) : {})))
+            : ctx.$$scope.ctx;
+    }
+    function get_slot_changes(definition, ctx, changed, fn) {
+        return definition[1]
+            ? assign({}, assign(ctx.$$scope.changed || {}, definition[1](fn ? fn(changed) : {})))
+            : ctx.$$scope.changed || {};
+    }
+    function null_to_empty(value) {
+        return value == null ? '' : value;
+    }
+
+    function append(target, node) {
+        target.appendChild(node);
+    }
+    function insert(target, node, anchor) {
+        target.insertBefore(node, anchor || null);
+    }
+    function detach(node) {
+        node.parentNode.removeChild(node);
+    }
+    function destroy_each(iterations, detaching) {
+        for (let i = 0; i < iterations.length; i += 1) {
+            if (iterations[i])
+                iterations[i].d(detaching);
+        }
+    }
+    function element(name) {
+        return document.createElement(name);
+    }
+    function svg_element(name) {
+        return document.createElementNS('http://www.w3.org/2000/svg', name);
+    }
+    function text(data) {
+        return document.createTextNode(data);
+    }
+    function space() {
+        return text(' ');
+    }
+    function empty() {
+        return text('');
+    }
+    function listen(node, event, handler, options) {
+        node.addEventListener(event, handler, options);
+        return () => node.removeEventListener(event, handler, options);
+    }
+    function prevent_default(fn) {
+        return function (event) {
+            event.preventDefault();
+            // @ts-ignore
+            return fn.call(this, event);
+        };
+    }
+    function attr(node, attribute, value) {
+        if (value == null)
+            node.removeAttribute(attribute);
+        else
+            node.setAttribute(attribute, value);
+    }
+    function set_attributes(node, attributes) {
+        for (const key in attributes) {
+            if (key === 'style') {
+                node.style.cssText = attributes[key];
+            }
+            else if (key in node) {
+                node[key] = attributes[key];
+            }
+            else {
+                attr(node, key, attributes[key]);
+            }
+        }
+    }
+    function set_custom_element_data(node, prop, value) {
+        if (prop in node) {
+            node[prop] = value;
+        }
+        else {
+            attr(node, prop, value);
+        }
+    }
+    function children(element) {
+        return Array.from(element.childNodes);
+    }
+    function set_input_value(input, value) {
+        if (value != null || input.value) {
+            input.value = value;
+        }
+    }
+    function set_style(node, key, value, important) {
+        node.style.setProperty(key, value, important ? 'important' : '');
+    }
+    function select_option(select, value) {
+        for (let i = 0; i < select.options.length; i += 1) {
+            const option = select.options[i];
+            if (option.__value === value) {
+                option.selected = true;
+                return;
+            }
+        }
+    }
+    function select_value(select) {
+        const selected_option = select.querySelector(':checked') || select.options[0];
+        return selected_option && selected_option.__value;
+    }
+    function add_resize_listener(element, fn) {
+        if (getComputedStyle(element).position === 'static') {
+            element.style.position = 'relative';
+        }
+        const object = document.createElement('object');
+        object.setAttribute('style', 'display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; pointer-events: none; z-index: -1;');
+        object.type = 'text/html';
+        object.tabIndex = -1;
+        let win;
+        object.onload = () => {
+            win = object.contentDocument.defaultView;
+            win.addEventListener('resize', fn);
+        };
+        if (/Trident/.test(navigator.userAgent)) {
+            element.appendChild(object);
+            object.data = 'about:blank';
+        }
+        else {
+            object.data = 'about:blank';
+            element.appendChild(object);
+        }
+        return {
+            cancel: () => {
+                win && win.removeEventListener && win.removeEventListener('resize', fn);
+                element.removeChild(object);
+            }
+        };
+    }
+    function toggle_class(element, name, toggle) {
+        element.classList[toggle ? 'add' : 'remove'](name);
+    }
+    function custom_event(type, detail) {
+        const e = document.createEvent('CustomEvent');
+        e.initCustomEvent(type, false, false, detail);
+        return e;
+    }
+    class HtmlTag {
+        constructor(html, anchor = null) {
+            this.e = element('div');
+            this.a = anchor;
+            this.u(html);
+        }
+        m(target, anchor = null) {
+            for (let i = 0; i < this.n.length; i += 1) {
+                insert(target, this.n[i], anchor);
+            }
+            this.t = target;
+        }
+        u(html) {
+            this.e.innerHTML = html;
+            this.n = Array.from(this.e.childNodes);
+        }
+        p(html) {
+            this.d();
+            this.u(html);
+            this.m(this.t, this.a);
+        }
+        d() {
+            this.n.forEach(detach);
+        }
+    }
+
+    let current_component;
+    function set_current_component(component) {
+        current_component = component;
+    }
+    function get_current_component() {
+        if (!current_component)
+            throw new Error(`Function called outside component initialization`);
+        return current_component;
+    }
+    function beforeUpdate(fn) {
+        get_current_component().$$.before_update.push(fn);
+    }
+    function onMount(fn) {
+        get_current_component().$$.on_mount.push(fn);
+    }
+    function onDestroy(fn) {
+        get_current_component().$$.on_destroy.push(fn);
+    }
+    function createEventDispatcher() {
+        const component = current_component;
+        return (type, detail) => {
+            const callbacks = component.$$.callbacks[type];
+            if (callbacks) {
+                // TODO are there situations where events could be dispatched
+                // in a server (non-DOM) environment?
+                const event = custom_event(type, detail);
+                callbacks.slice().forEach(fn => {
+                    fn.call(component, event);
+                });
+            }
+        };
+    }
+
+    const dirty_components = [];
+    const binding_callbacks = [];
+    const render_callbacks = [];
+    const flush_callbacks = [];
+    const resolved_promise = Promise.resolve();
+    let update_scheduled = false;
+    function schedule_update() {
+        if (!update_scheduled) {
+            update_scheduled = true;
+            resolved_promise.then(flush);
+        }
+    }
+    function tick() {
+        schedule_update();
+        return resolved_promise;
+    }
+    function add_render_callback(fn) {
+        render_callbacks.push(fn);
+    }
+    function add_flush_callback(fn) {
+        flush_callbacks.push(fn);
+    }
+    function flush() {
+        const seen_callbacks = new Set();
+        do {
+            // first, call beforeUpdate functions
+            // and update components
+            while (dirty_components.length) {
+                const component = dirty_components.shift();
+                set_current_component(component);
+                update(component.$$);
+            }
+            while (binding_callbacks.length)
+                binding_callbacks.pop()();
+            // then, once components are updated, call
+            // afterUpdate functions. This may cause
+            // subsequent updates...
+            for (let i = 0; i < render_callbacks.length; i += 1) {
+                const callback = render_callbacks[i];
+                if (!seen_callbacks.has(callback)) {
+                    callback();
+                    // ...so guard against infinite loops
+                    seen_callbacks.add(callback);
+                }
+            }
+            render_callbacks.length = 0;
+        } while (dirty_components.length);
+        while (flush_callbacks.length) {
+            flush_callbacks.pop()();
+        }
+        update_scheduled = false;
+    }
+    function update($$) {
+        if ($$.fragment) {
+            $$.update($$.dirty);
+            run_all($$.before_update);
+            $$.fragment.p($$.dirty, $$.ctx);
+            $$.dirty = null;
+            $$.after_update.forEach(add_render_callback);
+        }
+    }
+    const outroing = new Set();
+    let outros;
+    function group_outros() {
+        outros = {
+            r: 0,
+            c: [],
+            p: outros // parent group
+        };
+    }
+    function check_outros() {
+        if (!outros.r) {
+            run_all(outros.c);
+        }
+        outros = outros.p;
+    }
+    function transition_in(block, local) {
+        if (block && block.i) {
+            outroing.delete(block);
+            block.i(local);
+        }
+    }
+    function transition_out(block, local, detach, callback) {
+        if (block && block.o) {
+            if (outroing.has(block))
+                return;
+            outroing.add(block);
+            outros.c.push(() => {
+                outroing.delete(block);
+                if (callback) {
+                    if (detach)
+                        block.d(1);
+                    callback();
+                }
+            });
+            block.o(local);
+        }
+    }
+
+    const globals = (typeof window !== 'undefined' ? window : global);
+    function outro_and_destroy_block(block, lookup) {
+        transition_out(block, 1, 1, () => {
+            lookup.delete(block.key);
+        });
+    }
+    function update_keyed_each(old_blocks, changed, get_key, dynamic, ctx, list, lookup, node, destroy, create_each_block, next, get_context) {
+        let o = old_blocks.length;
+        let n = list.length;
+        let i = o;
+        const old_indexes = {};
+        while (i--)
+            old_indexes[old_blocks[i].key] = i;
+        const new_blocks = [];
+        const new_lookup = new Map();
+        const deltas = new Map();
+        i = n;
+        while (i--) {
+            const child_ctx = get_context(ctx, list, i);
+            const key = get_key(child_ctx);
+            let block = lookup.get(key);
+            if (!block) {
+                block = create_each_block(key, child_ctx);
+                block.c();
+            }
+            else if (dynamic) {
+                block.p(changed, child_ctx);
+            }
+            new_lookup.set(key, new_blocks[i] = block);
+            if (key in old_indexes)
+                deltas.set(key, Math.abs(i - old_indexes[key]));
+        }
+        const will_move = new Set();
+        const did_move = new Set();
+        function insert(block) {
+            transition_in(block, 1);
+            block.m(node, next);
+            lookup.set(block.key, block);
+            next = block.first;
+            n--;
+        }
+        while (o && n) {
+            const new_block = new_blocks[n - 1];
+            const old_block = old_blocks[o - 1];
+            const new_key = new_block.key;
+            const old_key = old_block.key;
+            if (new_block === old_block) {
+                // do nothing
+                next = new_block.first;
+                o--;
+                n--;
+            }
+            else if (!new_lookup.has(old_key)) {
+                // remove old block
+                destroy(old_block, lookup);
+                o--;
+            }
+            else if (!lookup.has(new_key) || will_move.has(new_key)) {
+                insert(new_block);
+            }
+            else if (did_move.has(old_key)) {
+                o--;
+            }
+            else if (deltas.get(new_key) > deltas.get(old_key)) {
+                did_move.add(new_key);
+                insert(new_block);
+            }
+            else {
+                will_move.add(old_key);
+                o--;
+            }
+        }
+        while (o--) {
+            const old_block = old_blocks[o];
+            if (!new_lookup.has(old_block.key))
+                destroy(old_block, lookup);
+        }
+        while (n)
+            insert(new_blocks[n - 1]);
+        return new_blocks;
+    }
+
+    function get_spread_update(levels, updates) {
+        const update = {};
+        const to_null_out = {};
+        const accounted_for = { $$scope: 1 };
+        let i = levels.length;
+        while (i--) {
+            const o = levels[i];
+            const n = updates[i];
+            if (n) {
+                for (const key in o) {
+                    if (!(key in n))
+                        to_null_out[key] = 1;
+                }
+                for (const key in n) {
+                    if (!accounted_for[key]) {
+                        update[key] = n[key];
+                        accounted_for[key] = 1;
+                    }
+                }
+                levels[i] = n;
+            }
+            else {
+                for (const key in o) {
+                    accounted_for[key] = 1;
+                }
+            }
+        }
+        for (const key in to_null_out) {
+            if (!(key in update))
+                update[key] = undefined;
+        }
+        return update;
+    }
+    function get_spread_object(spread_props) {
+        return typeof spread_props === 'object' && spread_props !== null ? spread_props : {};
+    }
+
+    function bind(component, name, callback) {
+        if (component.$$.props.indexOf(name) === -1)
+            return;
+        component.$$.bound[name] = callback;
+        callback(component.$$.ctx[name]);
+    }
+    function mount_component(component, target, anchor) {
+        const { fragment, on_mount, on_destroy, after_update } = component.$$;
+        fragment.m(target, anchor);
+        // onMount happens before the initial afterUpdate
+        add_render_callback(() => {
+            const new_on_destroy = on_mount.map(run).filter(is_function);
+            if (on_destroy) {
+                on_destroy.push(...new_on_destroy);
+            }
+            else {
+                // Edge case - component was destroyed immediately,
+                // most likely as a result of a binding initialising
+                run_all(new_on_destroy);
+            }
+            component.$$.on_mount = [];
+        });
+        after_update.forEach(add_render_callback);
+    }
+    function destroy_component(component, detaching) {
+        if (component.$$.fragment) {
+            run_all(component.$$.on_destroy);
+            component.$$.fragment.d(detaching);
+            // TODO null out other refs, including component.$$ (but need to
+            // preserve final state?)
+            component.$$.on_destroy = component.$$.fragment = null;
+            component.$$.ctx = {};
+        }
+    }
+    function make_dirty(component, key) {
+        if (!component.$$.dirty) {
+            dirty_components.push(component);
+            schedule_update();
+            component.$$.dirty = blank_object();
+        }
+        component.$$.dirty[key] = true;
+    }
+    function init(component, options, instance, create_fragment, not_equal, prop_names) {
+        const parent_component = current_component;
+        set_current_component(component);
+        const props = options.props || {};
+        const $$ = component.$$ = {
+            fragment: null,
+            ctx: null,
+            // state
+            props: prop_names,
+            update: noop,
+            not_equal,
+            bound: blank_object(),
+            // lifecycle
+            on_mount: [],
+            on_destroy: [],
+            before_update: [],
+            after_update: [],
+            context: new Map(parent_component ? parent_component.$$.context : []),
+            // everything else
+            callbacks: blank_object(),
+            dirty: null
+        };
+        let ready = false;
+        $$.ctx = instance
+            ? instance(component, props, (key, ret, value = ret) => {
+                if ($$.ctx && not_equal($$.ctx[key], $$.ctx[key] = value)) {
+                    if ($$.bound[key])
+                        $$.bound[key](value);
+                    if (ready)
+                        make_dirty(component, key);
+                }
+                return ret;
+            })
+            : props;
+        $$.update();
+        ready = true;
+        run_all($$.before_update);
+        $$.fragment = create_fragment($$.ctx);
+        if (options.target) {
+            if (options.hydrate) {
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment.l(children(options.target));
+            }
+            else {
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment.c();
+            }
+            if (options.intro)
+                transition_in(component.$$.fragment);
+            mount_component(component, options.target, options.anchor);
+            flush();
+        }
+        set_current_component(parent_component);
+    }
+    let SvelteElement;
+    if (typeof HTMLElement !== 'undefined') {
+        SvelteElement = class extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({ mode: 'open' });
+            }
+            connectedCallback() {
+                // @ts-ignore todo: improve typings
+                for (const key in this.$$.slotted) {
+                    // @ts-ignore todo: improve typings
+                    this.appendChild(this.$$.slotted[key]);
+                }
+            }
+            attributeChangedCallback(attr, _oldValue, newValue) {
+                this[attr] = newValue;
+            }
+            $destroy() {
+                destroy_component(this, 1);
+                this.$destroy = noop;
+            }
+            $on(type, callback) {
+                // TODO should this delegate to addEventListener?
+                const callbacks = (this.$$.callbacks[type] || (this.$$.callbacks[type] = []));
+                callbacks.push(callback);
+                return () => {
+                    const index = callbacks.indexOf(callback);
+                    if (index !== -1)
+                        callbacks.splice(index, 1);
+                };
+            }
+            $set() {
+                // overridden by instance, if it has props
+            }
+        };
+    }
+    class SvelteComponent {
+        $destroy() {
+            destroy_component(this, 1);
+            this.$destroy = noop;
+        }
+        $on(type, callback) {
+            const callbacks = (this.$$.callbacks[type] || (this.$$.callbacks[type] = []));
+            callbacks.push(callback);
+            return () => {
+                const index = callbacks.indexOf(callback);
+                if (index !== -1)
+                    callbacks.splice(index, 1);
+            };
+        }
+        $set() {
+            // overridden by instance, if it has props
+        }
+    }
+
+    function dispatch_dev(type, detail) {
+        document.dispatchEvent(custom_event(type, detail));
+    }
+    function append_dev(target, node) {
+        dispatch_dev("SvelteDOMInsert", { target, node });
+        append(target, node);
+    }
+    function insert_dev(target, node, anchor) {
+        dispatch_dev("SvelteDOMInsert", { target, node, anchor });
+        insert(target, node, anchor);
+    }
+    function detach_dev(node) {
+        dispatch_dev("SvelteDOMRemove", { node });
+        detach(node);
+    }
+    function listen_dev(node, event, handler, options, has_prevent_default, has_stop_propagation) {
+        const modifiers = options === true ? ["capture"] : options ? Array.from(Object.keys(options)) : [];
+        if (has_prevent_default)
+            modifiers.push('preventDefault');
+        if (has_stop_propagation)
+            modifiers.push('stopPropagation');
+        dispatch_dev("SvelteDOMAddEventListener", { node, event, handler, modifiers });
+        const dispose = listen(node, event, handler, options);
+        return () => {
+            dispatch_dev("SvelteDOMRemoveEventListener", { node, event, handler, modifiers });
+            dispose();
+        };
+    }
+    function attr_dev(node, attribute, value) {
+        attr(node, attribute, value);
+        if (value == null)
+            dispatch_dev("SvelteDOMRemoveAttribute", { node, attribute });
+        else
+            dispatch_dev("SvelteDOMSetAttribute", { node, attribute, value });
+    }
+    function set_data_dev(text, data) {
+        data = '' + data;
+        if (text.data === data)
+            return;
+        dispatch_dev("SvelteDOMSetData", { node: text, data });
+        text.data = data;
+    }
+    class SvelteComponentDev extends SvelteComponent {
+        constructor(options) {
+            if (!options || (!options.target && !options.$$inline)) {
+                throw new Error(`'target' is a required option`);
+            }
+            super();
+        }
+        $destroy() {
+            super.$destroy();
+            this.$destroy = () => {
+                console.warn(`Component was already destroyed`); // eslint-disable-line no-console
+            };
+        }
+    }
+
+    /* src/components/groups/Request.svelte generated by Svelte v3.12.1 */
+
+    const file = "src/components/groups/Request.svelte";
+
+    function create_fragment(ctx) {
+    	var a, strong, t0_value = ctx.request.method + "", t0, strong_class_value, t1, span, t2_value = ctx.request.name + "", t2, a_href_value;
+
+    	const block = {
+    		c: function create() {
+    			a = element("a");
+    			strong = element("strong");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			span = element("span");
+    			t2 = text(t2_value);
+    			attr_dev(strong, "class", strong_class_value = ctx.request.method.toLowerCase());
+    			add_location(strong, file, 5, 2, 101);
+    			add_location(span, file, 6, 2, 174);
+    			attr_dev(a, "href", a_href_value = "#" + ctx.request._id);
+    			attr_dev(a, "class", "sidebar-list-link name");
+    			add_location(a, file, 4, 0, 42);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, a, anchor);
+    			append_dev(a, strong);
+    			append_dev(strong, t0);
+    			append_dev(a, t1);
+    			append_dev(a, span);
+    			append_dev(span, t2);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.request) && t0_value !== (t0_value = ctx.request.method + "")) {
+    				set_data_dev(t0, t0_value);
+    			}
+
+    			if ((changed.request) && strong_class_value !== (strong_class_value = ctx.request.method.toLowerCase())) {
+    				attr_dev(strong, "class", strong_class_value);
+    			}
+
+    			if ((changed.request) && t2_value !== (t2_value = ctx.request.name + "")) {
+    				set_data_dev(t2, t2_value);
+    			}
+
+    			if ((changed.request) && a_href_value !== (a_href_value = "#" + ctx.request._id)) {
+    				attr_dev(a, "href", a_href_value);
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(a);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function instance($$self, $$props, $$invalidate) {
+    	let { request } = $$props;
+
+    	const writable_props = ['request'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<Request> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('request' in $$props) $$invalidate('request', request = $$props.request);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { request };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('request' in $$props) $$invalidate('request', request = $$props.request);
+    	};
+
+    	return { request };
+    }
+
+    class Request extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance, create_fragment, safe_not_equal, ["request"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Request", options, id: create_fragment.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.request === undefined && !('request' in props)) {
+    			console.warn("<Request> was created without expected prop 'request'");
+    		}
+    	}
+
+    	get request() {
+    		throw new Error("<Request>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set request(value) {
+    		throw new Error("<Request>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/components/groups/Group.svelte generated by Svelte v3.12.1 */
+
+    const file$1 = "src/components/groups/Group.svelte";
+
+    function get_each_context(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.request = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_1(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.child = list[i];
+    	return child_ctx;
+    }
+
+    // (15:0) {#if !root}
+    function create_if_block_1(ctx) {
+    	var a, span, t, dispose;
+
+    	const block = {
+    		c: function create() {
+    			a = element("a");
+    			span = element("span");
+    			t = text(ctx.name);
+    			add_location(span, file$1, 16, 2, 341);
+    			attr_dev(a, "href", "javascript:;");
+    			attr_dev(a, "class", "sidebar-list-link name svelte-1banbqx");
+    			toggle_class(a, "expanded", ctx.expanded);
+    			add_location(a, file$1, 15, 0, 251);
+    			dispose = listen_dev(a, "click", ctx.toggle);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, a, anchor);
+    			append_dev(a, span);
+    			append_dev(span, t);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.name) {
+    				set_data_dev(t, ctx.name);
+    			}
+
+    			if (changed.expanded) {
+    				toggle_class(a, "expanded", ctx.expanded);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(a);
+    			}
+
+    			dispose();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1.name, type: "if", source: "(15:0) {#if !root}", ctx });
+    	return block;
+    }
+
+    // (21:0) {#if expanded}
+    function create_if_block(ctx) {
+    	var ul, t, current;
+
+    	let each_value_1 = ctx.children;
+
+    	let each_blocks_1 = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks_1[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
+    	}
+
+    	const out = i => transition_out(each_blocks_1[i], 1, 1, () => {
+    		each_blocks_1[i] = null;
+    	});
+
+    	let each_value = ctx.requests;
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+    	}
+
+    	const out_1 = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			ul = element("ul");
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].c();
+    			}
+
+    			t = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+    			attr_dev(ul, "class", "svelte-1banbqx");
+    			add_location(ul, file$1, 21, 2, 390);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, ul, anchor);
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].m(ul, null);
+    			}
+
+    			append_dev(ul, t);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(ul, null);
+    			}
+
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.children) {
+    				each_value_1 = ctx.children;
+
+    				let i;
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1(ctx, each_value_1, i);
+
+    					if (each_blocks_1[i]) {
+    						each_blocks_1[i].p(changed, child_ctx);
+    						transition_in(each_blocks_1[i], 1);
+    					} else {
+    						each_blocks_1[i] = create_each_block_1(child_ctx);
+    						each_blocks_1[i].c();
+    						transition_in(each_blocks_1[i], 1);
+    						each_blocks_1[i].m(ul, t);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value_1.length; i < each_blocks_1.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+
+    			if (changed.requests) {
+    				each_value = ctx.requests;
+
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(ul, null);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out_1(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value_1.length; i += 1) {
+    				transition_in(each_blocks_1[i]);
+    			}
+
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks_1 = each_blocks_1.filter(Boolean);
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				transition_out(each_blocks_1[i]);
+    			}
+
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(ul);
+    			}
+
+    			destroy_each(each_blocks_1, detaching);
+
+    			destroy_each(each_blocks, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block.name, type: "if", source: "(21:0) {#if expanded}", ctx });
+    	return block;
+    }
+
+    // (23:4) {#each children as child}
+    function create_each_block_1(ctx) {
+    	var li, current;
+
+    	var group_spread_levels = [
+    		ctx.child
+    	];
+
+    	let group_props = {};
+    	for (var i = 0; i < group_spread_levels.length; i += 1) {
+    		group_props = assign(group_props, group_spread_levels[i]);
+    	}
+    	var group = new Group({ props: group_props, $$inline: true });
+
+    	const block = {
+    		c: function create() {
+    			li = element("li");
+    			group.$$.fragment.c();
+    			attr_dev(li, "class", "folder");
+    			add_location(li, file$1, 23, 4, 429);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, li, anchor);
+    			mount_component(group, li, null);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var group_changes = (changed.children) ? get_spread_update(group_spread_levels, [
+    									get_spread_object(ctx.child)
+    								]) : {};
+    			group.$set(group_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(group.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(group.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(li);
+    			}
+
+    			destroy_component(group);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block_1.name, type: "each", source: "(23:4) {#each children as child}", ctx });
+    	return block;
+    }
+
+    // (26:4) {#each requests as request}
+    function create_each_block(ctx) {
+    	var li, current;
+
+    	var request = new Request({
+    		props: { request: ctx.request },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			li = element("li");
+    			request.$$.fragment.c();
+    			attr_dev(li, "class", "request");
+    			add_location(li, file$1, 26, 4, 540);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, li, anchor);
+    			mount_component(request, li, null);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var request_changes = {};
+    			if (changed.requests) request_changes.request = ctx.request;
+    			request.$set(request_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(request.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(request.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(li);
+    			}
+
+    			destroy_component(request);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block.name, type: "each", source: "(26:4) {#each requests as request}", ctx });
+    	return block;
+    }
+
+    function create_fragment$1(ctx) {
+    	var t, if_block1_anchor, current;
+
+    	var if_block0 = (!ctx.root) && create_if_block_1(ctx);
+
+    	var if_block1 = (ctx.expanded) && create_if_block(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block0) if_block0.c();
+    			t = space();
+    			if (if_block1) if_block1.c();
+    			if_block1_anchor = empty();
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block0) if_block0.m(target, anchor);
+    			insert_dev(target, t, anchor);
+    			if (if_block1) if_block1.m(target, anchor);
+    			insert_dev(target, if_block1_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (!ctx.root) {
+    				if (if_block0) {
+    					if_block0.p(changed, ctx);
+    				} else {
+    					if_block0 = create_if_block_1(ctx);
+    					if_block0.c();
+    					if_block0.m(t.parentNode, t);
+    				}
+    			} else if (if_block0) {
+    				if_block0.d(1);
+    				if_block0 = null;
+    			}
+
+    			if (ctx.expanded) {
+    				if (if_block1) {
+    					if_block1.p(changed, ctx);
+    					transition_in(if_block1, 1);
+    				} else {
+    					if_block1 = create_if_block(ctx);
+    					if_block1.c();
+    					transition_in(if_block1, 1);
+    					if_block1.m(if_block1_anchor.parentNode, if_block1_anchor);
+    				}
+    			} else if (if_block1) {
+    				group_outros();
+    				transition_out(if_block1, 1, 1, () => {
+    					if_block1 = null;
+    				});
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block1);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block1);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block0) if_block0.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(t);
+    			}
+
+    			if (if_block1) if_block1.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block1_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$1.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function instance$1($$self, $$props, $$invalidate) {
+    	let { root = false, expanded = false, name, children, requests } = $$props;
+
+      function toggle() {
+        $$invalidate('expanded', expanded = !expanded);
+      }
+
+    	const writable_props = ['root', 'expanded', 'name', 'children', 'requests'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<Group> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('root' in $$props) $$invalidate('root', root = $$props.root);
+    		if ('expanded' in $$props) $$invalidate('expanded', expanded = $$props.expanded);
+    		if ('name' in $$props) $$invalidate('name', name = $$props.name);
+    		if ('children' in $$props) $$invalidate('children', children = $$props.children);
+    		if ('requests' in $$props) $$invalidate('requests', requests = $$props.requests);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { root, expanded, name, children, requests };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('root' in $$props) $$invalidate('root', root = $$props.root);
+    		if ('expanded' in $$props) $$invalidate('expanded', expanded = $$props.expanded);
+    		if ('name' in $$props) $$invalidate('name', name = $$props.name);
+    		if ('children' in $$props) $$invalidate('children', children = $$props.children);
+    		if ('requests' in $$props) $$invalidate('requests', requests = $$props.requests);
+    	};
+
+    	return {
+    		root,
+    		expanded,
+    		name,
+    		children,
+    		requests,
+    		toggle
+    	};
+    }
+
+    class Group extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, ["root", "expanded", "name", "children", "requests"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Group", options, id: create_fragment$1.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.name === undefined && !('name' in props)) {
+    			console.warn("<Group> was created without expected prop 'name'");
+    		}
+    		if (ctx.children === undefined && !('children' in props)) {
+    			console.warn("<Group> was created without expected prop 'children'");
+    		}
+    		if (ctx.requests === undefined && !('requests' in props)) {
+    			console.warn("<Group> was created without expected prop 'requests'");
+    		}
+    	}
+
+    	get root() {
+    		throw new Error("<Group>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set root(value) {
+    		throw new Error("<Group>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get expanded() {
+    		throw new Error("<Group>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set expanded(value) {
+    		throw new Error("<Group>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get name() {
+    		throw new Error("<Group>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set name(value) {
+    		throw new Error("<Group>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get children() {
+    		throw new Error("<Group>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set children(value) {
+    		throw new Error("<Group>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get requests() {
+    		throw new Error("<Group>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set requests(value) {
+    		throw new Error("<Group>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/components/Sidebar.svelte generated by Svelte v3.12.1 */
+
+    const file$2 = "src/components/Sidebar.svelte";
+
+    function create_fragment$2(ctx) {
+    	var aside, current;
+
+    	var group = new Group({
+    		props: {
+    		name: ctx.workspace.name,
+    		children: ctx.groups,
+    		requests: ctx.requests,
+    		root: true,
+    		expanded: true
+    	},
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			aside = element("aside");
+    			group.$$.fragment.c();
+    			attr_dev(aside, "class", "svelte-1jtqzbx");
+    			toggle_class(aside, "visible", ctx.visible);
+    			add_location(aside, file$2, 29, 0, 467);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, aside, anchor);
+    			mount_component(group, aside, null);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var group_changes = {};
+    			if (changed.workspace) group_changes.name = ctx.workspace.name;
+    			if (changed.groups) group_changes.children = ctx.groups;
+    			if (changed.requests) group_changes.requests = ctx.requests;
+    			group.$set(group_changes);
+
+    			if (changed.visible) {
+    				toggle_class(aside, "visible", ctx.visible);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(group.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(group.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(aside);
+    			}
+
+    			destroy_component(group);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$2.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function instance$2($$self, $$props, $$invalidate) {
+    	let { requests, groups, workspace, visible } = $$props;
+
+    	const writable_props = ['requests', 'groups', 'workspace', 'visible'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<Sidebar> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('requests' in $$props) $$invalidate('requests', requests = $$props.requests);
+    		if ('groups' in $$props) $$invalidate('groups', groups = $$props.groups);
+    		if ('workspace' in $$props) $$invalidate('workspace', workspace = $$props.workspace);
+    		if ('visible' in $$props) $$invalidate('visible', visible = $$props.visible);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { requests, groups, workspace, visible };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('requests' in $$props) $$invalidate('requests', requests = $$props.requests);
+    		if ('groups' in $$props) $$invalidate('groups', groups = $$props.groups);
+    		if ('workspace' in $$props) $$invalidate('workspace', workspace = $$props.workspace);
+    		if ('visible' in $$props) $$invalidate('visible', visible = $$props.visible);
+    	};
+
+    	return { requests, groups, workspace, visible };
+    }
+
+    class Sidebar extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$2, create_fragment$2, safe_not_equal, ["requests", "groups", "workspace", "visible"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Sidebar", options, id: create_fragment$2.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.requests === undefined && !('requests' in props)) {
+    			console.warn("<Sidebar> was created without expected prop 'requests'");
+    		}
+    		if (ctx.groups === undefined && !('groups' in props)) {
+    			console.warn("<Sidebar> was created without expected prop 'groups'");
+    		}
+    		if (ctx.workspace === undefined && !('workspace' in props)) {
+    			console.warn("<Sidebar> was created without expected prop 'workspace'");
+    		}
+    		if (ctx.visible === undefined && !('visible' in props)) {
+    			console.warn("<Sidebar> was created without expected prop 'visible'");
+    		}
+    	}
+
+    	get requests() {
+    		throw new Error("<Sidebar>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set requests(value) {
+    		throw new Error("<Sidebar>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get groups() {
+    		throw new Error("<Sidebar>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set groups(value) {
+    		throw new Error("<Sidebar>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get workspace() {
+    		throw new Error("<Sidebar>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set workspace(value) {
+    		throw new Error("<Sidebar>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get visible() {
+    		throw new Error("<Sidebar>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set visible(value) {
+    		throw new Error("<Sidebar>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    function deepFreeze(obj) {
+        if (obj instanceof Map) {
+            obj.clear = obj.delete = obj.set = function () {
+                throw new Error('map is read-only');
+            };
+        } else if (obj instanceof Set) {
+            obj.add = obj.clear = obj.delete = function () {
+                throw new Error('set is read-only');
+            };
+        }
+
+        // Freeze self
+        Object.freeze(obj);
+
+        Object.getOwnPropertyNames(obj).forEach(function (name) {
+            var prop = obj[name];
+
+            // Freeze prop if it is an object
+            if (typeof prop == 'object' && !Object.isFrozen(prop)) {
+                deepFreeze(prop);
+            }
+        });
+
+        return obj;
+    }
+
+    var deepFreezeEs6 = deepFreeze;
+    var _default = deepFreeze;
+    deepFreezeEs6.default = _default;
+
+    class Response {
+      /**
+       * @param {CompiledMode} mode
+       */
+      constructor(mode) {
+        // eslint-disable-next-line no-undefined
+        if (mode.data === undefined) mode.data = {};
+
+        this.data = mode.data;
+      }
+
+      ignoreMatch() {
+        this.ignore = true;
+      }
+    }
+
+    /**
+     * @param {string} value
+     * @returns {string}
+     */
+    function escapeHTML(value) {
+      return value
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#x27;');
+    }
+
+    /**
+     * performs a shallow merge of multiple objects into one
+     *
+     * @template T
+     * @param {T} original
+     * @param {Record<string,any>[]} objects
+     * @returns {T} a single new object
+     */
+    function inherit(original, ...objects) {
+      /** @type Record<string,any> */
+      const result = Object.create(null);
+
+      for (const key in original) {
+        result[key] = original[key];
+      }
+      objects.forEach(function(obj) {
+        for (const key in obj) {
+          result[key] = obj[key];
+        }
+      });
+      return /** @type {T} */ (result);
+    }
+
+    /* Stream merging */
+
+    /**
+     * @typedef Event
+     * @property {'start'|'stop'} event
+     * @property {number} offset
+     * @property {Node} node
+     */
+
+    /**
+     * @param {Node} node
+     */
+    function tag(node) {
+      return node.nodeName.toLowerCase();
+    }
+
+    /**
+     * @param {Node} node
+     */
+    function nodeStream(node) {
+      /** @type Event[] */
+      const result = [];
+      (function _nodeStream(node, offset) {
+        for (let child = node.firstChild; child; child = child.nextSibling) {
+          if (child.nodeType === 3) {
+            offset += child.nodeValue.length;
+          } else if (child.nodeType === 1) {
+            result.push({
+              event: 'start',
+              offset: offset,
+              node: child
+            });
+            offset = _nodeStream(child, offset);
+            // Prevent void elements from having an end tag that would actually
+            // double them in the output. There are more void elements in HTML
+            // but we list only those realistically expected in code display.
+            if (!tag(child).match(/br|hr|img|input/)) {
+              result.push({
+                event: 'stop',
+                offset: offset,
+                node: child
+              });
+            }
+          }
+        }
+        return offset;
+      })(node, 0);
+      return result;
+    }
+
+    /**
+     * @param {any} original - the original stream
+     * @param {any} highlighted - stream of the highlighted source
+     * @param {string} value - the original source itself
+     */
+    function mergeStreams(original, highlighted, value) {
+      let processed = 0;
+      let result = '';
+      const nodeStack = [];
+
+      function selectStream() {
+        if (!original.length || !highlighted.length) {
+          return original.length ? original : highlighted;
+        }
+        if (original[0].offset !== highlighted[0].offset) {
+          return (original[0].offset < highlighted[0].offset) ? original : highlighted;
+        }
+
+        /*
+        To avoid starting the stream just before it should stop the order is
+        ensured that original always starts first and closes last:
+
+        if (event1 == 'start' && event2 == 'start')
+          return original;
+        if (event1 == 'start' && event2 == 'stop')
+          return highlighted;
+        if (event1 == 'stop' && event2 == 'start')
+          return original;
+        if (event1 == 'stop' && event2 == 'stop')
+          return highlighted;
+
+        ... which is collapsed to:
+        */
+        return highlighted[0].event === 'start' ? original : highlighted;
+      }
+
+      /**
+       * @param {Node} node
+       */
+      function open(node) {
+        /** @param {Attr} attr */
+        function attributeString(attr) {
+          return ' ' + attr.nodeName + '="' + escapeHTML(attr.value) + '"';
+        }
+        // @ts-ignore
+        result += '<' + tag(node) + [].map.call(node.attributes, attributeString).join('') + '>';
+      }
+
+      /**
+       * @param {Node} node
+       */
+      function close(node) {
+        result += '</' + tag(node) + '>';
+      }
+
+      /**
+       * @param {Event} event
+       */
+      function render(event) {
+        (event.event === 'start' ? open : close)(event.node);
+      }
+
+      while (original.length || highlighted.length) {
+        let stream = selectStream();
+        result += escapeHTML(value.substring(processed, stream[0].offset));
+        processed = stream[0].offset;
+        if (stream === original) {
+          /*
+          On any opening or closing tag of the original markup we first close
+          the entire highlighted node stack, then render the original tag along
+          with all the following original tags at the same offset and then
+          reopen all the tags on the highlighted stack.
+          */
+          nodeStack.reverse().forEach(close);
+          do {
+            render(stream.splice(0, 1)[0]);
+            stream = selectStream();
+          } while (stream === original && stream.length && stream[0].offset === processed);
+          nodeStack.reverse().forEach(open);
+        } else {
+          if (stream[0].event === 'start') {
+            nodeStack.push(stream[0].node);
+          } else {
+            nodeStack.pop();
+          }
+          render(stream.splice(0, 1)[0]);
+        }
+      }
+      return result + escapeHTML(value.substr(processed));
+    }
+
+    var utils = /*#__PURE__*/Object.freeze({
+        __proto__: null,
+        escapeHTML: escapeHTML,
+        inherit: inherit,
+        nodeStream: nodeStream,
+        mergeStreams: mergeStreams
+    });
+
+    /**
+     * @typedef {object} Renderer
+     * @property {(text: string) => void} addText
+     * @property {(node: Node) => void} openNode
+     * @property {(node: Node) => void} closeNode
+     * @property {() => string} value
+     */
+
+    /** @typedef {{kind?: string, sublanguage?: boolean}} Node */
+    /** @typedef {{walk: (r: Renderer) => void}} Tree */
+    /** */
+
+    const SPAN_CLOSE = '</span>';
+
+    /**
+     * Determines if a node needs to be wrapped in <span>
+     *
+     * @param {Node} node */
+    const emitsWrappingTags = (node) => {
+      return !!node.kind;
+    };
+
+    /** @type {Renderer} */
+    class HTMLRenderer {
+      /**
+       * Creates a new HTMLRenderer
+       *
+       * @param {Tree} parseTree - the parse tree (must support `walk` API)
+       * @param {{classPrefix: string}} options
+       */
+      constructor(parseTree, options) {
+        this.buffer = "";
+        this.classPrefix = options.classPrefix;
+        parseTree.walk(this);
+      }
+
+      /**
+       * Adds texts to the output stream
+       *
+       * @param {string} text */
+      addText(text) {
+        this.buffer += escapeHTML(text);
+      }
+
+      /**
+       * Adds a node open to the output stream (if needed)
+       *
+       * @param {Node} node */
+      openNode(node) {
+        if (!emitsWrappingTags(node)) return;
+
+        let className = node.kind;
+        if (!node.sublanguage) {
+          className = `${this.classPrefix}${className}`;
+        }
+        this.span(className);
+      }
+
+      /**
+       * Adds a node close to the output stream (if needed)
+       *
+       * @param {Node} node */
+      closeNode(node) {
+        if (!emitsWrappingTags(node)) return;
+
+        this.buffer += SPAN_CLOSE;
+      }
+
+      /**
+       * returns the accumulated buffer
+      */
+      value() {
+        return this.buffer;
+      }
+
+      // helpers
+
+      /**
+       * Builds a span element
+       *
+       * @param {string} className */
+      span(className) {
+        this.buffer += `<span class="${className}">`;
+      }
+    }
+
+    /** @typedef {{kind?: string, sublanguage?: boolean, children: Node[]} | string} Node */
+    /** @typedef {{kind?: string, sublanguage?: boolean, children: Node[]} } DataNode */
+    /**  */
+
+    class TokenTree {
+      constructor() {
+        /** @type DataNode */
+        this.rootNode = { children: [] };
+        this.stack = [this.rootNode];
+      }
+
+      get top() {
+        return this.stack[this.stack.length - 1];
+      }
+
+      get root() { return this.rootNode; }
+
+      /** @param {Node} node */
+      add(node) {
+        this.top.children.push(node);
+      }
+
+      /** @param {string} kind */
+      openNode(kind) {
+        /** @type Node */
+        const node = { kind, children: [] };
+        this.add(node);
+        this.stack.push(node);
+      }
+
+      closeNode() {
+        if (this.stack.length > 1) {
+          return this.stack.pop();
+        }
+        // eslint-disable-next-line no-undefined
+        return undefined;
+      }
+
+      closeAllNodes() {
+        while (this.closeNode());
+      }
+
+      toJSON() {
+        return JSON.stringify(this.rootNode, null, 4);
+      }
+
+      /**
+       * @typedef { import("./html_renderer").Renderer } Renderer
+       * @param {Renderer} builder
+       */
+      walk(builder) {
+        // this does not
+        return this.constructor._walk(builder, this.rootNode);
+        // this works
+        // return TokenTree._walk(builder, this.rootNode);
+      }
+
+      /**
+       * @param {Renderer} builder
+       * @param {Node} node
+       */
+      static _walk(builder, node) {
+        if (typeof node === "string") {
+          builder.addText(node);
+        } else if (node.children) {
+          builder.openNode(node);
+          node.children.forEach((child) => this._walk(builder, child));
+          builder.closeNode(node);
+        }
+        return builder;
+      }
+
+      /**
+       * @param {Node} node
+       */
+      static _collapse(node) {
+        if (typeof node === "string") return;
+        if (!node.children) return;
+
+        if (node.children.every(el => typeof el === "string")) {
+          // node.text = node.children.join("");
+          // delete node.children;
+          node.children = [node.children.join("")];
+        } else {
+          node.children.forEach((child) => {
+            TokenTree._collapse(child);
+          });
+        }
+      }
+    }
+
+    /**
+      Currently this is all private API, but this is the minimal API necessary
+      that an Emitter must implement to fully support the parser.
+
+      Minimal interface:
+
+      - addKeyword(text, kind)
+      - addText(text)
+      - addSublanguage(emitter, subLanguageName)
+      - finalize()
+      - openNode(kind)
+      - closeNode()
+      - closeAllNodes()
+      - toHTML()
+
+    */
+
+    /**
+     * @implements {Emitter}
+     */
+    class TokenTreeEmitter extends TokenTree {
+      /**
+       * @param {*} options
+       */
+      constructor(options) {
+        super();
+        this.options = options;
+      }
+
+      /**
+       * @param {string} text
+       * @param {string} kind
+       */
+      addKeyword(text, kind) {
+        if (text === "") { return; }
+
+        this.openNode(kind);
+        this.addText(text);
+        this.closeNode();
+      }
+
+      /**
+       * @param {string} text
+       */
+      addText(text) {
+        if (text === "") { return; }
+
+        this.add(text);
+      }
+
+      /**
+       * @param {Emitter & {root: DataNode}} emitter
+       * @param {string} name
+       */
+      addSublanguage(emitter, name) {
+        /** @type DataNode */
+        const node = emitter.root;
+        node.kind = name;
+        node.sublanguage = true;
+        this.add(node);
+      }
+
+      toHTML() {
+        const renderer = new HTMLRenderer(this, this.options);
+        return renderer.value();
+      }
+
+      finalize() {
+        return true;
+      }
+    }
+
+    /**
+     * @param {string} value
+     * @returns {RegExp}
+     * */
+    function escape$1(value) {
+      return new RegExp(value.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&'), 'm');
+    }
+
+    /**
+     * @param {RegExp | string } re
+     * @returns {string}
+     */
+    function source(re) {
+      if (!re) return null;
+      if (typeof re === "string") return re;
+
+      return re.source;
+    }
+
+    /**
+     * @param {...(RegExp | string) } args
+     * @returns {string}
+     */
+    function concat(...args) {
+      const joined = args.map((x) => source(x)).join("");
+      return joined;
+    }
+
+    /**
+     * @param {RegExp} re
+     * @returns {number}
+     */
+    function countMatchGroups(re) {
+      return (new RegExp(re.toString() + '|')).exec('').length - 1;
+    }
+
+    /**
+     * Does lexeme start with a regular expression match at the beginning
+     * @param {RegExp} re
+     * @param {string} lexeme
+     */
+    function startsWith(re, lexeme) {
+      const match = re && re.exec(lexeme);
+      return match && match.index === 0;
+    }
+
+    // join logically computes regexps.join(separator), but fixes the
+    // backreferences so they continue to match.
+    // it also places each individual regular expression into it's own
+    // match group, keeping track of the sequencing of those match groups
+    // is currently an exercise for the caller. :-)
+    /**
+     * @param {(string | RegExp)[]} regexps
+     * @param {string} separator
+     * @returns {string}
+     */
+    function join(regexps, separator = "|") {
+      // backreferenceRe matches an open parenthesis or backreference. To avoid
+      // an incorrect parse, it additionally matches the following:
+      // - [...] elements, where the meaning of parentheses and escapes change
+      // - other escape sequences, so we do not misparse escape sequences as
+      //   interesting elements
+      // - non-matching or lookahead parentheses, which do not capture. These
+      //   follow the '(' with a '?'.
+      const backreferenceRe = /\[(?:[^\\\]]|\\.)*\]|\(\??|\\([1-9][0-9]*)|\\./;
+      let numCaptures = 0;
+      let ret = '';
+      for (let i = 0; i < regexps.length; i++) {
+        numCaptures += 1;
+        const offset = numCaptures;
+        let re = source(regexps[i]);
+        if (i > 0) {
+          ret += separator;
+        }
+        ret += "(";
+        while (re.length > 0) {
+          const match = backreferenceRe.exec(re);
+          if (match == null) {
+            ret += re;
+            break;
+          }
+          ret += re.substring(0, match.index);
+          re = re.substring(match.index + match[0].length);
+          if (match[0][0] === '\\' && match[1]) {
+            // Adjust the backreference.
+            ret += '\\' + String(Number(match[1]) + offset);
+          } else {
+            ret += match[0];
+            if (match[0] === '(') {
+              numCaptures++;
+            }
+          }
+        }
+        ret += ")";
+      }
+      return ret;
+    }
+
+    // Common regexps
+    const IDENT_RE = '[a-zA-Z]\\w*';
+    const UNDERSCORE_IDENT_RE = '[a-zA-Z_]\\w*';
+    const NUMBER_RE = '\\b\\d+(\\.\\d+)?';
+    const C_NUMBER_RE = '(-?)(\\b0[xX][a-fA-F0-9]+|(\\b\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)'; // 0x..., 0..., decimal, float
+    const BINARY_NUMBER_RE = '\\b(0b[01]+)'; // 0b...
+    const RE_STARTERS_RE = '!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|-|-=|/=|/|:|;|<<|<<=|<=|<|===|==|=|>>>=|>>=|>=|>>>|>>|>|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~';
+
+    /**
+    * @param { Partial<Mode> & {binary?: string | RegExp} } opts
+    */
+    const SHEBANG = (opts = {}) => {
+      const beginShebang = /^#![ ]*\//;
+      if (opts.binary) {
+        opts.begin = concat(
+          beginShebang,
+          /.*\b/,
+          opts.binary,
+          /\b.*/);
+      }
+      return inherit({
+        className: 'meta',
+        begin: beginShebang,
+        end: /$/,
+        relevance: 0,
+        /** @type {ModeCallback} */
+        "on:begin": (m, resp) => {
+          if (m.index !== 0) resp.ignoreMatch();
+        }
+      }, opts);
+    };
+
+    // Common modes
+    const BACKSLASH_ESCAPE = {
+      begin: '\\\\[\\s\\S]', relevance: 0
+    };
+    const APOS_STRING_MODE = {
+      className: 'string',
+      begin: '\'',
+      end: '\'',
+      illegal: '\\n',
+      contains: [BACKSLASH_ESCAPE]
+    };
+    const QUOTE_STRING_MODE = {
+      className: 'string',
+      begin: '"',
+      end: '"',
+      illegal: '\\n',
+      contains: [BACKSLASH_ESCAPE]
+    };
+    const PHRASAL_WORDS_MODE = {
+      begin: /\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b/
+    };
+    /**
+     * Creates a comment mode
+     *
+     * @param {string | RegExp} begin
+     * @param {string | RegExp} end
+     * @param {Mode | {}} [modeOptions]
+     * @returns {Partial<Mode>}
+     */
+    const COMMENT = function(begin, end, modeOptions = {}) {
+      const mode = inherit(
+        {
+          className: 'comment',
+          begin,
+          end,
+          contains: []
+        },
+        modeOptions
+      );
+      mode.contains.push(PHRASAL_WORDS_MODE);
+      mode.contains.push({
+        className: 'doctag',
+        begin: '(?:TODO|FIXME|NOTE|BUG|OPTIMIZE|HACK|XXX):',
+        relevance: 0
+      });
+      return mode;
+    };
+    const C_LINE_COMMENT_MODE = COMMENT('//', '$');
+    const C_BLOCK_COMMENT_MODE = COMMENT('/\\*', '\\*/');
+    const HASH_COMMENT_MODE = COMMENT('#', '$');
+    const NUMBER_MODE = {
+      className: 'number',
+      begin: NUMBER_RE,
+      relevance: 0
+    };
+    const C_NUMBER_MODE = {
+      className: 'number',
+      begin: C_NUMBER_RE,
+      relevance: 0
+    };
+    const BINARY_NUMBER_MODE = {
+      className: 'number',
+      begin: BINARY_NUMBER_RE,
+      relevance: 0
+    };
+    const CSS_NUMBER_MODE = {
+      className: 'number',
+      begin: NUMBER_RE + '(' +
+        '%|em|ex|ch|rem' +
+        '|vw|vh|vmin|vmax' +
+        '|cm|mm|in|pt|pc|px' +
+        '|deg|grad|rad|turn' +
+        '|s|ms' +
+        '|Hz|kHz' +
+        '|dpi|dpcm|dppx' +
+        ')?',
+      relevance: 0
+    };
+    const REGEXP_MODE = {
+      // this outer rule makes sure we actually have a WHOLE regex and not simply
+      // an expression such as:
+      //
+      //     3 / something
+      //
+      // (which will then blow up when regex's `illegal` sees the newline)
+      begin: /(?=\/[^/\n]*\/)/,
+      contains: [{
+        className: 'regexp',
+        begin: /\//,
+        end: /\/[gimuy]*/,
+        illegal: /\n/,
+        contains: [
+          BACKSLASH_ESCAPE,
+          {
+            begin: /\[/,
+            end: /\]/,
+            relevance: 0,
+            contains: [BACKSLASH_ESCAPE]
+          }
+        ]
+      }]
+    };
+    const TITLE_MODE = {
+      className: 'title',
+      begin: IDENT_RE,
+      relevance: 0
+    };
+    const UNDERSCORE_TITLE_MODE = {
+      className: 'title',
+      begin: UNDERSCORE_IDENT_RE,
+      relevance: 0
+    };
+    const METHOD_GUARD = {
+      // excludes method names from keyword processing
+      begin: '\\.\\s*' + UNDERSCORE_IDENT_RE,
+      relevance: 0
+    };
+
+    /**
+     * Adds end same as begin mechanics to a mode
+     *
+     * Your mode must include at least a single () match group as that first match
+     * group is what is used for comparison
+     * @param {Partial<Mode>} mode
+     */
+    const END_SAME_AS_BEGIN = function(mode) {
+      return Object.assign(mode,
+        {
+          /** @type {ModeCallback} */
+          'on:begin': (m, resp) => { resp.data._beginMatch = m[1]; },
+          /** @type {ModeCallback} */
+          'on:end': (m, resp) => { if (resp.data._beginMatch !== m[1]) resp.ignoreMatch(); }
+        });
+    };
+
+    var MODES = /*#__PURE__*/Object.freeze({
+        __proto__: null,
+        IDENT_RE: IDENT_RE,
+        UNDERSCORE_IDENT_RE: UNDERSCORE_IDENT_RE,
+        NUMBER_RE: NUMBER_RE,
+        C_NUMBER_RE: C_NUMBER_RE,
+        BINARY_NUMBER_RE: BINARY_NUMBER_RE,
+        RE_STARTERS_RE: RE_STARTERS_RE,
+        SHEBANG: SHEBANG,
+        BACKSLASH_ESCAPE: BACKSLASH_ESCAPE,
+        APOS_STRING_MODE: APOS_STRING_MODE,
+        QUOTE_STRING_MODE: QUOTE_STRING_MODE,
+        PHRASAL_WORDS_MODE: PHRASAL_WORDS_MODE,
+        COMMENT: COMMENT,
+        C_LINE_COMMENT_MODE: C_LINE_COMMENT_MODE,
+        C_BLOCK_COMMENT_MODE: C_BLOCK_COMMENT_MODE,
+        HASH_COMMENT_MODE: HASH_COMMENT_MODE,
+        NUMBER_MODE: NUMBER_MODE,
+        C_NUMBER_MODE: C_NUMBER_MODE,
+        BINARY_NUMBER_MODE: BINARY_NUMBER_MODE,
+        CSS_NUMBER_MODE: CSS_NUMBER_MODE,
+        REGEXP_MODE: REGEXP_MODE,
+        TITLE_MODE: TITLE_MODE,
+        UNDERSCORE_TITLE_MODE: UNDERSCORE_TITLE_MODE,
+        METHOD_GUARD: METHOD_GUARD,
+        END_SAME_AS_BEGIN: END_SAME_AS_BEGIN
+    });
+
+    // keywords that should have no default relevance value
+    const COMMON_KEYWORDS = [
+      'of',
+      'and',
+      'for',
+      'in',
+      'not',
+      'or',
+      'if',
+      'then',
+      'parent', // common variable name
+      'list', // common variable name
+      'value' // common variable name
+    ];
+
+    // compilation
+
+    /**
+     * Compiles a language definition result
+     *
+     * Given the raw result of a language definition (Language), compiles this so
+     * that it is ready for highlighting code.
+     * @param {Language} language
+     * @returns {CompiledLanguage}
+     */
+    function compileLanguage(language) {
+      /**
+       * Builds a regex with the case sensativility of the current language
+       *
+       * @param {RegExp | string} value
+       * @param {boolean} [global]
+       */
+      function langRe(value, global) {
+        return new RegExp(
+          source(value),
+          'm' + (language.case_insensitive ? 'i' : '') + (global ? 'g' : '')
+        );
+      }
+
+      /**
+        Stores multiple regular expressions and allows you to quickly search for
+        them all in a string simultaneously - returning the first match.  It does
+        this by creating a huge (a|b|c) regex - each individual item wrapped with ()
+        and joined by `|` - using match groups to track position.  When a match is
+        found checking which position in the array has content allows us to figure
+        out which of the original regexes / match groups triggered the match.
+
+        The match object itself (the result of `Regex.exec`) is returned but also
+        enhanced by merging in any meta-data that was registered with the regex.
+        This is how we keep track of which mode matched, and what type of rule
+        (`illegal`, `begin`, end, etc).
+      */
+      class MultiRegex {
+        constructor() {
+          this.matchIndexes = {};
+          // @ts-ignore
+          this.regexes = [];
+          this.matchAt = 1;
+          this.position = 0;
+        }
+
+        // @ts-ignore
+        addRule(re, opts) {
+          opts.position = this.position++;
+          // @ts-ignore
+          this.matchIndexes[this.matchAt] = opts;
+          this.regexes.push([opts, re]);
+          this.matchAt += countMatchGroups(re) + 1;
+        }
+
+        compile() {
+          if (this.regexes.length === 0) {
+            // avoids the need to check length every time exec is called
+            // @ts-ignore
+            this.exec = () => null;
+          }
+          const terminators = this.regexes.map(el => el[1]);
+          this.matcherRe = langRe(join(terminators), true);
+          this.lastIndex = 0;
+        }
+
+        /** @param {string} s */
+        exec(s) {
+          this.matcherRe.lastIndex = this.lastIndex;
+          const match = this.matcherRe.exec(s);
+          if (!match) { return null; }
+
+          // eslint-disable-next-line no-undefined
+          const i = match.findIndex((el, i) => i > 0 && el !== undefined);
+          // @ts-ignore
+          const matchData = this.matchIndexes[i];
+          // trim off any earlier non-relevant match groups (ie, the other regex
+          // match groups that make up the multi-matcher)
+          match.splice(0, i);
+
+          return Object.assign(match, matchData);
+        }
+      }
+
+      /*
+        Created to solve the key deficiently with MultiRegex - there is no way to
+        test for multiple matches at a single location.  Why would we need to do
+        that?  In the future a more dynamic engine will allow certain matches to be
+        ignored.  An example: if we matched say the 3rd regex in a large group but
+        decided to ignore it - we'd need to started testing again at the 4th
+        regex... but MultiRegex itself gives us no real way to do that.
+
+        So what this class creates MultiRegexs on the fly for whatever search
+        position they are needed.
+
+        NOTE: These additional MultiRegex objects are created dynamically.  For most
+        grammars most of the time we will never actually need anything more than the
+        first MultiRegex - so this shouldn't have too much overhead.
+
+        Say this is our search group, and we match regex3, but wish to ignore it.
+
+          regex1 | regex2 | regex3 | regex4 | regex5    ' ie, startAt = 0
+
+        What we need is a new MultiRegex that only includes the remaining
+        possibilities:
+
+          regex4 | regex5                               ' ie, startAt = 3
+
+        This class wraps all that complexity up in a simple API... `startAt` decides
+        where in the array of expressions to start doing the matching. It
+        auto-increments, so if a match is found at position 2, then startAt will be
+        set to 3.  If the end is reached startAt will return to 0.
+
+        MOST of the time the parser will be setting startAt manually to 0.
+      */
+      class ResumableMultiRegex {
+        constructor() {
+          // @ts-ignore
+          this.rules = [];
+          // @ts-ignore
+          this.multiRegexes = [];
+          this.count = 0;
+
+          this.lastIndex = 0;
+          this.regexIndex = 0;
+        }
+
+        // @ts-ignore
+        getMatcher(index) {
+          if (this.multiRegexes[index]) return this.multiRegexes[index];
+
+          const matcher = new MultiRegex();
+          this.rules.slice(index).forEach(([re, opts]) => matcher.addRule(re, opts));
+          matcher.compile();
+          this.multiRegexes[index] = matcher;
+          return matcher;
+        }
+
+        resumingScanAtSamePosition() {
+          return this.regexIndex !== 0;
+        }
+
+        considerAll() {
+          this.regexIndex = 0;
+        }
+
+        // @ts-ignore
+        addRule(re, opts) {
+          this.rules.push([re, opts]);
+          if (opts.type === "begin") this.count++;
+        }
+
+        /** @param {string} s */
+        exec(s) {
+          const m = this.getMatcher(this.regexIndex);
+          m.lastIndex = this.lastIndex;
+          let result = m.exec(s);
+
+          // The following is because we have no easy way to say "resume scanning at the
+          // existing position but also skip the current rule ONLY". What happens is
+          // all prior rules are also skipped which can result in matching the wrong
+          // thing. Example of matching "booger":
+
+          // our matcher is [string, "booger", number]
+          //
+          // ....booger....
+
+          // if "booger" is ignored then we'd really need a regex to scan from the
+          // SAME position for only: [string, number] but ignoring "booger" (if it
+          // was the first match), a simple resume would scan ahead who knows how
+          // far looking only for "number", ignoring potential string matches (or
+          // future "booger" matches that might be valid.)
+
+          // So what we do: We execute two matchers, one resuming at the same
+          // position, but the second full matcher starting at the position after:
+
+          //     /--- resume first regex match here (for [number])
+          //     |/---- full match here for [string, "booger", number]
+          //     vv
+          // ....booger....
+
+          // Which ever results in a match first is then used. So this 3-4 step
+          // process essentially allows us to say "match at this position, excluding
+          // a prior rule that was ignored".
+          //
+          // 1. Match "booger" first, ignore. Also proves that [string] does non match.
+          // 2. Resume matching for [number]
+          // 3. Match at index + 1 for [string, "booger", number]
+          // 4. If #2 and #3 result in matches, which came first?
+          if (this.resumingScanAtSamePosition()) {
+            if (result && result.index === this.lastIndex) ; else { // use the second matcher result
+              const m2 = this.getMatcher(0);
+              m2.lastIndex = this.lastIndex + 1;
+              result = m2.exec(s);
+            }
+          }
+
+          if (result) {
+            this.regexIndex += result.position + 1;
+            if (this.regexIndex === this.count) {
+              // wrap-around to considering all matches again
+              this.considerAll();
+            }
+          }
+
+          return result;
+        }
+      }
+
+      /**
+       * Given a mode, builds a huge ResumableMultiRegex that can be used to walk
+       * the content and find matches.
+       *
+       * @param {CompiledMode} mode
+       * @returns {ResumableMultiRegex}
+       */
+      function buildModeRegex(mode) {
+        const mm = new ResumableMultiRegex();
+
+        mode.contains.forEach(term => mm.addRule(term.begin, { rule: term, type: "begin" }));
+
+        if (mode.terminator_end) {
+          mm.addRule(mode.terminator_end, { type: "end" });
+        }
+        if (mode.illegal) {
+          mm.addRule(mode.illegal, { type: "illegal" });
+        }
+
+        return mm;
+      }
+
+      // TODO: We need negative look-behind support to do this properly
+      /**
+       * Skip a match if it has a preceding dot
+       *
+       * This is used for `beginKeywords` to prevent matching expressions such as
+       * `bob.keyword.do()`. The mode compiler automatically wires this up as a
+       * special _internal_ 'on:begin' callback for modes with `beginKeywords`
+       * @param {RegExpMatchArray} match
+       * @param {CallbackResponse} response
+       */
+      function skipIfhasPrecedingDot(match, response) {
+        const before = match.input[match.index - 1];
+        if (before === ".") {
+          response.ignoreMatch();
+        }
+      }
+
+      /** skip vs abort vs ignore
+       *
+       * @skip   - The mode is still entered and exited normally (and contains rules apply),
+       *           but all content is held and added to the parent buffer rather than being
+       *           output when the mode ends.  Mostly used with `sublanguage` to build up
+       *           a single large buffer than can be parsed by sublanguage.
+       *
+       *             - The mode begin ands ends normally.
+       *             - Content matched is added to the parent mode buffer.
+       *             - The parser cursor is moved forward normally.
+       *
+       * @abort  - A hack placeholder until we have ignore.  Aborts the mode (as if it
+       *           never matched) but DOES NOT continue to match subsequent `contains`
+       *           modes.  Abort is bad/suboptimal because it can result in modes
+       *           farther down not getting applied because an earlier rule eats the
+       *           content but then aborts.
+       *
+       *             - The mode does not begin.
+       *             - Content matched by `begin` is added to the mode buffer.
+       *             - The parser cursor is moved forward accordingly.
+       *
+       * @ignore - Ignores the mode (as if it never matched) and continues to match any
+       *           subsequent `contains` modes.  Ignore isn't technically possible with
+       *           the current parser implementation.
+       *
+       *             - The mode does not begin.
+       *             - Content matched by `begin` is ignored.
+       *             - The parser cursor is not moved forward.
+       */
+
+      /**
+       * Compiles an individual mode
+       *
+       * This can raise an error if the mode contains certain detectable known logic
+       * issues.
+       * @param {Mode} mode
+       * @param {CompiledMode | null} [parent]
+       * @returns {CompiledMode | never}
+       */
+      function compileMode(mode, parent) {
+        const cmode = /** @type CompiledMode */ (mode);
+        if (mode.compiled) return cmode;
+        mode.compiled = true;
+
+        // __beforeBegin is considered private API, internal use only
+        mode.__beforeBegin = null;
+
+        mode.keywords = mode.keywords || mode.beginKeywords;
+
+        let keywordPattern = null;
+        if (typeof mode.keywords === "object") {
+          keywordPattern = mode.keywords.$pattern;
+          delete mode.keywords.$pattern;
+        }
+
+        if (mode.keywords) {
+          mode.keywords = compileKeywords(mode.keywords, language.case_insensitive);
+        }
+
+        // both are not allowed
+        if (mode.lexemes && keywordPattern) {
+          throw new Error("ERR: Prefer `keywords.$pattern` to `mode.lexemes`, BOTH are not allowed. (see mode reference) ");
+        }
+
+        // `mode.lexemes` was the old standard before we added and now recommend
+        // using `keywords.$pattern` to pass the keyword pattern
+        cmode.keywordPatternRe = langRe(mode.lexemes || keywordPattern || /\w+/, true);
+
+        if (parent) {
+          if (mode.beginKeywords) {
+            // for languages with keywords that include non-word characters checking for
+            // a word boundary is not sufficient, so instead we check for a word boundary
+            // or whitespace - this does no harm in any case since our keyword engine
+            // doesn't allow spaces in keywords anyways and we still check for the boundary
+            // first
+            mode.begin = '\\b(' + mode.beginKeywords.split(' ').join('|') + ')(?!\\.)(?=\\b|\\s)';
+            mode.__beforeBegin = skipIfhasPrecedingDot;
+          }
+          if (!mode.begin) mode.begin = /\B|\b/;
+          cmode.beginRe = langRe(mode.begin);
+          if (mode.endSameAsBegin) mode.end = mode.begin;
+          if (!mode.end && !mode.endsWithParent) mode.end = /\B|\b/;
+          if (mode.end) cmode.endRe = langRe(mode.end);
+          cmode.terminator_end = source(mode.end) || '';
+          if (mode.endsWithParent && parent.terminator_end) {
+            cmode.terminator_end += (mode.end ? '|' : '') + parent.terminator_end;
+          }
+        }
+        if (mode.illegal) cmode.illegalRe = langRe(mode.illegal);
+        // eslint-disable-next-line no-undefined
+        if (mode.relevance === undefined) mode.relevance = 1;
+        if (!mode.contains) mode.contains = [];
+
+        mode.contains = [].concat(...mode.contains.map(function(c) {
+          return expandOrCloneMode(c === 'self' ? mode : c);
+        }));
+        mode.contains.forEach(function(c) { compileMode(/** @type Mode */ (c), cmode); });
+
+        if (mode.starts) {
+          compileMode(mode.starts, parent);
+        }
+
+        cmode.matcher = buildModeRegex(cmode);
+        return cmode;
+      }
+
+      // self is not valid at the top-level
+      if (language.contains && language.contains.includes('self')) {
+        throw new Error("ERR: contains `self` is not supported at the top-level of a language.  See documentation.");
+      }
+
+      // we need a null object, which inherit will guarantee
+      language.classNameAliases = inherit(language.classNameAliases || {});
+
+      return compileMode(/** @type Mode */ (language));
+    }
+
+    /**
+     * Determines if a mode has a dependency on it's parent or not
+     *
+     * If a mode does have a parent dependency then often we need to clone it if
+     * it's used in multiple places so that each copy points to the correct parent,
+     * where-as modes without a parent can often safely be re-used at the bottom of
+     * a mode chain.
+     *
+     * @param {Mode | null} mode
+     * @returns {boolean} - is there a dependency on the parent?
+     * */
+    function dependencyOnParent(mode) {
+      if (!mode) return false;
+
+      return mode.endsWithParent || dependencyOnParent(mode.starts);
+    }
+
+    /**
+     * Expands a mode or clones it if necessary
+     *
+     * This is necessary for modes with parental dependenceis (see notes on
+     * `dependencyOnParent`) and for nodes that have `variants` - which must then be
+     * exploded into their own individual modes at compile time.
+     *
+     * @param {Mode} mode
+     * @returns {Mode | Mode[]}
+     * */
+    function expandOrCloneMode(mode) {
+      if (mode.variants && !mode.cached_variants) {
+        mode.cached_variants = mode.variants.map(function(variant) {
+          return inherit(mode, { variants: null }, variant);
+        });
+      }
+
+      // EXPAND
+      // if we have variants then essentially "replace" the mode with the variants
+      // this happens in compileMode, where this function is called from
+      if (mode.cached_variants) {
+        return mode.cached_variants;
+      }
+
+      // CLONE
+      // if we have dependencies on parents then we need a unique
+      // instance of ourselves, so we can be reused with many
+      // different parents without issue
+      if (dependencyOnParent(mode)) {
+        return inherit(mode, { starts: mode.starts ? inherit(mode.starts) : null });
+      }
+
+      if (Object.isFrozen(mode)) {
+        return inherit(mode);
+      }
+
+      // no special dependency issues, just return ourselves
+      return mode;
+    }
+
+    /***********************************************
+      Keywords
+    ***********************************************/
+
+    /**
+     * Given raw keywords from a language definition, compile them.
+     *
+     * @param {string | Record<string,string>} rawKeywords
+     * @param {boolean} caseInsensitive
+     */
+    function compileKeywords(rawKeywords, caseInsensitive) {
+      /** @type KeywordDict */
+      const compiledKeywords = {};
+
+      if (typeof rawKeywords === 'string') { // string
+        splitAndCompile('keyword', rawKeywords);
+      } else {
+        Object.keys(rawKeywords).forEach(function(className) {
+          splitAndCompile(className, rawKeywords[className]);
+        });
+      }
+      return compiledKeywords;
+
+      // ---
+
+      /**
+       * Compiles an individual list of keywords
+       *
+       * Ex: "for if when while|5"
+       *
+       * @param {string} className
+       * @param {string} keywordList
+       */
+      function splitAndCompile(className, keywordList) {
+        if (caseInsensitive) {
+          keywordList = keywordList.toLowerCase();
+        }
+        keywordList.split(' ').forEach(function(keyword) {
+          const pair = keyword.split('|');
+          compiledKeywords[pair[0]] = [className, scoreForKeyword(pair[0], pair[1])];
+        });
+      }
+    }
+
+    /**
+     * Returns the proper score for a given keyword
+     *
+     * Also takes into account comment keywords, which will be scored 0 UNLESS
+     * another score has been manually assigned.
+     * @param {string} keyword
+     * @param {string} [providedScore]
+     */
+    function scoreForKeyword(keyword, providedScore) {
+      // manual scores always win over common keywords
+      // so you can force a score of 1 if you really insist
+      if (providedScore) {
+        return Number(providedScore);
+      }
+
+      return commonKeyword(keyword) ? 0 : 1;
+    }
+
+    /**
+     * Determines if a given keyword is common or not
+     *
+     * @param {string} keyword */
+    function commonKeyword(keyword) {
+      return COMMON_KEYWORDS.includes(keyword.toLowerCase());
+    }
+
+    var version = "10.4.1";
+
+    // @ts-nocheck
+
+    function hasValueOrEmptyAttribute(value) {
+      return Boolean(value || value === "");
+    }
+
+    function BuildVuePlugin(hljs) {
+      const Component = {
+        props: ["language", "code", "autodetect"],
+        data: function() {
+          return {
+            detectedLanguage: "",
+            unknownLanguage: false
+          };
+        },
+        computed: {
+          className() {
+            if (this.unknownLanguage) return "";
+      
+            return "hljs " + this.detectedLanguage;
+          },
+          highlighted() {
+            // no idea what language to use, return raw code
+            if (!this.autoDetect && !hljs.getLanguage(this.language)) {
+              console.warn(`The language "${this.language}" you specified could not be found.`);
+              this.unknownLanguage = true;
+              return escapeHTML(this.code);
+            }
+      
+            let result;
+            if (this.autoDetect) {
+              result = hljs.highlightAuto(this.code);
+              this.detectedLanguage = result.language;
+            } else {
+              result = hljs.highlight(this.language, this.code, this.ignoreIllegals);
+              this.detectedLanguage = this.language;
+            }
+            return result.value;
+          },
+          autoDetect() {
+            return !this.language || hasValueOrEmptyAttribute(this.autodetect);
+          },
+          ignoreIllegals() {
+            return true;
+          }
+        },
+        // this avoids needing to use a whole Vue compilation pipeline just
+        // to build Highlight.js
+        render(createElement) {
+          return createElement("pre", {}, [
+            createElement("code", {
+              class: this.className,
+              domProps: { innerHTML: this.highlighted }})
+          ]);
+        }
+        // template: `<pre><code :class="className" v-html="highlighted"></code></pre>`
+      };
+      
+      const VuePlugin = {
+        install(Vue) {
+          Vue.component('highlightjs', Component);
+        }
+      };
+
+      return { Component, VuePlugin };
+    }
+
+    /*
+    Syntax highlighting with language autodetection.
+    https://highlightjs.org/
+    */
+
+    const escape$1$1 = escapeHTML;
+    const inherit$1 = inherit;
+
+    const { nodeStream: nodeStream$1, mergeStreams: mergeStreams$1 } = utils;
+    const NO_MATCH = Symbol("nomatch");
+
+    /**
+     * @param {any} hljs - object that is extended (legacy)
+     * @returns {HLJSApi}
+     */
+    const HLJS = function(hljs) {
+      // Convenience variables for build-in objects
+      /** @type {unknown[]} */
+      const ArrayProto = [];
+
+      // Global internal variables used within the highlight.js library.
+      /** @type {Record<string, Language>} */
+      const languages = Object.create(null);
+      /** @type {Record<string, string>} */
+      const aliases = Object.create(null);
+      /** @type {HLJSPlugin[]} */
+      const plugins = [];
+
+      // safe/production mode - swallows more errors, tries to keep running
+      // even if a single syntax or parse hits a fatal error
+      let SAFE_MODE = true;
+      const fixMarkupRe = /(^(<[^>]+>|\t|)+|\n)/gm;
+      const LANGUAGE_NOT_FOUND = "Could not find the language '{}', did you forget to load/include a language module?";
+      /** @type {Language} */
+      const PLAINTEXT_LANGUAGE = { disableAutodetect: true, name: 'Plain text', contains: [] };
+
+      // Global options used when within external APIs. This is modified when
+      // calling the `hljs.configure` function.
+      /** @type HLJSOptions */
+      let options = {
+        noHighlightRe: /^(no-?highlight)$/i,
+        languageDetectRe: /\blang(?:uage)?-([\w-]+)\b/i,
+        classPrefix: 'hljs-',
+        tabReplace: null,
+        useBR: false,
+        languages: null,
+        // beta configuration options, subject to change, welcome to discuss
+        // https://github.com/highlightjs/highlight.js/issues/1086
+        __emitter: TokenTreeEmitter
+      };
+
+      /* Utility functions */
+
+      /**
+       * Tests a language name to see if highlighting should be skipped
+       * @param {string} languageName
+       */
+      function shouldNotHighlight(languageName) {
+        return options.noHighlightRe.test(languageName);
+      }
+
+      /**
+       * @param {HighlightedHTMLElement} block - the HTML element to determine language for
+       */
+      function blockLanguage(block) {
+        let classes = block.className + ' ';
+
+        classes += block.parentNode ? block.parentNode.className : '';
+
+        // language-* takes precedence over non-prefixed class names.
+        const match = options.languageDetectRe.exec(classes);
+        if (match) {
+          const language = getLanguage(match[1]);
+          if (!language) {
+            console.warn(LANGUAGE_NOT_FOUND.replace("{}", match[1]));
+            console.warn("Falling back to no-highlight mode for this block.", block);
+          }
+          return language ? match[1] : 'no-highlight';
+        }
+
+        return classes
+          .split(/\s+/)
+          .find((_class) => shouldNotHighlight(_class) || getLanguage(_class));
+      }
+
+      /**
+       * Core highlighting function.
+       *
+       * @param {string} languageName - the language to use for highlighting
+       * @param {string} code - the code to highlight
+       * @param {boolean} [ignoreIllegals] - whether to ignore illegal matches, default is to bail
+       * @param {CompiledMode} [continuation] - current continuation mode, if any
+       *
+       * @returns {HighlightResult} Result - an object that represents the result
+       * @property {string} language - the language name
+       * @property {number} relevance - the relevance score
+       * @property {string} value - the highlighted HTML code
+       * @property {string} code - the original raw code
+       * @property {CompiledMode} top - top of the current mode stack
+       * @property {boolean} illegal - indicates whether any illegal matches were found
+      */
+      function highlight(languageName, code, ignoreIllegals, continuation) {
+        /** @type {{ code: string, language: string, result?: any }} */
+        const context = {
+          code,
+          language: languageName
+        };
+        // the plugin can change the desired language or the code to be highlighted
+        // just be changing the object it was passed
+        fire("before:highlight", context);
+
+        // a before plugin can usurp the result completely by providing it's own
+        // in which case we don't even need to call highlight
+        const result = context.result ?
+          context.result :
+          _highlight(context.language, context.code, ignoreIllegals, continuation);
+
+        result.code = context.code;
+        // the plugin can change anything in result to suite it
+        fire("after:highlight", result);
+
+        return result;
+      }
+
+      /**
+       * private highlight that's used internally and does not fire callbacks
+       *
+       * @param {string} languageName - the language to use for highlighting
+       * @param {string} code - the code to highlight
+       * @param {boolean} [ignoreIllegals] - whether to ignore illegal matches, default is to bail
+       * @param {CompiledMode} [continuation] - current continuation mode, if any
+       * @returns {HighlightResult} - result of the highlight operation
+      */
+      function _highlight(languageName, code, ignoreIllegals, continuation) {
+        const codeToHighlight = code;
+
+        /**
+         * Return keyword data if a match is a keyword
+         * @param {CompiledMode} mode - current mode
+         * @param {RegExpMatchArray} match - regexp match data
+         * @returns {KeywordData | false}
+         */
+        function keywordData(mode, match) {
+          const matchText = language.case_insensitive ? match[0].toLowerCase() : match[0];
+          return Object.prototype.hasOwnProperty.call(mode.keywords, matchText) && mode.keywords[matchText];
+        }
+
+        function processKeywords() {
+          if (!top.keywords) {
+            emitter.addText(modeBuffer);
+            return;
+          }
+
+          let lastIndex = 0;
+          top.keywordPatternRe.lastIndex = 0;
+          let match = top.keywordPatternRe.exec(modeBuffer);
+          let buf = "";
+
+          while (match) {
+            buf += modeBuffer.substring(lastIndex, match.index);
+            const data = keywordData(top, match);
+            if (data) {
+              const [kind, keywordRelevance] = data;
+              emitter.addText(buf);
+              buf = "";
+
+              relevance += keywordRelevance;
+              const cssClass = language.classNameAliases[kind] || kind;
+              emitter.addKeyword(match[0], cssClass);
+            } else {
+              buf += match[0];
+            }
+            lastIndex = top.keywordPatternRe.lastIndex;
+            match = top.keywordPatternRe.exec(modeBuffer);
+          }
+          buf += modeBuffer.substr(lastIndex);
+          emitter.addText(buf);
+        }
+
+        function processSubLanguage() {
+          if (modeBuffer === "") return;
+          /** @type HighlightResult */
+          let result = null;
+
+          if (typeof top.subLanguage === 'string') {
+            if (!languages[top.subLanguage]) {
+              emitter.addText(modeBuffer);
+              return;
+            }
+            result = _highlight(top.subLanguage, modeBuffer, true, continuations[top.subLanguage]);
+            continuations[top.subLanguage] = /** @type {CompiledMode} */ (result.top);
+          } else {
+            result = highlightAuto(modeBuffer, top.subLanguage.length ? top.subLanguage : null);
+          }
+
+          // Counting embedded language score towards the host language may be disabled
+          // with zeroing the containing mode relevance. Use case in point is Markdown that
+          // allows XML everywhere and makes every XML snippet to have a much larger Markdown
+          // score.
+          if (top.relevance > 0) {
+            relevance += result.relevance;
+          }
+          emitter.addSublanguage(result.emitter, result.language);
+        }
+
+        function processBuffer() {
+          if (top.subLanguage != null) {
+            processSubLanguage();
+          } else {
+            processKeywords();
+          }
+          modeBuffer = '';
+        }
+
+        /**
+         * @param {Mode} mode - new mode to start
+         */
+        function startNewMode(mode) {
+          if (mode.className) {
+            emitter.openNode(language.classNameAliases[mode.className] || mode.className);
+          }
+          top = Object.create(mode, { parent: { value: top } });
+          return top;
+        }
+
+        /**
+         * @param {CompiledMode } mode - the mode to potentially end
+         * @param {RegExpMatchArray} match - the latest match
+         * @param {string} matchPlusRemainder - match plus remainder of content
+         * @returns {CompiledMode | void} - the next mode, or if void continue on in current mode
+         */
+        function endOfMode(mode, match, matchPlusRemainder) {
+          let matched = startsWith(mode.endRe, matchPlusRemainder);
+
+          if (matched) {
+            if (mode["on:end"]) {
+              const resp = new Response(mode);
+              mode["on:end"](match, resp);
+              if (resp.ignore) matched = false;
+            }
+
+            if (matched) {
+              while (mode.endsParent && mode.parent) {
+                mode = mode.parent;
+              }
+              return mode;
+            }
+          }
+          // even if on:end fires an `ignore` it's still possible
+          // that we might trigger the end node because of a parent mode
+          if (mode.endsWithParent) {
+            return endOfMode(mode.parent, match, matchPlusRemainder);
+          }
+        }
+
+        /**
+         * Handle matching but then ignoring a sequence of text
+         *
+         * @param {string} lexeme - string containing full match text
+         */
+        function doIgnore(lexeme) {
+          if (top.matcher.regexIndex === 0) {
+            // no more regexs to potentially match here, so we move the cursor forward one
+            // space
+            modeBuffer += lexeme[0];
+            return 1;
+          } else {
+            // no need to move the cursor, we still have additional regexes to try and
+            // match at this very spot
+            resumeScanAtSamePosition = true;
+            return 0;
+          }
+        }
+
+        /**
+         * Handle the start of a new potential mode match
+         *
+         * @param {EnhancedMatch} match - the current match
+         * @returns {number} how far to advance the parse cursor
+         */
+        function doBeginMatch(match) {
+          const lexeme = match[0];
+          const newMode = match.rule;
+
+          const resp = new Response(newMode);
+          // first internal before callbacks, then the public ones
+          const beforeCallbacks = [newMode.__beforeBegin, newMode["on:begin"]];
+          for (const cb of beforeCallbacks) {
+            if (!cb) continue;
+            cb(match, resp);
+            if (resp.ignore) return doIgnore(lexeme);
+          }
+
+          if (newMode && newMode.endSameAsBegin) {
+            newMode.endRe = escape$1(lexeme);
+          }
+
+          if (newMode.skip) {
+            modeBuffer += lexeme;
+          } else {
+            if (newMode.excludeBegin) {
+              modeBuffer += lexeme;
+            }
+            processBuffer();
+            if (!newMode.returnBegin && !newMode.excludeBegin) {
+              modeBuffer = lexeme;
+            }
+          }
+          startNewMode(newMode);
+          // if (mode["after:begin"]) {
+          //   let resp = new Response(mode);
+          //   mode["after:begin"](match, resp);
+          // }
+          return newMode.returnBegin ? 0 : lexeme.length;
+        }
+
+        /**
+         * Handle the potential end of mode
+         *
+         * @param {RegExpMatchArray} match - the current match
+         */
+        function doEndMatch(match) {
+          const lexeme = match[0];
+          const matchPlusRemainder = codeToHighlight.substr(match.index);
+
+          const endMode = endOfMode(top, match, matchPlusRemainder);
+          if (!endMode) { return NO_MATCH; }
+
+          const origin = top;
+          if (origin.skip) {
+            modeBuffer += lexeme;
+          } else {
+            if (!(origin.returnEnd || origin.excludeEnd)) {
+              modeBuffer += lexeme;
+            }
+            processBuffer();
+            if (origin.excludeEnd) {
+              modeBuffer = lexeme;
+            }
+          }
+          do {
+            if (top.className) {
+              emitter.closeNode();
+            }
+            if (!top.skip && !top.subLanguage) {
+              relevance += top.relevance;
+            }
+            top = top.parent;
+          } while (top !== endMode.parent);
+          if (endMode.starts) {
+            if (endMode.endSameAsBegin) {
+              endMode.starts.endRe = endMode.endRe;
+            }
+            startNewMode(endMode.starts);
+          }
+          return origin.returnEnd ? 0 : lexeme.length;
+        }
+
+        function processContinuations() {
+          const list = [];
+          for (let current = top; current !== language; current = current.parent) {
+            if (current.className) {
+              list.unshift(current.className);
+            }
+          }
+          list.forEach(item => emitter.openNode(item));
+        }
+
+        /** @type {{type?: MatchType, index?: number, rule?: Mode}}} */
+        let lastMatch = {};
+
+        /**
+         *  Process an individual match
+         *
+         * @param {string} textBeforeMatch - text preceeding the match (since the last match)
+         * @param {EnhancedMatch} [match] - the match itself
+         */
+        function processLexeme(textBeforeMatch, match) {
+          const lexeme = match && match[0];
+
+          // add non-matched text to the current mode buffer
+          modeBuffer += textBeforeMatch;
+
+          if (lexeme == null) {
+            processBuffer();
+            return 0;
+          }
+
+          // we've found a 0 width match and we're stuck, so we need to advance
+          // this happens when we have badly behaved rules that have optional matchers to the degree that
+          // sometimes they can end up matching nothing at all
+          // Ref: https://github.com/highlightjs/highlight.js/issues/2140
+          if (lastMatch.type === "begin" && match.type === "end" && lastMatch.index === match.index && lexeme === "") {
+            // spit the "skipped" character that our regex choked on back into the output sequence
+            modeBuffer += codeToHighlight.slice(match.index, match.index + 1);
+            if (!SAFE_MODE) {
+              /** @type {AnnotatedError} */
+              const err = new Error('0 width match regex');
+              err.languageName = languageName;
+              err.badRule = lastMatch.rule;
+              throw err;
+            }
+            return 1;
+          }
+          lastMatch = match;
+
+          if (match.type === "begin") {
+            return doBeginMatch(match);
+          } else if (match.type === "illegal" && !ignoreIllegals) {
+            // illegal match, we do not continue processing
+            /** @type {AnnotatedError} */
+            const err = new Error('Illegal lexeme "' + lexeme + '" for mode "' + (top.className || '<unnamed>') + '"');
+            err.mode = top;
+            throw err;
+          } else if (match.type === "end") {
+            const processed = doEndMatch(match);
+            if (processed !== NO_MATCH) {
+              return processed;
+            }
+          }
+
+          // edge case for when illegal matches $ (end of line) which is technically
+          // a 0 width match but not a begin/end match so it's not caught by the
+          // first handler (when ignoreIllegals is true)
+          if (match.type === "illegal" && lexeme === "") {
+            // advance so we aren't stuck in an infinite loop
+            return 1;
+          }
+
+          // infinite loops are BAD, this is a last ditch catch all. if we have a
+          // decent number of iterations yet our index (cursor position in our
+          // parsing) still 3x behind our index then something is very wrong
+          // so we bail
+          if (iterations > 100000 && iterations > match.index * 3) {
+            const err = new Error('potential infinite loop, way more iterations than matches');
+            throw err;
+          }
+
+          /*
+          Why might be find ourselves here?  Only one occasion now.  An end match that was
+          triggered but could not be completed.  When might this happen?  When an `endSameasBegin`
+          rule sets the end rule to a specific match.  Since the overall mode termination rule that's
+          being used to scan the text isn't recompiled that means that any match that LOOKS like
+          the end (but is not, because it is not an exact match to the beginning) will
+          end up here.  A definite end match, but when `doEndMatch` tries to "reapply"
+          the end rule and fails to match, we wind up here, and just silently ignore the end.
+
+          This causes no real harm other than stopping a few times too many.
+          */
+
+          modeBuffer += lexeme;
+          return lexeme.length;
+        }
+
+        const language = getLanguage(languageName);
+        if (!language) {
+          console.error(LANGUAGE_NOT_FOUND.replace("{}", languageName));
+          throw new Error('Unknown language: "' + languageName + '"');
+        }
+
+        const md = compileLanguage(language);
+        let result = '';
+        /** @type {CompiledMode} */
+        let top = continuation || md;
+        /** @type Record<string,CompiledMode> */
+        const continuations = {}; // keep continuations for sub-languages
+        const emitter = new options.__emitter(options);
+        processContinuations();
+        let modeBuffer = '';
+        let relevance = 0;
+        let index = 0;
+        let iterations = 0;
+        let resumeScanAtSamePosition = false;
+
+        try {
+          top.matcher.considerAll();
+
+          for (;;) {
+            iterations++;
+            if (resumeScanAtSamePosition) {
+              // only regexes not matched previously will now be
+              // considered for a potential match
+              resumeScanAtSamePosition = false;
+            } else {
+              top.matcher.considerAll();
+            }
+            top.matcher.lastIndex = index;
+
+            const match = top.matcher.exec(codeToHighlight);
+            // console.log("match", match[0], match.rule && match.rule.begin)
+
+            if (!match) break;
+
+            const beforeMatch = codeToHighlight.substring(index, match.index);
+            const processedCount = processLexeme(beforeMatch, match);
+            index = match.index + processedCount;
+          }
+          processLexeme(codeToHighlight.substr(index));
+          emitter.closeAllNodes();
+          emitter.finalize();
+          result = emitter.toHTML();
+
+          return {
+            relevance: relevance,
+            value: result,
+            language: languageName,
+            illegal: false,
+            emitter: emitter,
+            top: top
+          };
+        } catch (err) {
+          if (err.message && err.message.includes('Illegal')) {
+            return {
+              illegal: true,
+              illegalBy: {
+                msg: err.message,
+                context: codeToHighlight.slice(index - 100, index + 100),
+                mode: err.mode
+              },
+              sofar: result,
+              relevance: 0,
+              value: escape$1$1(codeToHighlight),
+              emitter: emitter
+            };
+          } else if (SAFE_MODE) {
+            return {
+              illegal: false,
+              relevance: 0,
+              value: escape$1$1(codeToHighlight),
+              emitter: emitter,
+              language: languageName,
+              top: top,
+              errorRaised: err
+            };
+          } else {
+            throw err;
+          }
+        }
+      }
+
+      /**
+       * returns a valid highlight result, without actually doing any actual work,
+       * auto highlight starts with this and it's possible for small snippets that
+       * auto-detection may not find a better match
+       * @param {string} code
+       * @returns {HighlightResult}
+       */
+      function justTextHighlightResult(code) {
+        const result = {
+          relevance: 0,
+          emitter: new options.__emitter(options),
+          value: escape$1$1(code),
+          illegal: false,
+          top: PLAINTEXT_LANGUAGE
+        };
+        result.emitter.addText(code);
+        return result;
+      }
+
+      /**
+      Highlighting with language detection. Accepts a string with the code to
+      highlight. Returns an object with the following properties:
+
+      - language (detected language)
+      - relevance (int)
+      - value (an HTML string with highlighting markup)
+      - second_best (object with the same structure for second-best heuristically
+        detected language, may be absent)
+
+        @param {string} code
+        @param {Array<string>} [languageSubset]
+        @returns {AutoHighlightResult}
+      */
+      function highlightAuto(code, languageSubset) {
+        languageSubset = languageSubset || options.languages || Object.keys(languages);
+        const plaintext = justTextHighlightResult(code);
+
+        const results = languageSubset.filter(getLanguage).filter(autoDetection).map(name =>
+          _highlight(name, code, false)
+        );
+        results.unshift(plaintext); // plaintext is always an option
+
+        const sorted = results.sort((a, b) => {
+          // sort base on relevance
+          if (a.relevance !== b.relevance) return b.relevance - a.relevance;
+
+          // always award the tie to the base language
+          // ie if C++ and Arduino are tied, it's more likely to be C++
+          if (a.language && b.language) {
+            if (getLanguage(a.language).supersetOf === b.language) {
+              return 1;
+            } else if (getLanguage(b.language).supersetOf === a.language) {
+              return -1;
+            }
+          }
+
+          // otherwise say they are equal, which has the effect of sorting on
+          // relevance while preserving the original ordering - which is how ties
+          // have historically been settled, ie the language that comes first always
+          // wins in the case of a tie
+          return 0;
+        });
+
+        const [best, secondBest] = sorted;
+
+        /** @type {AutoHighlightResult} */
+        const result = best;
+        result.second_best = secondBest;
+
+        return result;
+      }
+
+      /**
+      Post-processing of the highlighted markup:
+
+      - replace TABs with something more useful
+      - replace real line-breaks with '<br>' for non-pre containers
+
+        @param {string} html
+        @returns {string}
+      */
+      function fixMarkup(html) {
+        if (!(options.tabReplace || options.useBR)) {
+          return html;
+        }
+
+        return html.replace(fixMarkupRe, match => {
+          if (match === '\n') {
+            return options.useBR ? '<br>' : match;
+          } else if (options.tabReplace) {
+            return match.replace(/\t/g, options.tabReplace);
+          }
+          return match;
+        });
+      }
+
+      /**
+       * Builds new class name for block given the language name
+       *
+       * @param {string} prevClassName
+       * @param {string} [currentLang]
+       * @param {string} [resultLang]
+       */
+      function buildClassName(prevClassName, currentLang, resultLang) {
+        const language = currentLang ? aliases[currentLang] : resultLang;
+        const result = [prevClassName.trim()];
+
+        if (!prevClassName.match(/\bhljs\b/)) {
+          result.push('hljs');
+        }
+
+        if (!prevClassName.includes(language)) {
+          result.push(language);
+        }
+
+        return result.join(' ').trim();
+      }
+
+      /**
+       * Applies highlighting to a DOM node containing code. Accepts a DOM node and
+       * two optional parameters for fixMarkup.
+       *
+       * @param {HighlightedHTMLElement} element - the HTML element to highlight
+      */
+      function highlightBlock(element) {
+        /** @type HTMLElement */
+        let node = null;
+        const language = blockLanguage(element);
+
+        if (shouldNotHighlight(language)) return;
+
+        fire("before:highlightBlock",
+          { block: element, language: language });
+
+        if (options.useBR) {
+          node = document.createElement('div');
+          node.innerHTML = element.innerHTML.replace(/\n/g, '').replace(/<br[ /]*>/g, '\n');
+        } else {
+          node = element;
+        }
+        const text = node.textContent;
+        const result = language ? highlight(language, text, true) : highlightAuto(text);
+
+        const originalStream = nodeStream$1(node);
+        if (originalStream.length) {
+          const resultNode = document.createElement('div');
+          resultNode.innerHTML = result.value;
+          result.value = mergeStreams$1(originalStream, nodeStream$1(resultNode), text);
+        }
+        result.value = fixMarkup(result.value);
+
+        fire("after:highlightBlock", { block: element, result: result });
+
+        element.innerHTML = result.value;
+        element.className = buildClassName(element.className, language, result.language);
+        element.result = {
+          language: result.language,
+          // TODO: remove with version 11.0
+          re: result.relevance,
+          relavance: result.relevance
+        };
+        if (result.second_best) {
+          element.second_best = {
+            language: result.second_best.language,
+            // TODO: remove with version 11.0
+            re: result.second_best.relevance,
+            relavance: result.second_best.relevance
+          };
+        }
+      }
+
+      /**
+       * Updates highlight.js global options with the passed options
+       *
+       * @param {Partial<HLJSOptions>} userOptions
+       */
+      function configure(userOptions) {
+        if (userOptions.useBR) {
+          console.warn("'useBR' option is deprecated and will be removed entirely in v11.0");
+          console.warn("Please see https://github.com/highlightjs/highlight.js/issues/2559");
+        }
+        options = inherit$1(options, userOptions);
+      }
+
+      /**
+       * Highlights to all <pre><code> blocks on a page
+       *
+       * @type {Function & {called?: boolean}}
+       */
+      const initHighlighting = () => {
+        if (initHighlighting.called) return;
+        initHighlighting.called = true;
+
+        const blocks = document.querySelectorAll('pre code');
+        ArrayProto.forEach.call(blocks, highlightBlock);
+      };
+
+      // Higlights all when DOMContentLoaded fires
+      function initHighlightingOnLoad() {
+        // @ts-ignore
+        window.addEventListener('DOMContentLoaded', initHighlighting, false);
+      }
+
+      /**
+       * Register a language grammar module
+       *
+       * @param {string} languageName
+       * @param {LanguageFn} languageDefinition
+       */
+      function registerLanguage(languageName, languageDefinition) {
+        let lang = null;
+        try {
+          lang = languageDefinition(hljs);
+        } catch (error) {
+          console.error("Language definition for '{}' could not be registered.".replace("{}", languageName));
+          // hard or soft error
+          if (!SAFE_MODE) { throw error; } else { console.error(error); }
+          // languages that have serious errors are replaced with essentially a
+          // "plaintext" stand-in so that the code blocks will still get normal
+          // css classes applied to them - and one bad language won't break the
+          // entire highlighter
+          lang = PLAINTEXT_LANGUAGE;
+        }
+        // give it a temporary name if it doesn't have one in the meta-data
+        if (!lang.name) lang.name = languageName;
+        languages[languageName] = lang;
+        lang.rawDefinition = languageDefinition.bind(null, hljs);
+
+        if (lang.aliases) {
+          registerAliases(lang.aliases, { languageName });
+        }
+      }
+
+      /**
+       * @returns {string[]} List of language internal names
+       */
+      function listLanguages() {
+        return Object.keys(languages);
+      }
+
+      /**
+        intended usage: When one language truly requires another
+
+        Unlike `getLanguage`, this will throw when the requested language
+        is not available.
+
+        @param {string} name - name of the language to fetch/require
+        @returns {Language | never}
+      */
+      function requireLanguage(name) {
+        console.warn("requireLanguage is deprecated and will be removed entirely in the future.");
+        console.warn("Please see https://github.com/highlightjs/highlight.js/pull/2844");
+
+        const lang = getLanguage(name);
+        if (lang) { return lang; }
+
+        const err = new Error('The \'{}\' language is required, but not loaded.'.replace('{}', name));
+        throw err;
+      }
+
+      /**
+       * @param {string} name - name of the language to retrieve
+       * @returns {Language | undefined}
+       */
+      function getLanguage(name) {
+        name = (name || '').toLowerCase();
+        return languages[name] || languages[aliases[name]];
+      }
+
+      /**
+       *
+       * @param {string|string[]} aliasList - single alias or list of aliases
+       * @param {{languageName: string}} opts
+       */
+      function registerAliases(aliasList, { languageName }) {
+        if (typeof aliasList === 'string') {
+          aliasList = [aliasList];
+        }
+        aliasList.forEach(alias => { aliases[alias] = languageName; });
+      }
+
+      /**
+       * Determines if a given language has auto-detection enabled
+       * @param {string} name - name of the language
+       */
+      function autoDetection(name) {
+        const lang = getLanguage(name);
+        return lang && !lang.disableAutodetect;
+      }
+
+      /**
+       * @param {HLJSPlugin} plugin
+       */
+      function addPlugin(plugin) {
+        plugins.push(plugin);
+      }
+
+      /**
+       *
+       * @param {PluginEvent} event
+       * @param {any} args
+       */
+      function fire(event, args) {
+        const cb = event;
+        plugins.forEach(function(plugin) {
+          if (plugin[cb]) {
+            plugin[cb](args);
+          }
+        });
+      }
+
+      /**
+      Note: fixMarkup is deprecated and will be removed entirely in v11
+
+      @param {string} arg
+      @returns {string}
+      */
+      function deprecateFixMarkup(arg) {
+        console.warn("fixMarkup is deprecated and will be removed entirely in v11.0");
+        console.warn("Please see https://github.com/highlightjs/highlight.js/issues/2534");
+
+        return fixMarkup(arg);
+      }
+
+      /* Interface definition */
+      Object.assign(hljs, {
+        highlight,
+        highlightAuto,
+        fixMarkup: deprecateFixMarkup,
+        highlightBlock,
+        configure,
+        initHighlighting,
+        initHighlightingOnLoad,
+        registerLanguage,
+        listLanguages,
+        getLanguage,
+        registerAliases,
+        requireLanguage,
+        autoDetection,
+        inherit: inherit$1,
+        addPlugin,
+        // plugins for frameworks
+        vuePlugin: BuildVuePlugin(hljs).VuePlugin
+      });
+
+      hljs.debugMode = function() { SAFE_MODE = false; };
+      hljs.safeMode = function() { SAFE_MODE = true; };
+      hljs.versionString = version;
+
+      for (const key in MODES) {
+        // @ts-ignore
+        if (typeof MODES[key] === "object") {
+          // @ts-ignore
+          deepFreezeEs6(MODES[key]);
+        }
+      }
+
+      // merge all the modes/regexs into our main object
+      Object.assign(hljs, MODES);
+
+      return hljs;
+    };
+
+    // export an "instance" of the highlighter
+    var highlight = HLJS({});
+
+    var core = highlight;
+
+    const IDENT_RE$1 = '[A-Za-z$_][0-9A-Za-z$_]*';
+    const KEYWORDS = [
+      "as", // for exports
+      "in",
+      "of",
+      "if",
+      "for",
+      "while",
+      "finally",
+      "var",
+      "new",
+      "function",
+      "do",
+      "return",
+      "void",
+      "else",
+      "break",
+      "catch",
+      "instanceof",
+      "with",
+      "throw",
+      "case",
+      "default",
+      "try",
+      "switch",
+      "continue",
+      "typeof",
+      "delete",
+      "let",
+      "yield",
+      "const",
+      "class",
+      // JS handles these with a special rule
+      // "get",
+      // "set",
+      "debugger",
+      "async",
+      "await",
+      "static",
+      "import",
+      "from",
+      "export",
+      "extends"
+    ];
+    const LITERALS = [
+      "true",
+      "false",
+      "null",
+      "undefined",
+      "NaN",
+      "Infinity"
+    ];
+
+    const TYPES = [
+      "Intl",
+      "DataView",
+      "Number",
+      "Math",
+      "Date",
+      "String",
+      "RegExp",
+      "Object",
+      "Function",
+      "Boolean",
+      "Error",
+      "Symbol",
+      "Set",
+      "Map",
+      "WeakSet",
+      "WeakMap",
+      "Proxy",
+      "Reflect",
+      "JSON",
+      "Promise",
+      "Float64Array",
+      "Int16Array",
+      "Int32Array",
+      "Int8Array",
+      "Uint16Array",
+      "Uint32Array",
+      "Float32Array",
+      "Array",
+      "Uint8Array",
+      "Uint8ClampedArray",
+      "ArrayBuffer"
+    ];
+
+    const ERROR_TYPES = [
+      "EvalError",
+      "InternalError",
+      "RangeError",
+      "ReferenceError",
+      "SyntaxError",
+      "TypeError",
+      "URIError"
+    ];
+
+    const BUILT_IN_GLOBALS = [
+      "setInterval",
+      "setTimeout",
+      "clearInterval",
+      "clearTimeout",
+
+      "require",
+      "exports",
+
+      "eval",
+      "isFinite",
+      "isNaN",
+      "parseFloat",
+      "parseInt",
+      "decodeURI",
+      "decodeURIComponent",
+      "encodeURI",
+      "encodeURIComponent",
+      "escape",
+      "unescape"
+    ];
+
+    const BUILT_IN_VARIABLES = [
+      "arguments",
+      "this",
+      "super",
+      "console",
+      "window",
+      "document",
+      "localStorage",
+      "module",
+      "global" // Node.js
+    ];
+
+    const BUILT_INS = [].concat(
+      BUILT_IN_GLOBALS,
+      BUILT_IN_VARIABLES,
+      TYPES,
+      ERROR_TYPES
+    );
+
+    /**
+     * @param {string} value
+     * @returns {RegExp}
+     * */
+
+    /**
+     * @param {RegExp | string } re
+     * @returns {string}
+     */
+    function source$1(re) {
+      if (!re) return null;
+      if (typeof re === "string") return re;
+
+      return re.source;
+    }
+
+    /**
+     * @param {RegExp | string } re
+     * @returns {string}
+     */
+    function lookahead(re) {
+      return concat$1('(?=', re, ')');
+    }
+
+    /**
+     * @param {...(RegExp | string) } args
+     * @returns {string}
+     */
+    function concat$1(...args) {
+      const joined = args.map((x) => source$1(x)).join("");
+      return joined;
+    }
+
+    /*
+    Language: JavaScript
+    Description: JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions.
+    Category: common, scripting
+    Website: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+    */
+
+    /** @type LanguageFn */
+    function javascript(hljs) {
+      /**
+       * Takes a string like "<Booger" and checks to see
+       * if we can find a matching "</Booger" later in the
+       * content.
+       * @param {RegExpMatchArray} match
+       * @param {{after:number}} param1
+       */
+      const hasClosingTag = (match, { after }) => {
+        const tag = "</" + match[0].slice(1);
+        const pos = match.input.indexOf(tag, after);
+        return pos !== -1;
+      };
+
+      const IDENT_RE$1$1 = IDENT_RE$1;
+      const FRAGMENT = {
+        begin: '<>',
+        end: '</>'
+      };
+      const XML_TAG = {
+        begin: /<[A-Za-z0-9\\._:-]+/,
+        end: /\/[A-Za-z0-9\\._:-]+>|\/>/,
+        /**
+         * @param {RegExpMatchArray} match
+         * @param {CallbackResponse} response
+         */
+        isTrulyOpeningTag: (match, response) => {
+          const afterMatchIndex = match[0].length + match.index;
+          const nextChar = match.input[afterMatchIndex];
+          // nested type?
+          // HTML should not include another raw `<` inside a tag
+          // But a type might: `<Array<Array<number>>`, etc.
+          if (nextChar === "<") {
+            response.ignoreMatch();
+            return;
+          }
+          // <something>
+          // This is now either a tag or a type.
+          if (nextChar === ">") {
+            // if we cannot find a matching closing tag, then we
+            // will ignore it
+            if (!hasClosingTag(match, { after: afterMatchIndex })) {
+              response.ignoreMatch();
+            }
+          }
+        }
+      };
+      const KEYWORDS$1 = {
+        $pattern: IDENT_RE$1,
+        keyword: KEYWORDS.join(" "),
+        literal: LITERALS.join(" "),
+        built_in: BUILT_INS.join(" ")
+      };
+
+      // https://tc39.es/ecma262/#sec-literals-numeric-literals
+      const decimalDigits = '[0-9](_?[0-9])*';
+      const frac = `\\.(${decimalDigits})`;
+      // DecimalIntegerLiteral, including Annex B NonOctalDecimalIntegerLiteral
+      // https://tc39.es/ecma262/#sec-additional-syntax-numeric-literals
+      const decimalInteger = `0|[1-9](_?[0-9])*|0[0-7]*[89][0-9]*`;
+      const NUMBER = {
+        className: 'number',
+        variants: [
+          // DecimalLiteral
+          { begin: `(\\b(${decimalInteger})((${frac})|\\.)?|(${frac}))` +
+            `[eE][+-]?(${decimalDigits})\\b` },
+          { begin: `\\b(${decimalInteger})\\b((${frac})\\b|\\.)?|(${frac})\\b` },
+
+          // DecimalBigIntegerLiteral
+          { begin: `\\b(0|[1-9](_?[0-9])*)n\\b` },
+
+          // NonDecimalIntegerLiteral
+          { begin: "\\b0[xX][0-9a-fA-F](_?[0-9a-fA-F])*n?\\b" },
+          { begin: "\\b0[bB][0-1](_?[0-1])*n?\\b" },
+          { begin: "\\b0[oO][0-7](_?[0-7])*n?\\b" },
+
+          // LegacyOctalIntegerLiteral (does not include underscore separators)
+          // https://tc39.es/ecma262/#sec-additional-syntax-numeric-literals
+          { begin: "\\b0[0-7]+n?\\b" },
+        ],
+        relevance: 0
+      };
+
+      const SUBST = {
+        className: 'subst',
+        begin: '\\$\\{',
+        end: '\\}',
+        keywords: KEYWORDS$1,
+        contains: [] // defined later
+      };
+      const HTML_TEMPLATE = {
+        begin: 'html`',
+        end: '',
+        starts: {
+          end: '`',
+          returnEnd: false,
+          contains: [
+            hljs.BACKSLASH_ESCAPE,
+            SUBST
+          ],
+          subLanguage: 'xml'
+        }
+      };
+      const CSS_TEMPLATE = {
+        begin: 'css`',
+        end: '',
+        starts: {
+          end: '`',
+          returnEnd: false,
+          contains: [
+            hljs.BACKSLASH_ESCAPE,
+            SUBST
+          ],
+          subLanguage: 'css'
+        }
+      };
+      const TEMPLATE_STRING = {
+        className: 'string',
+        begin: '`',
+        end: '`',
+        contains: [
+          hljs.BACKSLASH_ESCAPE,
+          SUBST
+        ]
+      };
+      const JSDOC_COMMENT = hljs.COMMENT(
+        '/\\*\\*',
+        '\\*/',
+        {
+          relevance: 0,
+          contains: [
+            {
+              className: 'doctag',
+              begin: '@[A-Za-z]+',
+              contains: [
+                {
+                  className: 'type',
+                  begin: '\\{',
+                  end: '\\}',
+                  relevance: 0
+                },
+                {
+                  className: 'variable',
+                  begin: IDENT_RE$1$1 + '(?=\\s*(-)|$)',
+                  endsParent: true,
+                  relevance: 0
+                },
+                // eat spaces (not newlines) so we can find
+                // types or variables
+                {
+                  begin: /(?=[^\n])\s/,
+                  relevance: 0
+                }
+              ]
+            }
+          ]
+        }
+      );
+      const COMMENT = {
+        className: "comment",
+        variants: [
+          JSDOC_COMMENT,
+          hljs.C_BLOCK_COMMENT_MODE,
+          hljs.C_LINE_COMMENT_MODE
+        ]
+      };
+      const SUBST_INTERNALS = [
+        hljs.APOS_STRING_MODE,
+        hljs.QUOTE_STRING_MODE,
+        HTML_TEMPLATE,
+        CSS_TEMPLATE,
+        TEMPLATE_STRING,
+        NUMBER,
+        hljs.REGEXP_MODE
+      ];
+      SUBST.contains = SUBST_INTERNALS
+        .concat({
+          // we need to pair up {} inside our subst to prevent
+          // it from ending too early by matching another }
+          begin: /\{/,
+          end: /\}/,
+          keywords: KEYWORDS$1,
+          contains: [
+            "self"
+          ].concat(SUBST_INTERNALS)
+        });
+      const SUBST_AND_COMMENTS = [].concat(COMMENT, SUBST.contains);
+      const PARAMS_CONTAINS = SUBST_AND_COMMENTS.concat([
+        // eat recursive parens in sub expressions
+        {
+          begin: /\(/,
+          end: /\)/,
+          keywords: KEYWORDS$1,
+          contains: ["self"].concat(SUBST_AND_COMMENTS)
+        }
+      ]);
+      const PARAMS = {
+        className: 'params',
+        begin: /\(/,
+        end: /\)/,
+        excludeBegin: true,
+        excludeEnd: true,
+        keywords: KEYWORDS$1,
+        contains: PARAMS_CONTAINS
+      };
+
+      return {
+        name: 'Javascript',
+        aliases: ['js', 'jsx', 'mjs', 'cjs'],
+        keywords: KEYWORDS$1,
+        // this will be extended by TypeScript
+        exports: { PARAMS_CONTAINS },
+        illegal: /#(?![$_A-z])/,
+        contains: [
+          hljs.SHEBANG({
+            label: "shebang",
+            binary: "node",
+            relevance: 5
+          }),
+          {
+            label: "use_strict",
+            className: 'meta',
+            relevance: 10,
+            begin: /^\s*['"]use (strict|asm)['"]/
+          },
+          hljs.APOS_STRING_MODE,
+          hljs.QUOTE_STRING_MODE,
+          HTML_TEMPLATE,
+          CSS_TEMPLATE,
+          TEMPLATE_STRING,
+          COMMENT,
+          NUMBER,
+          { // object attr container
+            begin: concat$1(/[{,\n]\s*/,
+              // we need to look ahead to make sure that we actually have an
+              // attribute coming up so we don't steal a comma from a potential
+              // "value" container
+              //
+              // NOTE: this might not work how you think.  We don't actually always
+              // enter this mode and stay.  Instead it might merely match `,
+              // <comments up next>` and then immediately end after the , because it
+              // fails to find any actual attrs. But this still does the job because
+              // it prevents the value contain rule from grabbing this instead and
+              // prevening this rule from firing when we actually DO have keys.
+              lookahead(concat$1(
+                // we also need to allow for multiple possible comments inbetween
+                // the first key:value pairing
+                /(((\/\/.*$)|(\/\*(\*[^/]|[^*])*\*\/))\s*)*/,
+                IDENT_RE$1$1 + '\\s*:'))),
+            relevance: 0,
+            contains: [
+              {
+                className: 'attr',
+                begin: IDENT_RE$1$1 + lookahead('\\s*:'),
+                relevance: 0
+              }
+            ]
+          },
+          { // "value" container
+            begin: '(' + hljs.RE_STARTERS_RE + '|\\b(case|return|throw)\\b)\\s*',
+            keywords: 'return throw case',
+            contains: [
+              COMMENT,
+              hljs.REGEXP_MODE,
+              {
+                className: 'function',
+                // we have to count the parens to make sure we actually have the
+                // correct bounding ( ) before the =>.  There could be any number of
+                // sub-expressions inside also surrounded by parens.
+                begin: '(\\(' +
+                '[^()]*(\\(' +
+                '[^()]*(\\(' +
+                '[^()]*' +
+                '\\)[^()]*)*' +
+                '\\)[^()]*)*' +
+                '\\)|' + hljs.UNDERSCORE_IDENT_RE + ')\\s*=>',
+                returnBegin: true,
+                end: '\\s*=>',
+                contains: [
+                  {
+                    className: 'params',
+                    variants: [
+                      {
+                        begin: hljs.UNDERSCORE_IDENT_RE,
+                        relevance: 0
+                      },
+                      {
+                        className: null,
+                        begin: /\(\s*\)/,
+                        skip: true
+                      },
+                      {
+                        begin: /\(/,
+                        end: /\)/,
+                        excludeBegin: true,
+                        excludeEnd: true,
+                        keywords: KEYWORDS$1,
+                        contains: PARAMS_CONTAINS
+                      }
+                    ]
+                  }
+                ]
+              },
+              { // could be a comma delimited list of params to a function call
+                begin: /,/, relevance: 0
+              },
+              {
+                className: '',
+                begin: /\s/,
+                end: /\s*/,
+                skip: true
+              },
+              { // JSX
+                variants: [
+                  { begin: FRAGMENT.begin, end: FRAGMENT.end },
+                  {
+                    begin: XML_TAG.begin,
+                    // we carefully check the opening tag to see if it truly
+                    // is a tag and not a false positive
+                    'on:begin': XML_TAG.isTrulyOpeningTag,
+                    end: XML_TAG.end
+                  }
+                ],
+                subLanguage: 'xml',
+                contains: [
+                  {
+                    begin: XML_TAG.begin,
+                    end: XML_TAG.end,
+                    skip: true,
+                    contains: ['self']
+                  }
+                ]
+              }
+            ],
+            relevance: 0
+          },
+          {
+            className: 'function',
+            beginKeywords: 'function',
+            end: /[{;]/,
+            excludeEnd: true,
+            keywords: KEYWORDS$1,
+            contains: [
+              'self',
+              hljs.inherit(hljs.TITLE_MODE, { begin: IDENT_RE$1$1 }),
+              PARAMS
+            ],
+            illegal: /%/
+          },
+          {
+            // prevent this from getting swallowed up by function
+            // since they appear "function like"
+            beginKeywords: "while if switch catch for"
+          },
+          {
+            className: 'function',
+            // we have to count the parens to make sure we actually have the correct
+            // bounding ( ).  There could be any number of sub-expressions inside
+            // also surrounded by parens.
+            begin: hljs.UNDERSCORE_IDENT_RE +
+              '\\(' + // first parens
+              '[^()]*(\\(' +
+                '[^()]*(\\(' +
+                  '[^()]*' +
+                '\\)[^()]*)*' +
+              '\\)[^()]*)*' +
+              '\\)\\s*\\{', // end parens
+            returnBegin:true,
+            contains: [
+              PARAMS,
+              hljs.inherit(hljs.TITLE_MODE, { begin: IDENT_RE$1$1 }),
+            ]
+          },
+          // hack: prevents detection of keywords in some circumstances
+          // .keyword()
+          // $keyword = x
+          {
+            variants: [
+              { begin: '\\.' + IDENT_RE$1$1 },
+              { begin: '\\$' + IDENT_RE$1$1 }
+            ],
+            relevance: 0
+          },
+          { // ES6 class
+            className: 'class',
+            beginKeywords: 'class',
+            end: /[{;=]/,
+            excludeEnd: true,
+            illegal: /[:"[\]]/,
+            contains: [
+              { beginKeywords: 'extends' },
+              hljs.UNDERSCORE_TITLE_MODE
+            ]
+          },
+          {
+            begin: /\b(?=constructor)/,
+            end: /[{;]/,
+            excludeEnd: true,
+            contains: [
+              hljs.inherit(hljs.TITLE_MODE, { begin: IDENT_RE$1$1 }),
+              'self',
+              PARAMS
+            ]
+          },
+          {
+            begin: '(get|set)\\s+(?=' + IDENT_RE$1$1 + '\\()',
+            end: /\{/,
+            keywords: "get set",
+            contains: [
+              hljs.inherit(hljs.TITLE_MODE, { begin: IDENT_RE$1$1 }),
+              { begin: /\(\)/ }, // eat to avoid empty params
+              PARAMS
+            ]
+          },
+          {
+            begin: /\$[(.]/ // relevance booster for a pattern common to JS libs: `$(something)` and `$.something`
+          }
+        ]
+      };
+    }
+
+    var javascript_1 = javascript;
+
+    /*
+    Language: Python
+    Description: Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.
+    Website: https://www.python.org
+    Category: common
+    */
+
+    function python(hljs) {
+      const RESERVED_WORDS = [
+        'and',
+        'as',
+        'assert',
+        'async',
+        'await',
+        'break',
+        'class',
+        'continue',
+        'def',
+        'del',
+        'elif',
+        'else',
+        'except',
+        'finally',
+        'for',
+        '',
+        'from',
+        'global',
+        'if',
+        'import',
+        'in',
+        'is',
+        'lambda',
+        'nonlocal|10',
+        'not',
+        'or',
+        'pass',
+        'raise',
+        'return',
+        'try',
+        'while',
+        'with',
+        'yield',
+      ];
+
+      const BUILT_INS = [
+        '__import__',
+        'abs',
+        'all',
+        'any',
+        'ascii',
+        'bin',
+        'bool',
+        'breakpoint',
+        'bytearray',
+        'bytes',
+        'callable',
+        'chr',
+        'classmethod',
+        'compile',
+        'complex',
+        'delattr',
+        'dict',
+        'dir',
+        'divmod',
+        'enumerate',
+        'eval',
+        'exec',
+        'filter',
+        'float',
+        'format',
+        'frozenset',
+        'getattr',
+        'globals',
+        'hasattr',
+        'hash',
+        'help',
+        'hex',
+        'id',
+        'input',
+        'int',
+        'isinstance',
+        'issubclass',
+        'iter',
+        'len',
+        'list',
+        'locals',
+        'map',
+        'max',
+        'memoryview',
+        'min',
+        'next',
+        'object',
+        'oct',
+        'open',
+        'ord',
+        'pow',
+        'print',
+        'property',
+        'range',
+        'repr',
+        'reversed',
+        'round',
+        'set',
+        'setattr',
+        'slice',
+        'sorted',
+        'staticmethod',
+        'str',
+        'sum',
+        'super',
+        'tuple',
+        'type',
+        'vars',
+        'zip',
+      ];
+
+      const LITERALS = [
+        '__debug__',
+        'Ellipsis',
+        'False',
+        'None',
+        'NotImplemented',
+        'True',
+      ];
+
+      const KEYWORDS = {
+        keyword: RESERVED_WORDS.join(' '),
+        built_in: BUILT_INS.join(' '),
+        literal: LITERALS.join(' ')
+      };
+
+      const PROMPT = {
+        className: 'meta',  begin: /^(>>>|\.\.\.) /
+      };
+
+      const SUBST = {
+        className: 'subst',
+        begin: /\{/, end: /\}/,
+        keywords: KEYWORDS,
+        illegal: /#/
+      };
+
+      const LITERAL_BRACKET = {
+        begin: /\{\{/,
+        relevance: 0
+      };
+
+      const STRING = {
+        className: 'string',
+        contains: [hljs.BACKSLASH_ESCAPE],
+        variants: [
+          {
+            begin: /([uU]|[bB]|[rR]|[bB][rR]|[rR][bB])?'''/, end: /'''/,
+            contains: [hljs.BACKSLASH_ESCAPE, PROMPT],
+            relevance: 10
+          },
+          {
+            begin: /([uU]|[bB]|[rR]|[bB][rR]|[rR][bB])?"""/, end: /"""/,
+            contains: [hljs.BACKSLASH_ESCAPE, PROMPT],
+            relevance: 10
+          },
+          {
+            begin: /([fF][rR]|[rR][fF]|[fF])'''/, end: /'''/,
+            contains: [hljs.BACKSLASH_ESCAPE, PROMPT, LITERAL_BRACKET, SUBST]
+          },
+          {
+            begin: /([fF][rR]|[rR][fF]|[fF])"""/, end: /"""/,
+            contains: [hljs.BACKSLASH_ESCAPE, PROMPT, LITERAL_BRACKET, SUBST]
+          },
+          {
+            begin: /([uU]|[rR])'/, end: /'/,
+            relevance: 10
+          },
+          {
+            begin: /([uU]|[rR])"/, end: /"/,
+            relevance: 10
+          },
+          {
+            begin: /([bB]|[bB][rR]|[rR][bB])'/, end: /'/
+          },
+          {
+            begin: /([bB]|[bB][rR]|[rR][bB])"/, end: /"/
+          },
+          {
+            begin: /([fF][rR]|[rR][fF]|[fF])'/, end: /'/,
+            contains: [hljs.BACKSLASH_ESCAPE, LITERAL_BRACKET, SUBST]
+          },
+          {
+            begin: /([fF][rR]|[rR][fF]|[fF])"/, end: /"/,
+            contains: [hljs.BACKSLASH_ESCAPE, LITERAL_BRACKET, SUBST]
+          },
+          hljs.APOS_STRING_MODE,
+          hljs.QUOTE_STRING_MODE
+        ]
+      };
+
+      // https://docs.python.org/3.9/reference/lexical_analysis.html#numeric-literals
+      const digitpart = '[0-9](_?[0-9])*';
+      const pointfloat = `(\\b(${digitpart}))?\\.(${digitpart})|\\b(${digitpart})\\.`;
+      const NUMBER = {
+        className: 'number', relevance: 0,
+        variants: [
+          // exponentfloat, pointfloat
+          // https://docs.python.org/3.9/reference/lexical_analysis.html#floating-point-literals
+          // optionally imaginary
+          // https://docs.python.org/3.9/reference/lexical_analysis.html#imaginary-literals
+          // Note: no leading \b because floats can start with a decimal point
+          // and we don't want to mishandle e.g. `fn(.5)`,
+          // no trailing \b for pointfloat because it can end with a decimal point
+          // and we don't want to mishandle e.g. `0..hex()`; this should be safe
+          // because both MUST contain a decimal point and so cannot be confused with
+          // the interior part of an identifier
+          { begin: `(\\b(${digitpart})|(${pointfloat}))[eE][+-]?(${digitpart})[jJ]?\\b` },
+          { begin: `(${pointfloat})[jJ]?` },
+
+          // decinteger, bininteger, octinteger, hexinteger
+          // https://docs.python.org/3.9/reference/lexical_analysis.html#integer-literals
+          // optionally "long" in Python 2
+          // https://docs.python.org/2.7/reference/lexical_analysis.html#integer-and-long-integer-literals
+          // decinteger is optionally imaginary
+          // https://docs.python.org/3.9/reference/lexical_analysis.html#imaginary-literals
+          { begin: '\\b([1-9](_?[0-9])*|0+(_?0)*)[lLjJ]?\\b' },
+          { begin: '\\b0[bB](_?[01])+[lL]?\\b' },
+          { begin: '\\b0[oO](_?[0-7])+[lL]?\\b' },
+          { begin: '\\b0[xX](_?[0-9a-fA-F])+[lL]?\\b' },
+
+          // imagnumber (digitpart-based)
+          // https://docs.python.org/3.9/reference/lexical_analysis.html#imaginary-literals
+          { begin: `\\b(${digitpart})[jJ]\\b` },
+        ]
+      };
+
+      const PARAMS = {
+        className: 'params',
+        variants: [
+          // Exclude params at functions without params
+          {begin: /\(\s*\)/, skip: true, className: null },
+          {
+            begin: /\(/, end: /\)/, excludeBegin: true, excludeEnd: true,
+            keywords: KEYWORDS,
+            contains: ['self', PROMPT, NUMBER, STRING, hljs.HASH_COMMENT_MODE],
+          },
+        ],
+      };
+      SUBST.contains = [STRING, NUMBER, PROMPT];
+
+      return {
+        name: 'Python',
+        aliases: ['py', 'gyp', 'ipython'],
+        keywords: KEYWORDS,
+        illegal: /(<\/|->|\?)|=>/,
+        contains: [
+          PROMPT,
+          NUMBER,
+          // eat "if" prior to string so that it won't accidentally be
+          // labeled as an f-string as in:
+          { begin: /\bself\b/, }, // very common convention
+          { beginKeywords: "if", relevance: 0 },
+          STRING,
+          hljs.HASH_COMMENT_MODE,
+          {
+            variants: [
+              {className: 'function', beginKeywords: 'def'},
+              {className: 'class', beginKeywords: 'class'}
+            ],
+            end: /:/,
+            illegal: /[${=;\n,]/,
+            contains: [
+              hljs.UNDERSCORE_TITLE_MODE,
+              PARAMS,
+              {
+                begin: /->/, endsWithParent: true,
+                keywords: 'None'
+              }
+            ]
+          },
+          {
+            className: 'meta',
+            begin: /^[\t ]*@/, end: /(?=#)|$/,
+            contains: [NUMBER, PARAMS, STRING]
+          },
+          {
+            begin: /\b(print|exec)\(/ // don’t highlight keywords-turned-functions in Python 3
+          }
+        ]
+      };
+    }
+
+    var python_1 = python;
+
+    /**
+     * @param {string} value
+     * @returns {RegExp}
+     * */
+
+    /**
+     * @param {RegExp | string } re
+     * @returns {string}
+     */
+    function source$2(re) {
+      if (!re) return null;
+      if (typeof re === "string") return re;
+
+      return re.source;
+    }
+
+    /**
+     * @param {...(RegExp | string) } args
+     * @returns {string}
+     */
+    function concat$2(...args) {
+      const joined = args.map((x) => source$2(x)).join("");
+      return joined;
+    }
+
+    /*
+    Language: Bash
+    Author: vah <vahtenberg@gmail.com>
+    Contributrors: Benjamin Pannell <contact@sierrasoftworks.com>
+    Website: https://www.gnu.org/software/bash/
+    Category: common
+    */
+
+    /** @type LanguageFn */
+    function bash(hljs) {
+      const VAR = {};
+      const BRACED_VAR = {
+        begin: /\$\{/,
+        end:/\}/,
+        contains: [
+          "self",
+          {
+            begin: /:-/,
+            contains: [ VAR ]
+          } // default values
+        ]
+      };
+      Object.assign(VAR,{
+        className: 'variable',
+        variants: [
+          {begin: concat$2(/\$[\w\d#@][\w\d_]*/,
+            // negative look-ahead tries to avoid matching patterns that are not
+            // Perl at all like $ident$, @ident@, etc.
+            `(?![\\w\\d])(?![$])`) },
+          BRACED_VAR
+        ]
+      });
+
+      const SUBST = {
+        className: 'subst',
+        begin: /\$\(/, end: /\)/,
+        contains: [hljs.BACKSLASH_ESCAPE]
+      };
+      const HERE_DOC = {
+        begin: /<<-?\s*(?=\w+)/,
+        starts: {
+          contains: [
+            hljs.END_SAME_AS_BEGIN({
+              begin: /(\w+)/,
+              end: /(\w+)/,
+              className: 'string'
+            })
+          ]
+        }
+      };
+      const QUOTE_STRING = {
+        className: 'string',
+        begin: /"/, end: /"/,
+        contains: [
+          hljs.BACKSLASH_ESCAPE,
+          VAR,
+          SUBST
+        ]
+      };
+      SUBST.contains.push(QUOTE_STRING);
+      const ESCAPED_QUOTE = {
+        className: '',
+        begin: /\\"/
+
+      };
+      const APOS_STRING = {
+        className: 'string',
+        begin: /'/, end: /'/
+      };
+      const ARITHMETIC = {
+        begin: /\$\(\(/,
+        end: /\)\)/,
+        contains: [
+          { begin: /\d+#[0-9a-f]+/, className: "number" },
+          hljs.NUMBER_MODE,
+          VAR
+        ]
+      };
+      const SH_LIKE_SHELLS = [
+        "fish",
+        "bash",
+        "zsh",
+        "sh",
+        "csh",
+        "ksh",
+        "tcsh",
+        "dash",
+        "scsh",
+      ];
+      const KNOWN_SHEBANG = hljs.SHEBANG({
+        binary: `(${SH_LIKE_SHELLS.join("|")})`,
+        relevance: 10
+      });
+      const FUNCTION = {
+        className: 'function',
+        begin: /\w[\w\d_]*\s*\(\s*\)\s*\{/,
+        returnBegin: true,
+        contains: [hljs.inherit(hljs.TITLE_MODE, {begin: /\w[\w\d_]*/})],
+        relevance: 0
+      };
+
+      return {
+        name: 'Bash',
+        aliases: ['sh', 'zsh'],
+        keywords: {
+          $pattern: /\b[a-z._-]+\b/,
+          keyword:
+            'if then else elif fi for while in do done case esac function',
+          literal:
+            'true false',
+          built_in:
+            // Shell built-ins
+            // http://www.gnu.org/software/bash/manual/html_node/Shell-Builtin-Commands.html
+            'break cd continue eval exec exit export getopts hash pwd readonly return shift test times ' +
+            'trap umask unset ' +
+            // Bash built-ins
+            'alias bind builtin caller command declare echo enable help let local logout mapfile printf ' +
+            'read readarray source type typeset ulimit unalias ' +
+            // Shell modifiers
+            'set shopt ' +
+            // Zsh built-ins
+            'autoload bg bindkey bye cap chdir clone comparguments compcall compctl compdescribe compfiles ' +
+            'compgroups compquote comptags comptry compvalues dirs disable disown echotc echoti emulate ' +
+            'fc fg float functions getcap getln history integer jobs kill limit log noglob popd print ' +
+            'pushd pushln rehash sched setcap setopt stat suspend ttyctl unfunction unhash unlimit ' +
+            'unsetopt vared wait whence where which zcompile zformat zftp zle zmodload zparseopts zprof ' +
+            'zpty zregexparse zsocket zstyle ztcp'
+        },
+        contains: [
+          KNOWN_SHEBANG, // to catch known shells and boost relevancy
+          hljs.SHEBANG(), // to catch unknown shells but still highlight the shebang
+          FUNCTION,
+          ARITHMETIC,
+          hljs.HASH_COMMENT_MODE,
+          HERE_DOC,
+          QUOTE_STRING,
+          ESCAPED_QUOTE,
+          APOS_STRING,
+          VAR
+        ]
+      };
+    }
+
+    var bash_1 = bash;
+
+    /**
+     * @param {string} value
+     * @returns {RegExp}
+     * */
+
+    /**
+     * @param {RegExp | string } re
+     * @returns {string}
+     */
+    function source$3(re) {
+      if (!re) return null;
+      if (typeof re === "string") return re;
+
+      return re.source;
+    }
+
+    /**
+     * @param {RegExp | string } re
+     * @returns {string}
+     */
+    function lookahead$1(re) {
+      return concat$3('(?=', re, ')');
+    }
+
+    /**
+     * @param {...(RegExp | string) } args
+     * @returns {string}
+     */
+    function concat$3(...args) {
+      const joined = args.map((x) => source$3(x)).join("");
+      return joined;
+    }
+
+    /*
+    Language: Ruby
+    Description: Ruby is a dynamic, open source programming language with a focus on simplicity and productivity.
+    Website: https://www.ruby-lang.org/
+    Author: Anton Kovalyov <anton@kovalyov.net>
+    Contributors: Peter Leonov <gojpeg@yandex.ru>, Vasily Polovnyov <vast@whiteants.net>, Loren Segal <lsegal@soen.ca>, Pascal Hurni <phi@ruby-reactive.org>, Cedric Sohrauer <sohrauer@googlemail.com>
+    Category: common
+    */
+
+    function ruby(hljs) {
+      var RUBY_METHOD_RE = '([a-zA-Z_]\\w*[!?=]?|[-+~]@|<<|>>|=~|===?|<=>|[<>]=?|\\*\\*|[-/+%^&*~`|]|\\[\\]=?)';
+      var RUBY_KEYWORDS = {
+        keyword:
+          'and then defined module in return redo if BEGIN retry end for self when ' +
+          'next until do begin unless END rescue else break undef not super class case ' +
+          'require yield alias while ensure elsif or include attr_reader attr_writer attr_accessor ' +
+          '__FILE__',
+        built_in: 'proc lambda',
+        literal:
+          'true false nil'
+      };
+      var YARDOCTAG = {
+        className: 'doctag',
+        begin: '@[A-Za-z]+'
+      };
+      var IRB_OBJECT = {
+        begin: '#<', end: '>'
+      };
+      var COMMENT_MODES = [
+        hljs.COMMENT(
+          '#',
+          '$',
+          {
+            contains: [YARDOCTAG]
+          }
+        ),
+        hljs.COMMENT(
+          '^=begin',
+          '^=end',
+          {
+            contains: [YARDOCTAG],
+            relevance: 10
+          }
+        ),
+        hljs.COMMENT('^__END__', '\\n$')
+      ];
+      var SUBST = {
+        className: 'subst',
+        begin: /#\{/, end: /\}/,
+        keywords: RUBY_KEYWORDS
+      };
+      var STRING = {
+        className: 'string',
+        contains: [hljs.BACKSLASH_ESCAPE, SUBST],
+        variants: [
+          {begin: /'/, end: /'/},
+          {begin: /"/, end: /"/},
+          {begin: /`/, end: /`/},
+          {begin: /%[qQwWx]?\(/, end: /\)/},
+          {begin: /%[qQwWx]?\[/, end: /\]/},
+          {begin: /%[qQwWx]?\{/, end: /\}/},
+          {begin: /%[qQwWx]?</, end: />/},
+          {begin: /%[qQwWx]?\//, end: /\//},
+          {begin: /%[qQwWx]?%/, end: /%/},
+          {begin: /%[qQwWx]?-/, end: /-/},
+          {begin: /%[qQwWx]?\|/, end: /\|/},
+          {
+            // \B in the beginning suppresses recognition of ?-sequences where ?
+            // is the last character of a preceding identifier, as in: `func?4`
+            begin: /\B\?(\\\d{1,3}|\\x[A-Fa-f0-9]{1,2}|\\u[A-Fa-f0-9]{4}|\\?\S)\b/
+          },
+          { // heredocs
+            begin: /<<[-~]?'?(\w+)\n(?:[^\n]*\n)*?\s*\1\b/,
+            returnBegin: true,
+            contains: [
+              { begin: /<<[-~]?'?/ },
+              hljs.END_SAME_AS_BEGIN({
+                begin: /(\w+)/, end: /(\w+)/,
+                contains: [hljs.BACKSLASH_ESCAPE, SUBST],
+              })
+            ]
+          }
+        ]
+      };
+
+      // Ruby syntax is underdocumented, but this grammar seems to be accurate
+      // as of version 2.7.2 (confirmed with (irb and `Ripper.sexp(...)`)
+      // https://docs.ruby-lang.org/en/2.7.0/doc/syntax/literals_rdoc.html#label-Numbers
+      var decimal = '[1-9](_?[0-9])*|0';
+      var digits = '[0-9](_?[0-9])*';
+      var NUMBER = {
+        className: 'number', relevance: 0,
+        variants: [
+          // decimal integer/float, optionally exponential or rational, optionally imaginary
+          { begin: `\\b(${decimal})(\\.(${digits}))?([eE][+-]?(${digits})|r)?i?\\b` },
+
+          // explicit decimal/binary/octal/hexadecimal integer,
+          // optionally rational and/or imaginary
+          { begin: "\\b0[dD][0-9](_?[0-9])*r?i?\\b" },
+          { begin: "\\b0[bB][0-1](_?[0-1])*r?i?\\b" },
+          { begin: "\\b0[oO][0-7](_?[0-7])*r?i?\\b" },
+          { begin: "\\b0[xX][0-9a-fA-F](_?[0-9a-fA-F])*r?i?\\b" },
+
+          // 0-prefixed implicit octal integer, optionally rational and/or imaginary
+          { begin: "\\b0(_?[0-7])+r?i?\\b" },
+        ]
+      };
+
+      var PARAMS = {
+        className: 'params',
+        begin: '\\(', end: '\\)', endsParent: true,
+        keywords: RUBY_KEYWORDS
+      };
+
+      var RUBY_DEFAULT_CONTAINS = [
+        STRING,
+        {
+          className: 'class',
+          beginKeywords: 'class module', end: '$|;',
+          illegal: /=/,
+          contains: [
+            hljs.inherit(hljs.TITLE_MODE, {begin: '[A-Za-z_]\\w*(::\\w+)*(\\?|!)?'}),
+            {
+              begin: '<\\s*',
+              contains: [{
+                begin: '(' + hljs.IDENT_RE + '::)?' + hljs.IDENT_RE
+              }]
+            }
+          ].concat(COMMENT_MODES)
+        },
+        {
+          className: 'function',
+          // def method_name(
+          // def method_name;
+          // def method_name (end of line)
+          begin: concat$3(/def\s*/, lookahead$1(RUBY_METHOD_RE + "\\s*(\\(|;|$)")),
+          keywords: "def",
+          end: '$|;',
+          contains: [
+            hljs.inherit(hljs.TITLE_MODE, {begin: RUBY_METHOD_RE}),
+            PARAMS
+          ].concat(COMMENT_MODES)
+        },
+        {
+          // swallow namespace qualifiers before symbols
+          begin: hljs.IDENT_RE + '::'
+        },
+        {
+          className: 'symbol',
+          begin: hljs.UNDERSCORE_IDENT_RE + '(!|\\?)?:',
+          relevance: 0
+        },
+        {
+          className: 'symbol',
+          begin: ':(?!\\s)',
+          contains: [STRING, {begin: RUBY_METHOD_RE}],
+          relevance: 0
+        },
+        NUMBER,
+        {
+          // negative-look forward attemps to prevent false matches like:
+          // @ident@ or $ident$ that might indicate this is not ruby at all
+          className: "variable",
+          begin: '(\\$\\W)|((\\$|@@?)(\\w+))(?=[^@$?])' + `(?![A-Za-z])(?![@$?'])`
+        },
+        {
+          className: 'params',
+          begin: /\|/,
+          end: /\|/,
+          relevance:0, // this could be a lot of things (in other languages) other than params
+          keywords: RUBY_KEYWORDS
+        },
+        { // regexp container
+          begin: '(' + hljs.RE_STARTERS_RE + '|unless)\\s*',
+          keywords: 'unless',
+          contains: [
+            {
+              className: 'regexp',
+              contains: [hljs.BACKSLASH_ESCAPE, SUBST],
+              illegal: /\n/,
+              variants: [
+                {begin: '/', end: '/[a-z]*'},
+                {begin: /%r\{/, end: /\}[a-z]*/},
+                {begin: '%r\\(', end: '\\)[a-z]*'},
+                {begin: '%r!', end: '![a-z]*'},
+                {begin: '%r\\[', end: '\\][a-z]*'}
+              ]
+            }
+          ].concat(IRB_OBJECT, COMMENT_MODES),
+          relevance: 0
+        }
+      ].concat(IRB_OBJECT, COMMENT_MODES);
+
+      SUBST.contains = RUBY_DEFAULT_CONTAINS;
+      PARAMS.contains = RUBY_DEFAULT_CONTAINS;
+
+      // >>
+      // ?>
+      var SIMPLE_PROMPT = "[>?]>";
+      // irb(main):001:0>
+      var DEFAULT_PROMPT = "[\\w#]+\\(\\w+\\):\\d+:\\d+>";
+      var RVM_PROMPT = "(\\w+-)?\\d+\\.\\d+\\.\\d+(p\\d+)?[^\\d][^>]+>";
+
+      var IRB_DEFAULT = [
+        {
+          begin: /^\s*=>/,
+          starts: {
+            end: '$', contains: RUBY_DEFAULT_CONTAINS
+          }
+        },
+        {
+          className: 'meta',
+          begin: '^('+SIMPLE_PROMPT+"|"+DEFAULT_PROMPT+'|'+RVM_PROMPT+')(?=[ ])',
+          starts: {
+            end: '$', contains: RUBY_DEFAULT_CONTAINS
+          }
+        }
+      ];
+
+      COMMENT_MODES.unshift(IRB_OBJECT);
+
+      return {
+        name: 'Ruby',
+        aliases: ['rb', 'gemspec', 'podspec', 'thor', 'irb'],
+        keywords: RUBY_KEYWORDS,
+        illegal: /\/\*/,
+        contains: [
+            hljs.SHEBANG({binary:"ruby"}),
+          ]
+          .concat(IRB_DEFAULT)
+          .concat(COMMENT_MODES)
+          .concat(RUBY_DEFAULT_CONTAINS)
+      };
+    }
+
+    var ruby_1 = ruby;
+
+    /*
+    Language: Go
+    Author: Stephan Kountso aka StepLg <steplg@gmail.com>
+    Contributors: Evgeny Stepanischev <imbolk@gmail.com>
+    Description: Google go language (golang). For info about language
+    Website: http://golang.org/
+    Category: common, system
+    */
+
+    function go(hljs) {
+      const GO_KEYWORDS = {
+        keyword:
+          'break default func interface select case map struct chan else goto package switch ' +
+          'const fallthrough if range type continue for import return var go defer ' +
+          'bool byte complex64 complex128 float32 float64 int8 int16 int32 int64 string uint8 ' +
+          'uint16 uint32 uint64 int uint uintptr rune',
+        literal:
+           'true false iota nil',
+        built_in:
+          'append cap close complex copy imag len make new panic print println real recover delete'
+      };
+      return {
+        name: 'Go',
+        aliases: ['golang'],
+        keywords: GO_KEYWORDS,
+        illegal: '</',
+        contains: [
+          hljs.C_LINE_COMMENT_MODE,
+          hljs.C_BLOCK_COMMENT_MODE,
+          {
+            className: 'string',
+            variants: [
+              hljs.QUOTE_STRING_MODE,
+              hljs.APOS_STRING_MODE,
+              {
+                begin: '`',
+                end: '`'
+              }
+            ]
+          },
+          {
+            className: 'number',
+            variants: [
+              {
+                begin: hljs.C_NUMBER_RE + '[i]',
+                relevance: 1
+              },
+              hljs.C_NUMBER_MODE
+            ]
+          },
+          {
+            begin: /:=/ // relevance booster
+          },
+          {
+            className: 'function',
+            beginKeywords: 'func',
+            end: '\\s*(\\{|$)',
+            excludeEnd: true,
+            contains: [
+              hljs.TITLE_MODE,
+              {
+                className: 'params',
+                begin: /\(/,
+                end: /\)/,
+                keywords: GO_KEYWORDS,
+                illegal: /["']/
+              }
+            ]
+          }
+        ]
+      };
+    }
+
+    var go_1 = go;
+
+    /*
+    Language: PHP
+    Author: Victor Karamzin <Victor.Karamzin@enterra-inc.com>
+    Contributors: Evgeny Stepanischev <imbolk@gmail.com>, Ivan Sagalaev <maniac@softwaremaniacs.org>
+    Website: https://www.php.net
+    Category: common
+    */
+
+    /**
+     * @param {HLJSApi} hljs
+     * @returns {LanguageDetail}
+     * */
+    function php(hljs) {
+      const VARIABLE = {
+        className: 'variable',
+        begin: '\\$+[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*' +
+          // negative look-ahead tries to avoid matching patterns that are not
+          // Perl at all like $ident$, @ident@, etc.
+          `(?![A-Za-z0-9])(?![$])`
+      };
+      const PREPROCESSOR = {
+        className: 'meta',
+        variants: [
+          { begin: /<\?php/, relevance: 10 }, // boost for obvious PHP
+          { begin: /<\?[=]?/ },
+          { begin: /\?>/ } // end php tag
+        ]
+      };
+      const SUBST = {
+        className: 'subst',
+        variants: [
+          { begin: /\$\w+/ },
+          { begin: /\{\$/, end: /\}/ }
+        ]
+      };
+      const SINGLE_QUOTED = hljs.inherit(hljs.APOS_STRING_MODE, {
+        illegal: null,
+      });
+      const DOUBLE_QUOTED = hljs.inherit(hljs.QUOTE_STRING_MODE, {
+        illegal: null,
+        contains: hljs.QUOTE_STRING_MODE.contains.concat(SUBST),
+      });
+      const HEREDOC = hljs.END_SAME_AS_BEGIN({
+        begin: /<<<[ \t]*(\w+)\n/,
+        end: /[ \t]*(\w+)\b/,
+        contains: hljs.QUOTE_STRING_MODE.contains.concat(SUBST),
+      });
+      const STRING = {
+        className: 'string',
+        contains: [hljs.BACKSLASH_ESCAPE, PREPROCESSOR],
+        variants: [
+          hljs.inherit(SINGLE_QUOTED, {
+            begin: "b'", end: "'",
+          }),
+          hljs.inherit(DOUBLE_QUOTED, {
+            begin: 'b"', end: '"',
+          }),
+          DOUBLE_QUOTED,
+          SINGLE_QUOTED,
+          HEREDOC
+        ]
+      };
+      const NUMBER = {variants: [hljs.BINARY_NUMBER_MODE, hljs.C_NUMBER_MODE]};
+      const KEYWORDS = {
+        keyword:
+        // Magic constants:
+        // <https://www.php.net/manual/en/language.constants.predefined.php>
+        '__CLASS__ __DIR__ __FILE__ __FUNCTION__ __LINE__ __METHOD__ __NAMESPACE__ __TRAIT__ ' +
+        // Function that look like language construct or language construct that look like function:
+        // List of keywords that may not require parenthesis
+        'die echo exit include include_once print require require_once ' +
+        // These are not language construct (function) but operate on the currently-executing function and can access the current symbol table
+        // 'compact extract func_get_arg func_get_args func_num_args get_called_class get_parent_class ' +
+        // Other keywords:
+        // <https://www.php.net/manual/en/reserved.php>
+        // <https://www.php.net/manual/en/language.types.type-juggling.php>
+        'array abstract and as binary bool boolean break callable case catch class clone const continue declare ' +
+        'default do double else elseif empty enddeclare endfor endforeach endif endswitch endwhile eval extends ' +
+        'final finally float for foreach from global goto if implements instanceof insteadof int integer interface ' +
+        'isset iterable list match|0 new object or private protected public real return string switch throw trait ' +
+        'try unset use var void while xor yield',
+        literal: 'false null true',
+        built_in:
+        // Standard PHP library:
+        // <https://www.php.net/manual/en/book.spl.php>
+        'Error|0 ' + // error is too common a name esp since PHP is case in-sensitive
+        'AppendIterator ArgumentCountError ArithmeticError ArrayIterator ArrayObject AssertionError BadFunctionCallException BadMethodCallException CachingIterator CallbackFilterIterator CompileError Countable DirectoryIterator DivisionByZeroError DomainException EmptyIterator ErrorException Exception FilesystemIterator FilterIterator GlobIterator InfiniteIterator InvalidArgumentException IteratorIterator LengthException LimitIterator LogicException MultipleIterator NoRewindIterator OutOfBoundsException OutOfRangeException OuterIterator OverflowException ParentIterator ParseError RangeException RecursiveArrayIterator RecursiveCachingIterator RecursiveCallbackFilterIterator RecursiveDirectoryIterator RecursiveFilterIterator RecursiveIterator RecursiveIteratorIterator RecursiveRegexIterator RecursiveTreeIterator RegexIterator RuntimeException SeekableIterator SplDoublyLinkedList SplFileInfo SplFileObject SplFixedArray SplHeap SplMaxHeap SplMinHeap SplObjectStorage SplObserver SplObserver SplPriorityQueue SplQueue SplStack SplSubject SplSubject SplTempFileObject TypeError UnderflowException UnexpectedValueException ' +
+        // Reserved interfaces:
+        // <https://www.php.net/manual/en/reserved.interfaces.php>
+        'ArrayAccess Closure Generator Iterator IteratorAggregate Serializable Throwable Traversable WeakReference ' +
+        // Reserved classes:
+        // <https://www.php.net/manual/en/reserved.classes.php>
+        'Directory __PHP_Incomplete_Class parent php_user_filter self static stdClass'
+      };
+      return {
+        aliases: ['php', 'php3', 'php4', 'php5', 'php6', 'php7', 'php8'],
+        case_insensitive: true,
+        keywords: KEYWORDS,
+        contains: [
+          hljs.HASH_COMMENT_MODE,
+          hljs.COMMENT('//', '$', {contains: [PREPROCESSOR]}),
+          hljs.COMMENT(
+            '/\\*',
+            '\\*/',
+            {
+              contains: [
+                {
+                  className: 'doctag',
+                  begin: '@[A-Za-z]+'
+                }
+              ]
+            }
+          ),
+          hljs.COMMENT(
+            '__halt_compiler.+?;',
+            false,
+            {
+              endsWithParent: true,
+              keywords: '__halt_compiler'
+            }
+          ),
+          PREPROCESSOR,
+          {
+            className: 'keyword', begin: /\$this\b/
+          },
+          VARIABLE,
+          {
+            // swallow composed identifiers to avoid parsing them as keywords
+            begin: /(::|->)+[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*/
+          },
+          {
+            className: 'function',
+            relevance: 0,
+            beginKeywords: 'fn function', end: /[;{]/, excludeEnd: true,
+            illegal: '[$%\\[]',
+            contains: [
+              hljs.UNDERSCORE_TITLE_MODE,
+              {
+                begin: '=>' // No markup, just a relevance booster
+              },
+              {
+                className: 'params',
+                begin: '\\(', end: '\\)',
+                excludeBegin: true,
+                excludeEnd: true,
+                keywords: KEYWORDS,
+                contains: [
+                  'self',
+                  VARIABLE,
+                  hljs.C_BLOCK_COMMENT_MODE,
+                  STRING,
+                  NUMBER
+                ]
+              }
+            ]
+          },
+          {
+            className: 'class',
+            beginKeywords: 'class interface',
+            relevance: 0,
+            end: /\{/,
+            excludeEnd: true,
+            illegal: /[:($"]/,
+            contains: [
+              {beginKeywords: 'extends implements'},
+              hljs.UNDERSCORE_TITLE_MODE
+            ]
+          },
+          {
+            beginKeywords: 'namespace',
+            relevance: 0,
+            end: ';',
+            illegal: /[.']/,
+            contains: [hljs.UNDERSCORE_TITLE_MODE]
+          },
+          {
+            beginKeywords: 'use',
+            relevance: 0,
+            end: ';',
+            contains: [hljs.UNDERSCORE_TITLE_MODE]
+          },
+          STRING,
+          NUMBER
+        ]
+      };
+    }
+
+    var php_1 = php;
+
+    core.registerLanguage('javascript', javascript_1);
+    core.registerLanguage('node', javascript_1);
+    core.registerLanguage('python', python_1);
+    core.registerLanguage('curl', bash_1);
+    core.registerLanguage('ruby', ruby_1);
+    core.registerLanguage('go', go_1);
+    core.registerLanguage('php', php_1);
+
+    var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+    function unwrapExports (x) {
+    	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
+    }
+
+    function createCommonjsModule(fn, module) {
+    	return module = { exports: {} }, fn(module, module.exports), module.exports;
+    }
+
+    var clipboard = createCommonjsModule(function (module, exports) {
+    /*!
      * clipboard.js v2.0.4
      * https://zenorocha.github.io/clipboard.js
      * 
      * Licensed MIT © Zeno Rocha
      */
-var n;n=function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var a=t[r]={i:r,l:!1,exports:{}};return e[r].call(a.exports,a,a.exports,n),a.l=!0,a.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var a in e)n.d(r,a,function(t){return e[t]}.bind(null,a));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=l(n(1)),o=l(n(3)),s=l(n(4));function l(e){return e&&e.__esModule?e:{default:e}}var c=function(e){function t(e,n){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t);var r=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return r.resolveOptions(n),r.listenClick(e),r}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),a(t,[{key:"resolveOptions",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};this.action="function"==typeof e.action?e.action:this.defaultAction,this.target="function"==typeof e.target?e.target:this.defaultTarget,this.text="function"==typeof e.text?e.text:this.defaultText,this.container="object"===r(e.container)?e.container:document.body}},{key:"listenClick",value:function(e){var t=this;this.listener=(0,s.default)(e,"click",(function(e){return t.onClick(e)}))}},{key:"onClick",value:function(e){var t=e.delegateTarget||e.currentTarget;this.clipboardAction&&(this.clipboardAction=null),this.clipboardAction=new i.default({action:this.action(t),target:this.target(t),text:this.text(t),container:this.container,trigger:t,emitter:this})}},{key:"defaultAction",value:function(e){return u("action",e)}},{key:"defaultTarget",value:function(e){var t=u("target",e);if(t)return document.querySelector(t)}},{key:"defaultText",value:function(e){return u("text",e)}},{key:"destroy",value:function(){this.listener.destroy(),this.clipboardAction&&(this.clipboardAction.destroy(),this.clipboardAction=null)}}],[{key:"isSupported",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:["copy","cut"],t="string"==typeof e?[e]:e,n=!!document.queryCommandSupported;return t.forEach((function(e){n=n&&!!document.queryCommandSupported(e)})),n}}]),t}(o.default);function u(e,t){var n="data-clipboard-"+e;if(t.hasAttribute(n))return t.getAttribute(n)}e.exports=c},function(e,t,n){var r,a="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},i=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=n(2),s=(r=o)&&r.__esModule?r:{default:r},l=function(){function e(t){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.resolveOptions(t),this.initSelection()}return i(e,[{key:"resolveOptions",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};this.action=e.action,this.container=e.container,this.emitter=e.emitter,this.target=e.target,this.text=e.text,this.trigger=e.trigger,this.selectedText=""}},{key:"initSelection",value:function(){this.text?this.selectFake():this.target&&this.selectTarget()}},{key:"selectFake",value:function(){var e=this,t="rtl"==document.documentElement.getAttribute("dir");this.removeFake(),this.fakeHandlerCallback=function(){return e.removeFake()},this.fakeHandler=this.container.addEventListener("click",this.fakeHandlerCallback)||!0,this.fakeElem=document.createElement("textarea"),this.fakeElem.style.fontSize="12pt",this.fakeElem.style.border="0",this.fakeElem.style.padding="0",this.fakeElem.style.margin="0",this.fakeElem.style.position="absolute",this.fakeElem.style[t?"right":"left"]="-9999px";var n=window.pageYOffset||document.documentElement.scrollTop;this.fakeElem.style.top=n+"px",this.fakeElem.setAttribute("readonly",""),this.fakeElem.value=this.text,this.container.appendChild(this.fakeElem),this.selectedText=(0,s.default)(this.fakeElem),this.copyText()}},{key:"removeFake",value:function(){this.fakeHandler&&(this.container.removeEventListener("click",this.fakeHandlerCallback),this.fakeHandler=null,this.fakeHandlerCallback=null),this.fakeElem&&(this.container.removeChild(this.fakeElem),this.fakeElem=null)}},{key:"selectTarget",value:function(){this.selectedText=(0,s.default)(this.target),this.copyText()}},{key:"copyText",value:function(){var e=void 0;try{e=document.execCommand(this.action)}catch(t){e=!1}this.handleResult(e)}},{key:"handleResult",value:function(e){this.emitter.emit(e?"success":"error",{action:this.action,text:this.selectedText,trigger:this.trigger,clearSelection:this.clearSelection.bind(this)})}},{key:"clearSelection",value:function(){this.trigger&&this.trigger.focus(),window.getSelection().removeAllRanges()}},{key:"destroy",value:function(){this.removeFake()}},{key:"action",set:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"copy";if(this._action=e,"copy"!==this._action&&"cut"!==this._action)throw new Error('Invalid "action" value, use either "copy" or "cut"')},get:function(){return this._action}},{key:"target",set:function(e){if(void 0!==e){if(!e||"object"!==(void 0===e?"undefined":a(e))||1!==e.nodeType)throw new Error('Invalid "target" value, use a valid Element');if("copy"===this.action&&e.hasAttribute("disabled"))throw new Error('Invalid "target" attribute. Please use "readonly" instead of "disabled" attribute');if("cut"===this.action&&(e.hasAttribute("readonly")||e.hasAttribute("disabled")))throw new Error('Invalid "target" attribute. You can\'t cut text from elements with "readonly" or "disabled" attributes');this._target=e}},get:function(){return this._target}}]),e}();e.exports=l},function(e,t){e.exports=function(e){var t;if("SELECT"===e.nodeName)e.focus(),t=e.value;else if("INPUT"===e.nodeName||"TEXTAREA"===e.nodeName){var n=e.hasAttribute("readonly");n||e.setAttribute("readonly",""),e.select(),e.setSelectionRange(0,e.value.length),n||e.removeAttribute("readonly"),t=e.value}else{e.hasAttribute("contenteditable")&&e.focus();var r=window.getSelection(),a=document.createRange();a.selectNodeContents(e),r.removeAllRanges(),r.addRange(a),t=r.toString()}return t}},function(e,t){function n(){}n.prototype={on:function(e,t,n){var r=this.e||(this.e={});return(r[e]||(r[e]=[])).push({fn:t,ctx:n}),this},once:function(e,t,n){var r=this;function a(){r.off(e,a),t.apply(n,arguments)}return a._=t,this.on(e,a,n)},emit:function(e){for(var t=[].slice.call(arguments,1),n=((this.e||(this.e={}))[e]||[]).slice(),r=0,a=n.length;r<a;r++)n[r].fn.apply(n[r].ctx,t);return this},off:function(e,t){var n=this.e||(this.e={}),r=n[e],a=[];if(r&&t)for(var i=0,o=r.length;i<o;i++)r[i].fn!==t&&r[i].fn._!==t&&a.push(r[i]);return a.length?n[e]=a:delete n[e],this}},e.exports=n},function(e,t,n){var r=n(5),a=n(6);e.exports=function(e,t,n){if(!e&&!t&&!n)throw new Error("Missing required arguments");if(!r.string(t))throw new TypeError("Second argument must be a String");if(!r.fn(n))throw new TypeError("Third argument must be a Function");if(r.node(e))return function(e,t,n){return e.addEventListener(t,n),{destroy:function(){e.removeEventListener(t,n)}}}(e,t,n);if(r.nodeList(e))return function(e,t,n){return Array.prototype.forEach.call(e,(function(e){e.addEventListener(t,n)})),{destroy:function(){Array.prototype.forEach.call(e,(function(e){e.removeEventListener(t,n)}))}}}(e,t,n);if(r.string(e))return function(e,t,n){return a(document.body,e,t,n)}(e,t,n);throw new TypeError("First argument must be a String, HTMLElement, HTMLCollection, or NodeList")}},function(e,t){t.node=function(e){return void 0!==e&&e instanceof HTMLElement&&1===e.nodeType},t.nodeList=function(e){var n=Object.prototype.toString.call(e);return void 0!==e&&("[object NodeList]"===n||"[object HTMLCollection]"===n)&&"length"in e&&(0===e.length||t.node(e[0]))},t.string=function(e){return"string"==typeof e||e instanceof String},t.fn=function(e){return"[object Function]"===Object.prototype.toString.call(e)}},function(e,t,n){var r=n(7);function a(e,t,n,r,a){var o=i.apply(this,arguments);return e.addEventListener(n,o,a),{destroy:function(){e.removeEventListener(n,o,a)}}}function i(e,t,n,a){return function(n){n.delegateTarget=r(n.target,t),n.delegateTarget&&a.call(e,n)}}e.exports=function(e,t,n,r,i){return"function"==typeof e.addEventListener?a.apply(null,arguments):"function"==typeof n?a.bind(null,document).apply(null,arguments):("string"==typeof e&&(e=document.querySelectorAll(e)),Array.prototype.map.call(e,(function(e){return a(e,t,n,r,i)})))}},function(e,t){if("undefined"!=typeof Element&&!Element.prototype.matches){var n=Element.prototype;n.matches=n.matchesSelector||n.mozMatchesSelector||n.msMatchesSelector||n.oMatchesSelector||n.webkitMatchesSelector}e.exports=function(e,t){for(;e&&9!==e.nodeType;){if("function"==typeof e.matches&&e.matches(t))return e;e=e.parentNode}}}])},e.exports=n()})),xt=(yt=kt)&&yt.__esModule&&Object.prototype.hasOwnProperty.call(yt,"default")?yt.default:yt,Et=wt((function(e){(function(){function t(e){var t={omitExtraWLInCodeBlocks:{defaultValue:!1,describe:"Omit the default extra whiteline added to code blocks",type:"boolean"},noHeaderId:{defaultValue:!1,describe:"Turn on/off generated header id",type:"boolean"},prefixHeaderId:{defaultValue:!1,describe:"Add a prefix to the generated header ids. Passing a string will prefix that string to the header id. Setting to true will add a generic 'section-' prefix",type:"string"},rawPrefixHeaderId:{defaultValue:!1,describe:'Setting this option to true will prevent showdown from modifying the prefix. This might result in malformed IDs (if, for instance, the " char is used in the prefix)',type:"boolean"},ghCompatibleHeaderId:{defaultValue:!1,describe:"Generate header ids compatible with github style (spaces are replaced with dashes, a bunch of non alphanumeric chars are removed)",type:"boolean"},rawHeaderId:{defaultValue:!1,describe:"Remove only spaces, ' and \" from generated header ids (including prefixes), replacing them with dashes (-). WARNING: This might result in malformed ids",type:"boolean"},headerLevelStart:{defaultValue:!1,describe:"The header blocks level start",type:"integer"},parseImgDimensions:{defaultValue:!1,describe:"Turn on/off image dimension parsing",type:"boolean"},simplifiedAutoLink:{defaultValue:!1,describe:"Turn on/off GFM autolink style",type:"boolean"},excludeTrailingPunctuationFromURLs:{defaultValue:!1,describe:"Excludes trailing punctuation from links generated with autoLinking",type:"boolean"},literalMidWordUnderscores:{defaultValue:!1,describe:"Parse midword underscores as literal underscores",type:"boolean"},literalMidWordAsterisks:{defaultValue:!1,describe:"Parse midword asterisks as literal asterisks",type:"boolean"},strikethrough:{defaultValue:!1,describe:"Turn on/off strikethrough support",type:"boolean"},tables:{defaultValue:!1,describe:"Turn on/off tables support",type:"boolean"},tablesHeaderId:{defaultValue:!1,describe:"Add an id to table headers",type:"boolean"},ghCodeBlocks:{defaultValue:!0,describe:"Turn on/off GFM fenced code blocks support",type:"boolean"},tasklists:{defaultValue:!1,describe:"Turn on/off GFM tasklist support",type:"boolean"},smoothLivePreview:{defaultValue:!1,describe:"Prevents weird effects in live previews due to incomplete input",type:"boolean"},smartIndentationFix:{defaultValue:!1,description:"Tries to smartly fix indentation in es6 strings",type:"boolean"},disableForced4SpacesIndentedSublists:{defaultValue:!1,description:"Disables the requirement of indenting nested sublists by 4 spaces",type:"boolean"},simpleLineBreaks:{defaultValue:!1,description:"Parses simple line breaks as <br> (GFM Style)",type:"boolean"},requireSpaceBeforeHeadingText:{defaultValue:!1,description:"Makes adding a space between `#` and the header text mandatory (GFM Style)",type:"boolean"},ghMentions:{defaultValue:!1,description:"Enables github @mentions",type:"boolean"},ghMentionsLink:{defaultValue:"https://github.com/{u}",description:"Changes the link generated by @mentions. Only applies if ghMentions option is enabled.",type:"string"},encodeEmails:{defaultValue:!0,description:"Encode e-mail addresses through the use of Character Entities, transforming ASCII e-mail addresses into its equivalent decimal entities",type:"boolean"},openLinksInNewWindow:{defaultValue:!1,description:"Open all links in new windows",type:"boolean"},backslashEscapesHTMLTags:{defaultValue:!1,description:"Support for HTML Tag escaping. ex: <div>foo</div>",type:"boolean"},emoji:{defaultValue:!1,description:"Enable emoji support. Ex: `this is a :smile: emoji`",type:"boolean"},underline:{defaultValue:!1,description:"Enable support for underline. Syntax is double or triple underscores: `__underline word__`. With this option enabled, underscores no longer parses into `<em>` and `<strong>`",type:"boolean"},completeHTMLDocument:{defaultValue:!1,description:"Outputs a complete html document, including `<html>`, `<head>` and `<body>` tags",type:"boolean"},metadata:{defaultValue:!1,description:"Enable support for document metadata (defined at the top of the document between `«««` and `»»»` or between `---` and `---`).",type:"boolean"},splitAdjacentBlockquotes:{defaultValue:!1,description:"Split adjacent blockquote blocks",type:"boolean"}};if(!1===e)return JSON.parse(JSON.stringify(t));var n={};for(var r in t)t.hasOwnProperty(r)&&(n[r]=t[r].defaultValue);return n}var n={},r={},a={},i=t(!0),o="vanilla",s={github:{omitExtraWLInCodeBlocks:!0,simplifiedAutoLink:!0,excludeTrailingPunctuationFromURLs:!0,literalMidWordUnderscores:!0,strikethrough:!0,tables:!0,tablesHeaderId:!0,ghCodeBlocks:!0,tasklists:!0,disableForced4SpacesIndentedSublists:!0,simpleLineBreaks:!0,requireSpaceBeforeHeadingText:!0,ghCompatibleHeaderId:!0,ghMentions:!0,backslashEscapesHTMLTags:!0,emoji:!0,splitAdjacentBlockquotes:!0},original:{noHeaderId:!0,ghCodeBlocks:!1},ghost:{omitExtraWLInCodeBlocks:!0,parseImgDimensions:!0,simplifiedAutoLink:!0,excludeTrailingPunctuationFromURLs:!0,literalMidWordUnderscores:!0,strikethrough:!0,tables:!0,tablesHeaderId:!0,ghCodeBlocks:!0,tasklists:!0,smoothLivePreview:!0,simpleLineBreaks:!0,requireSpaceBeforeHeadingText:!0,ghMentions:!1,encodeEmails:!0},vanilla:t(!0),allOn:function(){var e=t(!0),n={};for(var r in e)e.hasOwnProperty(r)&&(n[r]=!0);return n}()};function l(e,t){var r=t?"Error in "+t+" extension->":"Error in unnamed extension",a={valid:!0,error:""};n.helper.isArray(e)||(e=[e]);for(var i=0;i<e.length;++i){var o=r+" sub-extension "+i+": ",s=e[i];if("object"!=typeof s)return a.valid=!1,a.error=o+"must be an object, but "+typeof s+" given",a;if(!n.helper.isString(s.type))return a.valid=!1,a.error=o+'property "type" must be a string, but '+typeof s.type+" given",a;var l=s.type=s.type.toLowerCase();if("language"===l&&(l=s.type="lang"),"html"===l&&(l=s.type="output"),"lang"!==l&&"output"!==l&&"listener"!==l)return a.valid=!1,a.error=o+"type "+l+' is not recognized. Valid values: "lang/language", "output/html" or "listener"',a;if("listener"===l){if(n.helper.isUndefined(s.listeners))return a.valid=!1,a.error=o+'. Extensions of type "listener" must have a property called "listeners"',a}else if(n.helper.isUndefined(s.filter)&&n.helper.isUndefined(s.regex))return a.valid=!1,a.error=o+l+' extensions must define either a "regex" property or a "filter" method',a;if(s.listeners){if("object"!=typeof s.listeners)return a.valid=!1,a.error=o+'"listeners" property must be an object but '+typeof s.listeners+" given",a;for(var c in s.listeners)if(s.listeners.hasOwnProperty(c)&&"function"!=typeof s.listeners[c])return a.valid=!1,a.error=o+'"listeners" property must be an hash of [event name]: [callback]. listeners.'+c+" must be a function but "+typeof s.listeners[c]+" given",a}if(s.filter){if("function"!=typeof s.filter)return a.valid=!1,a.error=o+'"filter" must be a function, but '+typeof s.filter+" given",a}else if(s.regex){if(n.helper.isString(s.regex)&&(s.regex=new RegExp(s.regex,"g")),!(s.regex instanceof RegExp))return a.valid=!1,a.error=o+'"regex" property must either be a string or a RegExp object, but '+typeof s.regex+" given",a;if(n.helper.isUndefined(s.replace))return a.valid=!1,a.error=o+'"regex" extensions must implement a replace string or function',a}}return a}function c(e,t){return"¨E"+t.charCodeAt(0)+"E"}n.helper={},n.extensions={},n.setOption=function(e,t){return i[e]=t,this},n.getOption=function(e){return i[e]},n.getOptions=function(){return i},n.resetOptions=function(){i=t(!0)},n.setFlavor=function(e){if(!s.hasOwnProperty(e))throw Error(e+" flavor was not found");n.resetOptions();var t=s[e];for(var r in o=e,t)t.hasOwnProperty(r)&&(i[r]=t[r])},n.getFlavor=function(){return o},n.getFlavorOptions=function(e){if(s.hasOwnProperty(e))return s[e]},n.getDefaultOptions=function(e){return t(e)},n.subParser=function(e,t){if(n.helper.isString(e)){if(void 0===t){if(r.hasOwnProperty(e))return r[e];throw Error("SubParser named "+e+" not registered!")}r[e]=t}},n.extension=function(e,t){if(!n.helper.isString(e))throw Error("Extension 'name' must be a string");if(e=n.helper.stdExtName(e),n.helper.isUndefined(t)){if(!a.hasOwnProperty(e))throw Error("Extension named "+e+" is not registered!");return a[e]}"function"==typeof t&&(t=t()),n.helper.isArray(t)||(t=[t]);var r=l(t,e);if(!r.valid)throw Error(r.error);a[e]=t},n.getAllExtensions=function(){return a},n.removeExtension=function(e){delete a[e]},n.resetExtensions=function(){a={}},n.validateExtension=function(e){var t=l(e,null);return!!t.valid||(console.warn(t.error),!1)},n.hasOwnProperty("helper")||(n.helper={}),n.helper.isString=function(e){return"string"==typeof e||e instanceof String},n.helper.isFunction=function(e){return e&&"[object Function]"==={}.toString.call(e)},n.helper.isArray=function(e){return Array.isArray(e)},n.helper.isUndefined=function(e){return void 0===e},n.helper.forEach=function(e,t){if(n.helper.isUndefined(e))throw new Error("obj param is required");if(n.helper.isUndefined(t))throw new Error("callback param is required");if(!n.helper.isFunction(t))throw new Error("callback param must be a function/closure");if("function"==typeof e.forEach)e.forEach(t);else if(n.helper.isArray(e))for(var r=0;r<e.length;r++)t(e[r],r,e);else{if("object"!=typeof e)throw new Error("obj does not seem to be an array or an iterable object");for(var a in e)e.hasOwnProperty(a)&&t(e[a],a,e)}},n.helper.stdExtName=function(e){return e.replace(/[_?*+\/\\.^-]/g,"").replace(/\s/g,"").toLowerCase()},n.helper.escapeCharactersCallback=c,n.helper.escapeCharacters=function(e,t,n){var r="(["+t.replace(/([\[\]\\])/g,"\\$1")+"])";n&&(r="\\\\"+r);var a=new RegExp(r,"g");return e=e.replace(a,c)},n.helper.unescapeHTMLEntities=function(e){return e.replace(/&quot;/g,'"').replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&amp;/g,"&")};var u=function(e,t,n,r){var a,i,o,s,l,c=r||"",u=c.indexOf("g")>-1,d=new RegExp(t+"|"+n,"g"+c.replace(/g/g,"")),p=new RegExp(t,c.replace(/g/g,"")),h=[];do{for(a=0;o=d.exec(e);)if(p.test(o[0]))a++||(s=(i=d.lastIndex)-o[0].length);else if(a&&!--a){l=o.index+o[0].length;var g={left:{start:s,end:i},match:{start:i,end:o.index},right:{start:o.index,end:l},wholeMatch:{start:s,end:l}};if(h.push(g),!u)return h}}while(a&&(d.lastIndex=i));return h};n.helper.matchRecursiveRegExp=function(e,t,n,r){for(var a=u(e,t,n,r),i=[],o=0;o<a.length;++o)i.push([e.slice(a[o].wholeMatch.start,a[o].wholeMatch.end),e.slice(a[o].match.start,a[o].match.end),e.slice(a[o].left.start,a[o].left.end),e.slice(a[o].right.start,a[o].right.end)]);return i},n.helper.replaceRecursiveRegExp=function(e,t,r,a,i){if(!n.helper.isFunction(t)){var o=t;t=function(){return o}}var s=u(e,r,a,i),l=e,c=s.length;if(c>0){var d=[];0!==s[0].wholeMatch.start&&d.push(e.slice(0,s[0].wholeMatch.start));for(var p=0;p<c;++p)d.push(t(e.slice(s[p].wholeMatch.start,s[p].wholeMatch.end),e.slice(s[p].match.start,s[p].match.end),e.slice(s[p].left.start,s[p].left.end),e.slice(s[p].right.start,s[p].right.end))),p<c-1&&d.push(e.slice(s[p].wholeMatch.end,s[p+1].wholeMatch.start));s[c-1].wholeMatch.end<e.length&&d.push(e.slice(s[c-1].wholeMatch.end)),l=d.join("")}return l},n.helper.regexIndexOf=function(e,t,r){if(!n.helper.isString(e))throw"InvalidArgumentError: first parameter of showdown.helper.regexIndexOf function must be a string";if(t instanceof RegExp==!1)throw"InvalidArgumentError: second parameter of showdown.helper.regexIndexOf function must be an instance of RegExp";var a=e.substring(r||0).search(t);return a>=0?a+(r||0):a},n.helper.splitAtIndex=function(e,t){if(!n.helper.isString(e))throw"InvalidArgumentError: first parameter of showdown.helper.regexIndexOf function must be a string";return[e.substring(0,t),e.substring(t)]},n.helper.encodeEmailAddress=function(e){var t=[function(e){return"&#"+e.charCodeAt(0)+";"},function(e){return"&#x"+e.charCodeAt(0).toString(16)+";"},function(e){return e}];return e=e.replace(/./g,(function(e){if("@"===e)e=t[Math.floor(2*Math.random())](e);else{var n=Math.random();e=n>.9?t[2](e):n>.45?t[1](e):t[0](e)}return e}))},n.helper.padEnd=function(e,t,n){return t>>=0,n=String(n||" "),e.length>t?String(e):((t-=e.length)>n.length&&(n+=n.repeat(t/n.length)),String(e)+n.slice(0,t))},"undefined"==typeof console&&(console={warn:function(e){alert(e)},log:function(e){alert(e)},error:function(e){throw e}}),n.helper.regexes={asteriskDashAndColon:/([*_:~])/g},n.helper.emojis={"+1":"👍","-1":"👎",100:"💯",1234:"🔢","1st_place_medal":"🥇","2nd_place_medal":"🥈","3rd_place_medal":"🥉","8ball":"🎱",a:"🅰️",ab:"🆎",abc:"🔤",abcd:"🔡",accept:"🉑",aerial_tramway:"🚡",airplane:"✈️",alarm_clock:"⏰",alembic:"⚗️",alien:"👽",ambulance:"🚑",amphora:"🏺",anchor:"⚓️",angel:"👼",anger:"💢",angry:"😠",anguished:"😧",ant:"🐜",apple:"🍎",aquarius:"♒️",aries:"♈️",arrow_backward:"◀️",arrow_double_down:"⏬",arrow_double_up:"⏫",arrow_down:"⬇️",arrow_down_small:"🔽",arrow_forward:"▶️",arrow_heading_down:"⤵️",arrow_heading_up:"⤴️",arrow_left:"⬅️",arrow_lower_left:"↙️",arrow_lower_right:"↘️",arrow_right:"➡️",arrow_right_hook:"↪️",arrow_up:"⬆️",arrow_up_down:"↕️",arrow_up_small:"🔼",arrow_upper_left:"↖️",arrow_upper_right:"↗️",arrows_clockwise:"🔃",arrows_counterclockwise:"🔄",art:"🎨",articulated_lorry:"🚛",artificial_satellite:"🛰",astonished:"😲",athletic_shoe:"👟",atm:"🏧",atom_symbol:"⚛️",avocado:"🥑",b:"🅱️",baby:"👶",baby_bottle:"🍼",baby_chick:"🐤",baby_symbol:"🚼",back:"🔙",bacon:"🥓",badminton:"🏸",baggage_claim:"🛄",baguette_bread:"🥖",balance_scale:"⚖️",balloon:"🎈",ballot_box:"🗳",ballot_box_with_check:"☑️",bamboo:"🎍",banana:"🍌",bangbang:"‼️",bank:"🏦",bar_chart:"📊",barber:"💈",baseball:"⚾️",basketball:"🏀",basketball_man:"⛹️",basketball_woman:"⛹️&zwj;♀️",bat:"🦇",bath:"🛀",bathtub:"🛁",battery:"🔋",beach_umbrella:"🏖",bear:"🐻",bed:"🛏",bee:"🐝",beer:"🍺",beers:"🍻",beetle:"🐞",beginner:"🔰",bell:"🔔",bellhop_bell:"🛎",bento:"🍱",biking_man:"🚴",bike:"🚲",biking_woman:"🚴&zwj;♀️",bikini:"👙",biohazard:"☣️",bird:"🐦",birthday:"🎂",black_circle:"⚫️",black_flag:"🏴",black_heart:"🖤",black_joker:"🃏",black_large_square:"⬛️",black_medium_small_square:"◾️",black_medium_square:"◼️",black_nib:"✒️",black_small_square:"▪️",black_square_button:"🔲",blonde_man:"👱",blonde_woman:"👱&zwj;♀️",blossom:"🌼",blowfish:"🐡",blue_book:"📘",blue_car:"🚙",blue_heart:"💙",blush:"😊",boar:"🐗",boat:"⛵️",bomb:"💣",book:"📖",bookmark:"🔖",bookmark_tabs:"📑",books:"📚",boom:"💥",boot:"👢",bouquet:"💐",bowing_man:"🙇",bow_and_arrow:"🏹",bowing_woman:"🙇&zwj;♀️",bowling:"🎳",boxing_glove:"🥊",boy:"👦",bread:"🍞",bride_with_veil:"👰",bridge_at_night:"🌉",briefcase:"💼",broken_heart:"💔",bug:"🐛",building_construction:"🏗",bulb:"💡",bullettrain_front:"🚅",bullettrain_side:"🚄",burrito:"🌯",bus:"🚌",business_suit_levitating:"🕴",busstop:"🚏",bust_in_silhouette:"👤",busts_in_silhouette:"👥",butterfly:"🦋",cactus:"🌵",cake:"🍰",calendar:"📆",call_me_hand:"🤙",calling:"📲",camel:"🐫",camera:"📷",camera_flash:"📸",camping:"🏕",cancer:"♋️",candle:"🕯",candy:"🍬",canoe:"🛶",capital_abcd:"🔠",capricorn:"♑️",car:"🚗",card_file_box:"🗃",card_index:"📇",card_index_dividers:"🗂",carousel_horse:"🎠",carrot:"🥕",cat:"🐱",cat2:"🐈",cd:"💿",chains:"⛓",champagne:"🍾",chart:"💹",chart_with_downwards_trend:"📉",chart_with_upwards_trend:"📈",checkered_flag:"🏁",cheese:"🧀",cherries:"🍒",cherry_blossom:"🌸",chestnut:"🌰",chicken:"🐔",children_crossing:"🚸",chipmunk:"🐿",chocolate_bar:"🍫",christmas_tree:"🎄",church:"⛪️",cinema:"🎦",circus_tent:"🎪",city_sunrise:"🌇",city_sunset:"🌆",cityscape:"🏙",cl:"🆑",clamp:"🗜",clap:"👏",clapper:"🎬",classical_building:"🏛",clinking_glasses:"🥂",clipboard:"📋",clock1:"🕐",clock10:"🕙",clock1030:"🕥",clock11:"🕚",clock1130:"🕦",clock12:"🕛",clock1230:"🕧",clock130:"🕜",clock2:"🕑",clock230:"🕝",clock3:"🕒",clock330:"🕞",clock4:"🕓",clock430:"🕟",clock5:"🕔",clock530:"🕠",clock6:"🕕",clock630:"🕡",clock7:"🕖",clock730:"🕢",clock8:"🕗",clock830:"🕣",clock9:"🕘",clock930:"🕤",closed_book:"📕",closed_lock_with_key:"🔐",closed_umbrella:"🌂",cloud:"☁️",cloud_with_lightning:"🌩",cloud_with_lightning_and_rain:"⛈",cloud_with_rain:"🌧",cloud_with_snow:"🌨",clown_face:"🤡",clubs:"♣️",cocktail:"🍸",coffee:"☕️",coffin:"⚰️",cold_sweat:"😰",comet:"☄️",computer:"💻",computer_mouse:"🖱",confetti_ball:"🎊",confounded:"😖",confused:"😕",congratulations:"㊗️",construction:"🚧",construction_worker_man:"👷",construction_worker_woman:"👷&zwj;♀️",control_knobs:"🎛",convenience_store:"🏪",cookie:"🍪",cool:"🆒",policeman:"👮",copyright:"©️",corn:"🌽",couch_and_lamp:"🛋",couple:"👫",couple_with_heart_woman_man:"💑",couple_with_heart_man_man:"👨&zwj;❤️&zwj;👨",couple_with_heart_woman_woman:"👩&zwj;❤️&zwj;👩",couplekiss_man_man:"👨&zwj;❤️&zwj;💋&zwj;👨",couplekiss_man_woman:"💏",couplekiss_woman_woman:"👩&zwj;❤️&zwj;💋&zwj;👩",cow:"🐮",cow2:"🐄",cowboy_hat_face:"🤠",crab:"🦀",crayon:"🖍",credit_card:"💳",crescent_moon:"🌙",cricket:"🏏",crocodile:"🐊",croissant:"🥐",crossed_fingers:"🤞",crossed_flags:"🎌",crossed_swords:"⚔️",crown:"👑",cry:"😢",crying_cat_face:"😿",crystal_ball:"🔮",cucumber:"🥒",cupid:"💘",curly_loop:"➰",currency_exchange:"💱",curry:"🍛",custard:"🍮",customs:"🛃",cyclone:"🌀",dagger:"🗡",dancer:"💃",dancing_women:"👯",dancing_men:"👯&zwj;♂️",dango:"🍡",dark_sunglasses:"🕶",dart:"🎯",dash:"💨",date:"📅",deciduous_tree:"🌳",deer:"🦌",department_store:"🏬",derelict_house:"🏚",desert:"🏜",desert_island:"🏝",desktop_computer:"🖥",male_detective:"🕵️",diamond_shape_with_a_dot_inside:"💠",diamonds:"♦️",disappointed:"😞",disappointed_relieved:"😥",dizzy:"💫",dizzy_face:"😵",do_not_litter:"🚯",dog:"🐶",dog2:"🐕",dollar:"💵",dolls:"🎎",dolphin:"🐬",door:"🚪",doughnut:"🍩",dove:"🕊",dragon:"🐉",dragon_face:"🐲",dress:"👗",dromedary_camel:"🐪",drooling_face:"🤤",droplet:"💧",drum:"🥁",duck:"🦆",dvd:"📀","e-mail":"📧",eagle:"🦅",ear:"👂",ear_of_rice:"🌾",earth_africa:"🌍",earth_americas:"🌎",earth_asia:"🌏",egg:"🥚",eggplant:"🍆",eight_pointed_black_star:"✴️",eight_spoked_asterisk:"✳️",electric_plug:"🔌",elephant:"🐘",email:"✉️",end:"🔚",envelope_with_arrow:"📩",euro:"💶",european_castle:"🏰",european_post_office:"🏤",evergreen_tree:"🌲",exclamation:"❗️",expressionless:"😑",eye:"👁",eye_speech_bubble:"👁&zwj;🗨",eyeglasses:"👓",eyes:"👀",face_with_head_bandage:"🤕",face_with_thermometer:"🤒",fist_oncoming:"👊",factory:"🏭",fallen_leaf:"🍂",family_man_woman_boy:"👪",family_man_boy:"👨&zwj;👦",family_man_boy_boy:"👨&zwj;👦&zwj;👦",family_man_girl:"👨&zwj;👧",family_man_girl_boy:"👨&zwj;👧&zwj;👦",family_man_girl_girl:"👨&zwj;👧&zwj;👧",family_man_man_boy:"👨&zwj;👨&zwj;👦",family_man_man_boy_boy:"👨&zwj;👨&zwj;👦&zwj;👦",family_man_man_girl:"👨&zwj;👨&zwj;👧",family_man_man_girl_boy:"👨&zwj;👨&zwj;👧&zwj;👦",family_man_man_girl_girl:"👨&zwj;👨&zwj;👧&zwj;👧",family_man_woman_boy_boy:"👨&zwj;👩&zwj;👦&zwj;👦",family_man_woman_girl:"👨&zwj;👩&zwj;👧",family_man_woman_girl_boy:"👨&zwj;👩&zwj;👧&zwj;👦",family_man_woman_girl_girl:"👨&zwj;👩&zwj;👧&zwj;👧",family_woman_boy:"👩&zwj;👦",family_woman_boy_boy:"👩&zwj;👦&zwj;👦",family_woman_girl:"👩&zwj;👧",family_woman_girl_boy:"👩&zwj;👧&zwj;👦",family_woman_girl_girl:"👩&zwj;👧&zwj;👧",family_woman_woman_boy:"👩&zwj;👩&zwj;👦",family_woman_woman_boy_boy:"👩&zwj;👩&zwj;👦&zwj;👦",family_woman_woman_girl:"👩&zwj;👩&zwj;👧",family_woman_woman_girl_boy:"👩&zwj;👩&zwj;👧&zwj;👦",family_woman_woman_girl_girl:"👩&zwj;👩&zwj;👧&zwj;👧",fast_forward:"⏩",fax:"📠",fearful:"😨",feet:"🐾",female_detective:"🕵️&zwj;♀️",ferris_wheel:"🎡",ferry:"⛴",field_hockey:"🏑",file_cabinet:"🗄",file_folder:"📁",film_projector:"📽",film_strip:"🎞",fire:"🔥",fire_engine:"🚒",fireworks:"🎆",first_quarter_moon:"🌓",first_quarter_moon_with_face:"🌛",fish:"🐟",fish_cake:"🍥",fishing_pole_and_fish:"🎣",fist_raised:"✊",fist_left:"🤛",fist_right:"🤜",flags:"🎏",flashlight:"🔦",fleur_de_lis:"⚜️",flight_arrival:"🛬",flight_departure:"🛫",floppy_disk:"💾",flower_playing_cards:"🎴",flushed:"😳",fog:"🌫",foggy:"🌁",football:"🏈",footprints:"👣",fork_and_knife:"🍴",fountain:"⛲️",fountain_pen:"🖋",four_leaf_clover:"🍀",fox_face:"🦊",framed_picture:"🖼",free:"🆓",fried_egg:"🍳",fried_shrimp:"🍤",fries:"🍟",frog:"🐸",frowning:"😦",frowning_face:"☹️",frowning_man:"🙍&zwj;♂️",frowning_woman:"🙍",middle_finger:"🖕",fuelpump:"⛽️",full_moon:"🌕",full_moon_with_face:"🌝",funeral_urn:"⚱️",game_die:"🎲",gear:"⚙️",gem:"💎",gemini:"♊️",ghost:"👻",gift:"🎁",gift_heart:"💝",girl:"👧",globe_with_meridians:"🌐",goal_net:"🥅",goat:"🐐",golf:"⛳️",golfing_man:"🏌️",golfing_woman:"🏌️&zwj;♀️",gorilla:"🦍",grapes:"🍇",green_apple:"🍏",green_book:"📗",green_heart:"💚",green_salad:"🥗",grey_exclamation:"❕",grey_question:"❔",grimacing:"😬",grin:"😁",grinning:"😀",guardsman:"💂",guardswoman:"💂&zwj;♀️",guitar:"🎸",gun:"🔫",haircut_woman:"💇",haircut_man:"💇&zwj;♂️",hamburger:"🍔",hammer:"🔨",hammer_and_pick:"⚒",hammer_and_wrench:"🛠",hamster:"🐹",hand:"✋",handbag:"👜",handshake:"🤝",hankey:"💩",hatched_chick:"🐥",hatching_chick:"🐣",headphones:"🎧",hear_no_evil:"🙉",heart:"❤️",heart_decoration:"💟",heart_eyes:"😍",heart_eyes_cat:"😻",heartbeat:"💓",heartpulse:"💗",hearts:"♥️",heavy_check_mark:"✔️",heavy_division_sign:"➗",heavy_dollar_sign:"💲",heavy_heart_exclamation:"❣️",heavy_minus_sign:"➖",heavy_multiplication_x:"✖️",heavy_plus_sign:"➕",helicopter:"🚁",herb:"🌿",hibiscus:"🌺",high_brightness:"🔆",high_heel:"👠",hocho:"🔪",hole:"🕳",honey_pot:"🍯",horse:"🐴",horse_racing:"🏇",hospital:"🏥",hot_pepper:"🌶",hotdog:"🌭",hotel:"🏨",hotsprings:"♨️",hourglass:"⌛️",hourglass_flowing_sand:"⏳",house:"🏠",house_with_garden:"🏡",houses:"🏘",hugs:"🤗",hushed:"😯",ice_cream:"🍨",ice_hockey:"🏒",ice_skate:"⛸",icecream:"🍦",id:"🆔",ideograph_advantage:"🉐",imp:"👿",inbox_tray:"📥",incoming_envelope:"📨",tipping_hand_woman:"💁",information_source:"ℹ️",innocent:"😇",interrobang:"⁉️",iphone:"📱",izakaya_lantern:"🏮",jack_o_lantern:"🎃",japan:"🗾",japanese_castle:"🏯",japanese_goblin:"👺",japanese_ogre:"👹",jeans:"👖",joy:"😂",joy_cat:"😹",joystick:"🕹",kaaba:"🕋",key:"🔑",keyboard:"⌨️",keycap_ten:"🔟",kick_scooter:"🛴",kimono:"👘",kiss:"💋",kissing:"😗",kissing_cat:"😽",kissing_closed_eyes:"😚",kissing_heart:"😘",kissing_smiling_eyes:"😙",kiwi_fruit:"🥝",koala:"🐨",koko:"🈁",label:"🏷",large_blue_circle:"🔵",large_blue_diamond:"🔷",large_orange_diamond:"🔶",last_quarter_moon:"🌗",last_quarter_moon_with_face:"🌜",latin_cross:"✝️",laughing:"😆",leaves:"🍃",ledger:"📒",left_luggage:"🛅",left_right_arrow:"↔️",leftwards_arrow_with_hook:"↩️",lemon:"🍋",leo:"♌️",leopard:"🐆",level_slider:"🎚",libra:"♎️",light_rail:"🚈",link:"🔗",lion:"🦁",lips:"👄",lipstick:"💄",lizard:"🦎",lock:"🔒",lock_with_ink_pen:"🔏",lollipop:"🍭",loop:"➿",loud_sound:"🔊",loudspeaker:"📢",love_hotel:"🏩",love_letter:"💌",low_brightness:"🔅",lying_face:"🤥",m:"Ⓜ️",mag:"🔍",mag_right:"🔎",mahjong:"🀄️",mailbox:"📫",mailbox_closed:"📪",mailbox_with_mail:"📬",mailbox_with_no_mail:"📭",man:"👨",man_artist:"👨&zwj;🎨",man_astronaut:"👨&zwj;🚀",man_cartwheeling:"🤸&zwj;♂️",man_cook:"👨&zwj;🍳",man_dancing:"🕺",man_facepalming:"🤦&zwj;♂️",man_factory_worker:"👨&zwj;🏭",man_farmer:"👨&zwj;🌾",man_firefighter:"👨&zwj;🚒",man_health_worker:"👨&zwj;⚕️",man_in_tuxedo:"🤵",man_judge:"👨&zwj;⚖️",man_juggling:"🤹&zwj;♂️",man_mechanic:"👨&zwj;🔧",man_office_worker:"👨&zwj;💼",man_pilot:"👨&zwj;✈️",man_playing_handball:"🤾&zwj;♂️",man_playing_water_polo:"🤽&zwj;♂️",man_scientist:"👨&zwj;🔬",man_shrugging:"🤷&zwj;♂️",man_singer:"👨&zwj;🎤",man_student:"👨&zwj;🎓",man_teacher:"👨&zwj;🏫",man_technologist:"👨&zwj;💻",man_with_gua_pi_mao:"👲",man_with_turban:"👳",tangerine:"🍊",mans_shoe:"👞",mantelpiece_clock:"🕰",maple_leaf:"🍁",martial_arts_uniform:"🥋",mask:"😷",massage_woman:"💆",massage_man:"💆&zwj;♂️",meat_on_bone:"🍖",medal_military:"🎖",medal_sports:"🏅",mega:"📣",melon:"🍈",memo:"📝",men_wrestling:"🤼&zwj;♂️",menorah:"🕎",mens:"🚹",metal:"🤘",metro:"🚇",microphone:"🎤",microscope:"🔬",milk_glass:"🥛",milky_way:"🌌",minibus:"🚐",minidisc:"💽",mobile_phone_off:"📴",money_mouth_face:"🤑",money_with_wings:"💸",moneybag:"💰",monkey:"🐒",monkey_face:"🐵",monorail:"🚝",moon:"🌔",mortar_board:"🎓",mosque:"🕌",motor_boat:"🛥",motor_scooter:"🛵",motorcycle:"🏍",motorway:"🛣",mount_fuji:"🗻",mountain:"⛰",mountain_biking_man:"🚵",mountain_biking_woman:"🚵&zwj;♀️",mountain_cableway:"🚠",mountain_railway:"🚞",mountain_snow:"🏔",mouse:"🐭",mouse2:"🐁",movie_camera:"🎥",moyai:"🗿",mrs_claus:"🤶",muscle:"💪",mushroom:"🍄",musical_keyboard:"🎹",musical_note:"🎵",musical_score:"🎼",mute:"🔇",nail_care:"💅",name_badge:"📛",national_park:"🏞",nauseated_face:"🤢",necktie:"👔",negative_squared_cross_mark:"❎",nerd_face:"🤓",neutral_face:"😐",new:"🆕",new_moon:"🌑",new_moon_with_face:"🌚",newspaper:"📰",newspaper_roll:"🗞",next_track_button:"⏭",ng:"🆖",no_good_man:"🙅&zwj;♂️",no_good_woman:"🙅",night_with_stars:"🌃",no_bell:"🔕",no_bicycles:"🚳",no_entry:"⛔️",no_entry_sign:"🚫",no_mobile_phones:"📵",no_mouth:"😶",no_pedestrians:"🚷",no_smoking:"🚭","non-potable_water":"🚱",nose:"👃",notebook:"📓",notebook_with_decorative_cover:"📔",notes:"🎶",nut_and_bolt:"🔩",o:"⭕️",o2:"🅾️",ocean:"🌊",octopus:"🐙",oden:"🍢",office:"🏢",oil_drum:"🛢",ok:"🆗",ok_hand:"👌",ok_man:"🙆&zwj;♂️",ok_woman:"🙆",old_key:"🗝",older_man:"👴",older_woman:"👵",om:"🕉",on:"🔛",oncoming_automobile:"🚘",oncoming_bus:"🚍",oncoming_police_car:"🚔",oncoming_taxi:"🚖",open_file_folder:"📂",open_hands:"👐",open_mouth:"😮",open_umbrella:"☂️",ophiuchus:"⛎",orange_book:"📙",orthodox_cross:"☦️",outbox_tray:"📤",owl:"🦉",ox:"🐂",package:"📦",page_facing_up:"📄",page_with_curl:"📃",pager:"📟",paintbrush:"🖌",palm_tree:"🌴",pancakes:"🥞",panda_face:"🐼",paperclip:"📎",paperclips:"🖇",parasol_on_ground:"⛱",parking:"🅿️",part_alternation_mark:"〽️",partly_sunny:"⛅️",passenger_ship:"🛳",passport_control:"🛂",pause_button:"⏸",peace_symbol:"☮️",peach:"🍑",peanuts:"🥜",pear:"🍐",pen:"🖊",pencil2:"✏️",penguin:"🐧",pensive:"😔",performing_arts:"🎭",persevere:"😣",person_fencing:"🤺",pouting_woman:"🙎",phone:"☎️",pick:"⛏",pig:"🐷",pig2:"🐖",pig_nose:"🐽",pill:"💊",pineapple:"🍍",ping_pong:"🏓",pisces:"♓️",pizza:"🍕",place_of_worship:"🛐",plate_with_cutlery:"🍽",play_or_pause_button:"⏯",point_down:"👇",point_left:"👈",point_right:"👉",point_up:"☝️",point_up_2:"👆",police_car:"🚓",policewoman:"👮&zwj;♀️",poodle:"🐩",popcorn:"🍿",post_office:"🏣",postal_horn:"📯",postbox:"📮",potable_water:"🚰",potato:"🥔",pouch:"👝",poultry_leg:"🍗",pound:"💷",rage:"😡",pouting_cat:"😾",pouting_man:"🙎&zwj;♂️",pray:"🙏",prayer_beads:"📿",pregnant_woman:"🤰",previous_track_button:"⏮",prince:"🤴",princess:"👸",printer:"🖨",purple_heart:"💜",purse:"👛",pushpin:"📌",put_litter_in_its_place:"🚮",question:"❓",rabbit:"🐰",rabbit2:"🐇",racehorse:"🐎",racing_car:"🏎",radio:"📻",radio_button:"🔘",radioactive:"☢️",railway_car:"🚃",railway_track:"🛤",rainbow:"🌈",rainbow_flag:"🏳️&zwj;🌈",raised_back_of_hand:"🤚",raised_hand_with_fingers_splayed:"🖐",raised_hands:"🙌",raising_hand_woman:"🙋",raising_hand_man:"🙋&zwj;♂️",ram:"🐏",ramen:"🍜",rat:"🐀",record_button:"⏺",recycle:"♻️",red_circle:"🔴",registered:"®️",relaxed:"☺️",relieved:"😌",reminder_ribbon:"🎗",repeat:"🔁",repeat_one:"🔂",rescue_worker_helmet:"⛑",restroom:"🚻",revolving_hearts:"💞",rewind:"⏪",rhinoceros:"🦏",ribbon:"🎀",rice:"🍚",rice_ball:"🍙",rice_cracker:"🍘",rice_scene:"🎑",right_anger_bubble:"🗯",ring:"💍",robot:"🤖",rocket:"🚀",rofl:"🤣",roll_eyes:"🙄",roller_coaster:"🎢",rooster:"🐓",rose:"🌹",rosette:"🏵",rotating_light:"🚨",round_pushpin:"📍",rowing_man:"🚣",rowing_woman:"🚣&zwj;♀️",rugby_football:"🏉",running_man:"🏃",running_shirt_with_sash:"🎽",running_woman:"🏃&zwj;♀️",sa:"🈂️",sagittarius:"♐️",sake:"🍶",sandal:"👡",santa:"🎅",satellite:"📡",saxophone:"🎷",school:"🏫",school_satchel:"🎒",scissors:"✂️",scorpion:"🦂",scorpius:"♏️",scream:"😱",scream_cat:"🙀",scroll:"📜",seat:"💺",secret:"㊙️",see_no_evil:"🙈",seedling:"🌱",selfie:"🤳",shallow_pan_of_food:"🥘",shamrock:"☘️",shark:"🦈",shaved_ice:"🍧",sheep:"🐑",shell:"🐚",shield:"🛡",shinto_shrine:"⛩",ship:"🚢",shirt:"👕",shopping:"🛍",shopping_cart:"🛒",shower:"🚿",shrimp:"🦐",signal_strength:"📶",six_pointed_star:"🔯",ski:"🎿",skier:"⛷",skull:"💀",skull_and_crossbones:"☠️",sleeping:"😴",sleeping_bed:"🛌",sleepy:"😪",slightly_frowning_face:"🙁",slightly_smiling_face:"🙂",slot_machine:"🎰",small_airplane:"🛩",small_blue_diamond:"🔹",small_orange_diamond:"🔸",small_red_triangle:"🔺",small_red_triangle_down:"🔻",smile:"😄",smile_cat:"😸",smiley:"😃",smiley_cat:"😺",smiling_imp:"😈",smirk:"😏",smirk_cat:"😼",smoking:"🚬",snail:"🐌",snake:"🐍",sneezing_face:"🤧",snowboarder:"🏂",snowflake:"❄️",snowman:"⛄️",snowman_with_snow:"☃️",sob:"😭",soccer:"⚽️",soon:"🔜",sos:"🆘",sound:"🔉",space_invader:"👾",spades:"♠️",spaghetti:"🍝",sparkle:"❇️",sparkler:"🎇",sparkles:"✨",sparkling_heart:"💖",speak_no_evil:"🙊",speaker:"🔈",speaking_head:"🗣",speech_balloon:"💬",speedboat:"🚤",spider:"🕷",spider_web:"🕸",spiral_calendar:"🗓",spiral_notepad:"🗒",spoon:"🥄",squid:"🦑",stadium:"🏟",star:"⭐️",star2:"🌟",star_and_crescent:"☪️",star_of_david:"✡️",stars:"🌠",station:"🚉",statue_of_liberty:"🗽",steam_locomotive:"🚂",stew:"🍲",stop_button:"⏹",stop_sign:"🛑",stopwatch:"⏱",straight_ruler:"📏",strawberry:"🍓",stuck_out_tongue:"😛",stuck_out_tongue_closed_eyes:"😝",stuck_out_tongue_winking_eye:"😜",studio_microphone:"🎙",stuffed_flatbread:"🥙",sun_behind_large_cloud:"🌥",sun_behind_rain_cloud:"🌦",sun_behind_small_cloud:"🌤",sun_with_face:"🌞",sunflower:"🌻",sunglasses:"😎",sunny:"☀️",sunrise:"🌅",sunrise_over_mountains:"🌄",surfing_man:"🏄",surfing_woman:"🏄&zwj;♀️",sushi:"🍣",suspension_railway:"🚟",sweat:"😓",sweat_drops:"💦",sweat_smile:"😅",sweet_potato:"🍠",swimming_man:"🏊",swimming_woman:"🏊&zwj;♀️",symbols:"🔣",synagogue:"🕍",syringe:"💉",taco:"🌮",tada:"🎉",tanabata_tree:"🎋",taurus:"♉️",taxi:"🚕",tea:"🍵",telephone_receiver:"📞",telescope:"🔭",tennis:"🎾",tent:"⛺️",thermometer:"🌡",thinking:"🤔",thought_balloon:"💭",ticket:"🎫",tickets:"🎟",tiger:"🐯",tiger2:"🐅",timer_clock:"⏲",tipping_hand_man:"💁&zwj;♂️",tired_face:"😫",tm:"™️",toilet:"🚽",tokyo_tower:"🗼",tomato:"🍅",tongue:"👅",top:"🔝",tophat:"🎩",tornado:"🌪",trackball:"🖲",tractor:"🚜",traffic_light:"🚥",train:"🚋",train2:"🚆",tram:"🚊",triangular_flag_on_post:"🚩",triangular_ruler:"📐",trident:"🔱",triumph:"😤",trolleybus:"🚎",trophy:"🏆",tropical_drink:"🍹",tropical_fish:"🐠",truck:"🚚",trumpet:"🎺",tulip:"🌷",tumbler_glass:"🥃",turkey:"🦃",turtle:"🐢",tv:"📺",twisted_rightwards_arrows:"🔀",two_hearts:"💕",two_men_holding_hands:"👬",two_women_holding_hands:"👭",u5272:"🈹",u5408:"🈴",u55b6:"🈺",u6307:"🈯️",u6708:"🈷️",u6709:"🈶",u6e80:"🈵",u7121:"🈚️",u7533:"🈸",u7981:"🈲",u7a7a:"🈳",umbrella:"☔️",unamused:"😒",underage:"🔞",unicorn:"🦄",unlock:"🔓",up:"🆙",upside_down_face:"🙃",v:"✌️",vertical_traffic_light:"🚦",vhs:"📼",vibration_mode:"📳",video_camera:"📹",video_game:"🎮",violin:"🎻",virgo:"♍️",volcano:"🌋",volleyball:"🏐",vs:"🆚",vulcan_salute:"🖖",walking_man:"🚶",walking_woman:"🚶&zwj;♀️",waning_crescent_moon:"🌘",waning_gibbous_moon:"🌖",warning:"⚠️",wastebasket:"🗑",watch:"⌚️",water_buffalo:"🐃",watermelon:"🍉",wave:"👋",wavy_dash:"〰️",waxing_crescent_moon:"🌒",wc:"🚾",weary:"😩",wedding:"💒",weight_lifting_man:"🏋️",weight_lifting_woman:"🏋️&zwj;♀️",whale:"🐳",whale2:"🐋",wheel_of_dharma:"☸️",wheelchair:"♿️",white_check_mark:"✅",white_circle:"⚪️",white_flag:"🏳️",white_flower:"💮",white_large_square:"⬜️",white_medium_small_square:"◽️",white_medium_square:"◻️",white_small_square:"▫️",white_square_button:"🔳",wilted_flower:"🥀",wind_chime:"🎐",wind_face:"🌬",wine_glass:"🍷",wink:"😉",wolf:"🐺",woman:"👩",woman_artist:"👩&zwj;🎨",woman_astronaut:"👩&zwj;🚀",woman_cartwheeling:"🤸&zwj;♀️",woman_cook:"👩&zwj;🍳",woman_facepalming:"🤦&zwj;♀️",woman_factory_worker:"👩&zwj;🏭",woman_farmer:"👩&zwj;🌾",woman_firefighter:"👩&zwj;🚒",woman_health_worker:"👩&zwj;⚕️",woman_judge:"👩&zwj;⚖️",woman_juggling:"🤹&zwj;♀️",woman_mechanic:"👩&zwj;🔧",woman_office_worker:"👩&zwj;💼",woman_pilot:"👩&zwj;✈️",woman_playing_handball:"🤾&zwj;♀️",woman_playing_water_polo:"🤽&zwj;♀️",woman_scientist:"👩&zwj;🔬",woman_shrugging:"🤷&zwj;♀️",woman_singer:"👩&zwj;🎤",woman_student:"👩&zwj;🎓",woman_teacher:"👩&zwj;🏫",woman_technologist:"👩&zwj;💻",woman_with_turban:"👳&zwj;♀️",womans_clothes:"👚",womans_hat:"👒",women_wrestling:"🤼&zwj;♀️",womens:"🚺",world_map:"🗺",worried:"😟",wrench:"🔧",writing_hand:"✍️",x:"❌",yellow_heart:"💛",yen:"💴",yin_yang:"☯️",yum:"😋",zap:"⚡️",zipper_mouth_face:"🤐",zzz:"💤",octocat:'<img alt=":octocat:" height="20" width="20" align="absmiddle" src="https://assets-cdn.github.com/images/icons/emoji/octocat.png">',showdown:"<span style=\"font-family: 'Anonymous Pro', monospace; text-decoration: underline; text-decoration-style: dashed; text-decoration-color: #3e8b8a;text-underline-position: under;\">S</span>"},n.Converter=function(e){var t={},r=[],c=[],u={},d=o,p={parsed:{},raw:"",format:""};function h(e,t){if(t=t||null,n.helper.isString(e)){if(t=e=n.helper.stdExtName(e),n.extensions[e])return console.warn("DEPRECATION WARNING: "+e+" is an old extension that uses a deprecated loading method.Please inform the developer that the extension should be updated!"),void function(e,t){"function"==typeof e&&(e=e(new n.Converter));n.helper.isArray(e)||(e=[e]);var a=l(e,t);if(!a.valid)throw Error(a.error);for(var i=0;i<e.length;++i)switch(e[i].type){case"lang":r.push(e[i]);break;case"output":c.push(e[i]);break;default:throw Error("Extension loader error: Type unrecognized!!!")}}(n.extensions[e],e);if(n.helper.isUndefined(a[e]))throw Error('Extension "'+e+'" could not be loaded. It was either not found or is not a valid extension.');e=a[e]}"function"==typeof e&&(e=e()),n.helper.isArray(e)||(e=[e]);var i=l(e,t);if(!i.valid)throw Error(i.error);for(var o=0;o<e.length;++o){switch(e[o].type){case"lang":r.push(e[o]);break;case"output":c.push(e[o])}if(e[o].hasOwnProperty("listeners"))for(var s in e[o].listeners)e[o].listeners.hasOwnProperty(s)&&g(s,e[o].listeners[s])}}function g(e,t){if(!n.helper.isString(e))throw Error("Invalid argument in converter.listen() method: name must be a string, but "+typeof e+" given");if("function"!=typeof t)throw Error("Invalid argument in converter.listen() method: callback must be a function, but "+typeof t+" given");u.hasOwnProperty(e)||(u[e]=[]),u[e].push(t)}!function(){for(var r in e=e||{},i)i.hasOwnProperty(r)&&(t[r]=i[r]);if("object"!=typeof e)throw Error("Converter expects the passed parameter to be an object, but "+typeof e+" was passed instead.");for(var a in e)e.hasOwnProperty(a)&&(t[a]=e[a]);t.extensions&&n.helper.forEach(t.extensions,h)}(),this._dispatch=function(e,t,n,r){if(u.hasOwnProperty(e))for(var a=0;a<u[e].length;++a){var i=u[e][a](e,t,this,n,r);i&&void 0!==i&&(t=i)}return t},this.listen=function(e,t){return g(e,t),this},this.makeHtml=function(e){if(!e)return e;var a={gHtmlBlocks:[],gHtmlMdBlocks:[],gHtmlSpans:[],gUrls:{},gTitles:{},gDimensions:{},gListLevel:0,hashLinkCounts:{},langExtensions:r,outputModifiers:c,converter:this,ghCodeBlocks:[],metadata:{parsed:{},raw:"",format:""}};return e=(e=(e=(e=(e=e.replace(/¨/g,"¨T")).replace(/\$/g,"¨D")).replace(/\r\n/g,"\n")).replace(/\r/g,"\n")).replace(/\u00A0/g,"&nbsp;"),t.smartIndentationFix&&(e=function(e){var t=e.match(/^\s*/)[0].length,n=new RegExp("^\\s{0,"+t+"}","gm");return e.replace(n,"")}(e)),e="\n\n"+e+"\n\n",e=(e=n.subParser("detab")(e,t,a)).replace(/^[ \t]+$/gm,""),n.helper.forEach(r,(function(r){e=n.subParser("runExtension")(r,e,t,a)})),e=n.subParser("metadata")(e,t,a),e=n.subParser("hashPreCodeTags")(e,t,a),e=n.subParser("githubCodeBlocks")(e,t,a),e=n.subParser("hashHTMLBlocks")(e,t,a),e=n.subParser("hashCodeTags")(e,t,a),e=n.subParser("stripLinkDefinitions")(e,t,a),e=n.subParser("blockGamut")(e,t,a),e=n.subParser("unhashHTMLSpans")(e,t,a),e=(e=(e=n.subParser("unescapeSpecialChars")(e,t,a)).replace(/¨D/g,"$$")).replace(/¨T/g,"¨"),e=n.subParser("completeHTMLDocument")(e,t,a),n.helper.forEach(c,(function(r){e=n.subParser("runExtension")(r,e,t,a)})),p=a.metadata,e},this.makeMarkdown=this.makeMd=function(e,t){if(e=(e=(e=e.replace(/\r\n/g,"\n")).replace(/\r/g,"\n")).replace(/>[ \t]+</,">¨NBSP;<"),!t){if(!window||!window.document)throw new Error("HTMLParser is undefined. If in a webworker or nodejs environment, you need to provide a WHATWG DOM and HTML such as JSDOM");t=window.document}var r=t.createElement("div");r.innerHTML=e;var a={preList:function(e){for(var t=e.querySelectorAll("pre"),r=[],a=0;a<t.length;++a)if(1===t[a].childElementCount&&"code"===t[a].firstChild.tagName.toLowerCase()){var i=t[a].firstChild.innerHTML.trim(),o=t[a].firstChild.getAttribute("data-language")||"";if(""===o)for(var s=t[a].firstChild.className.split(" "),l=0;l<s.length;++l){var c=s[l].match(/^language-(.+)$/);if(null!==c){o=c[1];break}}i=n.helper.unescapeHTMLEntities(i),r.push(i),t[a].outerHTML='<precode language="'+o+'" precodenum="'+a.toString()+'"></precode>'}else r.push(t[a].innerHTML),t[a].innerHTML="",t[a].setAttribute("prenum",a.toString());return r}(r)};!function e(t){for(var n=0;n<t.childNodes.length;++n){var r=t.childNodes[n];3===r.nodeType?/\S/.test(r.nodeValue)?(r.nodeValue=r.nodeValue.split("\n").join(" "),r.nodeValue=r.nodeValue.replace(/(\s)+/g,"$1")):(t.removeChild(r),--n):1===r.nodeType&&e(r)}}(r);for(var i=r.childNodes,o="",s=0;s<i.length;s++)o+=n.subParser("makeMarkdown.node")(i[s],a);return o},this.setOption=function(e,n){t[e]=n},this.getOption=function(e){return t[e]},this.getOptions=function(){return t},this.addExtension=function(e,t){h(e,t=t||null)},this.useExtension=function(e){h(e)},this.setFlavor=function(e){if(!s.hasOwnProperty(e))throw Error(e+" flavor was not found");var n=s[e];for(var r in d=e,n)n.hasOwnProperty(r)&&(t[r]=n[r])},this.getFlavor=function(){return d},this.removeExtension=function(e){n.helper.isArray(e)||(e=[e]);for(var t=0;t<e.length;++t){for(var a=e[t],i=0;i<r.length;++i)r[i]===a&&r[i].splice(i,1);for(;0<c.length;++i)c[0]===a&&c[0].splice(i,1)}},this.getAllExtensions=function(){return{language:r,output:c}},this.getMetadata=function(e){return e?p.raw:p.parsed},this.getMetadataFormat=function(){return p.format},this._setMetadataPair=function(e,t){p.parsed[e]=t},this._setMetadataFormat=function(e){p.format=e},this._setMetadataRaw=function(e){p.raw=e}},n.subParser("anchors",(function(e,t,r){var a=function(e,a,i,o,s,l,c){if(n.helper.isUndefined(c)&&(c=""),i=i.toLowerCase(),e.search(/\(<?\s*>? ?(['"].*['"])?\)$/m)>-1)o="";else if(!o){if(i||(i=a.toLowerCase().replace(/ ?\n/g," ")),o="#"+i,n.helper.isUndefined(r.gUrls[i]))return e;o=r.gUrls[i],n.helper.isUndefined(r.gTitles[i])||(c=r.gTitles[i])}var u='<a href="'+(o=o.replace(n.helper.regexes.asteriskDashAndColon,n.helper.escapeCharactersCallback))+'"';return""!==c&&null!==c&&(u+=' title="'+(c=(c=c.replace(/"/g,"&quot;")).replace(n.helper.regexes.asteriskDashAndColon,n.helper.escapeCharactersCallback))+'"'),t.openLinksInNewWindow&&!/^#/.test(o)&&(u+=' rel="noopener noreferrer" target="¨E95Eblank"'),u+=">"+a+"</a>"};return e=(e=(e=(e=(e=r.converter._dispatch("anchors.before",e,t,r)).replace(/\[((?:\[[^\]]*]|[^\[\]])*)] ?(?:\n *)?\[(.*?)]()()()()/g,a)).replace(/\[((?:\[[^\]]*]|[^\[\]])*)]()[ \t]*\([ \t]?<([^>]*)>(?:[ \t]*((["'])([^"]*?)\5))?[ \t]?\)/g,a)).replace(/\[((?:\[[^\]]*]|[^\[\]])*)]()[ \t]*\([ \t]?<?([\S]+?(?:\([\S]*?\)[\S]*?)?)>?(?:[ \t]*((["'])([^"]*?)\5))?[ \t]?\)/g,a)).replace(/\[([^\[\]]+)]()()()()()/g,a),t.ghMentions&&(e=e.replace(/(^|\s)(\\)?(@([a-z\d]+(?:[a-z\d.-]+?[a-z\d]+)*))/gim,(function(e,r,a,i,o){if("\\"===a)return r+i;if(!n.helper.isString(t.ghMentionsLink))throw new Error("ghMentionsLink option must be a string");var s=t.ghMentionsLink.replace(/\{u}/g,o),l="";return t.openLinksInNewWindow&&(l=' rel="noopener noreferrer" target="¨E95Eblank"'),r+'<a href="'+s+'"'+l+">"+i+"</a>"}))),e=r.converter._dispatch("anchors.after",e,t,r)}));var d=/([*~_]+|\b)(((https?|ftp|dict):\/\/|www\.)[^'">\s]+?\.[^'">\s]+?)()(\1)?(?=\s|$)(?!["<>])/gi,p=/([*~_]+|\b)(((https?|ftp|dict):\/\/|www\.)[^'">\s]+\.[^'">\s]+?)([.!?,()\[\]])?(\1)?(?=\s|$)(?!["<>])/gi,h=/()<(((https?|ftp|dict):\/\/|www\.)[^'">\s]+)()>()/gi,g=/(^|\s)(?:mailto:)?([A-Za-z0-9!#$%&'*+-/=?^_`{|}~.]+@[-a-z0-9]+(\.[-a-z0-9]+)*\.[a-z]+)(?=$|\s)/gim,f=/<()(?:mailto:)?([-.\w]+@[-a-z0-9]+(\.[-a-z0-9]+)*\.[a-z]+)>/gi,m=function(e){return function(t,r,a,i,o,s,l){var c=a=a.replace(n.helper.regexes.asteriskDashAndColon,n.helper.escapeCharactersCallback),u="",d="",p=r||"",h=l||"";return/^www\./i.test(a)&&(a=a.replace(/^www\./i,"http://www.")),e.excludeTrailingPunctuationFromURLs&&s&&(u=s),e.openLinksInNewWindow&&(d=' rel="noopener noreferrer" target="¨E95Eblank"'),p+'<a href="'+a+'"'+d+">"+c+"</a>"+u+h}},b=function(e,t){return function(r,a,i){var o="mailto:";return a=a||"",i=n.subParser("unescapeSpecialChars")(i,e,t),e.encodeEmails?(o=n.helper.encodeEmailAddress(o+i),i=n.helper.encodeEmailAddress(i)):o+=i,a+'<a href="'+o+'">'+i+"</a>"}};n.subParser("autoLinks",(function(e,t,n){return e=(e=(e=n.converter._dispatch("autoLinks.before",e,t,n)).replace(h,m(t))).replace(f,b(t,n)),e=n.converter._dispatch("autoLinks.after",e,t,n)})),n.subParser("simplifiedAutoLinks",(function(e,t,n){return t.simplifiedAutoLink?(e=n.converter._dispatch("simplifiedAutoLinks.before",e,t,n),e=(e=t.excludeTrailingPunctuationFromURLs?e.replace(p,m(t)):e.replace(d,m(t))).replace(g,b(t,n)),e=n.converter._dispatch("simplifiedAutoLinks.after",e,t,n)):e})),n.subParser("blockGamut",(function(e,t,r){return e=r.converter._dispatch("blockGamut.before",e,t,r),e=n.subParser("blockQuotes")(e,t,r),e=n.subParser("headers")(e,t,r),e=n.subParser("horizontalRule")(e,t,r),e=n.subParser("lists")(e,t,r),e=n.subParser("codeBlocks")(e,t,r),e=n.subParser("tables")(e,t,r),e=n.subParser("hashHTMLBlocks")(e,t,r),e=n.subParser("paragraphs")(e,t,r),e=r.converter._dispatch("blockGamut.after",e,t,r)})),n.subParser("blockQuotes",(function(e,t,r){e=r.converter._dispatch("blockQuotes.before",e,t,r),e+="\n\n";var a=/(^ {0,3}>[ \t]?.+\n(.+\n)*\n*)+/gm;return t.splitAdjacentBlockquotes&&(a=/^ {0,3}>[\s\S]*?(?:\n\n)/gm),e=e.replace(a,(function(e){return e=(e=(e=e.replace(/^[ \t]*>[ \t]?/gm,"")).replace(/¨0/g,"")).replace(/^[ \t]+$/gm,""),e=n.subParser("githubCodeBlocks")(e,t,r),e=(e=(e=n.subParser("blockGamut")(e,t,r)).replace(/(^|\n)/g,"$1  ")).replace(/(\s*<pre>[^\r]+?<\/pre>)/gm,(function(e,t){var n=t;return n=(n=n.replace(/^  /gm,"¨0")).replace(/¨0/g,"")})),n.subParser("hashBlock")("<blockquote>\n"+e+"\n</blockquote>",t,r)})),e=r.converter._dispatch("blockQuotes.after",e,t,r)})),n.subParser("codeBlocks",(function(e,t,r){e=r.converter._dispatch("codeBlocks.before",e,t,r);return e=(e=(e+="¨0").replace(/(?:\n\n|^)((?:(?:[ ]{4}|\t).*\n+)+)(\n*[ ]{0,3}[^ \t\n]|(?=¨0))/g,(function(e,a,i){var o=a,s=i,l="\n";return o=n.subParser("outdent")(o,t,r),o=n.subParser("encodeCode")(o,t,r),o=(o=(o=n.subParser("detab")(o,t,r)).replace(/^\n+/g,"")).replace(/\n+$/g,""),t.omitExtraWLInCodeBlocks&&(l=""),o="<pre><code>"+o+l+"</code></pre>",n.subParser("hashBlock")(o,t,r)+s}))).replace(/¨0/,""),e=r.converter._dispatch("codeBlocks.after",e,t,r)})),n.subParser("codeSpans",(function(e,t,r){return void 0===(e=r.converter._dispatch("codeSpans.before",e,t,r))&&(e=""),e=e.replace(/(^|[^\\])(`+)([^\r]*?[^`])\2(?!`)/gm,(function(e,a,i,o){var s=o;return s=(s=s.replace(/^([ \t]*)/g,"")).replace(/[ \t]*$/g,""),s=a+"<code>"+(s=n.subParser("encodeCode")(s,t,r))+"</code>",s=n.subParser("hashHTMLSpans")(s,t,r)})),e=r.converter._dispatch("codeSpans.after",e,t,r)})),n.subParser("completeHTMLDocument",(function(e,t,n){if(!t.completeHTMLDocument)return e;e=n.converter._dispatch("completeHTMLDocument.before",e,t,n);var r="html",a="<!DOCTYPE HTML>\n",i="",o='<meta charset="utf-8">\n',s="",l="";for(var c in void 0!==n.metadata.parsed.doctype&&(a="<!DOCTYPE "+n.metadata.parsed.doctype+">\n","html"!==(r=n.metadata.parsed.doctype.toString().toLowerCase())&&"html5"!==r||(o='<meta charset="utf-8">')),n.metadata.parsed)if(n.metadata.parsed.hasOwnProperty(c))switch(c.toLowerCase()){case"doctype":break;case"title":i="<title>"+n.metadata.parsed.title+"</title>\n";break;case"charset":o="html"===r||"html5"===r?'<meta charset="'+n.metadata.parsed.charset+'">\n':'<meta name="charset" content="'+n.metadata.parsed.charset+'">\n';break;case"language":case"lang":s=' lang="'+n.metadata.parsed[c]+'"',l+='<meta name="'+c+'" content="'+n.metadata.parsed[c]+'">\n';break;default:l+='<meta name="'+c+'" content="'+n.metadata.parsed[c]+'">\n'}return e=a+"<html"+s+">\n<head>\n"+i+o+l+"</head>\n<body>\n"+e.trim()+"\n</body>\n</html>",e=n.converter._dispatch("completeHTMLDocument.after",e,t,n)})),n.subParser("detab",(function(e,t,n){return e=(e=(e=(e=(e=(e=n.converter._dispatch("detab.before",e,t,n)).replace(/\t(?=\t)/g,"    ")).replace(/\t/g,"¨A¨B")).replace(/¨B(.+?)¨A/g,(function(e,t){for(var n=t,r=4-n.length%4,a=0;a<r;a++)n+=" ";return n}))).replace(/¨A/g,"    ")).replace(/¨B/g,""),e=n.converter._dispatch("detab.after",e,t,n)})),n.subParser("ellipsis",(function(e,t,n){return e=(e=n.converter._dispatch("ellipsis.before",e,t,n)).replace(/\.\.\./g,"…"),e=n.converter._dispatch("ellipsis.after",e,t,n)})),n.subParser("emoji",(function(e,t,r){if(!t.emoji)return e;return e=(e=r.converter._dispatch("emoji.before",e,t,r)).replace(/:([\S]+?):/g,(function(e,t){return n.helper.emojis.hasOwnProperty(t)?n.helper.emojis[t]:e})),e=r.converter._dispatch("emoji.after",e,t,r)})),n.subParser("encodeAmpsAndAngles",(function(e,t,n){return e=(e=(e=(e=(e=n.converter._dispatch("encodeAmpsAndAngles.before",e,t,n)).replace(/&(?!#?[xX]?(?:[0-9a-fA-F]+|\w+);)/g,"&amp;")).replace(/<(?![a-z\/?$!])/gi,"&lt;")).replace(/</g,"&lt;")).replace(/>/g,"&gt;"),e=n.converter._dispatch("encodeAmpsAndAngles.after",e,t,n)})),n.subParser("encodeBackslashEscapes",(function(e,t,r){return e=(e=(e=r.converter._dispatch("encodeBackslashEscapes.before",e,t,r)).replace(/\\(\\)/g,n.helper.escapeCharactersCallback)).replace(/\\([`*_{}\[\]()>#+.!~=|-])/g,n.helper.escapeCharactersCallback),e=r.converter._dispatch("encodeBackslashEscapes.after",e,t,r)})),n.subParser("encodeCode",(function(e,t,r){return e=(e=r.converter._dispatch("encodeCode.before",e,t,r)).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/([*_{}\[\]\\=~-])/g,n.helper.escapeCharactersCallback),e=r.converter._dispatch("encodeCode.after",e,t,r)})),n.subParser("escapeSpecialCharsWithinTagAttributes",(function(e,t,r){return e=(e=(e=r.converter._dispatch("escapeSpecialCharsWithinTagAttributes.before",e,t,r)).replace(/<\/?[a-z\d_:-]+(?:[\s]+[\s\S]+?)?>/gi,(function(e){return e.replace(/(.)<\/?code>(?=.)/g,"$1`").replace(/([\\`*_~=|])/g,n.helper.escapeCharactersCallback)}))).replace(/<!(--(?:(?:[^>-]|-[^>])(?:[^-]|-[^-])*)--)>/gi,(function(e){return e.replace(/([\\`*_~=|])/g,n.helper.escapeCharactersCallback)})),e=r.converter._dispatch("escapeSpecialCharsWithinTagAttributes.after",e,t,r)})),n.subParser("githubCodeBlocks",(function(e,t,r){return t.ghCodeBlocks?(e=r.converter._dispatch("githubCodeBlocks.before",e,t,r),e=(e=(e+="¨0").replace(/(?:^|\n)(?: {0,3})(```+|~~~+)(?: *)([^\s`~]*)\n([\s\S]*?)\n(?: {0,3})\1/g,(function(e,a,i,o){var s=t.omitExtraWLInCodeBlocks?"":"\n";return o=n.subParser("encodeCode")(o,t,r),o="<pre><code"+(i?' class="'+i+" language-"+i+'"':"")+">"+(o=(o=(o=n.subParser("detab")(o,t,r)).replace(/^\n+/g,"")).replace(/\n+$/g,""))+s+"</code></pre>",o=n.subParser("hashBlock")(o,t,r),"\n\n¨G"+(r.ghCodeBlocks.push({text:e,codeblock:o})-1)+"G\n\n"}))).replace(/¨0/,""),r.converter._dispatch("githubCodeBlocks.after",e,t,r)):e})),n.subParser("hashBlock",(function(e,t,n){return e=(e=n.converter._dispatch("hashBlock.before",e,t,n)).replace(/(^\n+|\n+$)/g,""),e="\n\n¨K"+(n.gHtmlBlocks.push(e)-1)+"K\n\n",e=n.converter._dispatch("hashBlock.after",e,t,n)})),n.subParser("hashCodeTags",(function(e,t,r){e=r.converter._dispatch("hashCodeTags.before",e,t,r);return e=n.helper.replaceRecursiveRegExp(e,(function(e,a,i,o){var s=i+n.subParser("encodeCode")(a,t,r)+o;return"¨C"+(r.gHtmlSpans.push(s)-1)+"C"}),"<code\\b[^>]*>","</code>","gim"),e=r.converter._dispatch("hashCodeTags.after",e,t,r)})),n.subParser("hashElement",(function(e,t,n){return function(e,t){var r=t;return r=(r=(r=r.replace(/\n\n/g,"\n")).replace(/^\n/,"")).replace(/\n+$/g,""),r="\n\n¨K"+(n.gHtmlBlocks.push(r)-1)+"K\n\n"}})),n.subParser("hashHTMLBlocks",(function(e,t,r){e=r.converter._dispatch("hashHTMLBlocks.before",e,t,r);var a=["pre","div","h1","h2","h3","h4","h5","h6","blockquote","table","dl","ol","ul","script","noscript","form","fieldset","iframe","math","style","section","header","footer","nav","article","aside","address","audio","canvas","figure","hgroup","output","video","p"],i=function(e,t,n,a){var i=e;return-1!==n.search(/\bmarkdown\b/)&&(i=n+r.converter.makeHtml(t)+a),"\n\n¨K"+(r.gHtmlBlocks.push(i)-1)+"K\n\n"};t.backslashEscapesHTMLTags&&(e=e.replace(/\\<(\/?[^>]+?)>/g,(function(e,t){return"&lt;"+t+"&gt;"})));for(var o=0;o<a.length;++o)for(var s,l=new RegExp("^ {0,3}(<"+a[o]+"\\b[^>]*>)","im"),c="<"+a[o]+"\\b[^>]*>",u="</"+a[o]+">";-1!==(s=n.helper.regexIndexOf(e,l));){var d=n.helper.splitAtIndex(e,s),p=n.helper.replaceRecursiveRegExp(d[1],i,c,u,"im");if(p===d[1])break;e=d[0].concat(p)}return e=e.replace(/(\n {0,3}(<(hr)\b([^<>])*?\/?>)[ \t]*(?=\n{2,}))/g,n.subParser("hashElement")(e,t,r)),e=(e=n.helper.replaceRecursiveRegExp(e,(function(e){return"\n\n¨K"+(r.gHtmlBlocks.push(e)-1)+"K\n\n"}),"^ {0,3}\x3c!--","--\x3e","gm")).replace(/(?:\n\n)( {0,3}(?:<([?%])[^\r]*?\2>)[ \t]*(?=\n{2,}))/g,n.subParser("hashElement")(e,t,r)),e=r.converter._dispatch("hashHTMLBlocks.after",e,t,r)})),n.subParser("hashHTMLSpans",(function(e,t,n){function r(e){return"¨C"+(n.gHtmlSpans.push(e)-1)+"C"}return e=(e=(e=(e=(e=n.converter._dispatch("hashHTMLSpans.before",e,t,n)).replace(/<[^>]+?\/>/gi,(function(e){return r(e)}))).replace(/<([^>]+?)>[\s\S]*?<\/\1>/g,(function(e){return r(e)}))).replace(/<([^>]+?)\s[^>]+?>[\s\S]*?<\/\1>/g,(function(e){return r(e)}))).replace(/<[^>]+?>/gi,(function(e){return r(e)})),e=n.converter._dispatch("hashHTMLSpans.after",e,t,n)})),n.subParser("unhashHTMLSpans",(function(e,t,n){e=n.converter._dispatch("unhashHTMLSpans.before",e,t,n);for(var r=0;r<n.gHtmlSpans.length;++r){for(var a=n.gHtmlSpans[r],i=0;/¨C(\d+)C/.test(a);){var o=RegExp.$1;if(a=a.replace("¨C"+o+"C",n.gHtmlSpans[o]),10===i){console.error("maximum nesting of 10 spans reached!!!");break}++i}e=e.replace("¨C"+r+"C",a)}return e=n.converter._dispatch("unhashHTMLSpans.after",e,t,n)})),n.subParser("hashPreCodeTags",(function(e,t,r){e=r.converter._dispatch("hashPreCodeTags.before",e,t,r);return e=n.helper.replaceRecursiveRegExp(e,(function(e,a,i,o){var s=i+n.subParser("encodeCode")(a,t,r)+o;return"\n\n¨G"+(r.ghCodeBlocks.push({text:e,codeblock:s})-1)+"G\n\n"}),"^ {0,3}<pre\\b[^>]*>\\s*<code\\b[^>]*>","^ {0,3}</code>\\s*</pre>","gim"),e=r.converter._dispatch("hashPreCodeTags.after",e,t,r)})),n.subParser("headers",(function(e,t,r){e=r.converter._dispatch("headers.before",e,t,r);var a=isNaN(parseInt(t.headerLevelStart))?1:parseInt(t.headerLevelStart),i=t.smoothLivePreview?/^(.+)[ \t]*\n={2,}[ \t]*\n+/gm:/^(.+)[ \t]*\n=+[ \t]*\n+/gm,o=t.smoothLivePreview?/^(.+)[ \t]*\n-{2,}[ \t]*\n+/gm:/^(.+)[ \t]*\n-+[ \t]*\n+/gm;e=(e=e.replace(i,(function(e,i){var o=n.subParser("spanGamut")(i,t,r),s=t.noHeaderId?"":' id="'+l(i)+'"',c="<h"+a+s+">"+o+"</h"+a+">";return n.subParser("hashBlock")(c,t,r)}))).replace(o,(function(e,i){var o=n.subParser("spanGamut")(i,t,r),s=t.noHeaderId?"":' id="'+l(i)+'"',c=a+1,u="<h"+c+s+">"+o+"</h"+c+">";return n.subParser("hashBlock")(u,t,r)}));var s=t.requireSpaceBeforeHeadingText?/^(#{1,6})[ \t]+(.+?)[ \t]*#*\n+/gm:/^(#{1,6})[ \t]*(.+?)[ \t]*#*\n+/gm;function l(e){var a,i;if(t.customizedHeaderId){var o=e.match(/\{([^{]+?)}\s*$/);o&&o[1]&&(e=o[1])}return a=e,i=n.helper.isString(t.prefixHeaderId)?t.prefixHeaderId:!0===t.prefixHeaderId?"section-":"",t.rawPrefixHeaderId||(a=i+a),a=t.ghCompatibleHeaderId?a.replace(/ /g,"-").replace(/&amp;/g,"").replace(/¨T/g,"").replace(/¨D/g,"").replace(/[&+$,\/:;=?@"#{}|^¨~\[\]`\\*)(%.!'<>]/g,"").toLowerCase():t.rawHeaderId?a.replace(/ /g,"-").replace(/&amp;/g,"&").replace(/¨T/g,"¨").replace(/¨D/g,"$").replace(/["']/g,"-").toLowerCase():a.replace(/[^\w]/g,"").toLowerCase(),t.rawPrefixHeaderId&&(a=i+a),r.hashLinkCounts[a]?a=a+"-"+r.hashLinkCounts[a]++:r.hashLinkCounts[a]=1,a}return e=e.replace(s,(function(e,i,o){var s=o;t.customizedHeaderId&&(s=o.replace(/\s?\{([^{]+?)}\s*$/,""));var c=n.subParser("spanGamut")(s,t,r),u=t.noHeaderId?"":' id="'+l(o)+'"',d=a-1+i.length,p="<h"+d+u+">"+c+"</h"+d+">";return n.subParser("hashBlock")(p,t,r)})),e=r.converter._dispatch("headers.after",e,t,r)})),n.subParser("horizontalRule",(function(e,t,r){e=r.converter._dispatch("horizontalRule.before",e,t,r);var a=n.subParser("hashBlock")("<hr />",t,r);return e=(e=(e=e.replace(/^ {0,2}( ?-){3,}[ \t]*$/gm,a)).replace(/^ {0,2}( ?\*){3,}[ \t]*$/gm,a)).replace(/^ {0,2}( ?_){3,}[ \t]*$/gm,a),e=r.converter._dispatch("horizontalRule.after",e,t,r)})),n.subParser("images",(function(e,t,r){function a(e,t,a,i,o,s,l,c){var u=r.gUrls,d=r.gTitles,p=r.gDimensions;if(a=a.toLowerCase(),c||(c=""),e.search(/\(<?\s*>? ?(['"].*['"])?\)$/m)>-1)i="";else if(""===i||null===i){if(""!==a&&null!==a||(a=t.toLowerCase().replace(/ ?\n/g," ")),i="#"+a,n.helper.isUndefined(u[a]))return e;i=u[a],n.helper.isUndefined(d[a])||(c=d[a]),n.helper.isUndefined(p[a])||(o=p[a].width,s=p[a].height)}t=t.replace(/"/g,"&quot;").replace(n.helper.regexes.asteriskDashAndColon,n.helper.escapeCharactersCallback);var h='<img src="'+(i=i.replace(n.helper.regexes.asteriskDashAndColon,n.helper.escapeCharactersCallback))+'" alt="'+t+'"';return c&&n.helper.isString(c)&&(h+=' title="'+(c=c.replace(/"/g,"&quot;").replace(n.helper.regexes.asteriskDashAndColon,n.helper.escapeCharactersCallback))+'"'),o&&s&&(h+=' width="'+(o="*"===o?"auto":o)+'"',h+=' height="'+(s="*"===s?"auto":s)+'"'),h+=" />"}return e=(e=(e=(e=(e=(e=r.converter._dispatch("images.before",e,t,r)).replace(/!\[([^\]]*?)] ?(?:\n *)?\[([\s\S]*?)]()()()()()/g,a)).replace(/!\[([^\]]*?)][ \t]*()\([ \t]?<?(data:.+?\/.+?;base64,[A-Za-z0-9+/=\n]+?)>?(?: =([*\d]+[A-Za-z%]{0,4})x([*\d]+[A-Za-z%]{0,4}))?[ \t]*(?:(["'])([^"]*?)\6)?[ \t]?\)/g,(function(e,t,n,r,i,o,s,l){return a(e,t,n,r=r.replace(/\s/g,""),i,o,s,l)}))).replace(/!\[([^\]]*?)][ \t]*()\([ \t]?<([^>]*)>(?: =([*\d]+[A-Za-z%]{0,4})x([*\d]+[A-Za-z%]{0,4}))?[ \t]*(?:(?:(["'])([^"]*?)\6))?[ \t]?\)/g,a)).replace(/!\[([^\]]*?)][ \t]*()\([ \t]?<?([\S]+?(?:\([\S]*?\)[\S]*?)?)>?(?: =([*\d]+[A-Za-z%]{0,4})x([*\d]+[A-Za-z%]{0,4}))?[ \t]*(?:(["'])([^"]*?)\6)?[ \t]?\)/g,a)).replace(/!\[([^\[\]]+)]()()()()()/g,a),e=r.converter._dispatch("images.after",e,t,r)})),n.subParser("italicsAndBold",(function(e,t,n){function r(e,t,n){return t+e+n}return e=n.converter._dispatch("italicsAndBold.before",e,t,n),e=t.literalMidWordUnderscores?(e=(e=e.replace(/\b___(\S[\s\S]*?)___\b/g,(function(e,t){return r(t,"<strong><em>","</em></strong>")}))).replace(/\b__(\S[\s\S]*?)__\b/g,(function(e,t){return r(t,"<strong>","</strong>")}))).replace(/\b_(\S[\s\S]*?)_\b/g,(function(e,t){return r(t,"<em>","</em>")})):(e=(e=e.replace(/___(\S[\s\S]*?)___/g,(function(e,t){return/\S$/.test(t)?r(t,"<strong><em>","</em></strong>"):e}))).replace(/__(\S[\s\S]*?)__/g,(function(e,t){return/\S$/.test(t)?r(t,"<strong>","</strong>"):e}))).replace(/_([^\s_][\s\S]*?)_/g,(function(e,t){return/\S$/.test(t)?r(t,"<em>","</em>"):e})),e=t.literalMidWordAsterisks?(e=(e=e.replace(/([^*]|^)\B\*\*\*(\S[\s\S]*?)\*\*\*\B(?!\*)/g,(function(e,t,n){return r(n,t+"<strong><em>","</em></strong>")}))).replace(/([^*]|^)\B\*\*(\S[\s\S]*?)\*\*\B(?!\*)/g,(function(e,t,n){return r(n,t+"<strong>","</strong>")}))).replace(/([^*]|^)\B\*(\S[\s\S]*?)\*\B(?!\*)/g,(function(e,t,n){return r(n,t+"<em>","</em>")})):(e=(e=e.replace(/\*\*\*(\S[\s\S]*?)\*\*\*/g,(function(e,t){return/\S$/.test(t)?r(t,"<strong><em>","</em></strong>"):e}))).replace(/\*\*(\S[\s\S]*?)\*\*/g,(function(e,t){return/\S$/.test(t)?r(t,"<strong>","</strong>"):e}))).replace(/\*([^\s*][\s\S]*?)\*/g,(function(e,t){return/\S$/.test(t)?r(t,"<em>","</em>"):e})),e=n.converter._dispatch("italicsAndBold.after",e,t,n)})),n.subParser("lists",(function(e,t,r){function a(e,a){r.gListLevel++,e=e.replace(/\n{2,}$/,"\n");var i=/(\n)?(^ {0,3})([*+-]|\d+[.])[ \t]+((\[(x|X| )?])?[ \t]*[^\r]+?(\n{1,2}))(?=\n*(¨0| {0,3}([*+-]|\d+[.])[ \t]+))/gm,o=/\n[ \t]*\n(?!¨0)/.test(e+="¨0");return t.disableForced4SpacesIndentedSublists&&(i=/(\n)?(^ {0,3})([*+-]|\d+[.])[ \t]+((\[(x|X| )?])?[ \t]*[^\r]+?(\n{1,2}))(?=\n*(¨0|\2([*+-]|\d+[.])[ \t]+))/gm),e=(e=e.replace(i,(function(e,a,i,s,l,c,u){u=u&&""!==u.trim();var d=n.subParser("outdent")(l,t,r),p="";return c&&t.tasklists&&(p=' class="task-list-item" style="list-style-type: none;"',d=d.replace(/^[ \t]*\[(x|X| )?]/m,(function(){var e='<input type="checkbox" disabled style="margin: 0px 0.35em 0.25em -1.6em; vertical-align: middle;"';return u&&(e+=" checked"),e+=">"}))),d=d.replace(/^([-*+]|\d\.)[ \t]+[\S\n ]*/g,(function(e){return"¨A"+e})),a||d.search(/\n{2,}/)>-1?(d=n.subParser("githubCodeBlocks")(d,t,r),d=n.subParser("blockGamut")(d,t,r)):(d=(d=n.subParser("lists")(d,t,r)).replace(/\n$/,""),d=(d=n.subParser("hashHTMLBlocks")(d,t,r)).replace(/\n\n+/g,"\n\n"),d=o?n.subParser("paragraphs")(d,t,r):n.subParser("spanGamut")(d,t,r)),d="<li"+p+">"+(d=d.replace("¨A",""))+"</li>\n"}))).replace(/¨0/g,""),r.gListLevel--,a&&(e=e.replace(/\s+$/,"")),e}function i(e,t){if("ol"===t){var n=e.match(/^ *(\d+)\./);if(n&&"1"!==n[1])return' start="'+n[1]+'"'}return""}function o(e,n,r){var o=t.disableForced4SpacesIndentedSublists?/^ ?\d+\.[ \t]/gm:/^ {0,3}\d+\.[ \t]/gm,s=t.disableForced4SpacesIndentedSublists?/^ ?[*+-][ \t]/gm:/^ {0,3}[*+-][ \t]/gm,l="ul"===n?o:s,c="";if(-1!==e.search(l))!function t(u){var d=u.search(l),p=i(e,n);-1!==d?(c+="\n\n<"+n+p+">\n"+a(u.slice(0,d),!!r)+"</"+n+">\n",l="ul"===(n="ul"===n?"ol":"ul")?o:s,t(u.slice(d))):c+="\n\n<"+n+p+">\n"+a(u,!!r)+"</"+n+">\n"}(e);else{var u=i(e,n);c="\n\n<"+n+u+">\n"+a(e,!!r)+"</"+n+">\n"}return c}return e=r.converter._dispatch("lists.before",e,t,r),e+="¨0",e=(e=r.gListLevel?e.replace(/^(( {0,3}([*+-]|\d+[.])[ \t]+)[^\r]+?(¨0|\n{2,}(?=\S)(?![ \t]*(?:[*+-]|\d+[.])[ \t]+)))/gm,(function(e,t,n){return o(t,n.search(/[*+-]/g)>-1?"ul":"ol",!0)})):e.replace(/(\n\n|^\n?)(( {0,3}([*+-]|\d+[.])[ \t]+)[^\r]+?(¨0|\n{2,}(?=\S)(?![ \t]*(?:[*+-]|\d+[.])[ \t]+)))/gm,(function(e,t,n,r){return o(n,r.search(/[*+-]/g)>-1?"ul":"ol",!1)}))).replace(/¨0/,""),e=r.converter._dispatch("lists.after",e,t,r)})),n.subParser("metadata",(function(e,t,n){if(!t.metadata)return e;function r(e){n.metadata.raw=e,(e=(e=e.replace(/&/g,"&amp;").replace(/"/g,"&quot;")).replace(/\n {4}/g," ")).replace(/^([\S ]+): +([\s\S]+?)$/gm,(function(e,t,r){return n.metadata.parsed[t]=r,""}))}return e=(e=(e=(e=n.converter._dispatch("metadata.before",e,t,n)).replace(/^\s*«««+(\S*?)\n([\s\S]+?)\n»»»+\n/,(function(e,t,n){return r(n),"¨M"}))).replace(/^\s*---+(\S*?)\n([\s\S]+?)\n---+\n/,(function(e,t,a){return t&&(n.metadata.format=t),r(a),"¨M"}))).replace(/¨M/g,""),e=n.converter._dispatch("metadata.after",e,t,n)})),n.subParser("outdent",(function(e,t,n){return e=(e=(e=n.converter._dispatch("outdent.before",e,t,n)).replace(/^(\t|[ ]{1,4})/gm,"¨0")).replace(/¨0/g,""),e=n.converter._dispatch("outdent.after",e,t,n)})),n.subParser("paragraphs",(function(e,t,r){for(var a=(e=(e=(e=r.converter._dispatch("paragraphs.before",e,t,r)).replace(/^\n+/g,"")).replace(/\n+$/g,"")).split(/\n{2,}/g),i=[],o=a.length,s=0;s<o;s++){var l=a[s];l.search(/¨(K|G)(\d+)\1/g)>=0?i.push(l):l.search(/\S/)>=0&&(l=(l=n.subParser("spanGamut")(l,t,r)).replace(/^([ \t]*)/g,"<p>"),l+="</p>",i.push(l))}for(o=i.length,s=0;s<o;s++){for(var c="",u=i[s],d=!1;/¨(K|G)(\d+)\1/.test(u);){var p=RegExp.$1,h=RegExp.$2;c=(c="K"===p?r.gHtmlBlocks[h]:d?n.subParser("encodeCode")(r.ghCodeBlocks[h].text,t,r):r.ghCodeBlocks[h].codeblock).replace(/\$/g,"$$$$"),u=u.replace(/(\n\n)?¨(K|G)\d+\2(\n\n)?/,c),/^<pre\b[^>]*>\s*<code\b[^>]*>/.test(u)&&(d=!0)}i[s]=u}return e=(e=(e=i.join("\n")).replace(/^\n+/g,"")).replace(/\n+$/g,""),r.converter._dispatch("paragraphs.after",e,t,r)})),n.subParser("runExtension",(function(e,t,n,r){if(e.filter)t=e.filter(t,r.converter,n);else if(e.regex){var a=e.regex;a instanceof RegExp||(a=new RegExp(a,"g")),t=t.replace(a,e.replace)}return t})),n.subParser("spanGamut",(function(e,t,r){return e=r.converter._dispatch("spanGamut.before",e,t,r),e=n.subParser("codeSpans")(e,t,r),e=n.subParser("escapeSpecialCharsWithinTagAttributes")(e,t,r),e=n.subParser("encodeBackslashEscapes")(e,t,r),e=n.subParser("images")(e,t,r),e=n.subParser("anchors")(e,t,r),e=n.subParser("autoLinks")(e,t,r),e=n.subParser("simplifiedAutoLinks")(e,t,r),e=n.subParser("emoji")(e,t,r),e=n.subParser("underline")(e,t,r),e=n.subParser("italicsAndBold")(e,t,r),e=n.subParser("strikethrough")(e,t,r),e=n.subParser("ellipsis")(e,t,r),e=n.subParser("hashHTMLSpans")(e,t,r),e=n.subParser("encodeAmpsAndAngles")(e,t,r),t.simpleLineBreaks?/\n\n¨K/.test(e)||(e=e.replace(/\n+/g,"<br />\n")):e=e.replace(/  +\n/g,"<br />\n"),e=r.converter._dispatch("spanGamut.after",e,t,r)})),n.subParser("strikethrough",(function(e,t,r){return t.strikethrough&&(e=(e=r.converter._dispatch("strikethrough.before",e,t,r)).replace(/(?:~){2}([\s\S]+?)(?:~){2}/g,(function(e,a){return function(e){return t.simplifiedAutoLink&&(e=n.subParser("simplifiedAutoLinks")(e,t,r)),"<del>"+e+"</del>"}(a)})),e=r.converter._dispatch("strikethrough.after",e,t,r)),e})),n.subParser("stripLinkDefinitions",(function(e,t,r){var a=function(e,a,i,o,s,l,c){return a=a.toLowerCase(),i.match(/^data:.+?\/.+?;base64,/)?r.gUrls[a]=i.replace(/\s/g,""):r.gUrls[a]=n.subParser("encodeAmpsAndAngles")(i,t,r),l?l+c:(c&&(r.gTitles[a]=c.replace(/"|'/g,"&quot;")),t.parseImgDimensions&&o&&s&&(r.gDimensions[a]={width:o,height:s}),"")};return e=(e=(e=(e+="¨0").replace(/^ {0,3}\[(.+)]:[ \t]*\n?[ \t]*<?(data:.+?\/.+?;base64,[A-Za-z0-9+/=\n]+?)>?(?: =([*\d]+[A-Za-z%]{0,4})x([*\d]+[A-Za-z%]{0,4}))?[ \t]*\n?[ \t]*(?:(\n*)["|'(](.+?)["|')][ \t]*)?(?:\n\n|(?=¨0)|(?=\n\[))/gm,a)).replace(/^ {0,3}\[(.+)]:[ \t]*\n?[ \t]*<?([^>\s]+)>?(?: =([*\d]+[A-Za-z%]{0,4})x([*\d]+[A-Za-z%]{0,4}))?[ \t]*\n?[ \t]*(?:(\n*)["|'(](.+?)["|')][ \t]*)?(?:\n+|(?=¨0))/gm,a)).replace(/¨0/,"")})),n.subParser("tables",(function(e,t,r){if(!t.tables)return e;function a(e,a){return"<td"+a+">"+n.subParser("spanGamut")(e,t,r)+"</td>\n"}function i(e){var i,o=e.split("\n");for(i=0;i<o.length;++i)/^ {0,3}\|/.test(o[i])&&(o[i]=o[i].replace(/^ {0,3}\|/,"")),/\|[ \t]*$/.test(o[i])&&(o[i]=o[i].replace(/\|[ \t]*$/,"")),o[i]=n.subParser("codeSpans")(o[i],t,r);var s,l,c,u,d=o[0].split("|").map((function(e){return e.trim()})),p=o[1].split("|").map((function(e){return e.trim()})),h=[],g=[],f=[],m=[];for(o.shift(),o.shift(),i=0;i<o.length;++i)""!==o[i].trim()&&h.push(o[i].split("|").map((function(e){return e.trim()})));if(d.length<p.length)return e;for(i=0;i<p.length;++i)f.push((s=p[i],/^:[ \t]*--*$/.test(s)?' style="text-align:left;"':/^--*[ \t]*:[ \t]*$/.test(s)?' style="text-align:right;"':/^:[ \t]*--*[ \t]*:$/.test(s)?' style="text-align:center;"':""));for(i=0;i<d.length;++i)n.helper.isUndefined(f[i])&&(f[i]=""),g.push((l=d[i],c=f[i],u=void 0,u="",l=l.trim(),(t.tablesHeaderId||t.tableHeaderId)&&(u=' id="'+l.replace(/ /g,"_").toLowerCase()+'"'),"<th"+u+c+">"+(l=n.subParser("spanGamut")(l,t,r))+"</th>\n"));for(i=0;i<h.length;++i){for(var b=[],_=0;_<g.length;++_)n.helper.isUndefined(h[i][_]),b.push(a(h[i][_],f[_]));m.push(b)}return function(e,t){for(var n="<table>\n<thead>\n<tr>\n",r=e.length,a=0;a<r;++a)n+=e[a];for(n+="</tr>\n</thead>\n<tbody>\n",a=0;a<t.length;++a){n+="<tr>\n";for(var i=0;i<r;++i)n+=t[a][i];n+="</tr>\n"}return n+="</tbody>\n</table>\n"}(g,m)}return e=(e=(e=(e=r.converter._dispatch("tables.before",e,t,r)).replace(/\\(\|)/g,n.helper.escapeCharactersCallback)).replace(/^ {0,3}\|?.+\|.+\n {0,3}\|?[ \t]*:?[ \t]*(?:[-=]){2,}[ \t]*:?[ \t]*\|[ \t]*:?[ \t]*(?:[-=]){2,}[\s\S]+?(?:\n\n|¨0)/gm,i)).replace(/^ {0,3}\|.+\|[ \t]*\n {0,3}\|[ \t]*:?[ \t]*(?:[-=]){2,}[ \t]*:?[ \t]*\|[ \t]*\n( {0,3}\|.+\|[ \t]*\n)*(?:\n|¨0)/gm,i),e=r.converter._dispatch("tables.after",e,t,r)})),n.subParser("underline",(function(e,t,r){return t.underline?(e=r.converter._dispatch("underline.before",e,t,r),e=(e=t.literalMidWordUnderscores?(e=e.replace(/\b___(\S[\s\S]*?)___\b/g,(function(e,t){return"<u>"+t+"</u>"}))).replace(/\b__(\S[\s\S]*?)__\b/g,(function(e,t){return"<u>"+t+"</u>"})):(e=e.replace(/___(\S[\s\S]*?)___/g,(function(e,t){return/\S$/.test(t)?"<u>"+t+"</u>":e}))).replace(/__(\S[\s\S]*?)__/g,(function(e,t){return/\S$/.test(t)?"<u>"+t+"</u>":e}))).replace(/(_)/g,n.helper.escapeCharactersCallback),e=r.converter._dispatch("underline.after",e,t,r)):e})),n.subParser("unescapeSpecialChars",(function(e,t,n){return e=(e=n.converter._dispatch("unescapeSpecialChars.before",e,t,n)).replace(/¨E(\d+)E/g,(function(e,t){var n=parseInt(t);return String.fromCharCode(n)})),e=n.converter._dispatch("unescapeSpecialChars.after",e,t,n)})),n.subParser("makeMarkdown.blockquote",(function(e,t){var r="";if(e.hasChildNodes())for(var a=e.childNodes,i=a.length,o=0;o<i;++o){var s=n.subParser("makeMarkdown.node")(a[o],t);""!==s&&(r+=s)}return r="> "+(r=r.trim()).split("\n").join("\n> ")})),n.subParser("makeMarkdown.codeBlock",(function(e,t){var n=e.getAttribute("language"),r=e.getAttribute("precodenum");return"```"+n+"\n"+t.preList[r]+"\n```"})),n.subParser("makeMarkdown.codeSpan",(function(e){return"`"+e.innerHTML+"`"})),n.subParser("makeMarkdown.emphasis",(function(e,t){var r="";if(e.hasChildNodes()){r+="*";for(var a=e.childNodes,i=a.length,o=0;o<i;++o)r+=n.subParser("makeMarkdown.node")(a[o],t);r+="*"}return r})),n.subParser("makeMarkdown.header",(function(e,t,r){var a=new Array(r+1).join("#"),i="";if(e.hasChildNodes()){i=a+" ";for(var o=e.childNodes,s=o.length,l=0;l<s;++l)i+=n.subParser("makeMarkdown.node")(o[l],t)}return i})),n.subParser("makeMarkdown.hr",(function(){return"---"})),n.subParser("makeMarkdown.image",(function(e){var t="";return e.hasAttribute("src")&&(t+="!["+e.getAttribute("alt")+"](",t+="<"+e.getAttribute("src")+">",e.hasAttribute("width")&&e.hasAttribute("height")&&(t+=" ="+e.getAttribute("width")+"x"+e.getAttribute("height")),e.hasAttribute("title")&&(t+=' "'+e.getAttribute("title")+'"'),t+=")"),t})),n.subParser("makeMarkdown.links",(function(e,t){var r="";if(e.hasChildNodes()&&e.hasAttribute("href")){var a=e.childNodes,i=a.length;r="[";for(var o=0;o<i;++o)r+=n.subParser("makeMarkdown.node")(a[o],t);r+="](",r+="<"+e.getAttribute("href")+">",e.hasAttribute("title")&&(r+=' "'+e.getAttribute("title")+'"'),r+=")"}return r})),n.subParser("makeMarkdown.list",(function(e,t,r){var a="";if(!e.hasChildNodes())return"";for(var i=e.childNodes,o=i.length,s=e.getAttribute("start")||1,l=0;l<o;++l)if(void 0!==i[l].tagName&&"li"===i[l].tagName.toLowerCase()){a+=("ol"===r?s.toString()+". ":"- ")+n.subParser("makeMarkdown.listItem")(i[l],t),++s}return(a+="\n\x3c!-- --\x3e\n").trim()})),n.subParser("makeMarkdown.listItem",(function(e,t){for(var r="",a=e.childNodes,i=a.length,o=0;o<i;++o)r+=n.subParser("makeMarkdown.node")(a[o],t);return/\n$/.test(r)?r=r.split("\n").join("\n    ").replace(/^ {4}$/gm,"").replace(/\n\n+/g,"\n\n"):r+="\n",r})),n.subParser("makeMarkdown.node",(function(e,t,r){r=r||!1;var a="";if(3===e.nodeType)return n.subParser("makeMarkdown.txt")(e,t);if(8===e.nodeType)return"\x3c!--"+e.data+"--\x3e\n\n";if(1!==e.nodeType)return"";switch(e.tagName.toLowerCase()){case"h1":r||(a=n.subParser("makeMarkdown.header")(e,t,1)+"\n\n");break;case"h2":r||(a=n.subParser("makeMarkdown.header")(e,t,2)+"\n\n");break;case"h3":r||(a=n.subParser("makeMarkdown.header")(e,t,3)+"\n\n");break;case"h4":r||(a=n.subParser("makeMarkdown.header")(e,t,4)+"\n\n");break;case"h5":r||(a=n.subParser("makeMarkdown.header")(e,t,5)+"\n\n");break;case"h6":r||(a=n.subParser("makeMarkdown.header")(e,t,6)+"\n\n");break;case"p":r||(a=n.subParser("makeMarkdown.paragraph")(e,t)+"\n\n");break;case"blockquote":r||(a=n.subParser("makeMarkdown.blockquote")(e,t)+"\n\n");break;case"hr":r||(a=n.subParser("makeMarkdown.hr")(e,t)+"\n\n");break;case"ol":r||(a=n.subParser("makeMarkdown.list")(e,t,"ol")+"\n\n");break;case"ul":r||(a=n.subParser("makeMarkdown.list")(e,t,"ul")+"\n\n");break;case"precode":r||(a=n.subParser("makeMarkdown.codeBlock")(e,t)+"\n\n");break;case"pre":r||(a=n.subParser("makeMarkdown.pre")(e,t)+"\n\n");break;case"table":r||(a=n.subParser("makeMarkdown.table")(e,t)+"\n\n");break;case"code":a=n.subParser("makeMarkdown.codeSpan")(e,t);break;case"em":case"i":a=n.subParser("makeMarkdown.emphasis")(e,t);break;case"strong":case"b":a=n.subParser("makeMarkdown.strong")(e,t);break;case"del":a=n.subParser("makeMarkdown.strikethrough")(e,t);break;case"a":a=n.subParser("makeMarkdown.links")(e,t);break;case"img":a=n.subParser("makeMarkdown.image")(e,t);break;default:a=e.outerHTML+"\n\n"}return a})),n.subParser("makeMarkdown.paragraph",(function(e,t){var r="";if(e.hasChildNodes())for(var a=e.childNodes,i=a.length,o=0;o<i;++o)r+=n.subParser("makeMarkdown.node")(a[o],t);return r=r.trim()})),n.subParser("makeMarkdown.pre",(function(e,t){var n=e.getAttribute("prenum");return"<pre>"+t.preList[n]+"</pre>"})),n.subParser("makeMarkdown.strikethrough",(function(e,t){var r="";if(e.hasChildNodes()){r+="~~";for(var a=e.childNodes,i=a.length,o=0;o<i;++o)r+=n.subParser("makeMarkdown.node")(a[o],t);r+="~~"}return r})),n.subParser("makeMarkdown.strong",(function(e,t){var r="";if(e.hasChildNodes()){r+="**";for(var a=e.childNodes,i=a.length,o=0;o<i;++o)r+=n.subParser("makeMarkdown.node")(a[o],t);r+="**"}return r})),n.subParser("makeMarkdown.table",(function(e,t){var r,a,i="",o=[[],[]],s=e.querySelectorAll("thead>tr>th"),l=e.querySelectorAll("tbody>tr");for(r=0;r<s.length;++r){var c=n.subParser("makeMarkdown.tableCell")(s[r],t),u="---";if(s[r].hasAttribute("style"))switch(s[r].getAttribute("style").toLowerCase().replace(/\s/g,"")){case"text-align:left;":u=":---";break;case"text-align:right;":u="---:";break;case"text-align:center;":u=":---:"}o[0][r]=c.trim(),o[1][r]=u}for(r=0;r<l.length;++r){var d=o.push([])-1,p=l[r].getElementsByTagName("td");for(a=0;a<s.length;++a){var h=" ";void 0!==p[a]&&(h=n.subParser("makeMarkdown.tableCell")(p[a],t)),o[d].push(h)}}var g=3;for(r=0;r<o.length;++r)for(a=0;a<o[r].length;++a){var f=o[r][a].length;f>g&&(g=f)}for(r=0;r<o.length;++r){for(a=0;a<o[r].length;++a)1===r?":"===o[r][a].slice(-1)?o[r][a]=n.helper.padEnd(o[r][a].slice(-1),g-1,"-")+":":o[r][a]=n.helper.padEnd(o[r][a],g,"-"):o[r][a]=n.helper.padEnd(o[r][a],g);i+="| "+o[r].join(" | ")+" |\n"}return i.trim()})),n.subParser("makeMarkdown.tableCell",(function(e,t){var r="";if(!e.hasChildNodes())return"";for(var a=e.childNodes,i=a.length,o=0;o<i;++o)r+=n.subParser("makeMarkdown.node")(a[o],t,!0);return r.trim()})),n.subParser("makeMarkdown.txt",(function(e){var t=e.nodeValue;return t=(t=t.replace(/ +/g," ")).replace(/¨NBSP;/g," "),t=(t=(t=(t=(t=(t=(t=(t=(t=n.helper.unescapeHTMLEntities(t)).replace(/([*_~|`])/g,"\\$1")).replace(/^(\s*)>/g,"\\$1>")).replace(/^#/gm,"\\#")).replace(/^(\s*)([-=]{3,})(\s*)$/,"$1\\$2$3")).replace(/^( {0,3}\d+)\./gm,"$1\\.")).replace(/^( {0,3})([+-])/gm,"$1\\$2")).replace(/]([\s]*)\(/g,"\\]$1\\(")).replace(/^ {0,3}\[([\S \t]*?)]:/gm,"\\[$1]:")}));e.exports?e.exports=n:this.showdown=n}).call(vt)}));function St(e){switch(e.type){case"basic":return function(e=null,t=null){return{name:"Authorization",value:`Basic ${btoa(`${e||""}:${t||""}`)}`}}(e.username,e.password);case"bearer":return t=e.token,{name:"Authorization",value:`${e.prefix||"Bearer"} ${t}`};case"oauth1":return function(e){const{callback:t,consumerKey:n,nonce:r,signatureMethod:a,timestamp:i,tokenKey:o}=e;return{name:"Authorization",value:`OAuth oauth_callback="${t}",\noauth_consumer_key="${n}",\noauth_nonce="${r||"{{oauth_nonce}}"}",\noauth_signature="{{oauth_signature}}",\noauth_signature_method="${a}",\noauth_timestamp="${i||1103493600}",\noauth_token="${o}",\noauth_version="1.0"`.split("\n").join(" ")}}(e);case"oauth2":return{name:"Authorization",value:'OAuth {{params}}, oauth_version="2.0"'};case"hawk":return{name:"Authorization",value:`Hawk id="${e.id}", ts="1103493600", nonce="{{hawk_nonce}}", mac="{{hawk_mac}}"`};case"ntlm":return{name:"Authorization",value:"NTLM {{ntlm_token}}"};case"asap":return{name:"Authorization",value:"Bearer {{jwt_token}}"};default:return{name:"Authorization",value:"{{authorization}}"}}var t}function $t(e,t){const n=t.parameters;return n&&n.length?(e=`${e}?`,e+=n.map(e=>`${encodeURIComponent(e.name)}=${encodeURIComponent(e.value)}`).join("&")):e}function It(e){return JSON.stringify(e).slice(1,-1)}function Ct(e,t){let n=`curl "${$t(e,t)}" \\\n`;return t.headers.forEach(e=>{n+=`  -H '${e.name}: ${e.value||""}' \\\n`}),t.authHeader&&(n+=`  -H '${t.authHeader.name}: ${It(t.authHeader.value||"")}' \\\n`),n+=`  -X ${t.method} \\\n`,t.cookies&&t.cookies.length&&t.cookies.forEach(e=>{n+=`  -b '${e.key}'='${e.value}' \\\n`}),t.body&&t.body.params&&t.body.params.length&&t.body.params.forEach(e=>{if(null===e.value)return!1;e.value.indexOf("'")>=0&&e.value.indexOf('"')>=0?n+=`  -F "${e.name}=${e.value.replace('"','\\"')}"`:e.value.indexOf("'")>=0?n+=`  -F "${e.name}=${e.value}"`:(e.value.indexOf('"'),n+=`  -F '${e.name}=${e.value}'`),n+=" \\\n"}),t.body&&t.body.text&&(n+=`  -d '${t.body.text.replace(/\t/g,"  ")}' \\\n`),n.slice(0,-2)}function Lt(e,t){let n="",r=!1;t.body&&"multipart/form-data"===t.body.mimeType&&(r=!0,n+="const form = new FormData();\n",t.body.params.forEach(e=>{n+=`form.append("${e.name}", "${e.value}");\n`}),n+="\n"),n+=`fetch("${$t(e,t)}", `;const a={method:t.method};var i,o;return t.headers&&t.headers.length&&(a.headers={},t.headers.forEach(e=>{a.headers[e.name]=e.value})),t.authHeader&&(a.headers||(a.headers={}),a.headers[t.authHeader.name]=t.authHeader.value),t.cookies&&t.cookies.length&&(a.headers||(a.headers={}),a.headers.cookie=t.cookies.map(e=>`${encodeURIComponent(e.key)}=${encodeURIComponent(e.value)}`).join("; ")),!r&&t.body&&"multipart/form-data"!==t.body.mimeType&&(a.body=(i=t.body.mimeType,o=t.body,"application/json"===i&&o.text?JSON.parse(o.text):"application/x-www-form-urlencoded"===i?o.params.map(e=>`${encodeURIComponent(e.name)}=${encodeURIComponent(e.value)}`).join("&"):o.text)),r&&(a.body="{{formVariable}}"),n+=JSON.stringify(a,null,2),r&&(n=n.replace('"{{formVariable}}"',"form")),n+=")\n  .then(response => console.log(response))\n",n+="  .catch(err => console.error(err));",n}function Tt(e,t){let n="import requests\n\n";if(n+=`url = '${e}'\n`,t.parameters&&t.parameters.length){const e={};t.parameters.forEach(t=>{e[t.name]=t.value}),n+=`querystring = ${JSON.stringify(e)}\n`}const r={};t.authHeader&&(r[t.authHeader.name]=t.authHeader.value),t.headers&&t.headers.length&&t.headers.forEach(e=>{r[e.name]=e.value}),t.cookies&&t.cookies.length&&(r.cookie=t.cookies.map(e=>`${encodeURIComponent(e.key)}=${encodeURIComponent(e.value)}`).join("; ")),r&&(n+=`headers = ${JSON.stringify(r,null,2)}\n`);const a=function(e){const t=e.mimeType;if("application/x-www-form-urlencoded"===t)return`payload = ${e.params.map(e=>`${encodeURIComponent(e.name)}=${encodeURIComponent(e.value)}`).join("&")}`;if("multipart/form-data"===t){const t={},n={};return e.params.forEach(e=>{"file"===e.type?n[e.name]=e.value:t[e.name]=e.value}),`payload = ${JSON.stringify(t,null,2)}\n\nfiles = ${JSON.stringify(n,null,2)}`}return"application/json"===t&&e.text?`payload = ${JSON.stringify(JSON.parse(e.text),null,2)}`:`payload = ${e.text}`}(t.body);return a&&(n+=`${a}\n`),n+=`\nresponse = requests.request('${t.method}', url, data=payload, headers=headers, files=files)\n`,n+="print(response.text)",n}function Ot(e){const t=e.mimeType;if("application/x-www-form-urlencoded"===t)return e.params.map(e=>`${encodeURIComponent(e.name)}=${encodeURIComponent(e.value)}`).join("&");if("multipart/form-data"===t){const t="-----011000010111000001101001";return`"${It(e.params.map(e=>`${t}\nContent-Disposition: form-data; name="${e.name}"\n\n${e.value}`).join("\n"))}\n${t}--"`}return JSON.stringify(e.text)}function Mt(e,t){const n=(e=$t(e,t)).startsWith("https://");let r="require 'uri'\nrequire 'net/http'\n";if(n&&(r+="require 'openssl'\n"),r+=`\nurl = URI("${e}")\n\nhttp = Net::HTTP.new(url.host, url.port)\n`,n&&(r+="http.use_ssl = true\nhttp.verify_mode = OpenSSL::SSL::VERIFY_NONE\n"),r+=`\nrequest = Net::HTTP::${function(e){switch(e){case"GET":return"Get";case"POST":return"Post";case"PATCH":return"Patch";case"PUT":return"Put";case"DELETE":return"Delete";default:return"{{METHOD}}"}}(t.method)}.new(url)\n`,t.cookies&&t.cookies.length){const e=[];t.cookies.forEach(t=>e.push(`${encodeURIComponent(t.key)}=${encodeURIComponent(t.value)}`)),r+=`request["cookie"] = '${e.join("; ")}'\n`}if(t.headers&&t.headers.length&&t.headers.forEach(e=>{r+=`request["${e.name}"] = ${JSON.stringify(e.value)}\n`}),t.authHeader&&(r+=`request["${t.authHeader.name}"] = ${JSON.stringify(t.authHeader.value)}\n`),t.body){const e=Ot(t.body);e&&(r+=`request.body = ${e}\n`)}return r+="\nresponse = http.request(request)\nputs response.read_body",r}function jt(e,t){let n="<?php\n\n$curl = curl_init();\n\ncurl_setopt_array($curl, array(\n  ";const r=[`CURLOPT_URL => "${$t(e,t)}"`,"CURLOPT_RETURNTRANSFER => true",'CURLOPT_ENCODING => ""',"CURLOPT_MAXREDIRS => 10","CURLOPT_TIMEOUT => 30","CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1",`CURLOPT_CUSTOMREQUEST => "${t.method}"`],a=Ot(t.body);if(a&&r.push(`CURLOPT_POSTFIELDS => ${a}`),t.cookies&&t.cookies.length){const e=[];t.cookies.forEach(t=>e.push(`${encodeURIComponent(t.key)}=${encodeURIComponent(t.value)}`)),r.push(`CURLOPT_COOKIE => '${e.join("; ")}'`)}const i=[];return t.headers&&t.headers.length&&t.headers.forEach(e=>i.push(`${e.name}: ${It(e.value)}`)),t.authHeader&&i.push(`${t.authHeader.name}: ${t.authHeader.value}`),i.length&&r.push(`CURLOPTS_HTTPHEADER => array(\n    ${i.join(",\n    ")}\n  )`),n+=`${r.join(",\n  ")}\n));\n\n$response = curl_exec($curl);\n$err = curl_error($curl);\n\ncurl_close($curl);\n\nif ($err) {\n  echo "cURL Error #:" . $err;\n} else {\n  echo $response;\n}`,n}function At(e,t){const n=t.body&&function(e){const t=e.mimeType;if("application/x-www-form-urlencoded"===t)return'"'+e.params.map(e=>`${encodeURIComponent(e.name)}=${encodeURIComponent(e.value)}`).join("&")+'"';if("multipart/form-data"===t){const t="-----011000010111000001101001",n=e.params.map(e=>`${t}\nContent-Disposition: form-data; name="${e.name}"\n\n${e.value}`).join("\n");return`"${escape(n)}\n${t}--"`}return JSON.stringify(e.text)}(t.body);let r=`package main\n\nimport (\n  "fmt"${n?'\n"strings"':""}\n  "net/http"\n  "io/ioutil"\n)\n\nfunc main() {\n\n  `;if(r+=`url := "${$t(e,t)}"\n`,n&&(r+=`  payload := strings.NewReader(${n})\n`),r+=`  req, _ := http.NewRequest("${t.method}" url, ${n?"payload":"nil"})\n\n`,t.cookies&&t.cookies.length){const e=[];t.cookies.forEach(t=>e.push(`${encodeURIComponent(t.key)}=${encodeURIComponent(t.value)}`)),r+=`  req.Header.Add("cookie", ${JSON.stringify(e.join(";"))})\n`}return t.headers.forEach(e=>{r+=`  req.Header.Add("${e.name}", ${JSON.stringify(e.value)})\n`}),t.authHeader&&(r+=`  req.Header.Add("${t.authHeader.name}", ${JSON.stringify(t.authHeader.value)})\n`),r+="  res, _ := http.DefaultClient.Do(req)\n\n  defer res.Body.Close()\n  body, _ := ioutil.ReadAll(res.Body)\n\n  fmt.Println(res)\n  fmt.Println(string(body))\n\n}",r}class Pt{constructor(e,t,n){this.request=e,this.url=t,this.cookiejars=n,this.code=null,this.request.cookies=this.appendCookies(),this.request.authentication&&this.request.authentication.type&&(this.request.authHeader=St(this.request.authentication))}generate(e){switch(e){case"curl":this.code=Ct;break;case"javascript":this.code=Lt;break;case"python":this.code=Tt;break;case"node":return`const fetch = require('node-fetch');\n\n${Lt(this.url,this.request)}`;case"ruby":this.code=Mt;break;case"php":this.code=jt;break;case"golang":this.code=At;break;default:return"Not implemented yet..."}return this.code(this.url,this.request)}appendCookies(){const e=[];return this.cookiejars.forEach(t=>{t.cookies&&t.cookies.length&&t.cookies.forEach(t=>{this.url&&this.url.includes(t.domain)&&("/"===t.path||this.url.includes(t.path))&&e.push({key:t.key,value:t.value})})}),e}}function Nt(e){return e.replace(/{{\s*([a-zA-Z0-9_]+)\s*}}/g,'<span class="env-variable">$1</span>')}class Rt{constructor(e){this.body=e,this.mime=e.mimeType}__parseJSON(){if(!this.body.text)return;return this.body.text=this.body.text.replace(new RegExp("{{.*}}","g"),'"!!Missing declaration in environment!!"'),{type:"plain",note:"json",text:`<pre>${JSON.stringify(JSON.parse(this.body.text),null,2)}</pre>`}}__parseMultipart(){return{type:"array",note:"formdata",rows:this.body.params.map(e=>({name:e.name,value:e.value,description:e.description}))}}__parsePlain(){return{type:"plain",note:"raw",text:`<pre>${this.body.text}</pre>`}}parse(){switch(this.mime){case"application/json":return this.__parseJSON();case"multipart/form-data":case"application/x-www-form-urlencoded":return this.__parseMultipart();default:return this.__parsePlain()}}}class Ht{constructor(e){this.req=e,this.reType=/^<(\*?\w+)>:\s/}pathParams(){const e=[];return this.req.pathParams.forEach(t=>{const n={name:t.name,value:"",description:t.description||""},r=this.reType.exec(n.description.trim());r&&(n.value=r[1],n.description=n.description.replace(this.reType,"")),e.push(n)}),{title:"Path Parameters",rows:e}}params(){const e=[];return this.req.parameters.forEach(t=>{const n={name:t.name,value:"",description:t.description||""},r=this.reType.exec(n.description.trim());r&&(n.value=r[1],n.description=n.description.replace(this.reType,"")),e.push(n)}),{title:"Query Parameters",rows:e}}headers(){const e=[];if(this.req.headers.forEach(t=>{e.push({name:t.name,value:Nt(t.value||""),description:t.description})}),this.req.authentication&&this.req.authentication.type){const t=St(this.req.authentication);e.push({name:t.name,value:`<pre>${Nt(t.value)}</pre>`})}return{title:"Headers",rows:e}}body(){const e=new Rt(this.req.body).parse();switch(e.type){case"array":return{title:"Body",note:e.note,rows:e.rows};case"plain":return{title:"Body",note:e.note,text:e.text}}}}function zt(e){if(e){let t=e.indexOf("://");-1!==t&&(t=e.indexOf("/",t+3),e=e.substr(t))}return e}function qt(e,t){t=Object.assign({open:!0,duration:.2,easing:"ease"},t);const n=()=>{};let r=n,a=n;const i=e.addEventListener("transitionend",()=>{r(),r=n,a=n});async function o(){return new Promise(requestAnimationFrame)}function s(){return`height ${t.duration}s ${t.easing}`}async function l(){e.style.height=e.scrollHeight+"px";try{await async function(){return new Promise((e,t)=>{r=e,a=t})}(),e.style.height="auto"}catch(e){}}return e.style.overflow="hidden",e.style.transition=s(),e.style.height=t.open?"auto":"0px",{update:function(n){(t=Object.assign(t,n)).open?l():async function(){"auto"===e.style.height?(e.style.transition="none",await o(),e.style.height=e.scrollHeight+"px",e.style.transition=s(),await o(),e.style.height="0px"):(a(),e.style.height="0px")}()},destroy:function(){e.removeEventListener("transitionend",i)}}}function Dt(e,t,n){const r=Object.create(e);return r.row=t[n],r}function Bt(e){var t,n,r=e.data.note+"";return{c(){t=h("span"),n=g(r),_(t,"class","note svelte-d5vskm")},m(e,r){u(e,t,r),c(t,n)},p(e,t){e.data&&r!==(r=t.data.note+"")&&y(n,r)},d(e){e&&d(t)}}}function Vt(e){var t,n=e.data.text+"";return{c(){_(t=h("div"),"class","raw-data")},m(e,r){u(e,t,r),t.innerHTML=n},p(e,r){e.data&&n!==(n=r.data.text+"")&&(t.innerHTML=n)},d(e){e&&d(t)}}}function Ft(e){var t;let n=e.data.rows,r=[];for(let t=0;t<n.length;t+=1)r[t]=Gt(Dt(e,n,t));return{c(){for(let e=0;e<r.length;e+=1)r[e].c();t=m()},m(e,n){for(let t=0;t<r.length;t+=1)r[t].m(e,n);u(e,t,n)},p(e,a){if(e.data){let i;for(n=a.data.rows,i=0;i<n.length;i+=1){const o=Dt(a,n,i);r[i]?r[i].p(e,o):(r[i]=Gt(o),r[i].c(),r[i].m(t.parentNode,t))}for(;i<r.length;i+=1)r[i].d(1);r.length=n.length}},d(e){p(r,e),e&&d(t)}}}function Ut(e){var t,n,r,a=e.row.description+"";return{c(){t=h("div"),r=f(),n=new $(a,r),_(t,"class","row description svelte-d5vskm")},m(e,a){u(e,t,a),n.m(t),c(t,r)},p(e,t){e.data&&a!==(a=t.row.description+"")&&n.p(a)},d(e){e&&d(t)}}}function Gt(e){var t,n,r,a,i,o,s,l=e.row.name+"",p=e.row.value+"",b=e.row.description&&Ut(e);return{c(){t=h("div"),n=h("div"),r=g(l),a=f(),i=h("div"),o=f(),b&&b.c(),s=m(),_(n,"class","name svelte-d5vskm"),_(i,"class","value svelte-d5vskm"),_(t,"class","row svelte-d5vskm")},m(e,l){u(e,t,l),c(t,n),c(n,r),c(t,a),c(t,i),i.innerHTML=p,u(e,o,l),b&&b.m(e,l),u(e,s,l)},p(e,t){e.data&&l!==(l=t.row.name+"")&&y(r,l),e.data&&p!==(p=t.row.value+"")&&(i.innerHTML=p),t.row.description?b?b.p(e,t):((b=Ut(t)).c(),b.m(s.parentNode,s)):b&&(b.d(1),b=null)},d(e){e&&(d(t),d(o)),b&&b.d(e),e&&d(s)}}}function Wt(t){var n,r,a,i,o,s,l,p,m,v,w,k,x=t.data.title+"",E=t.data.note&&Bt(t),S=t.data.text&&Vt(t),$=t.data.rows&&t.data.rows.length&&Ft(t);return{c(){n=h("div"),r=h("div"),a=h("span"),i=g(x),o=f(),E&&E.c(),s=f(),(l=h("span")).innerHTML='<img src="chevron.png" alt="Show/Hide" width="16" height="16">',p=f(),m=h("div"),S&&S.c(),v=f(),$&&$.c(),_(a,"class","title svelte-d5vskm"),_(l,"class","chevron svelte-d5vskm"),_(r,"class","header svelte-d5vskm"),_(m,"class","table-body svelte-d5vskm"),_(n,"class","table svelte-d5vskm"),k=b(l,"click",t.handleToggle)},m(e,d){u(e,n,d),c(n,r),c(r,a),c(a,i),c(r,o),E&&E.m(r,null),c(r,s),c(r,l),c(n,p),c(n,m),S&&S.m(m,null),c(m,v),$&&$.m(m,null),w=qt.call(null,m,{open:t.open,duration:t.duration,easing:t.easing})||{}},p(e,t){e.data&&x!==(x=t.data.title+"")&&y(i,x),t.data.note?E?E.p(e,t):((E=Bt(t)).c(),E.m(r,s)):E&&(E.d(1),E=null),t.data.text?S?S.p(e,t):((S=Vt(t)).c(),S.m(m,v)):S&&(S.d(1),S=null),t.data.rows&&t.data.rows.length?$?$.p(e,t):(($=Ft(t)).c(),$.m(m,null)):$&&($.d(1),$=null),"function"==typeof w.update&&(e.open||e.duration||e.easing)&&w.update.call(null,{open:t.open,duration:t.duration,easing:t.easing})},i:e,o:e,d(e){e&&d(n),E&&E.d(),S&&S.d(),$&&$.d(),w&&"function"==typeof w.destroy&&w.destroy(),k()}}}function Kt(e,t,n){let{data:r,open:a=!!(r.rows&&r.rows.length<5),duration:i=.2,easing:o="ease-in"}=t;const s=j();return e.$set=e=>{"data"in e&&n("data",r=e.data),"open"in e&&n("open",a=e.open),"duration"in e&&n("duration",i=e.duration),"easing"in e&&n("easing",o=e.easing)},{data:r,open:a,duration:i,easing:o,handleToggle:function(){n("open",a=!a),s(a?"open":"close")}}}class Jt extends re{constructor(e){super(),ne(this,e,Kt,Wt,o,["data","open","duration","easing"])}}function Zt(e,t,n){const r=Object.create(e);return r.example=t[n],r}function Qt(e){var t;return{c(){_(t=h("div"),"class","description")},m(n,r){u(n,t,r),t.innerHTML=e.description},p(e,n){e.description&&(t.innerHTML=n.description)},d(e){e&&d(t)}}}function Xt(e){var t,n=new Jt({props:{data:e.content.pathParams()}});return{c(){n.$$.fragment.c()},m(e,r){ee(n,e,r),t=!0},p(e,t){var r={};e.content&&(r.data=t.content.pathParams()),n.$set(r)},i(e){t||(Z(n.$$.fragment,e),t=!0)},o(e){Q(n.$$.fragment,e),t=!1},d(e){te(n,e)}}}function Yt(e){var t,n=new Jt({props:{data:e.content.params()}});return{c(){n.$$.fragment.c()},m(e,r){ee(n,e,r),t=!0},p(e,t){var r={};e.content&&(r.data=t.content.params()),n.$set(r)},i(e){t||(Z(n.$$.fragment,e),t=!0)},o(e){Q(n.$$.fragment,e),t=!1},d(e){te(n,e)}}}function en(e){var t,n=new Jt({props:{data:e.content.headers()}});return{c(){n.$$.fragment.c()},m(e,r){ee(n,e,r),t=!0},p(e,t){var r={};e.content&&(r.data=t.content.headers()),n.$set(r)},i(e){t||(Z(n.$$.fragment,e),t=!0)},o(e){Q(n.$$.fragment,e),t=!1},d(e){te(n,e)}}}function tn(e){var t,n=new Jt({props:{data:e.content.body()}});return{c(){n.$$.fragment.c()},m(e,r){ee(n,e,r),t=!0},p(e,t){var r={};e.content&&(r.data=t.content.body()),n.$set(r)},i(e){t||(Z(n.$$.fragment,e),t=!0)},o(e){Q(n.$$.fragment,e),t=!1},d(e){te(n,e)}}}function nn(e){var t;let n=e.reqData.exampleResponses,r=[];for(let t=0;t<n.length;t+=1)r[t]=an(Zt(e,n,t));return{c(){for(let e=0;e<r.length;e+=1)r[e].c();t=m()},m(e,n){for(let t=0;t<r.length;t+=1)r[t].m(e,n);u(e,t,n)},p(e,a){if(e.reqData||e.getClassForStatusCode||e.hljs){let i;for(n=a.reqData.exampleResponses,i=0;i<n.length;i+=1){const o=Zt(a,n,i);r[i]?r[i].p(e,o):(r[i]=an(o),r[i].c(),r[i].m(t.parentNode,t))}for(;i<r.length;i+=1)r[i].d(1);r.length=n.length}},d(e){p(r,e),e&&d(t)}}}function rn(e){var t,n,r,a,i,o,s,p,m,b,v=e.example.code&&e.example.code.length?` - ${e.example.code}`:"",w=it.highlightAuto(e.example.value).value+"";return{c(){t=h("div"),n=h("div"),r=h("div"),a=g("Example\n                                response"),i=g(v),o=g(":"),s=f(),p=h("pre"),m=f(),_(r,"class","title svelte-bexg59"),_(n,"class","header svelte-bexg59"),_(p,"class","svelte-bexg59"),_(t,"class",b=l("code-example example-response "+e.getClassForStatusCode(e.example.code))+" svelte-bexg59")},m(e,l){u(e,t,l),c(t,n),c(n,r),c(r,a),c(r,i),c(r,o),c(t,s),c(t,p),p.innerHTML=w,c(t,m)},p(e,n){e.reqData&&v!==(v=n.example.code&&n.example.code.length?` - ${n.example.code}`:"")&&y(i,v),e.reqData&&w!==(w=it.highlightAuto(n.example.value).value+"")&&(p.innerHTML=w),e.reqData&&b!==(b=l("code-example example-response "+n.getClassForStatusCode(n.example.code))+" svelte-bexg59")&&_(t,"class",b)},d(e){e&&d(t)}}}function an(e){var t,n=e.example.value&&rn(e);return{c(){n&&n.c(),t=m()},m(e,r){n&&n.m(e,r),u(e,t,r)},p(e,r){r.example.value?n?n.p(e,r):((n=rn(r)).c(),n.m(t.parentNode,t)):n&&(n.d(1),n=null)},d(e){n&&n.d(e),e&&d(t)}}}function on(e){var t,n,r,a,i,o,s,p,m,b,v,w,k,x,E,S,$,I,C,L,T,O,M,j,A,P,N,R,H,z,q,D,B,V,F,U=e.request.method+"",G=e.reqData.name+"",W=e.reqData.url+"",X=e.description&&Qt(e),Y=e.request.pathParams&&e.request.pathParams.length&&Xt(e),ee=e.request.parameters&&e.request.parameters.length&&Yt(e),te=(e.request.headers&&e.request.headers.length||e.request.authentication&&e.request.authentication.type)&&en(e),ne=e.request.body&&(e.request.body.text||e.request.body.params)&&tn(e),re=e.reqData.exampleResponses&&e.reqData.exampleResponses.length&&nn(e);return{c(){t=h("div"),n=h("div"),r=h("div"),a=g(" "),o=f(),s=h("h3"),p=h("strong"),m=g(U),v=f(),w=g(G),k=f(),x=h("pre"),E=f(),X&&X.c(),S=f(),$=h("div"),Y&&Y.c(),I=f(),ee&&ee.c(),C=f(),te&&te.c(),L=f(),ne&&ne.c(),T=f(),O=h("hr"),M=f(),j=h("div"),A=h("div"),P=h("div"),(N=h("div")).textContent="Example request:",R=f(),H=h("div"),z=h("a"),q=g(e.copyText),D=f(),B=h("pre"),V=f(),re&&re.c(),_(r,"class","anchor svelte-bexg59"),_(r,"id",i=e.request._id),_(p,"class",b=l(e.request.method.toLowerCase())+" svelte-bexg59"),_(s,"class","request-title"),_(x,"class","url svelte-bexg59"),_($,"class","tables"),_(n,"class","left"),_(N,"class","title svelte-bexg59"),_(z,"href","javascript:"),_(z,"class","svelte-bexg59"),_(H,"class","copy"),_(P,"class","header svelte-bexg59"),_(B,"class","svelte-bexg59"),_(A,"class","code-example svelte-bexg59"),_(j,"class","right"),_(t,"class","row")},m(i,l){u(i,t,l),c(t,n),c(n,r),c(r,a),c(n,o),c(n,s),c(s,p),c(p,m),c(s,v),c(s,w),c(n,k),c(n,x),x.innerHTML=W,c(n,E),X&&X.m(n,null),c(n,S),c(n,$),Y&&Y.m($,null),c($,I),ee&&ee.m($,null),c($,C),te&&te.m($,null),c($,L),ne&&ne.m($,null),c(n,T),c(n,O),c(t,M),c(t,j),c(j,A),c(A,P),c(P,N),c(P,R),c(P,H),c(H,z),c(z,q),e.a_binding(z),c(A,D),c(A,B),B.innerHTML=e.exampleHTML,e.pre1_binding(B),c(j,V),re&&re.m(j,null),F=!0},p(e,t){F&&!e.request||i===(i=t.request._id)||_(r,"id",i),F&&!e.request||U===(U=t.request.method+"")||y(m,U),F&&!e.request||b===(b=l(t.request.method.toLowerCase())+" svelte-bexg59")||_(p,"class",b),F&&!e.reqData||G===(G=t.reqData.name+"")||y(w,G),F&&!e.reqData||W===(W=t.reqData.url+"")||(x.innerHTML=W),t.description?X?X.p(e,t):((X=Qt(t)).c(),X.m(n,S)):X&&(X.d(1),X=null),t.request.pathParams&&t.request.pathParams.length?Y?(Y.p(e,t),Z(Y,1)):((Y=Xt(t)).c(),Z(Y,1),Y.m($,I)):Y&&(K(),Q(Y,1,1,()=>{Y=null}),J()),t.request.parameters&&t.request.parameters.length?ee?(ee.p(e,t),Z(ee,1)):((ee=Yt(t)).c(),Z(ee,1),ee.m($,C)):ee&&(K(),Q(ee,1,1,()=>{ee=null}),J()),t.request.headers&&t.request.headers.length||t.request.authentication&&t.request.authentication.type?te?(te.p(e,t),Z(te,1)):((te=en(t)).c(),Z(te,1),te.m($,L)):te&&(K(),Q(te,1,1,()=>{te=null}),J()),t.request.body&&(t.request.body.text||t.request.body.params)?ne?(ne.p(e,t),Z(ne,1)):((ne=tn(t)).c(),Z(ne,1),ne.m($,null)):ne&&(K(),Q(ne,1,1,()=>{ne=null}),J()),F&&!e.copyText||y(q,t.copyText),F&&!e.exampleHTML||(B.innerHTML=t.exampleHTML),t.reqData.exampleResponses&&t.reqData.exampleResponses.length?re?re.p(e,t):((re=nn(t)).c(),re.m(j,null)):re&&(re.d(1),re=null)},i(e){F||(Z(Y),Z(ee),Z(te),Z(ne),F=!0)},o(e){Q(Y),Q(ee),Q(te),Q(ne),F=!1},d(n){n&&d(t),X&&X.d(),Y&&Y.d(),ee&&ee.d(),te&&te.d(),ne&&ne.d(),e.a_binding(null),e.pre1_binding(null),re&&re.d()}}}function sn(e,t,n){const r=new Et.Converter({simplifiedAutoLink:!0,openLinksInNewWindow:!0,excludeTrailingPunctuationFromURLs:!0,tables:!0});let a,i,{request:o,env:s,language:l=null,cookiejars:c}=t,u="Copy to clipboard";const d=document.createElement("code");let p,h,g,f,m,b;return e.$set=e=>{"request"in e&&n("request",o=e.request),"env"in e&&n("env",s=e.env),"language"in e&&n("language",l=e.language),"cookiejars"in e&&n("cookiejars",c=e.cookiejars)},e.$$.update=(e={request:1,language:1,cookiejars:1,exampleCode:1,code:1,copyButton:1,codeElement:1,clipboard:1,reqData:1})=>{e.request&&n("content",p=new Ht(o)),e.request&&n("reqData",h={method:o.method,url:zt(Nt(o.url)),name:o.name,description:o.description,exampleResponses:o.exampleResponses}),(e.request||e.language||e.cookiejars)&&n("exampleCode",g=((e,t,n,r)=>new Pt(e,t,r).generate(n))(o,o.url,l,c)),e.language&&n("code",d.className=l,d),e.exampleCode&&n("code",d.textContent=g,d),e.code&&it.highlightBlock(d),e.code&&n("exampleHTML",f=d.outerHTML),(e.copyButton||e.codeElement)&&n("clipboard",m=a&&new xt(a,{target:function(){return i}})),e.clipboard&&m&&m.on("success",(function(){n("copyText",u="Copied!"),setTimeout(()=>n("copyText",u="Copy to Clipboard"),5e3)})),e.clipboard&&m&&m.on("error",(function(e){console.error(e),n("copyText",u="Failed to copy :("),setTimeout(()=>n("copyText",u="Copy to Clipboard"),5e3)})),e.reqData&&n("description",b=h.description&&r.makeHtml(h.description))},{request:o,env:s,language:l,cookiejars:c,copyText:u,copyButton:a,codeElement:i,getClassForStatusCode:function(e){if(!e)return"default";switch(e[0]){case"1":return"info";case"2":return"success";case"3":return"redirect";case"4":return"client-error";case"5":return"server-error";default:return"default"}},content:p,reqData:h,exampleHTML:f,description:b,a_binding:function(e){P[e?"unshift":"push"](()=>{n("copyButton",a=e)})},pre1_binding:function(e){P[e?"unshift":"push"](()=>{n("codeElement",i=e)})}}}class ln extends re{constructor(e){super(),ne(this,e,sn,on,o,["request","env","language","cookiejars"])}}function cn(e,t){return e?(Object.keys(t.data).forEach(n=>{e=e.replace(new RegExp("{{(\\s*"+n+"\\s*)}}","g"),t.data[n])}),e):null}function un(e){var t;return{c(){_(t=h("div"),"class","description")},m(n,r){u(n,t,r),t.innerHTML=e.description},p(e,n){e.description&&(t.innerHTML=n.description)},d(e){e&&d(t)}}}function dn(t){var n,r,a,i,o,s,l,p,m,b=t.groupData.name+"",v=t.description&&un(t);return{c(){n=h("div"),r=h("div"),a=h("h2"),i=g(b),o=f(),v&&v.c(),s=f(),l=h("hr"),p=f(),m=h("div"),_(r,"class","left"),_(m,"class","right"),_(n,"class","row")},m(e,t){u(e,n,t),c(n,r),c(r,a),c(a,i),c(r,o),v&&v.m(r,null),c(r,s),c(r,l),c(n,p),c(n,m)},p(e,t){e.groupData&&b!==(b=t.groupData.name+"")&&y(i,b),t.description?v?v.p(e,t):((v=un(t)).c(),v.m(r,s)):v&&(v.d(1),v=null)},i:e,o:e,d(e){e&&d(n),v&&v.d()}}}function pn(e,t,n){const r=new Et.Converter({simplifiedAutoLink:!0,openLinksInNewWindow:!0,excludeTrailingPunctuationFromURLs:!0,tables:!0});let a,i,{group:o,env:s}=t;return e.$set=e=>{"group"in e&&n("group",o=e.group),"env"in e&&n("env",s=e.env)},e.$$.update=(e={group:1,env:1,groupData:1})=>{(e.group||e.env)&&n("groupData",a={name:cn(o.name,s),description:cn(o.description,s)}),e.groupData&&n("description",i=a.description&&r.makeHtml(a.description))},{group:o,env:s,groupData:a,description:i}}class hn extends re{constructor(e){super(),ne(this,e,pn,dn,o,["group","env"])}}function gn(e,t,n){const r=Object.create(e);return r.row=t[n],r}function fn(e){var t,n,r=new hn({props:{group:e.row,env:e.env}}),a=new wn({props:{content:[...e.row.requests,...e.row.children],env:e.env,language:e.language,cookiejars:e.cookiejars}});return{c(){r.$$.fragment.c(),t=f(),a.$$.fragment.c()},m(e,i){ee(r,e,i),u(e,t,i),ee(a,e,i),n=!0},p(e,t){var n={};e.content&&(n.group=t.row),e.env&&(n.env=t.env),r.$set(n);var i={};e.content&&(i.content=[...t.row.requests,...t.row.children]),e.env&&(i.env=t.env),e.language&&(i.language=t.language),e.cookiejars&&(i.cookiejars=t.cookiejars),a.$set(i)},i(e){n||(Z(r.$$.fragment,e),Z(a.$$.fragment,e),n=!0)},o(e){Q(r.$$.fragment,e),Q(a.$$.fragment,e),n=!1},d(e){te(r,e),e&&d(t),te(a,e)}}}function mn(e){var t,n=new ln({props:{request:e.row,env:e.env,language:e.language,cookiejars:e.cookiejars}});return{c(){n.$$.fragment.c()},m(e,r){ee(n,e,r),t=!0},p(e,t){var r={};e.content&&(r.request=t.row),e.env&&(r.env=t.env),e.language&&(r.language=t.language),e.cookiejars&&(r.cookiejars=t.cookiejars),n.$set(r)},i(e){t||(Z(n.$$.fragment,e),t=!0)},o(e){Q(n.$$.fragment,e),t=!1},d(e){te(n,e)}}}function bn(e){var t,n,r,a,i=[mn,fn],o=[];function s(e,t){return"request"===t.row._type?0:1}return t=s(0,e),n=o[t]=i[t](e),{c(){n.c(),r=m()},m(e,n){o[t].m(e,n),u(e,r,n),a=!0},p(e,a){var l=t;(t=s(0,a))===l?o[t].p(e,a):(K(),Q(o[l],1,1,()=>{o[l]=null}),J(),(n=o[t])||(n=o[t]=i[t](a)).c(),Z(n,1),n.m(r.parentNode,r))},i(e){a||(Z(n),a=!0)},o(e){Q(n),a=!1},d(e){o[t].d(e),e&&d(r)}}}function _n(e){var t,n;let r=e.content,a=[];for(let t=0;t<r.length;t+=1)a[t]=bn(gn(e,r,t));const i=e=>Q(a[e],1,1,()=>{a[e]=null});return{c(){for(let e=0;e<a.length;e+=1)a[e].c();t=m()},m(e,r){for(let t=0;t<a.length;t+=1)a[t].m(e,r);u(e,t,r),n=!0},p(e,n){if(e.content||e.env||e.language||e.cookiejars){let o;for(r=n.content,o=0;o<r.length;o+=1){const i=gn(n,r,o);a[o]?(a[o].p(e,i),Z(a[o],1)):(a[o]=bn(i),a[o].c(),Z(a[o],1),a[o].m(t.parentNode,t))}for(K(),o=r.length;o<a.length;o+=1)i(o);J()}},i(e){if(!n){for(let e=0;e<r.length;e+=1)Z(a[e]);n=!0}},o(e){a=a.filter(Boolean);for(let e=0;e<a.length;e+=1)Q(a[e]);n=!1},d(e){p(a,e),e&&d(t)}}}function vn(e,t,n){let{content:r,env:a,language:i,cookiejars:o}=t;return e.$set=e=>{"content"in e&&n("content",r=e.content),"env"in e&&n("env",a=e.env),"language"in e&&n("language",i=e.language),"cookiejars"in e&&n("cookiejars",o=e.cookiejars)},{content:r,env:a,language:i,cookiejars:o}}class wn extends re{constructor(e){super(),ne(this,e,vn,_n,o,["content","env","language","cookiejars"])}}function yn(t){var n,r,a=t.getOptionLabel(t.item,t.filterText)+"";return{c(){_(n=h("div"),"class",r="item "+t.itemClasses+" svelte-1xfc328")},m(e,t){u(e,n,t),n.innerHTML=a},p(e,t){(e.getOptionLabel||e.item||e.filterText)&&a!==(a=t.getOptionLabel(t.item,t.filterText)+"")&&(n.innerHTML=a),e.itemClasses&&r!==(r="item "+t.itemClasses+" svelte-1xfc328")&&_(n,"class",r)},i:e,o:e,d(e){e&&d(n)}}}function kn(e,t,n){let{isActive:r=!1,isFirst:a=!1,isHover:i=!1,getOptionLabel:o,item:s,filterText:l=""}=t,c="";return e.$set=e=>{"isActive"in e&&n("isActive",r=e.isActive),"isFirst"in e&&n("isFirst",a=e.isFirst),"isHover"in e&&n("isHover",i=e.isHover),"getOptionLabel"in e&&n("getOptionLabel",o=e.getOptionLabel),"item"in e&&n("item",s=e.item),"filterText"in e&&n("filterText",l=e.filterText)},e.$$.update=(e={isActive:1,isFirst:1,isHover:1,item:1})=>{if(e.isActive||e.isFirst||e.isHover||e.item){const e=[];r&&e.push("active"),a&&e.push("first"),i&&e.push("hover"),s.isGroupHeader&&e.push("groupHeader"),s.isGroupItem&&e.push("groupItem"),n("itemClasses",c=e.join(" "))}},{isActive:r,isFirst:a,isHover:i,getOptionLabel:o,item:s,filterText:l,itemClasses:c}}class xn extends re{constructor(e){super(),ne(this,e,kn,yn,o,["isActive","isFirst","isHover","getOptionLabel","item","filterText"])}}const En=({row:e,visible:t,hoverItemIndex:n})=>({item:t,i:t,hoverItemIndex:n}),Sn=({row:e,visible:t,hoverItemIndex:n})=>({item:e.data,i:e.index,hoverItemIndex:n});function $n(e,t,n){const r=Object.create(e);return r.row=t[n],r}function In(e,n){var r,a,i,o;const l=n.$$slots.default,p=function(e,t,n){if(e){const r=s(e,t,n);return e[0](r)}}(l,n,Sn);return{key:e,first:null,c(){r=h("svelte-virtual-list-row"),p||(a=g("Missing template")),p&&p.c(),i=f(),w(r,"class","svelte-p6ehlv"),this.first=r},l(e){p&&p.l(svelte_virtual_list_row_nodes)},m(e,t){u(e,r,t),p?p.m(r,null):c(r,a),c(r,i),o=!0},p(e,n){p&&p.p&&(e.$$scope||e.visible||e.hoverItemIndex)&&p.p(function(e,n,r,a){return e[1]?t({},t(n.$$scope.changed||{},e[1](a?a(r):{}))):n.$$scope.changed||{}}(l,n,e,En),s(l,n,Sn))},i(e){o||(Z(p,e),o=!0)},o(e){Q(p,e),o=!1},d(e){e&&d(r),p&&p.d(e)}}}function Cn(e){var t,n,r,a,i,o=[],s=new Map;let l=e.visible;const p=e=>e.row.index;for(let t=0;t<l.length;t+=1){let n=$n(e,l,t),r=p(n);s.set(r,o[t]=In(r,n))}return{c(){t=h("svelte-virtual-list-viewport"),n=h("svelte-virtual-list-contents");for(let e=0;e<o.length;e+=1)o[e].c();x(n,"padding-top",e.top+"px"),x(n,"padding-bottom",e.bottom+"px"),w(n,"class","svelte-p6ehlv"),B(()=>e.svelte_virtual_list_viewport_resize_handler.call(t)),x(t,"height",e.height),w(t,"class","svelte-p6ehlv"),i=b(t,"scroll",e.handle_scroll)},m(i,s){u(i,t,s),c(t,n);for(let e=0;e<o.length;e+=1)o[e].m(n,null);e.svelte_virtual_list_contents_binding(n),r=function(e,t){"static"===getComputedStyle(e).position&&(e.style.position="relative");const n=document.createElement("object");let r;return n.setAttribute("style","display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; pointer-events: none; z-index: -1;"),n.type="text/html",n.tabIndex=-1,n.onload=()=>{r=n.contentDocument.defaultView,r.addEventListener("resize",t)},/Trident/.test(navigator.userAgent)?(e.appendChild(n),n.data="about:blank"):(n.data="about:blank",e.appendChild(n)),{cancel:()=>{r&&r.removeEventListener&&r.removeEventListener("resize",t),e.removeChild(n)}}}(t,e.svelte_virtual_list_viewport_resize_handler.bind(t)),e.svelte_virtual_list_viewport_binding(t),a=!0},p(e,r){const i=r.visible;K(),o=function(e,t,n,r,a,i,o,s,l,c,u,d){let p=e.length,h=i.length,g=p;const f={};for(;g--;)f[e[g].key]=g;const m=[],b=new Map,_=new Map;for(g=h;g--;){const e=d(a,i,g),s=n(e);let l=o.get(s);l?r&&l.p(t,e):(l=c(s,e),l.c()),b.set(s,m[g]=l),s in f&&_.set(s,Math.abs(g-f[s]))}const v=new Set,w=new Set;function y(e){Z(e,1),e.m(s,u),o.set(e.key,e),u=e.first,h--}for(;p&&h;){const t=m[h-1],n=e[p-1],r=t.key,a=n.key;t===n?(u=t.first,p--,h--):b.has(a)?!o.has(r)||v.has(r)?y(t):w.has(a)?p--:_.get(r)>_.get(a)?(w.add(r),y(t)):(v.add(a),p--):(l(n,o),p--)}for(;p--;){const t=e[p];b.has(t.key)||l(t,o)}for(;h;)y(m[h-1]);return m}(o,e,p,1,r,i,s,n,X,In,null,$n),J(),a&&!e.top||x(n,"padding-top",r.top+"px"),a&&!e.bottom||x(n,"padding-bottom",r.bottom+"px"),a&&!e.height||x(t,"height",r.height)},i(e){if(!a){for(let e=0;e<l.length;e+=1)Z(o[e]);a=!0}},o(e){for(let e=0;e<o.length;e+=1)Q(o[e]);a=!1},d(n){n&&d(t);for(let e=0;e<o.length;e+=1)o[e].d();e.svelte_virtual_list_contents_binding(null),r.cancel(),e.svelte_virtual_list_viewport_binding(null),i()}}}function Ln(e,t,n){let r,a,i,o,s,l,{items:c,height:u="100%",itemHeight:d=40,hoverItemIndex:p=0,start:h=0,end:g=0}=t,f=[],m=0,b=0,_=0;O(()=>{r=i.getElementsByTagName("svelte-virtual-list-row"),n("mounted",s=!0)});let{$$slots:v={},$$scope:w}=t;return e.$set=e=>{"items"in e&&n("items",c=e.items),"height"in e&&n("height",u=e.height),"itemHeight"in e&&n("itemHeight",d=e.itemHeight),"hoverItemIndex"in e&&n("hoverItemIndex",p=e.hoverItemIndex),"start"in e&&n("start",h=e.start),"end"in e&&n("end",g=e.end),"$$scope"in e&&n("$$scope",w=e.$$scope)},e.$$.update=(e={items:1,start:1,end:1,mounted:1,viewport_height:1,itemHeight:1})=>{(e.items||e.start||e.end)&&n("visible",o=c.slice(h,g).map((e,t)=>({index:t+h,data:e}))),(e.mounted||e.items||e.viewport_height||e.itemHeight)&&s&&async function(e,t,i){const{scrollTop:o}=a;await D();let s=b-o,c=h;for(;s<t&&c<e.length;){let e=r[c-h];e||(n("end",g=c+1),await D(),e=r[c-h]),s+=f[c]=i||e.offsetHeight,c+=1}n("end",g=c);const u=e.length-g;l=(b+s)/g,n("bottom",_=u*l),f.length=e.length,n("viewport",a.scrollTop=0,a)}(c,m,d)},{items:c,height:u,itemHeight:d,hoverItemIndex:p,start:h,end:g,viewport:a,contents:i,viewport_height:m,visible:o,top:b,bottom:_,handle_scroll:async function(){const{scrollTop:e}=a,t=h;for(let e=0;e<r.length;e+=1)f[h+e]=d||r[e].offsetHeight;let i=0,o=0;for(;i<c.length;){const t=f[i]||l;if(o+t>e){n("start",h=i),n("top",b=o);break}o+=t,i+=1}for(;i<c.length&&(o+=f[i]||l,i+=1,!(o>e+m)););n("end",g=i);const s=c.length-g;for(l=o/g;i<c.length;)f[i++]=l;if(n("bottom",_=s*l),h<t){await D();let n=0,i=0;for(let e=h;e<t;e+=1)r[e-h]&&(n+=f[e],i+=d||r[e-h].offsetHeight);const o=i-n;a.scrollTo(0,e+o)}},svelte_virtual_list_contents_binding:function(e){P[e?"unshift":"push"](()=>{n("contents",i=e)})},svelte_virtual_list_viewport_resize_handler:function(){m=this.offsetHeight,n("viewport_height",m)},svelte_virtual_list_viewport_binding:function(e){P[e?"unshift":"push"](()=>{n("viewport",a=e)})},$$slots:v,$$scope:w}}class Tn extends re{constructor(e){super(),ne(this,e,Ln,Cn,o,["items","height","itemHeight","hoverItemIndex","start","end"])}}function On(e,t,n){const r=Object.create(e);return r.item=t[n],r.i=n,r}function Mn(e){var t,n,r=new Tn({props:{items:e.items,itemHeight:e.itemHeight,$$slots:{default:[jn,({item:e,i:t})=>({item:e,i:t})]},$$scope:{ctx:e}}});return{c(){t=h("div"),r.$$.fragment.c(),_(t,"class","listContainer virtualList svelte-bqv8jo")},m(a,i){u(a,t,i),ee(r,t,null),e.div_binding(t),n=!0},p(e,t){var n={};e.items&&(n.items=t.items),e.itemHeight&&(n.itemHeight=t.itemHeight),(e.$$scope||e.Item||e.filterText||e.getOptionLabel||e.selectedValue||e.optionIdentifier||e.hoverItemIndex||e.items)&&(n.$$scope={changed:e,ctx:t}),r.$set(n)},i(e){n||(Z(r.$$.fragment,e),n=!0)},o(e){Q(r.$$.fragment,e),n=!1},d(n){n&&d(t),te(r),e.div_binding(null)}}}function jn(e){var t,n,r,i=e.Item;function o(e){return{props:{item:e.item,filterText:e.filterText,getOptionLabel:e.getOptionLabel,isFirst:Bn(e.i),isActive:Dn(e.item,e.selectedValue,e.optionIdentifier),isHover:Vn(e.hoverItemIndex,e.item,e.i,e.items)}}}if(i)var s=new i(o(e));function l(){return e.mouseover_handler(e)}function c(...t){return e.click_handler(e,...t)}return{c(){t=h("div"),s&&s.$$.fragment.c(),_(t,"class","listItem"),r=[b(t,"mouseover",l),b(t,"click",c)]},m(e,r){u(e,t,r),s&&ee(s,t,null),n=!0},p(n,r){e=r;var a={};if(n.item&&(a.item=e.item),n.filterText&&(a.filterText=e.filterText),n.getOptionLabel&&(a.getOptionLabel=e.getOptionLabel),n.i&&(a.isFirst=Bn(e.i)),(n.item||n.selectedValue||n.optionIdentifier)&&(a.isActive=Dn(e.item,e.selectedValue,e.optionIdentifier)),(n.hoverItemIndex||n.item||n.i||n.items)&&(a.isHover=Vn(e.hoverItemIndex,e.item,e.i,e.items)),i!==(i=e.Item)){if(s){K();const e=s;Q(e.$$.fragment,1,0,()=>{te(e,1)}),J()}i?((s=new i(o(e))).$$.fragment.c(),Z(s.$$.fragment,1),ee(s,t,null)):s=null}else i&&s.$set(a)},i(e){n||(s&&Z(s.$$.fragment,e),n=!0)},o(e){s&&Q(s.$$.fragment,e),n=!1},d(e){e&&d(t),s&&te(s),a(r)}}}function An(e){var t,n;let r=e.items,a=[];for(let t=0;t<r.length;t+=1)a[t]=zn(On(e,r,t));const i=e=>Q(a[e],1,1,()=>{a[e]=null});let o=null;return r.length||(o=Pn(e),o.c()),{c(){t=h("div");for(let e=0;e<a.length;e+=1)a[e].c();_(t,"class","listContainer svelte-bqv8jo")},m(r,i){u(r,t,i);for(let e=0;e<a.length;e+=1)a[e].m(t,null);o&&o.m(t,null),e.div_binding_1(t),n=!0},p(e,n){if(e.items||e.getGroupHeaderLabel||e.Item||e.filterText||e.getOptionLabel||e.isItemFirst||e.isItemActive||e.selectedValue||e.optionIdentifier||e.isItemHover||e.hoverItemIndex||e.hideEmptyState||e.noOptionsMessage){let o;for(r=n.items,o=0;o<r.length;o+=1){const i=On(n,r,o);a[o]?(a[o].p(e,i),Z(a[o],1)):(a[o]=zn(i),a[o].c(),Z(a[o],1),a[o].m(t,null))}for(K(),o=r.length;o<a.length;o+=1)i(o);J()}!r.length&&o?o.p(e,n):r.length?o&&(o.d(1),o=null):(o=Pn(n),o.c(),o.m(t,null))},i(e){if(!n){for(let e=0;e<r.length;e+=1)Z(a[e]);n=!0}},o(e){a=a.filter(Boolean);for(let e=0;e<a.length;e+=1)Q(a[e]);n=!1},d(n){n&&d(t),p(a,n),o&&o.d(),e.div_binding_1(null)}}}function Pn(e){var t,n=!e.hideEmptyState&&Nn(e);return{c(){n&&n.c(),t=m()},m(e,r){n&&n.m(e,r),u(e,t,r)},p(e,r){r.hideEmptyState?n&&(n.d(1),n=null):n?n.p(e,r):((n=Nn(r)).c(),n.m(t.parentNode,t))},d(e){n&&n.d(e),e&&d(t)}}}function Nn(e){var t,n;return{c(){t=h("div"),n=g(e.noOptionsMessage),_(t,"class","empty svelte-bqv8jo")},m(e,r){u(e,t,r),c(t,n)},p(e,t){e.noOptionsMessage&&y(n,t.noOptionsMessage)},d(e){e&&d(t)}}}function Rn(e){var t,n,r,i,o=e.Item;function s(e){return{props:{item:e.item,filterText:e.filterText,getOptionLabel:e.getOptionLabel,isFirst:Bn(e.i),isActive:Dn(e.item,e.selectedValue,e.optionIdentifier),isHover:Vn(e.hoverItemIndex,e.item,e.i,e.items)}}}if(o)var l=new o(s(e));function p(){return e.mouseover_handler_1(e)}function g(...t){return e.click_handler_1(e,...t)}return{c(){t=h("div"),l&&l.$$.fragment.c(),n=f(),_(t,"class","listItem"),i=[b(t,"mouseover",p),b(t,"click",g)]},m(e,a){u(e,t,a),l&&ee(l,t,null),c(t,n),r=!0},p(r,a){e=a;var i={};if(r.items&&(i.item=e.item),r.filterText&&(i.filterText=e.filterText),r.getOptionLabel&&(i.getOptionLabel=e.getOptionLabel),(r.items||r.selectedValue||r.optionIdentifier)&&(i.isActive=Dn(e.item,e.selectedValue,e.optionIdentifier)),(r.hoverItemIndex||r.items)&&(i.isHover=Vn(e.hoverItemIndex,e.item,e.i,e.items)),o!==(o=e.Item)){if(l){K();const e=l;Q(e.$$.fragment,1,0,()=>{te(e,1)}),J()}o?((l=new o(s(e))).$$.fragment.c(),Z(l.$$.fragment,1),ee(l,t,n)):l=null}else o&&l.$set(i)},i(e){r||(l&&Z(l.$$.fragment,e),r=!0)},o(e){l&&Q(l.$$.fragment,e),r=!1},d(e){e&&d(t),l&&te(l),a(i)}}}function Hn(t){var n,r,a=t.getGroupHeaderLabel(t.item)+"";return{c(){n=h("div"),r=g(a),_(n,"class","listGroupTitle svelte-bqv8jo")},m(e,t){u(e,n,t),c(n,r)},p(e,t){(e.getGroupHeaderLabel||e.items)&&a!==(a=t.getGroupHeaderLabel(t.item)+"")&&y(r,a)},i:e,o:e,d(e){e&&d(n)}}}function zn(e){var t,n,r,a,i=[Hn,Rn],o=[];function s(e,t){return t.item.isGroupHeader&&!t.item.isSelectable?0:1}return t=s(0,e),n=o[t]=i[t](e),{c(){n.c(),r=m()},m(e,n){o[t].m(e,n),u(e,r,n),a=!0},p(e,a){var l=t;(t=s(0,a))===l?o[t].p(e,a):(K(),Q(o[l],1,1,()=>{o[l]=null}),J(),(n=o[t])||(n=o[t]=i[t](a)).c(),Z(n,1),n.m(r.parentNode,r))},i(e){a||(Z(n),a=!0)},o(e){Q(n),a=!1},d(e){o[t].d(e),e&&d(r)}}}function qn(e){var t,n,r,a,i=e.isVirtualList&&Mn(e),o=!e.isVirtualList&&An(e);return{c(){i&&i.c(),t=f(),o&&o.c(),n=m(),a=b(window,"keydown",e.handleKeyDown)},m(e,a){i&&i.m(e,a),u(e,t,a),o&&o.m(e,a),u(e,n,a),r=!0},p(e,r){r.isVirtualList?i?(i.p(e,r),Z(i,1)):((i=Mn(r)).c(),Z(i,1),i.m(t.parentNode,t)):i&&(K(),Q(i,1,1,()=>{i=null}),J()),r.isVirtualList?o&&(K(),Q(o,1,1,()=>{o=null}),J()):o?(o.p(e,r),Z(o,1)):((o=An(r)).c(),Z(o,1),o.m(n.parentNode,n))},i(e){r||(Z(i),Z(o),r=!0)},o(e){Q(i),Q(o),r=!1},d(e){i&&i.d(e),e&&d(t),o&&o.d(e),e&&d(n),a()}}}function Dn(e,t,n){return t&&t[n]===e[n]}function Bn(e){return 0===e}function Vn(e,t,n,r){return e===n||1===r.length}function Fn(e,t,n){const r=j();let a,{container:i}=t,{Item:o=xn,isVirtualList:s=!1,items:l=[],getOptionLabel:c=((e,t)=>{if(e)return e.isCreator?`Create "${t}"`:e.label})}=t,{getGroupHeaderLabel:u=(e=>e.label)}=t,{itemHeight:d=40,hoverItemIndex:p=0,selectedValue:h,start:g=0,end:f=0,optionIdentifier:m="value",hideEmptyState:b=!1,noOptionsMessage:_="No options",getOptionString:v=(e=>e)}=t,{isMulti:w=!1,activeItemIndex:y=0,filterText:k="",isCreatable:x=!1}=t,E=0,S=!1;function $(e){e.isCreator||r("itemSelected",e)}function I(e){S||n("hoverItemIndex",p=e)}function C(e){const{item:t,i:a,event:i}=e;i.stopPropagation(),h&&!w&&h[m]===t[m]||(t.isCreator?r("itemCreated",k):(n("activeItemIndex",y=a),n("hoverItemIndex",p=a),$(t)))}async function L(e){if(s)return;let t=!0;for(;t;)e>0&&p===l.length-1?n("hoverItemIndex",p=0):n("hoverItemIndex",e<0&&0===p?p=l.length-1:p+=e),t=l[p].isGroupHeader&&!l[p].isSelectable;await D(),A("hover")}function A(e){if(s||!i)return;let t;const r=i.querySelector(`.listItem .${e}`);r&&(t=i.getBoundingClientRect().bottom-r.getBoundingClientRect().bottom),n("container",i.scrollTop-=t,i)}O(()=>{if(l.length>0&&!w&&h){const e=l.findIndex(e=>e[m]===h[m]);e&&n("hoverItemIndex",p=e)}A("active"),i.addEventListener("scroll",()=>{clearTimeout(E),E=setTimeout(()=>{S=!1},100)},!1)}),M(()=>{}),T(()=>{l!==a&&l.length>0&&n("hoverItemIndex",p=0),a=l});return e.$set=e=>{"container"in e&&n("container",i=e.container),"Item"in e&&n("Item",o=e.Item),"isVirtualList"in e&&n("isVirtualList",s=e.isVirtualList),"items"in e&&n("items",l=e.items),"getOptionLabel"in e&&n("getOptionLabel",c=e.getOptionLabel),"getGroupHeaderLabel"in e&&n("getGroupHeaderLabel",u=e.getGroupHeaderLabel),"itemHeight"in e&&n("itemHeight",d=e.itemHeight),"hoverItemIndex"in e&&n("hoverItemIndex",p=e.hoverItemIndex),"selectedValue"in e&&n("selectedValue",h=e.selectedValue),"start"in e&&n("start",g=e.start),"end"in e&&n("end",f=e.end),"optionIdentifier"in e&&n("optionIdentifier",m=e.optionIdentifier),"hideEmptyState"in e&&n("hideEmptyState",b=e.hideEmptyState),"noOptionsMessage"in e&&n("noOptionsMessage",_=e.noOptionsMessage),"getOptionString"in e&&n("getOptionString",v=e.getOptionString),"isMulti"in e&&n("isMulti",w=e.isMulti),"activeItemIndex"in e&&n("activeItemIndex",y=e.activeItemIndex),"filterText"in e&&n("filterText",k=e.filterText),"isCreatable"in e&&n("isCreatable",x=e.isCreatable)},{container:i,Item:o,isVirtualList:s,items:l,getOptionLabel:c,getGroupHeaderLabel:u,itemHeight:d,hoverItemIndex:p,selectedValue:h,start:g,end:f,optionIdentifier:m,hideEmptyState:b,noOptionsMessage:_,getOptionString:v,isMulti:w,activeItemIndex:y,filterText:k,isCreatable:x,handleHover:I,handleClick:C,handleKeyDown:function(e){switch(e.key){case"ArrowDown":e.preventDefault(),l.length&&L(1);break;case"ArrowUp":e.preventDefault(),l.length&&L(-1);break;case"Enter":if(e.preventDefault(),0===l.length)break;const t=l[p];if(h&&!w&&h[m]===t[m])break;t.isCreator?r("itemCreated",k):(n("activeItemIndex",y=p),$(l[p]));break;case"Tab":if(e.preventDefault(),0===l.length)break;if(h&&h[m]===l[p][m])return;n("activeItemIndex",y=p),$(l[p])}},mouseover_handler:({i:e})=>I(e),click_handler:({item:e,i:t},n)=>C({item:e,i:t,event:n}),div_binding:function(e){P[e?"unshift":"push"](()=>{n("container",i=e)})},mouseover_handler_1:({i:e})=>I(e),click_handler_1:({item:e,i:t},n)=>C({item:e,i:t,event:n}),div_binding_1:function(e){P[e?"unshift":"push"](()=>{n("container",i=e)})}}}class Un extends re{constructor(e){super(),ne(this,e,Fn,qn,o,["container","Item","isVirtualList","items","getOptionLabel","getGroupHeaderLabel","itemHeight","hoverItemIndex","selectedValue","start","end","optionIdentifier","hideEmptyState","noOptionsMessage","getOptionString","isMulti","activeItemIndex","filterText","isCreatable"])}}function Gn(t){var n,r=t.getSelectionLabel(t.item)+"";return{c(){_(n=h("div"),"class","selection")},m(e,t){u(e,n,t),n.innerHTML=r},p(e,t){(e.getSelectionLabel||e.item)&&r!==(r=t.getSelectionLabel(t.item)+"")&&(n.innerHTML=r)},i:e,o:e,d(e){e&&d(n)}}}function Wn(e,t,n){let{getSelectionLabel:r,item:a}=t;return e.$set=e=>{"getSelectionLabel"in e&&n("getSelectionLabel",r=e.getSelectionLabel),"item"in e&&n("item",a=e.item)},{getSelectionLabel:r,item:a}}class Kn extends re{constructor(e){super(),ne(this,e,Wn,Gn,o,["getSelectionLabel","item"])}}function Jn(e,t,n){const r=Object.create(e);return r.value=t[n],r.i=n,r}function Zn(e){var t,n;function r(...t){return e.click_handler(e,...t)}return{c(){(t=h("div")).innerHTML='<svg width="100%" height="100%" viewBox="-2 -2 50 50" focusable="false" role="presentation" class="svelte-rtzfov"><path d="M34.923,37.251L24,26.328L13.077,37.251L9.436,33.61l10.923-10.923L9.436,11.765l3.641-3.641L24,19.047L34.923,8.124 l3.641,3.641L27.641,22.688L38.564,33.61L34.923,37.251z"></path></svg>',_(t,"class","multiSelectItem_clear svelte-rtzfov"),n=b(t,"click",r)},m(e,n){u(e,t,n)},p(t,n){e=n},d(e){e&&d(t),n()}}}function Qn(e){var t,n,r,a,i,o=e.getSelectionLabel(e.value)+"",s=!e.isDisabled&&Zn(e);return{c(){t=h("div"),n=h("div"),r=f(),s&&s.c(),a=f(),_(n,"class","multiSelectItem_label svelte-rtzfov"),_(t,"class",i="multiSelectItem "+(e.activeSelectedValue===e.i?"active":"")+" "+(e.isDisabled?"disabled":"")+" svelte-rtzfov")},m(e,i){u(e,t,i),c(t,n),n.innerHTML=o,c(t,r),s&&s.m(t,null),c(t,a)},p(e,r){(e.getSelectionLabel||e.selectedValue)&&o!==(o=r.getSelectionLabel(r.value)+"")&&(n.innerHTML=o),r.isDisabled?s&&(s.d(1),s=null):s||((s=Zn(r)).c(),s.m(t,a)),(e.activeSelectedValue||e.isDisabled)&&i!==(i="multiSelectItem "+(r.activeSelectedValue===r.i?"active":"")+" "+(r.isDisabled?"disabled":"")+" svelte-rtzfov")&&_(t,"class",i)},d(e){e&&d(t),s&&s.d()}}}function Xn(t){var n;let r=t.selectedValue,a=[];for(let e=0;e<r.length;e+=1)a[e]=Qn(Jn(t,r,e));return{c(){for(let e=0;e<a.length;e+=1)a[e].c();n=m()},m(e,t){for(let n=0;n<a.length;n+=1)a[n].m(e,t);u(e,n,t)},p(e,t){if(e.activeSelectedValue||e.isDisabled||e.getSelectionLabel||e.selectedValue){let i;for(r=t.selectedValue,i=0;i<r.length;i+=1){const o=Jn(t,r,i);a[i]?a[i].p(e,o):(a[i]=Qn(o),a[i].c(),a[i].m(n.parentNode,n))}for(;i<a.length;i+=1)a[i].d(1);a.length=r.length}},i:e,o:e,d(e){p(a,e),e&&d(n)}}}function Yn(e,t,n){const r=j();let{selectedValue:a=[],activeSelectedValue:i,isDisabled:o=!1,getSelectionLabel:s}=t;function l(e,t){t.stopPropagation(),r("multiItemClear",{i:e})}return e.$set=e=>{"selectedValue"in e&&n("selectedValue",a=e.selectedValue),"activeSelectedValue"in e&&n("activeSelectedValue",i=e.activeSelectedValue),"isDisabled"in e&&n("isDisabled",o=e.isDisabled),"getSelectionLabel"in e&&n("getSelectionLabel",s=e.getSelectionLabel)},{selectedValue:a,activeSelectedValue:i,isDisabled:o,getSelectionLabel:s,handleClear:l,click_handler:({i:e},t)=>l(e,t)}}class er extends re{constructor(e){super(),ne(this,e,Yn,Xn,o,["selectedValue","activeSelectedValue","isDisabled","getSelectionLabel"])}}function tr(e){var t,n,r=e.MultiSelection;function a(e){return{props:{selectedValue:e.selectedValue,getSelectionLabel:e.getSelectionLabel,activeSelectedValue:e.activeSelectedValue,isDisabled:e.isDisabled}}}if(r){var i=new r(a(e));i.$on("multiItemClear",e.handleMultiItemClear),i.$on("focus",e.handleFocus)}return{c(){i&&i.$$.fragment.c(),t=m()},m(e,r){i&&ee(i,e,r),u(e,t,r),n=!0},p(e,n){var o={};if(e.selectedValue&&(o.selectedValue=n.selectedValue),e.getSelectionLabel&&(o.getSelectionLabel=n.getSelectionLabel),e.activeSelectedValue&&(o.activeSelectedValue=n.activeSelectedValue),e.isDisabled&&(o.isDisabled=n.isDisabled),r!==(r=n.MultiSelection)){if(i){K();const e=i;Q(e.$$.fragment,1,0,()=>{te(e,1)}),J()}r?((i=new r(a(n))).$on("multiItemClear",n.handleMultiItemClear),i.$on("focus",n.handleFocus),i.$$.fragment.c(),Z(i.$$.fragment,1),ee(i,t.parentNode,t)):i=null}else r&&i.$set(o)},i(e){n||(i&&Z(i.$$.fragment,e),n=!0)},o(e){i&&Q(i.$$.fragment,e),n=!1},d(e){e&&d(t),i&&te(i,e)}}}function nr(e){var t,n,r,a=e.Selection;function i(e){return{props:{item:e.selectedValue,getSelectionLabel:e.getSelectionLabel}}}if(a)var o=new a(i(e));return{c(){t=h("div"),o&&o.$$.fragment.c(),_(t,"class","selectedItem svelte-1ik40xa"),r=b(t,"focus",e.handleFocus)},m(e,r){u(e,t,r),o&&ee(o,t,null),n=!0},p(e,n){var r={};if(e.selectedValue&&(r.item=n.selectedValue),e.getSelectionLabel&&(r.getSelectionLabel=n.getSelectionLabel),a!==(a=n.Selection)){if(o){K();const e=o;Q(e.$$.fragment,1,0,()=>{te(e,1)}),J()}a?((o=new a(i(n))).$$.fragment.c(),Z(o.$$.fragment,1),ee(o,t,null)):o=null}else a&&o.$set(r)},i(e){n||(o&&Z(o.$$.fragment,e),n=!0)},o(e){o&&Q(o.$$.fragment,e),n=!1},d(e){e&&d(t),o&&te(o),r()}}}function rr(e){var t,n;return{c(){var r;(t=h("div")).innerHTML='<svg width="100%" height="100%" viewBox="-2 -2 50 50" focusable="false" role="presentation" class="svelte-1ik40xa"><path fill="currentColor" d="M34.923,37.251L24,26.328L13.077,37.251L9.436,33.61l10.923-10.923L9.436,11.765l3.641-3.641L24,19.047L34.923,8.124 l3.641,3.641L27.641,22.688L38.564,33.61L34.923,37.251z"></path></svg>',_(t,"class","clearSelect svelte-1ik40xa"),n=b(t,"click",(r=e.handleClear,function(e){return e.preventDefault(),r.call(this,e)}))},m(e,n){u(e,t,n)},d(e){e&&d(t),n()}}}function ar(e){var t;return{c(){(t=h("div")).innerHTML='<svg width="100%" height="100%" viewBox="0 0 20 20" focusable="false" class="css-19bqh2r svelte-1ik40xa"><path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path></svg>',_(t,"class","indicator svelte-1ik40xa")},m(e,n){u(e,t,n)},d(e){e&&d(t)}}}function ir(e){var t;return{c(){(t=h("div")).innerHTML='<svg class="spinner_icon svelte-1ik40xa" viewBox="25 25 50 50"><circle class="spinner_path svelte-1ik40xa" cx="50" cy="50" r="20" fill="none" stroke="currentColor" stroke-width="5" stroke-miterlimit="10"></circle></svg>',_(t,"class","spinner svelte-1ik40xa")},m(e,n){u(e,t,n)},d(e){e&&d(t)}}}function or(e){for(var n,r,i,o,s,l,p,g,m,w,y=e.isMulti&&e.selectedValue&&e.selectedValue.length>0&&tr(e),x=[e._inputAttributes,{placeholder:e.placeholderText},{disabled:e.isDisabled},{style:e.inputStyles},{class:"svelte-1ik40xa"}],E={},S=0;S<x.length;S+=1)E=t(E,x[S]);var $=!e.isMulti&&e.showSelectedItem&&nr(e),I=e.showSelectedItem&&e.isClearable&&!e.isDisabled&&!e.isWaiting&&rr(e),C=!e.isSearchable&&!e.isDisabled&&!e.isWaiting&&(e.showSelectedItem&&!e.isClearable||!e.showSelectedItem)&&ar(),L=e.isWaiting&&ir();return{c(){n=h("div"),y&&y.c(),r=f(),i=h("input"),o=f(),$&&$.c(),s=f(),I&&I.c(),l=f(),C&&C.c(),p=f(),L&&L.c(),v(i,E),_(n,"class",g=e.containerClasses+" "+(e.hasError?"hasError":"")+" svelte-1ik40xa"),_(n,"style",e.containerStyles),w=[b(window,"click",e.handleWindowClick),b(window,"keydown",e.handleKeyDown),b(window,"resize",e.getPosition),b(i,"input",e.input_1_input_handler),b(i,"focus",e.handleFocus),b(n,"click",e.handleClick)]},m(t,a){u(t,n,a),y&&y.m(n,null),c(n,r),c(n,i),k(i,e.filterText),e.input_1_binding(i),c(n,o),$&&$.m(n,null),c(n,s),I&&I.m(n,null),c(n,l),C&&C.m(n,null),c(n,p),L&&L.m(n,null),e.div_binding(n),m=!0},p(e,t){t.isMulti&&t.selectedValue&&t.selectedValue.length>0?y?(y.p(e,t),Z(y,1)):((y=tr(t)).c(),Z(y,1),y.m(n,r)):y&&(K(),Q(y,1,1,()=>{y=null}),J()),e.filterText&&i.value!==t.filterText&&k(i,t.filterText),v(i,Y(x,[e._inputAttributes&&t._inputAttributes,e.placeholderText&&{placeholder:t.placeholderText},e.isDisabled&&{disabled:t.isDisabled},e.inputStyles&&{style:t.inputStyles},{class:"svelte-1ik40xa"}])),!t.isMulti&&t.showSelectedItem?$?($.p(e,t),Z($,1)):(($=nr(t)).c(),Z($,1),$.m(n,s)):$&&(K(),Q($,1,1,()=>{$=null}),J()),t.showSelectedItem&&t.isClearable&&!t.isDisabled&&!t.isWaiting?I||((I=rr(t)).c(),I.m(n,l)):I&&(I.d(1),I=null),t.isSearchable||t.isDisabled||t.isWaiting||(!t.showSelectedItem||t.isClearable)&&t.showSelectedItem?C&&(C.d(1),C=null):C||((C=ar()).c(),C.m(n,p)),t.isWaiting?L||((L=ir()).c(),L.m(n,null)):L&&(L.d(1),L=null),m&&!e.containerClasses&&!e.hasError||g===(g=t.containerClasses+" "+(t.hasError?"hasError":"")+" svelte-1ik40xa")||_(n,"class",g),m&&!e.containerStyles||_(n,"style",t.containerStyles)},i(e){m||(Z(y),Z($),m=!0)},o(e){Q(y),Q($),m=!1},d(t){t&&d(n),y&&y.d(),e.input_1_binding(null),$&&$.d(),I&&I.d(),C&&C.d(),L&&L.d(),e.div_binding(null),a(w)}}}function sr(e,t,n){const r=j();let a,i,o,s,l,c,u,d,{container:p,input:h,Item:g=xn,Selection:f=Kn,MultiSelection:m=er,isMulti:b=!1,isDisabled:_=!1,isCreatable:v=!1,isFocused:w=!1,selectedValue:y,filterText:k="",placeholder:x="Select...",items:E=[],groupBy:S,groupFilter:$=(e=>e)}=t,{isGroupHeaderSelectable:I=!1,getGroupHeaderLabel:C=(e=>e.label)}=t,{getOptionLabel:L=((e,t)=>e.isCreator?`Create "${t}"`:e.label)}=t,{optionIdentifier:A="value",loadOptions:N,hasError:R=!1,containerStyles:H="",getSelectionLabel:z=(e=>{if(e)return e.label})}=t,{createGroupHeaderItem:q=(e=>({value:e,label:e}))}=t,{createItem:B=(e=>({value:e,label:e}))}=t,{isSearchable:V=!0,inputStyles:F="",isClearable:U=!0,isWaiting:G=!1,listPlacement:W="auto",listOpen:K=!1,list:J,isVirtualList:Z=!1,loadOptionsInterval:Q=300,noOptionsMessage:X="No options",hideEmptyState:Y=!1,filteredItems:ee=[],inputAttributes:te={}}=t,ne="";async function re(){await D(),n("filterText",k="")}const ae=function(e,t,n){let r;return function(){let a=this,i=arguments,o=function(){r=null,n||e.apply(a,i)},s=n&&!r;clearTimeout(r),r=setTimeout(o,t),s&&e.apply(a,i)}}(async()=>{n("isWaiting",G=!0),n("items",E=await N(k)),n("isWaiting",G=!1),n("isFocused",w=!0),n("listOpen",K=!0)},Q);let ie,oe,se={};function le(){let e=!0;if(y){const t=[],r=[];y.forEach(n=>{t.includes(n[A])?e=!1:(t.push(n[A]),r.push(n))}),n("selectedValue",y=r)}return e}async function ce(e){if(await D(),J)return J.$set({items:e});N&&e.length>0&&ge()}function ue(e){const{detail:t}=e,a=y[t?t.i:y.length-1];1===y.length?n("selectedValue",y=void 0):n("selectedValue",y=y.filter(e=>e!==a)),r("clear",a),de()}async function de(){if(await D(),!a||!p)return;const{top:e,height:t,width:n}=p.getBoundingClientRect();a.style["min-width"]=`${n}px`,a.style.width="auto",a.style.left="0","top"===W?a.style.bottom=`${t+5}px`:a.style.top=`${t+5}px`,a=a,"auto"===W&&function(e){const t=e.getBoundingClientRect(),n={};return n.top=t.top<0,n.left=t.left<0,n.bottom=t.bottom>(window.innerHeight||document.documentElement.clientHeight),n.right=t.right>(window.innerWidth||document.documentElement.clientWidth),n.any=n.top||n.left||n.bottom||n.right,n}(a).bottom&&(a.style.top="",a.style.bottom=`${t+5}px`),a.style.visibility=""}function pe(){n("isFocused",w=!0),h&&h.focus()}function he(){re(),n("activeSelectedValue",i=void 0),J&&(J.$destroy(),n("list",J=void 0),a&&(a.parentNode&&a.parentNode.removeChild(a),a=void 0,n("list",J),a=a))}async function ge(){if(await D(),a&&J)return;const e={Item:g,filterText:k,optionIdentifier:A,noOptionsMessage:X,hideEmptyState:Y,isCreatable:v,isVirtualList:Z,selectedValue:y,isMulti:b,getGroupHeaderLabel:C,items:ee};L&&(e.getOptionLabel=L),a=document.createElement("div"),Object.assign(a.style,{position:"absolute","z-index":2,visibility:"hidden"}),n("list",J),a=a,p&&p.appendChild(a),n("list",J=new Un({target:a,props:e})),J.$on("itemSelected",e=>{const{detail:t}=e;if(t){const e=Object.assign({},t);n("selectedValue",y=b?y?y.concat([e]):[e]:e),re(),n("selectedValue",y),n("optionIdentifier",A),setTimeout(()=>{n("listOpen",K=!1),n("activeSelectedValue",i=void 0)})}}),J.$on("itemCreated",e=>{const{detail:t}=e;b?(n("selectedValue",y=y||[]),n("selectedValue",y=[...y,B(t)])):n("selectedValue",y=B(t)),n("filterText",k=""),n("listOpen",K=!1),n("activeSelectedValue",i=void 0),re()}),n("list",J),a=a,de()}return T(()=>{if(b&&y&&y.length>1&&le(),!b&&y&&s!==y&&(s&&JSON.stringify(y[A])===JSON.stringify(s[A])||r("select",y)),b&&JSON.stringify(y)!==JSON.stringify(s)&&le()&&r("select",y),p&&K!==l&&(K?ge():he()),k!==c&&(k.length>0?(n("isFocused",w=!0),n("listOpen",K=!0),N?ae():(ge(),n("listOpen",K=!0),b&&n("activeSelectedValue",i=void 0))):ce([]),J&&J.$set({filterText:k})),w!==u&&(w||K?pe():(re(),h&&h.blur())),d!==ee){let e=[...ee];if(v&&k){const t={...B(k),isCreator:!0},n=e.find(e=>e[A]===t[A]);let r;y&&(b?r=y.find(e=>e[A]===t[A]):y[A]===t[A]&&(r=y)),n||r||(e=[...e,t])}ce(e)}s=y,l=K,c=k,u=w,d=ee}),O(()=>{w&&h.focus(),K&&ge(),E&&E.length>0&&n("originalItemsClone",o=JSON.stringify(E)),y&&b&&n("selectedValue",y=y.map(e=>"string"==typeof e?{value:e,label:e}:e))}),M(()=>{he()}),e.$set=e=>{"container"in e&&n("container",p=e.container),"input"in e&&n("input",h=e.input),"Item"in e&&n("Item",g=e.Item),"Selection"in e&&n("Selection",f=e.Selection),"MultiSelection"in e&&n("MultiSelection",m=e.MultiSelection),"isMulti"in e&&n("isMulti",b=e.isMulti),"isDisabled"in e&&n("isDisabled",_=e.isDisabled),"isCreatable"in e&&n("isCreatable",v=e.isCreatable),"isFocused"in e&&n("isFocused",w=e.isFocused),"selectedValue"in e&&n("selectedValue",y=e.selectedValue),"filterText"in e&&n("filterText",k=e.filterText),"placeholder"in e&&n("placeholder",x=e.placeholder),"items"in e&&n("items",E=e.items),"groupBy"in e&&n("groupBy",S=e.groupBy),"groupFilter"in e&&n("groupFilter",$=e.groupFilter),"isGroupHeaderSelectable"in e&&n("isGroupHeaderSelectable",I=e.isGroupHeaderSelectable),"getGroupHeaderLabel"in e&&n("getGroupHeaderLabel",C=e.getGroupHeaderLabel),"getOptionLabel"in e&&n("getOptionLabel",L=e.getOptionLabel),"optionIdentifier"in e&&n("optionIdentifier",A=e.optionIdentifier),"loadOptions"in e&&n("loadOptions",N=e.loadOptions),"hasError"in e&&n("hasError",R=e.hasError),"containerStyles"in e&&n("containerStyles",H=e.containerStyles),"getSelectionLabel"in e&&n("getSelectionLabel",z=e.getSelectionLabel),"createGroupHeaderItem"in e&&n("createGroupHeaderItem",q=e.createGroupHeaderItem),"createItem"in e&&n("createItem",B=e.createItem),"isSearchable"in e&&n("isSearchable",V=e.isSearchable),"inputStyles"in e&&n("inputStyles",F=e.inputStyles),"isClearable"in e&&n("isClearable",U=e.isClearable),"isWaiting"in e&&n("isWaiting",G=e.isWaiting),"listPlacement"in e&&n("listPlacement",W=e.listPlacement),"listOpen"in e&&n("listOpen",K=e.listOpen),"list"in e&&n("list",J=e.list),"isVirtualList"in e&&n("isVirtualList",Z=e.isVirtualList),"loadOptionsInterval"in e&&n("loadOptionsInterval",Q=e.loadOptionsInterval),"noOptionsMessage"in e&&n("noOptionsMessage",X=e.noOptionsMessage),"hideEmptyState"in e&&n("hideEmptyState",Y=e.hideEmptyState),"filteredItems"in e&&n("filteredItems",ee=e.filteredItems),"inputAttributes"in e&&n("inputAttributes",te=e.inputAttributes)},e.$$.update=(e={isMulti:1,isDisabled:1,isFocused:1,selectedValue:1,optionIdentifier:1,filterText:1,placeholder:1,inputAttributes:1,isSearchable:1,items:1,loadOptions:1,originalItemsClone:1,getOptionLabel:1,groupBy:1,createGroupHeaderItem:1,isGroupHeaderSelectable:1,groupFilter:1})=>{if((e.isMulti||e.isDisabled||e.isFocused)&&(n("containerClasses",ne="selectContainer"),n("containerClasses",ne+=b?" multiSelect":""),n("containerClasses",ne+=_?" disabled":""),n("containerClasses",ne+=w?" focused":"")),(e.selectedValue||e.optionIdentifier)&&"string"==typeof y&&n("selectedValue",y={[A]:y,label:y}),(e.selectedValue||e.filterText)&&n("showSelectedItem",ie=y&&0===k.length),(e.selectedValue||e.placeholder)&&n("placeholderText",oe=y?"":x),(e.inputAttributes||e.isSearchable)&&(n("_inputAttributes",se=Object.assign(te,{autocomplete:"off",autocorrect:"off",spellcheck:!1})),V||n("_inputAttributes",se.readonly=!0,se)),e.items||e.loadOptions||e.filterText||e.originalItemsClone||e.isMulti||e.selectedValue||e.optionIdentifier||e.getOptionLabel||e.groupBy||e.createGroupHeaderItem||e.isGroupHeaderSelectable||e.groupFilter){let e,t=E;if(E&&E.length>0&&"object"!=typeof E[0]&&(t=E.map((e,t)=>({index:t,value:e,label:e}))),N&&0===k.length&&o?(e=JSON.parse(o),t=JSON.parse(o)):e=N?0===k.length?[]:t:t.filter(e=>{let t=!0;return b&&y&&(t=!y.find(t=>t[A]===e[A])),!!(t&&k.length<1)||t&&L(e,k).toLowerCase().includes(k.toLowerCase())}),S){const t=[],r={};e.forEach(e=>{const n=S(e);t.includes(n)||(t.push(n),r[n]=[],n&&r[n].push(Object.assign(q(n,e),{id:n,isGroupHeader:!0,isSelectable:I}))),r[n].push(Object.assign({isGroupItem:!!n},e))});const a=[];$(t).forEach(e=>{a.push(...r[e])}),n("filteredItems",ee=a)}else n("filteredItems",ee=e)}},{container:p,input:h,Item:g,Selection:f,MultiSelection:m,isMulti:b,isDisabled:_,isCreatable:v,isFocused:w,selectedValue:y,filterText:k,placeholder:x,items:E,groupBy:S,groupFilter:$,isGroupHeaderSelectable:I,getGroupHeaderLabel:C,getOptionLabel:L,optionIdentifier:A,loadOptions:N,hasError:R,containerStyles:H,getSelectionLabel:z,createGroupHeaderItem:q,createItem:B,isSearchable:V,inputStyles:F,isClearable:U,isWaiting:G,listPlacement:W,listOpen:K,list:J,isVirtualList:Z,loadOptionsInterval:Q,noOptionsMessage:X,hideEmptyState:Y,filteredItems:ee,inputAttributes:te,activeSelectedValue:i,containerClasses:ne,_inputAttributes:se,handleMultiItemClear:ue,getPosition:de,handleKeyDown:function(e){if(w)switch(e.key){case"ArrowDown":case"ArrowUp":e.preventDefault(),n("listOpen",K=!0),n("activeSelectedValue",i=void 0);break;case"Tab":K||n("isFocused",w=!1);break;case"Backspace":if(!b||k.length>0)return;if(b&&y&&y.length>0){if(ue(void 0!==i?i:y.length-1),0===i||void 0===i)break;n("activeSelectedValue",i=y.length>i?i-1:void 0)}break;case"ArrowLeft":if(J&&J.$set({hoverItemIndex:-1}),!b||k.length>0)return;void 0===i?n("activeSelectedValue",i=y.length-1):y.length>i&&0!==i&&n("activeSelectedValue",i-=1);break;case"ArrowRight":if(J&&J.$set({hoverItemIndex:-1}),!b||k.length>0||void 0===i)return;i===y.length-1?n("activeSelectedValue",i=void 0):i<y.length-1&&n("activeSelectedValue",i+=1)}},handleFocus:pe,handleWindowClick:function(e){p&&(p.contains(e.target)||(n("isFocused",w=!1),n("listOpen",K=!1),n("activeSelectedValue",i=void 0),h&&h.blur()))},handleClick:function(){_||(n("isFocused",w=!0),n("listOpen",K=!K))},handleClear:function(){n("selectedValue",y=void 0),n("listOpen",K=!1),r("clear",y),pe()},showSelectedItem:ie,placeholderText:oe,input_1_input_handler:function(){k=this.value,n("filterText",k)},input_1_binding:function(e){P[e?"unshift":"push"](()=>{n("input",h=e)})},div_binding:function(e){P[e?"unshift":"push"](()=>{n("container",p=e)})}}}class lr extends re{constructor(e){super(),ne(this,e,sr,or,o,["container","input","Item","Selection","MultiSelection","isMulti","isDisabled","isCreatable","isFocused","selectedValue","filterText","placeholder","items","groupBy","groupFilter","isGroupHeaderSelectable","getGroupHeaderLabel","getOptionLabel","optionIdentifier","loadOptions","hasError","containerStyles","getSelectionLabel","createGroupHeaderItem","createItem","isSearchable","inputStyles","isClearable","isWaiting","listPlacement","listOpen","list","isVirtualList","loadOptionsInterval","noOptionsMessage","hideEmptyState","filteredItems","inputAttributes","handleClear"])}get handleClear(){return this.$$.ctx.handleClear}}function cr(e){var t;return{c(){_(t=h("div"),"class","description")},m(n,r){u(n,t,r),t.innerHTML=e.description},p(e,n){e.description&&(t.innerHTML=n.description)},d(e){e&&d(t)}}}function ur(e){var t,n,r,a,i,o,s,l,p,m,b,v,w=e.workspace.name+"",k=e.description&&cr(e);function x(t){var n;e.select_selectedValue_binding.call(null,t),m=!0,n=()=>m=!1,R.push(n)}let E={items:e.languages,isClearable:!1,isSearchable:!1};void 0!==e.selectedValue&&(E.selectedValue=e.selectedValue);var S=new lr({props:E});P.push(()=>{return t="selectedValue",n=x,void(-1!==(e=S).$$.props.indexOf(t)&&(e.$$.bound[t]=n,n(e.$$.ctx[t])));var e,t,n});var $=new wn({props:{content:e.content,env:e.env,language:e.language,cookiejars:e.cookiejars}});return{c(){t=h("section"),n=h("div"),r=h("div"),a=h("h1"),i=g(w),o=f(),k&&k.c(),s=f(),l=h("div"),p=h("div"),S.$$.fragment.c(),b=f(),$.$$.fragment.c(),_(r,"class","left"),_(p,"class","language-selector svelte-uhjpwm"),_(l,"class","right"),_(n,"class","row"),_(t,"class","content svelte-uhjpwm")},m(e,d){u(e,t,d),c(t,n),c(n,r),c(r,a),c(a,i),c(r,o),k&&k.m(r,null),c(n,s),c(n,l),c(l,p),ee(S,p,null),c(t,b),ee($,t,null),v=!0},p(e,t){v&&!e.workspace||w===(w=t.workspace.name+"")||y(i,w),t.description?k?k.p(e,t):((k=cr(t)).c(),k.m(r,null)):k&&(k.d(1),k=null);var n={};!m&&e.selectedValue&&(n.selectedValue=t.selectedValue),S.$set(n);var a={};e.content&&(a.content=t.content),e.env&&(a.env=t.env),e.language&&(a.language=t.language),e.cookiejars&&(a.cookiejars=t.cookiejars),$.$set(a)},i(e){v||(Z(S.$$.fragment,e),Z($.$$.fragment,e),v=!0)},o(e){Q(S.$$.fragment,e),Q($.$$.fragment,e),v=!1},d(e){e&&d(t),k&&k.d(),te(S),te($)}}}function dr(e,t,n){const r=new Et.Converter({simplifiedAutoLink:!0,openLinksInNewWindow:!0,excludeTrailingPunctuationFromURLs:!0,tables:!0}),a=[{value:"curl",label:"cURL"},{value:"javascript",label:"JavaScript/Deno (fetch)"},{value:"python",label:"Python (requests)"},{value:"node",label:"Node.js (node-fetch)"},{value:"ruby",label:"Ruby"},{value:"php",label:"PHP"},{value:"golang",label:"Go"}];let i,o,s,{env:l,groups:c,requests:u,workspace:d,cookiejars:p}=t,h=a[0];return e.$set=e=>{"env"in e&&n("env",l=e.env),"groups"in e&&n("groups",c=e.groups),"requests"in e&&n("requests",u=e.requests),"workspace"in e&&n("workspace",d=e.workspace),"cookiejars"in e&&n("cookiejars",p=e.cookiejars)},e.$$.update=(e={groups:1,requests:1,workspace:1,env:1,selectedValue:1})=>{(e.groups||e.requests)&&n("content",i=[...c,...u]),(e.workspace||e.env)&&n("description",o=d.description&&r.makeHtml(cn(d.description,l))),e.selectedValue&&n("language",s=h.value)},{languages:a,env:l,groups:c,requests:u,workspace:d,cookiejars:p,selectedValue:h,content:i,description:o,language:s,select_selectedValue_binding:function(e){h=e,n("selectedValue",h)}}}class pr extends re{constructor(e){super(),ne(this,e,dr,ur,o,["env","groups","requests","workspace","cookiejars"])}}function hr(e,t){let n=e;return"object"==typeof n&&(n=JSON.parse(JSON.stringify(e)),function e(t,n){Object.keys(t).forEach(r=>{if(null!==t[r])switch(typeof t[r]){case"object":e(t[r],n);break;case"string":t[r]=cn(t[r],n)}})}(n,t)),n}function gr(e,t,n){const r=Object.create(e);return r.environment=t[n],r.idx=n,r}function fr(e){var t,n,r=e.environment.name+"";return{c(){t=h("option"),n=g(r),t.__value=e.idx,t.value=t.__value},m(e,r){u(e,t,r),c(t,n)},p(e,t){e.config&&r!==(r=t.environment.name+"")&&y(n,r)},d(e){e&&d(t)}}}function mr(e){var t,n,r,i,o,s,l,m,v,w,k,$,I,C,L,T,O,M,j,A,P,N,R,H,z,q,D,V,F,U=e.config.workspace.name+"";document.title=t=e.config.workspace.name;let G=e.config.environments,W=[];for(let t=0;t<G.length;t+=1)W[t]=fr(gr(e,G,t));var K=new _e({props:{requests:e.requests,groups:e.groups,workspace:e.config.workspace,visible:e.menuVisible}}),J=new pr({props:{requests:e.requests,groups:e.groups,workspace:e.config.workspace,cookiejars:e.config.cookiejars,env:e.env}});return{c(){n=f(),r=h("header"),i=h("div"),(o=h("a")).innerHTML='<i class="fa fa-bars" aria-hidden="true"></i>',s=f(),l=h("div"),m=h("img"),w=f(),k=h("h1"),$=g(U),I=f(),C=h("div"),L=h("div"),T=h("a"),O=h("img"),M=f(),j=h("div"),(A=h("label")).textContent="Environment:",P=f(),N=h("select");for(let e=0;e<W.length;e+=1)W[e].c();R=f(),(H=h("a")).innerHTML='<i class="fa fa-code" aria-hidden="true"></i>',z=f(),q=h("section"),K.$$.fragment.c(),D=f(),J.$$.fragment.c(),_(o,"href","javascript:"),_(o,"class","hamburger-toggler"),_(m,"src","logo.png"),_(m,"alt",v=e.config.workspace.name),_(l,"class","logo"),_(k,"class","title"),_(i,"class","header-left"),_(O,"src","https://insomnia.rest/images/run.svg"),_(O,"alt","Run in Insomnia"),_(T,"href",e.runInInsomniaLink),_(T,"target","_blank"),_(L,"class","run"),_(A,"for","env"),x(A,"display","inline-block"),void 0===e.envId&&B(()=>e.select_change_handler.call(N)),_(N,"id","env"),_(j,"class","environment"),_(H,"href","javascript:;"),_(H,"class","example-toggler"),_(H,"title","Toggle request examples"),S(H,"inactive",!e.exampleVisible),_(C,"class","header-right"),x(r,"border-top","6px solid "+(null!==e.color?e.color:"#6a57d5")),_(q,"class","wrapper"),S(q,"hide-right",!e.exampleVisible),F=[b(o,"click",e.toggleHamburger),b(N,"change",e.select_change_handler),b(H,"click",e.toggleExample)]},m(t,a){u(t,n,a),u(t,r,a),c(r,i),c(i,o),c(i,s),c(i,l),c(l,m),c(i,w),c(i,k),c(k,$),c(r,I),c(r,C),c(C,L),c(L,T),c(T,O),c(C,M),c(C,j),c(j,A),c(j,P),c(j,N);for(let e=0;e<W.length;e+=1)W[e].m(N,null);E(N,e.envId),c(C,R),c(C,H),u(t,z,a),u(t,q,a),ee(K,q,null),c(q,D),ee(J,q,null),V=!0},p(e,n){if(V&&!e.config||t===(t=n.config.workspace.name)||(document.title=t),V&&!e.config||v===(v=n.config.workspace.name)||_(m,"alt",v),V&&!e.config||U===(U=n.config.workspace.name+"")||y($,U),e.config){let t;for(G=n.config.environments,t=0;t<G.length;t+=1){const r=gr(n,G,t);W[t]?W[t].p(e,r):(W[t]=fr(r),W[t].c(),W[t].m(N,null))}for(;t<W.length;t+=1)W[t].d(1);W.length=G.length}e.envId&&E(N,n.envId),e.exampleVisible&&S(H,"inactive",!n.exampleVisible),V&&!e.color||x(r,"border-top","6px solid "+(null!==n.color?n.color:"#6a57d5"));var a={};e.requests&&(a.requests=n.requests),e.groups&&(a.groups=n.groups),e.config&&(a.workspace=n.config.workspace),e.menuVisible&&(a.visible=n.menuVisible),K.$set(a);var i={};e.requests&&(i.requests=n.requests),e.groups&&(i.groups=n.groups),e.config&&(i.workspace=n.config.workspace),e.config&&(i.cookiejars=n.config.cookiejars),e.env&&(i.env=n.env),J.$set(i),e.exampleVisible&&S(q,"hide-right",!n.exampleVisible)},i(e){V||(Z(K.$$.fragment,e),Z(J.$$.fragment,e),V=!0)},o(e){Q(K.$$.fragment,e),Q(J.$$.fragment,e),V=!1},d(e){e&&(d(n),d(r)),p(W,e),e&&(d(z),d(q)),te(K),te(J),a(F)}}}function br(e,t,n){let{config:r}=t,a=0;const i=window.location.origin+window.INSOMNIA_URL,o=`https://insomnia.rest/run/?label=${encodeURIComponent(r.workspace.name)}&uri=${encodeURIComponent(i)}`;let s,l,c,u,d=!1,p="true"===(localStorage.getItem("show-examples")||"true");return e.$set=e=>{"config"in e&&n("config",r=e.config)},e.$$.update=(e={config:1,envId:1,env:1})=>{(e.config||e.envId)&&n("env",s=r.environments[a]),e.env&&n("color",l=s.color),(e.config||e.envId)&&n("requests",c=hr(r.requests,r.environments[a])),(e.config||e.envId)&&n("groups",u=hr(r.groups,r.environments[a]))},{config:r,envId:a,runInInsomniaLink:o,menuVisible:d,exampleVisible:p,toggleHamburger:function(){n("menuVisible",d=!d)},toggleExample:function(){n("exampleVisible",p=!p),localStorage.setItem("show-examples",p)},env:s,color:l,requests:c,groups:u,select_change_handler:function(){a=function(e){const t=e.querySelector(":checked")||e.options[0];return t&&t.__value}(this),n("envId",a)}}}class _r extends re{constructor(e){super(),ne(this,e,br,mr,o,["config"])}}function vr(t){var n,r;return{c(){n=f(),(r=h("div")).innerHTML=`<h1>Uh-oh!</h1> <p>\n\t\t\t    It looks like it's not possible to retrieve the contents of the API documentation\n\t\t\t    at the moment. If you're the owner of this site, make sure that your\n\t\t\t    <a href="${window.INSOMNIA_URL}" target="_blank">Insomnia JSON file</a> is accessible.\n\t\t\t  </p> <p>\n\t\t\t    The developer console of your browser might have more things to say about this error.\n\t\t\t  </p>`,document.title="Uh-oh!",_(r,"class","error-page svelte-8fny4x")},m(e,t){u(e,n,t),u(e,r,t)},p:e,i:e,o:e,d(e){e&&(d(n),d(r))}}}class wr extends re{constructor(e){super(),ne(this,e,null,vr,o,[])}}var yr="object"==typeof vt&&vt&&vt.Object===Object&&vt,kr="object"==typeof self&&self&&self.Object===Object&&self,xr=yr||kr||Function("return this")();function Er(e,t,n){switch(n.length){case 0:return e.call(t);case 1:return e.call(t,n[0]);case 2:return e.call(t,n[0],n[1]);case 3:return e.call(t,n[0],n[1],n[2])}return e.apply(t,n)}function Sr(e,t){for(var n=-1,r=t.length,a=e.length;++n<r;)e[a+n]=t[n];return e}var $r=Object.prototype,Ir=$r.hasOwnProperty,Cr=$r.toString,Lr=xr.Symbol,Tr=$r.propertyIsEnumerable,Or=Lr?Lr.isConcatSpreadable:void 0,Mr=Math.max;function jr(e){return Pr(e)||function(e){return function(e){return Nr(e)&&function(e){return null!=e&&function(e){return"number"==typeof e&&e>-1&&e%1==0&&e<=9007199254740991}(e.length)&&!function(e){var t=function(e){var t=typeof e;return!!e&&("object"==t||"function"==t)}(e)?Cr.call(e):"";return"[object Function]"==t||"[object GeneratorFunction]"==t}(e)}(e)}(e)&&Ir.call(e,"callee")&&(!Tr.call(e,"callee")||"[object Arguments]"==Cr.call(e))}(e)||!!(Or&&e&&e[Or])}function Ar(e){if("string"==typeof e||function(e){return"symbol"==typeof e||Nr(e)&&"[object Symbol]"==Cr.call(e)}(e))return e;var t=e+"";return"0"==t&&1/e==-1/0?"-0":t}var Pr=Array.isArray;function Nr(e){return!!e&&"object"==typeof e}var Rr,Hr,zr=(Rr=function(e,t){return null==e?{}:function(e,t){return function(e,t,n){for(var r=-1,a=t.length,i={};++r<a;){var o=t[r],s=e[o];n(s,o)&&(i[o]=s)}return i}(e=Object(e),t,(function(t,n){return n in e}))}(e,function(e,t){for(var n=-1,r=e?e.length:0,a=Array(r);++n<r;)a[n]=t(e[n],n,e);return a}(function e(t,n,r,a,i){var o=-1,s=t.length;for(r||(r=jr),i||(i=[]);++o<s;){var l=t[o];n>0&&r(l)?n>1?e(l,n-1,r,a,i):Sr(i,l):a||(i[i.length]=l)}return i}(t,1),Ar))},Hr=Mr(void 0===Hr?Rr.length-1:Hr,0),function(){for(var e=arguments,t=-1,n=Mr(e.length-Hr,0),r=Array(n);++t<n;)r[t]=e[Hr+t];t=-1;for(var a=Array(Hr+1);++t<Hr;)a[t]=e[t];return a[Hr]=r,Er(Rr,this,a)});const qr=/<!--(?:\s+)?RESPONSE(?:\s+)((?:\d){3})?(?:\s+)?-->\n(.|\n)*?<!--(?:\s+)?ENDRESPONSE(?:\s+)?-->/gm,Dr=/<!--(?:\s+)?PATH_PARAMS(?:\s+)?-->\n(.|\n)*?<!--(?:\s+)?ENDPATH_PARAMS(?:\s+)?-->/gm;function Br(e){return{code:e[1]||null,value:e[0].slice(e[0].indexOf(">")+1,e[0].lastIndexOf("<")).trim()}}function Vr(e){const t=e[0].slice(e[0].indexOf(">")+1,e[0].lastIndexOf("<")).trim();let n=null;try{n=JSON.parse(t)}catch(e){}return Array.isArray(n)||(n=[]),console.log("match",n),n}function Fr(e){if(!(e=zr(e,"_id","method","name","description","parameters","url","authentication","body","headers","_type")).description)return e;const t=[],n=[];let r;for(;r=Dr.exec(e.description);)n.push(...Vr(r));for(e.pathParams=n,e.description=e.description.replace(Dr,"");r=qr.exec(e.description);)t.push(Br(r));return e.exampleResponses=t,e.description=e.description.replace(qr,""),e}class Ur{constructor(e){this.json=e,this.id=null,this.cute={workspace:{name:null,description:null},cookiejars:[],environments:[],groups:[],requests:[]}}metaSort(e,t){return e.metaSortKey-t.metaSortKey}mapCookiejar(e){return zr(e,"name","cookies")}filterCookiejars(){return this.json.resources.filter(e=>"cookie_jar"===e._type).map(this.mapCookiejar)}mapEnvironment(e){return zr(e,"color","data","name")}filterEnvironments(){return this.json.resources.filter(e=>"environment"===e._type&&!e.isPrivate).sort(this.metaSort).map(this.mapEnvironment)}filterRequests(e=null){const t=e||this.id;return this.json.resources.filter(e=>"request"===e._type&&e.parentId===t&&!e.isPrivate).sort(this.metaSort).map(Fr)}deepMapGroups(e){const t={name:e.name,description:e.description,_type:e._type};return t.children=this.json.resources.filter(t=>"request_group"===t._type&&t.parentId===e._id).sort(this.metaSort).map(this.deepMapGroups.bind(this)),t.requests=this.filterRequests(e._id),t}filterRootGroups(){const e=this.json.resources.filter(e=>"request_group"===e._type&&e.parentId===this.id);return e?e.sort(this.metaSort).map(this.deepMapGroups.bind(this)):[]}generate(){const e=this.json.resources.find(e=>"workspace"===e._type);return this.id=e._id,this.cute.workspace.name=e.name,this.cute.workspace.description=e.description,this.cute.cookiejars=this.filterCookiejars(),this.cute.environments=this.filterEnvironments(),this.cute.environments.length>1&&(this.cute.environments=this.cute.environments.slice(1)),this.cute.groups=this.filterRootGroups(),this.cute.requests=this.filterRequests(),this.cute}}return async function(){const e=document.getElementById("app"),t=`${e.getAttribute("data-root")||""}/insomnia.json`;window.INSOMNIA_URL=t;try{const n=await fetch(t,{method:"GET",credentials:"same-origin",headers:{Accept:"application/json","Content-Type":"application/json"}}).then(e=>e.json()),r=new Ur(n).generate();return new _r({target:e,props:{config:r}})}catch(t){return console.error(t),new wr({target:e})}}()}();
+    (function webpackUniversalModuleDefinition(root, factory) {
+    	module.exports = factory();
+    })(commonjsGlobal, function() {
+    return /******/ (function(modules) { // webpackBootstrap
+    /******/ 	// The module cache
+    /******/ 	var installedModules = {};
+    /******/
+    /******/ 	// The require function
+    /******/ 	function __webpack_require__(moduleId) {
+    /******/
+    /******/ 		// Check if module is in cache
+    /******/ 		if(installedModules[moduleId]) {
+    /******/ 			return installedModules[moduleId].exports;
+    /******/ 		}
+    /******/ 		// Create a new module (and put it into the cache)
+    /******/ 		var module = installedModules[moduleId] = {
+    /******/ 			i: moduleId,
+    /******/ 			l: false,
+    /******/ 			exports: {}
+    /******/ 		};
+    /******/
+    /******/ 		// Execute the module function
+    /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+    /******/
+    /******/ 		// Flag the module as loaded
+    /******/ 		module.l = true;
+    /******/
+    /******/ 		// Return the exports of the module
+    /******/ 		return module.exports;
+    /******/ 	}
+    /******/
+    /******/
+    /******/ 	// expose the modules object (__webpack_modules__)
+    /******/ 	__webpack_require__.m = modules;
+    /******/
+    /******/ 	// expose the module cache
+    /******/ 	__webpack_require__.c = installedModules;
+    /******/
+    /******/ 	// define getter function for harmony exports
+    /******/ 	__webpack_require__.d = function(exports, name, getter) {
+    /******/ 		if(!__webpack_require__.o(exports, name)) {
+    /******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+    /******/ 		}
+    /******/ 	};
+    /******/
+    /******/ 	// define __esModule on exports
+    /******/ 	__webpack_require__.r = function(exports) {
+    /******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+    /******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+    /******/ 		}
+    /******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+    /******/ 	};
+    /******/
+    /******/ 	// create a fake namespace object
+    /******/ 	// mode & 1: value is a module id, require it
+    /******/ 	// mode & 2: merge all properties of value into the ns
+    /******/ 	// mode & 4: return value when already ns object
+    /******/ 	// mode & 8|1: behave like require
+    /******/ 	__webpack_require__.t = function(value, mode) {
+    /******/ 		if(mode & 1) value = __webpack_require__(value);
+    /******/ 		if(mode & 8) return value;
+    /******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+    /******/ 		var ns = Object.create(null);
+    /******/ 		__webpack_require__.r(ns);
+    /******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+    /******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+    /******/ 		return ns;
+    /******/ 	};
+    /******/
+    /******/ 	// getDefaultExport function for compatibility with non-harmony modules
+    /******/ 	__webpack_require__.n = function(module) {
+    /******/ 		var getter = module && module.__esModule ?
+    /******/ 			function getDefault() { return module['default']; } :
+    /******/ 			function getModuleExports() { return module; };
+    /******/ 		__webpack_require__.d(getter, 'a', getter);
+    /******/ 		return getter;
+    /******/ 	};
+    /******/
+    /******/ 	// Object.prototype.hasOwnProperty.call
+    /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+    /******/
+    /******/ 	// __webpack_public_path__
+    /******/ 	__webpack_require__.p = "";
+    /******/
+    /******/
+    /******/ 	// Load entry module and return exports
+    /******/ 	return __webpack_require__(__webpack_require__.s = 0);
+    /******/ })
+    /************************************************************************/
+    /******/ ([
+    /* 0 */
+    /***/ (function(module, exports, __webpack_require__) {
+
+
+    var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _clipboardAction = __webpack_require__(1);
+
+    var _clipboardAction2 = _interopRequireDefault(_clipboardAction);
+
+    var _tinyEmitter = __webpack_require__(3);
+
+    var _tinyEmitter2 = _interopRequireDefault(_tinyEmitter);
+
+    var _goodListener = __webpack_require__(4);
+
+    var _goodListener2 = _interopRequireDefault(_goodListener);
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    /**
+     * Base class which takes one or more elements, adds event listeners to them,
+     * and instantiates a new `ClipboardAction` on each click.
+     */
+    var Clipboard = function (_Emitter) {
+        _inherits(Clipboard, _Emitter);
+
+        /**
+         * @param {String|HTMLElement|HTMLCollection|NodeList} trigger
+         * @param {Object} options
+         */
+        function Clipboard(trigger, options) {
+            _classCallCheck(this, Clipboard);
+
+            var _this = _possibleConstructorReturn(this, (Clipboard.__proto__ || Object.getPrototypeOf(Clipboard)).call(this));
+
+            _this.resolveOptions(options);
+            _this.listenClick(trigger);
+            return _this;
+        }
+
+        /**
+         * Defines if attributes would be resolved using internal setter functions
+         * or custom functions that were passed in the constructor.
+         * @param {Object} options
+         */
+
+
+        _createClass(Clipboard, [{
+            key: 'resolveOptions',
+            value: function resolveOptions() {
+                var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+                this.action = typeof options.action === 'function' ? options.action : this.defaultAction;
+                this.target = typeof options.target === 'function' ? options.target : this.defaultTarget;
+                this.text = typeof options.text === 'function' ? options.text : this.defaultText;
+                this.container = _typeof(options.container) === 'object' ? options.container : document.body;
+            }
+
+            /**
+             * Adds a click event listener to the passed trigger.
+             * @param {String|HTMLElement|HTMLCollection|NodeList} trigger
+             */
+
+        }, {
+            key: 'listenClick',
+            value: function listenClick(trigger) {
+                var _this2 = this;
+
+                this.listener = (0, _goodListener2.default)(trigger, 'click', function (e) {
+                    return _this2.onClick(e);
+                });
+            }
+
+            /**
+             * Defines a new `ClipboardAction` on each click event.
+             * @param {Event} e
+             */
+
+        }, {
+            key: 'onClick',
+            value: function onClick(e) {
+                var trigger = e.delegateTarget || e.currentTarget;
+
+                if (this.clipboardAction) {
+                    this.clipboardAction = null;
+                }
+
+                this.clipboardAction = new _clipboardAction2.default({
+                    action: this.action(trigger),
+                    target: this.target(trigger),
+                    text: this.text(trigger),
+                    container: this.container,
+                    trigger: trigger,
+                    emitter: this
+                });
+            }
+
+            /**
+             * Default `action` lookup function.
+             * @param {Element} trigger
+             */
+
+        }, {
+            key: 'defaultAction',
+            value: function defaultAction(trigger) {
+                return getAttributeValue('action', trigger);
+            }
+
+            /**
+             * Default `target` lookup function.
+             * @param {Element} trigger
+             */
+
+        }, {
+            key: 'defaultTarget',
+            value: function defaultTarget(trigger) {
+                var selector = getAttributeValue('target', trigger);
+
+                if (selector) {
+                    return document.querySelector(selector);
+                }
+            }
+
+            /**
+             * Returns the support of the given action, or all actions if no action is
+             * given.
+             * @param {String} [action]
+             */
+
+        }, {
+            key: 'defaultText',
+
+
+            /**
+             * Default `text` lookup function.
+             * @param {Element} trigger
+             */
+            value: function defaultText(trigger) {
+                return getAttributeValue('text', trigger);
+            }
+
+            /**
+             * Destroy lifecycle.
+             */
+
+        }, {
+            key: 'destroy',
+            value: function destroy() {
+                this.listener.destroy();
+
+                if (this.clipboardAction) {
+                    this.clipboardAction.destroy();
+                    this.clipboardAction = null;
+                }
+            }
+        }], [{
+            key: 'isSupported',
+            value: function isSupported() {
+                var action = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : ['copy', 'cut'];
+
+                var actions = typeof action === 'string' ? [action] : action;
+                var support = !!document.queryCommandSupported;
+
+                actions.forEach(function (action) {
+                    support = support && !!document.queryCommandSupported(action);
+                });
+
+                return support;
+            }
+        }]);
+
+        return Clipboard;
+    }(_tinyEmitter2.default);
+
+    /**
+     * Helper function to retrieve attribute value.
+     * @param {String} suffix
+     * @param {Element} element
+     */
+
+
+    function getAttributeValue(suffix, element) {
+        var attribute = 'data-clipboard-' + suffix;
+
+        if (!element.hasAttribute(attribute)) {
+            return;
+        }
+
+        return element.getAttribute(attribute);
+    }
+
+    module.exports = Clipboard;
+
+    /***/ }),
+    /* 1 */
+    /***/ (function(module, exports, __webpack_require__) {
+
+
+    var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _select = __webpack_require__(2);
+
+    var _select2 = _interopRequireDefault(_select);
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    /**
+     * Inner class which performs selection from either `text` or `target`
+     * properties and then executes copy or cut operations.
+     */
+    var ClipboardAction = function () {
+        /**
+         * @param {Object} options
+         */
+        function ClipboardAction(options) {
+            _classCallCheck(this, ClipboardAction);
+
+            this.resolveOptions(options);
+            this.initSelection();
+        }
+
+        /**
+         * Defines base properties passed from constructor.
+         * @param {Object} options
+         */
+
+
+        _createClass(ClipboardAction, [{
+            key: 'resolveOptions',
+            value: function resolveOptions() {
+                var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+                this.action = options.action;
+                this.container = options.container;
+                this.emitter = options.emitter;
+                this.target = options.target;
+                this.text = options.text;
+                this.trigger = options.trigger;
+
+                this.selectedText = '';
+            }
+
+            /**
+             * Decides which selection strategy is going to be applied based
+             * on the existence of `text` and `target` properties.
+             */
+
+        }, {
+            key: 'initSelection',
+            value: function initSelection() {
+                if (this.text) {
+                    this.selectFake();
+                } else if (this.target) {
+                    this.selectTarget();
+                }
+            }
+
+            /**
+             * Creates a fake textarea element, sets its value from `text` property,
+             * and makes a selection on it.
+             */
+
+        }, {
+            key: 'selectFake',
+            value: function selectFake() {
+                var _this = this;
+
+                var isRTL = document.documentElement.getAttribute('dir') == 'rtl';
+
+                this.removeFake();
+
+                this.fakeHandlerCallback = function () {
+                    return _this.removeFake();
+                };
+                this.fakeHandler = this.container.addEventListener('click', this.fakeHandlerCallback) || true;
+
+                this.fakeElem = document.createElement('textarea');
+                // Prevent zooming on iOS
+                this.fakeElem.style.fontSize = '12pt';
+                // Reset box model
+                this.fakeElem.style.border = '0';
+                this.fakeElem.style.padding = '0';
+                this.fakeElem.style.margin = '0';
+                // Move element out of screen horizontally
+                this.fakeElem.style.position = 'absolute';
+                this.fakeElem.style[isRTL ? 'right' : 'left'] = '-9999px';
+                // Move element to the same position vertically
+                var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+                this.fakeElem.style.top = yPosition + 'px';
+
+                this.fakeElem.setAttribute('readonly', '');
+                this.fakeElem.value = this.text;
+
+                this.container.appendChild(this.fakeElem);
+
+                this.selectedText = (0, _select2.default)(this.fakeElem);
+                this.copyText();
+            }
+
+            /**
+             * Only removes the fake element after another click event, that way
+             * a user can hit `Ctrl+C` to copy because selection still exists.
+             */
+
+        }, {
+            key: 'removeFake',
+            value: function removeFake() {
+                if (this.fakeHandler) {
+                    this.container.removeEventListener('click', this.fakeHandlerCallback);
+                    this.fakeHandler = null;
+                    this.fakeHandlerCallback = null;
+                }
+
+                if (this.fakeElem) {
+                    this.container.removeChild(this.fakeElem);
+                    this.fakeElem = null;
+                }
+            }
+
+            /**
+             * Selects the content from element passed on `target` property.
+             */
+
+        }, {
+            key: 'selectTarget',
+            value: function selectTarget() {
+                this.selectedText = (0, _select2.default)(this.target);
+                this.copyText();
+            }
+
+            /**
+             * Executes the copy operation based on the current selection.
+             */
+
+        }, {
+            key: 'copyText',
+            value: function copyText() {
+                var succeeded = void 0;
+
+                try {
+                    succeeded = document.execCommand(this.action);
+                } catch (err) {
+                    succeeded = false;
+                }
+
+                this.handleResult(succeeded);
+            }
+
+            /**
+             * Fires an event based on the copy operation result.
+             * @param {Boolean} succeeded
+             */
+
+        }, {
+            key: 'handleResult',
+            value: function handleResult(succeeded) {
+                this.emitter.emit(succeeded ? 'success' : 'error', {
+                    action: this.action,
+                    text: this.selectedText,
+                    trigger: this.trigger,
+                    clearSelection: this.clearSelection.bind(this)
+                });
+            }
+
+            /**
+             * Moves focus away from `target` and back to the trigger, removes current selection.
+             */
+
+        }, {
+            key: 'clearSelection',
+            value: function clearSelection() {
+                if (this.trigger) {
+                    this.trigger.focus();
+                }
+
+                window.getSelection().removeAllRanges();
+            }
+
+            /**
+             * Sets the `action` to be performed which can be either 'copy' or 'cut'.
+             * @param {String} action
+             */
+
+        }, {
+            key: 'destroy',
+
+
+            /**
+             * Destroy lifecycle.
+             */
+            value: function destroy() {
+                this.removeFake();
+            }
+        }, {
+            key: 'action',
+            set: function set() {
+                var action = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'copy';
+
+                this._action = action;
+
+                if (this._action !== 'copy' && this._action !== 'cut') {
+                    throw new Error('Invalid "action" value, use either "copy" or "cut"');
+                }
+            }
+
+            /**
+             * Gets the `action` property.
+             * @return {String}
+             */
+            ,
+            get: function get() {
+                return this._action;
+            }
+
+            /**
+             * Sets the `target` property using an element
+             * that will be have its content copied.
+             * @param {Element} target
+             */
+
+        }, {
+            key: 'target',
+            set: function set(target) {
+                if (target !== undefined) {
+                    if (target && (typeof target === 'undefined' ? 'undefined' : _typeof(target)) === 'object' && target.nodeType === 1) {
+                        if (this.action === 'copy' && target.hasAttribute('disabled')) {
+                            throw new Error('Invalid "target" attribute. Please use "readonly" instead of "disabled" attribute');
+                        }
+
+                        if (this.action === 'cut' && (target.hasAttribute('readonly') || target.hasAttribute('disabled'))) {
+                            throw new Error('Invalid "target" attribute. You can\'t cut text from elements with "readonly" or "disabled" attributes');
+                        }
+
+                        this._target = target;
+                    } else {
+                        throw new Error('Invalid "target" value, use a valid Element');
+                    }
+                }
+            }
+
+            /**
+             * Gets the `target` property.
+             * @return {String|HTMLElement}
+             */
+            ,
+            get: function get() {
+                return this._target;
+            }
+        }]);
+
+        return ClipboardAction;
+    }();
+
+    module.exports = ClipboardAction;
+
+    /***/ }),
+    /* 2 */
+    /***/ (function(module, exports) {
+
+    function select(element) {
+        var selectedText;
+
+        if (element.nodeName === 'SELECT') {
+            element.focus();
+
+            selectedText = element.value;
+        }
+        else if (element.nodeName === 'INPUT' || element.nodeName === 'TEXTAREA') {
+            var isReadOnly = element.hasAttribute('readonly');
+
+            if (!isReadOnly) {
+                element.setAttribute('readonly', '');
+            }
+
+            element.select();
+            element.setSelectionRange(0, element.value.length);
+
+            if (!isReadOnly) {
+                element.removeAttribute('readonly');
+            }
+
+            selectedText = element.value;
+        }
+        else {
+            if (element.hasAttribute('contenteditable')) {
+                element.focus();
+            }
+
+            var selection = window.getSelection();
+            var range = document.createRange();
+
+            range.selectNodeContents(element);
+            selection.removeAllRanges();
+            selection.addRange(range);
+
+            selectedText = selection.toString();
+        }
+
+        return selectedText;
+    }
+
+    module.exports = select;
+
+
+    /***/ }),
+    /* 3 */
+    /***/ (function(module, exports) {
+
+    function E () {
+      // Keep this empty so it's easier to inherit from
+      // (via https://github.com/lipsmack from https://github.com/scottcorgan/tiny-emitter/issues/3)
+    }
+
+    E.prototype = {
+      on: function (name, callback, ctx) {
+        var e = this.e || (this.e = {});
+
+        (e[name] || (e[name] = [])).push({
+          fn: callback,
+          ctx: ctx
+        });
+
+        return this;
+      },
+
+      once: function (name, callback, ctx) {
+        var self = this;
+        function listener () {
+          self.off(name, listener);
+          callback.apply(ctx, arguments);
+        }
+        listener._ = callback;
+        return this.on(name, listener, ctx);
+      },
+
+      emit: function (name) {
+        var data = [].slice.call(arguments, 1);
+        var evtArr = ((this.e || (this.e = {}))[name] || []).slice();
+        var i = 0;
+        var len = evtArr.length;
+
+        for (i; i < len; i++) {
+          evtArr[i].fn.apply(evtArr[i].ctx, data);
+        }
+
+        return this;
+      },
+
+      off: function (name, callback) {
+        var e = this.e || (this.e = {});
+        var evts = e[name];
+        var liveEvents = [];
+
+        if (evts && callback) {
+          for (var i = 0, len = evts.length; i < len; i++) {
+            if (evts[i].fn !== callback && evts[i].fn._ !== callback)
+              liveEvents.push(evts[i]);
+          }
+        }
+
+        // Remove event from queue to prevent memory leak
+        // Suggested by https://github.com/lazd
+        // Ref: https://github.com/scottcorgan/tiny-emitter/commit/c6ebfaa9bc973b33d110a84a307742b7cf94c953#commitcomment-5024910
+
+        (liveEvents.length)
+          ? e[name] = liveEvents
+          : delete e[name];
+
+        return this;
+      }
+    };
+
+    module.exports = E;
+
+
+    /***/ }),
+    /* 4 */
+    /***/ (function(module, exports, __webpack_require__) {
+
+    var is = __webpack_require__(5);
+    var delegate = __webpack_require__(6);
+
+    /**
+     * Validates all params and calls the right
+     * listener function based on its target type.
+     *
+     * @param {String|HTMLElement|HTMLCollection|NodeList} target
+     * @param {String} type
+     * @param {Function} callback
+     * @return {Object}
+     */
+    function listen(target, type, callback) {
+        if (!target && !type && !callback) {
+            throw new Error('Missing required arguments');
+        }
+
+        if (!is.string(type)) {
+            throw new TypeError('Second argument must be a String');
+        }
+
+        if (!is.fn(callback)) {
+            throw new TypeError('Third argument must be a Function');
+        }
+
+        if (is.node(target)) {
+            return listenNode(target, type, callback);
+        }
+        else if (is.nodeList(target)) {
+            return listenNodeList(target, type, callback);
+        }
+        else if (is.string(target)) {
+            return listenSelector(target, type, callback);
+        }
+        else {
+            throw new TypeError('First argument must be a String, HTMLElement, HTMLCollection, or NodeList');
+        }
+    }
+
+    /**
+     * Adds an event listener to a HTML element
+     * and returns a remove listener function.
+     *
+     * @param {HTMLElement} node
+     * @param {String} type
+     * @param {Function} callback
+     * @return {Object}
+     */
+    function listenNode(node, type, callback) {
+        node.addEventListener(type, callback);
+
+        return {
+            destroy: function() {
+                node.removeEventListener(type, callback);
+            }
+        }
+    }
+
+    /**
+     * Add an event listener to a list of HTML elements
+     * and returns a remove listener function.
+     *
+     * @param {NodeList|HTMLCollection} nodeList
+     * @param {String} type
+     * @param {Function} callback
+     * @return {Object}
+     */
+    function listenNodeList(nodeList, type, callback) {
+        Array.prototype.forEach.call(nodeList, function(node) {
+            node.addEventListener(type, callback);
+        });
+
+        return {
+            destroy: function() {
+                Array.prototype.forEach.call(nodeList, function(node) {
+                    node.removeEventListener(type, callback);
+                });
+            }
+        }
+    }
+
+    /**
+     * Add an event listener to a selector
+     * and returns a remove listener function.
+     *
+     * @param {String} selector
+     * @param {String} type
+     * @param {Function} callback
+     * @return {Object}
+     */
+    function listenSelector(selector, type, callback) {
+        return delegate(document.body, selector, type, callback);
+    }
+
+    module.exports = listen;
+
+
+    /***/ }),
+    /* 5 */
+    /***/ (function(module, exports) {
+
+    /**
+     * Check if argument is a HTML element.
+     *
+     * @param {Object} value
+     * @return {Boolean}
+     */
+    exports.node = function(value) {
+        return value !== undefined
+            && value instanceof HTMLElement
+            && value.nodeType === 1;
+    };
+
+    /**
+     * Check if argument is a list of HTML elements.
+     *
+     * @param {Object} value
+     * @return {Boolean}
+     */
+    exports.nodeList = function(value) {
+        var type = Object.prototype.toString.call(value);
+
+        return value !== undefined
+            && (type === '[object NodeList]' || type === '[object HTMLCollection]')
+            && ('length' in value)
+            && (value.length === 0 || exports.node(value[0]));
+    };
+
+    /**
+     * Check if argument is a string.
+     *
+     * @param {Object} value
+     * @return {Boolean}
+     */
+    exports.string = function(value) {
+        return typeof value === 'string'
+            || value instanceof String;
+    };
+
+    /**
+     * Check if argument is a function.
+     *
+     * @param {Object} value
+     * @return {Boolean}
+     */
+    exports.fn = function(value) {
+        var type = Object.prototype.toString.call(value);
+
+        return type === '[object Function]';
+    };
+
+
+    /***/ }),
+    /* 6 */
+    /***/ (function(module, exports, __webpack_require__) {
+
+    var closest = __webpack_require__(7);
+
+    /**
+     * Delegates event to a selector.
+     *
+     * @param {Element} element
+     * @param {String} selector
+     * @param {String} type
+     * @param {Function} callback
+     * @param {Boolean} useCapture
+     * @return {Object}
+     */
+    function _delegate(element, selector, type, callback, useCapture) {
+        var listenerFn = listener.apply(this, arguments);
+
+        element.addEventListener(type, listenerFn, useCapture);
+
+        return {
+            destroy: function() {
+                element.removeEventListener(type, listenerFn, useCapture);
+            }
+        }
+    }
+
+    /**
+     * Delegates event to a selector.
+     *
+     * @param {Element|String|Array} [elements]
+     * @param {String} selector
+     * @param {String} type
+     * @param {Function} callback
+     * @param {Boolean} useCapture
+     * @return {Object}
+     */
+    function delegate(elements, selector, type, callback, useCapture) {
+        // Handle the regular Element usage
+        if (typeof elements.addEventListener === 'function') {
+            return _delegate.apply(null, arguments);
+        }
+
+        // Handle Element-less usage, it defaults to global delegation
+        if (typeof type === 'function') {
+            // Use `document` as the first parameter, then apply arguments
+            // This is a short way to .unshift `arguments` without running into deoptimizations
+            return _delegate.bind(null, document).apply(null, arguments);
+        }
+
+        // Handle Selector-based usage
+        if (typeof elements === 'string') {
+            elements = document.querySelectorAll(elements);
+        }
+
+        // Handle Array-like based usage
+        return Array.prototype.map.call(elements, function (element) {
+            return _delegate(element, selector, type, callback, useCapture);
+        });
+    }
+
+    /**
+     * Finds closest match and invokes callback.
+     *
+     * @param {Element} element
+     * @param {String} selector
+     * @param {String} type
+     * @param {Function} callback
+     * @return {Function}
+     */
+    function listener(element, selector, type, callback) {
+        return function(e) {
+            e.delegateTarget = closest(e.target, selector);
+
+            if (e.delegateTarget) {
+                callback.call(element, e);
+            }
+        }
+    }
+
+    module.exports = delegate;
+
+
+    /***/ }),
+    /* 7 */
+    /***/ (function(module, exports) {
+
+    var DOCUMENT_NODE_TYPE = 9;
+
+    /**
+     * A polyfill for Element.matches()
+     */
+    if (typeof Element !== 'undefined' && !Element.prototype.matches) {
+        var proto = Element.prototype;
+
+        proto.matches = proto.matchesSelector ||
+                        proto.mozMatchesSelector ||
+                        proto.msMatchesSelector ||
+                        proto.oMatchesSelector ||
+                        proto.webkitMatchesSelector;
+    }
+
+    /**
+     * Finds the closest parent that matches a selector.
+     *
+     * @param {Element} element
+     * @param {String} selector
+     * @return {Function}
+     */
+    function closest (element, selector) {
+        while (element && element.nodeType !== DOCUMENT_NODE_TYPE) {
+            if (typeof element.matches === 'function' &&
+                element.matches(selector)) {
+              return element;
+            }
+            element = element.parentNode;
+        }
+    }
+
+    module.exports = closest;
+
+
+    /***/ })
+    /******/ ]);
+    });
+    });
+
+    var ClipboardJS = unwrapExports(clipboard);
+
+    var showdown = createCommonjsModule(function (module) {
+    (function(){
+    /**
+     * Created by Tivie on 13-07-2015.
+     */
+
+    function getDefaultOpts (simple) {
+
+      var defaultOptions = {
+        omitExtraWLInCodeBlocks: {
+          defaultValue: false,
+          describe: 'Omit the default extra whiteline added to code blocks',
+          type: 'boolean'
+        },
+        noHeaderId: {
+          defaultValue: false,
+          describe: 'Turn on/off generated header id',
+          type: 'boolean'
+        },
+        prefixHeaderId: {
+          defaultValue: false,
+          describe: 'Add a prefix to the generated header ids. Passing a string will prefix that string to the header id. Setting to true will add a generic \'section-\' prefix',
+          type: 'string'
+        },
+        rawPrefixHeaderId: {
+          defaultValue: false,
+          describe: 'Setting this option to true will prevent showdown from modifying the prefix. This might result in malformed IDs (if, for instance, the " char is used in the prefix)',
+          type: 'boolean'
+        },
+        ghCompatibleHeaderId: {
+          defaultValue: false,
+          describe: 'Generate header ids compatible with github style (spaces are replaced with dashes, a bunch of non alphanumeric chars are removed)',
+          type: 'boolean'
+        },
+        rawHeaderId: {
+          defaultValue: false,
+          describe: 'Remove only spaces, \' and " from generated header ids (including prefixes), replacing them with dashes (-). WARNING: This might result in malformed ids',
+          type: 'boolean'
+        },
+        headerLevelStart: {
+          defaultValue: false,
+          describe: 'The header blocks level start',
+          type: 'integer'
+        },
+        parseImgDimensions: {
+          defaultValue: false,
+          describe: 'Turn on/off image dimension parsing',
+          type: 'boolean'
+        },
+        simplifiedAutoLink: {
+          defaultValue: false,
+          describe: 'Turn on/off GFM autolink style',
+          type: 'boolean'
+        },
+        excludeTrailingPunctuationFromURLs: {
+          defaultValue: false,
+          describe: 'Excludes trailing punctuation from links generated with autoLinking',
+          type: 'boolean'
+        },
+        literalMidWordUnderscores: {
+          defaultValue: false,
+          describe: 'Parse midword underscores as literal underscores',
+          type: 'boolean'
+        },
+        literalMidWordAsterisks: {
+          defaultValue: false,
+          describe: 'Parse midword asterisks as literal asterisks',
+          type: 'boolean'
+        },
+        strikethrough: {
+          defaultValue: false,
+          describe: 'Turn on/off strikethrough support',
+          type: 'boolean'
+        },
+        tables: {
+          defaultValue: false,
+          describe: 'Turn on/off tables support',
+          type: 'boolean'
+        },
+        tablesHeaderId: {
+          defaultValue: false,
+          describe: 'Add an id to table headers',
+          type: 'boolean'
+        },
+        ghCodeBlocks: {
+          defaultValue: true,
+          describe: 'Turn on/off GFM fenced code blocks support',
+          type: 'boolean'
+        },
+        tasklists: {
+          defaultValue: false,
+          describe: 'Turn on/off GFM tasklist support',
+          type: 'boolean'
+        },
+        smoothLivePreview: {
+          defaultValue: false,
+          describe: 'Prevents weird effects in live previews due to incomplete input',
+          type: 'boolean'
+        },
+        smartIndentationFix: {
+          defaultValue: false,
+          description: 'Tries to smartly fix indentation in es6 strings',
+          type: 'boolean'
+        },
+        disableForced4SpacesIndentedSublists: {
+          defaultValue: false,
+          description: 'Disables the requirement of indenting nested sublists by 4 spaces',
+          type: 'boolean'
+        },
+        simpleLineBreaks: {
+          defaultValue: false,
+          description: 'Parses simple line breaks as <br> (GFM Style)',
+          type: 'boolean'
+        },
+        requireSpaceBeforeHeadingText: {
+          defaultValue: false,
+          description: 'Makes adding a space between `#` and the header text mandatory (GFM Style)',
+          type: 'boolean'
+        },
+        ghMentions: {
+          defaultValue: false,
+          description: 'Enables github @mentions',
+          type: 'boolean'
+        },
+        ghMentionsLink: {
+          defaultValue: 'https://github.com/{u}',
+          description: 'Changes the link generated by @mentions. Only applies if ghMentions option is enabled.',
+          type: 'string'
+        },
+        encodeEmails: {
+          defaultValue: true,
+          description: 'Encode e-mail addresses through the use of Character Entities, transforming ASCII e-mail addresses into its equivalent decimal entities',
+          type: 'boolean'
+        },
+        openLinksInNewWindow: {
+          defaultValue: false,
+          description: 'Open all links in new windows',
+          type: 'boolean'
+        },
+        backslashEscapesHTMLTags: {
+          defaultValue: false,
+          description: 'Support for HTML Tag escaping. ex: \<div>foo\</div>',
+          type: 'boolean'
+        },
+        emoji: {
+          defaultValue: false,
+          description: 'Enable emoji support. Ex: `this is a :smile: emoji`',
+          type: 'boolean'
+        },
+        underline: {
+          defaultValue: false,
+          description: 'Enable support for underline. Syntax is double or triple underscores: `__underline word__`. With this option enabled, underscores no longer parses into `<em>` and `<strong>`',
+          type: 'boolean'
+        },
+        completeHTMLDocument: {
+          defaultValue: false,
+          description: 'Outputs a complete html document, including `<html>`, `<head>` and `<body>` tags',
+          type: 'boolean'
+        },
+        metadata: {
+          defaultValue: false,
+          description: 'Enable support for document metadata (defined at the top of the document between `«««` and `»»»` or between `---` and `---`).',
+          type: 'boolean'
+        },
+        splitAdjacentBlockquotes: {
+          defaultValue: false,
+          description: 'Split adjacent blockquote blocks',
+          type: 'boolean'
+        }
+      };
+      if (simple === false) {
+        return JSON.parse(JSON.stringify(defaultOptions));
+      }
+      var ret = {};
+      for (var opt in defaultOptions) {
+        if (defaultOptions.hasOwnProperty(opt)) {
+          ret[opt] = defaultOptions[opt].defaultValue;
+        }
+      }
+      return ret;
+    }
+
+    function allOptionsOn () {
+      var options = getDefaultOpts(true),
+          ret = {};
+      for (var opt in options) {
+        if (options.hasOwnProperty(opt)) {
+          ret[opt] = true;
+        }
+      }
+      return ret;
+    }
+
+    /**
+     * Created by Tivie on 06-01-2015.
+     */
+
+    // Private properties
+    var showdown = {},
+        parsers = {},
+        extensions = {},
+        globalOptions = getDefaultOpts(true),
+        setFlavor = 'vanilla',
+        flavor = {
+          github: {
+            omitExtraWLInCodeBlocks:              true,
+            simplifiedAutoLink:                   true,
+            excludeTrailingPunctuationFromURLs:   true,
+            literalMidWordUnderscores:            true,
+            strikethrough:                        true,
+            tables:                               true,
+            tablesHeaderId:                       true,
+            ghCodeBlocks:                         true,
+            tasklists:                            true,
+            disableForced4SpacesIndentedSublists: true,
+            simpleLineBreaks:                     true,
+            requireSpaceBeforeHeadingText:        true,
+            ghCompatibleHeaderId:                 true,
+            ghMentions:                           true,
+            backslashEscapesHTMLTags:             true,
+            emoji:                                true,
+            splitAdjacentBlockquotes:             true
+          },
+          original: {
+            noHeaderId:                           true,
+            ghCodeBlocks:                         false
+          },
+          ghost: {
+            omitExtraWLInCodeBlocks:              true,
+            parseImgDimensions:                   true,
+            simplifiedAutoLink:                   true,
+            excludeTrailingPunctuationFromURLs:   true,
+            literalMidWordUnderscores:            true,
+            strikethrough:                        true,
+            tables:                               true,
+            tablesHeaderId:                       true,
+            ghCodeBlocks:                         true,
+            tasklists:                            true,
+            smoothLivePreview:                    true,
+            simpleLineBreaks:                     true,
+            requireSpaceBeforeHeadingText:        true,
+            ghMentions:                           false,
+            encodeEmails:                         true
+          },
+          vanilla: getDefaultOpts(true),
+          allOn: allOptionsOn()
+        };
+
+    /**
+     * helper namespace
+     * @type {{}}
+     */
+    showdown.helper = {};
+
+    /**
+     * TODO LEGACY SUPPORT CODE
+     * @type {{}}
+     */
+    showdown.extensions = {};
+
+    /**
+     * Set a global option
+     * @static
+     * @param {string} key
+     * @param {*} value
+     * @returns {showdown}
+     */
+    showdown.setOption = function (key, value) {
+      globalOptions[key] = value;
+      return this;
+    };
+
+    /**
+     * Get a global option
+     * @static
+     * @param {string} key
+     * @returns {*}
+     */
+    showdown.getOption = function (key) {
+      return globalOptions[key];
+    };
+
+    /**
+     * Get the global options
+     * @static
+     * @returns {{}}
+     */
+    showdown.getOptions = function () {
+      return globalOptions;
+    };
+
+    /**
+     * Reset global options to the default values
+     * @static
+     */
+    showdown.resetOptions = function () {
+      globalOptions = getDefaultOpts(true);
+    };
+
+    /**
+     * Set the flavor showdown should use as default
+     * @param {string} name
+     */
+    showdown.setFlavor = function (name) {
+      if (!flavor.hasOwnProperty(name)) {
+        throw Error(name + ' flavor was not found');
+      }
+      showdown.resetOptions();
+      var preset = flavor[name];
+      setFlavor = name;
+      for (var option in preset) {
+        if (preset.hasOwnProperty(option)) {
+          globalOptions[option] = preset[option];
+        }
+      }
+    };
+
+    /**
+     * Get the currently set flavor
+     * @returns {string}
+     */
+    showdown.getFlavor = function () {
+      return setFlavor;
+    };
+
+    /**
+     * Get the options of a specified flavor. Returns undefined if the flavor was not found
+     * @param {string} name Name of the flavor
+     * @returns {{}|undefined}
+     */
+    showdown.getFlavorOptions = function (name) {
+      if (flavor.hasOwnProperty(name)) {
+        return flavor[name];
+      }
+    };
+
+    /**
+     * Get the default options
+     * @static
+     * @param {boolean} [simple=true]
+     * @returns {{}}
+     */
+    showdown.getDefaultOptions = function (simple) {
+      return getDefaultOpts(simple);
+    };
+
+    /**
+     * Get or set a subParser
+     *
+     * subParser(name)       - Get a registered subParser
+     * subParser(name, func) - Register a subParser
+     * @static
+     * @param {string} name
+     * @param {function} [func]
+     * @returns {*}
+     */
+    showdown.subParser = function (name, func) {
+      if (showdown.helper.isString(name)) {
+        if (typeof func !== 'undefined') {
+          parsers[name] = func;
+        } else {
+          if (parsers.hasOwnProperty(name)) {
+            return parsers[name];
+          } else {
+            throw Error('SubParser named ' + name + ' not registered!');
+          }
+        }
+      }
+    };
+
+    /**
+     * Gets or registers an extension
+     * @static
+     * @param {string} name
+     * @param {object|function=} ext
+     * @returns {*}
+     */
+    showdown.extension = function (name, ext) {
+
+      if (!showdown.helper.isString(name)) {
+        throw Error('Extension \'name\' must be a string');
+      }
+
+      name = showdown.helper.stdExtName(name);
+
+      // Getter
+      if (showdown.helper.isUndefined(ext)) {
+        if (!extensions.hasOwnProperty(name)) {
+          throw Error('Extension named ' + name + ' is not registered!');
+        }
+        return extensions[name];
+
+        // Setter
+      } else {
+        // Expand extension if it's wrapped in a function
+        if (typeof ext === 'function') {
+          ext = ext();
+        }
+
+        // Ensure extension is an array
+        if (!showdown.helper.isArray(ext)) {
+          ext = [ext];
+        }
+
+        var validExtension = validate(ext, name);
+
+        if (validExtension.valid) {
+          extensions[name] = ext;
+        } else {
+          throw Error(validExtension.error);
+        }
+      }
+    };
+
+    /**
+     * Gets all extensions registered
+     * @returns {{}}
+     */
+    showdown.getAllExtensions = function () {
+      return extensions;
+    };
+
+    /**
+     * Remove an extension
+     * @param {string} name
+     */
+    showdown.removeExtension = function (name) {
+      delete extensions[name];
+    };
+
+    /**
+     * Removes all extensions
+     */
+    showdown.resetExtensions = function () {
+      extensions = {};
+    };
+
+    /**
+     * Validate extension
+     * @param {array} extension
+     * @param {string} name
+     * @returns {{valid: boolean, error: string}}
+     */
+    function validate (extension, name) {
+
+      var errMsg = (name) ? 'Error in ' + name + ' extension->' : 'Error in unnamed extension',
+          ret = {
+            valid: true,
+            error: ''
+          };
+
+      if (!showdown.helper.isArray(extension)) {
+        extension = [extension];
+      }
+
+      for (var i = 0; i < extension.length; ++i) {
+        var baseMsg = errMsg + ' sub-extension ' + i + ': ',
+            ext = extension[i];
+        if (typeof ext !== 'object') {
+          ret.valid = false;
+          ret.error = baseMsg + 'must be an object, but ' + typeof ext + ' given';
+          return ret;
+        }
+
+        if (!showdown.helper.isString(ext.type)) {
+          ret.valid = false;
+          ret.error = baseMsg + 'property "type" must be a string, but ' + typeof ext.type + ' given';
+          return ret;
+        }
+
+        var type = ext.type = ext.type.toLowerCase();
+
+        // normalize extension type
+        if (type === 'language') {
+          type = ext.type = 'lang';
+        }
+
+        if (type === 'html') {
+          type = ext.type = 'output';
+        }
+
+        if (type !== 'lang' && type !== 'output' && type !== 'listener') {
+          ret.valid = false;
+          ret.error = baseMsg + 'type ' + type + ' is not recognized. Valid values: "lang/language", "output/html" or "listener"';
+          return ret;
+        }
+
+        if (type === 'listener') {
+          if (showdown.helper.isUndefined(ext.listeners)) {
+            ret.valid = false;
+            ret.error = baseMsg + '. Extensions of type "listener" must have a property called "listeners"';
+            return ret;
+          }
+        } else {
+          if (showdown.helper.isUndefined(ext.filter) && showdown.helper.isUndefined(ext.regex)) {
+            ret.valid = false;
+            ret.error = baseMsg + type + ' extensions must define either a "regex" property or a "filter" method';
+            return ret;
+          }
+        }
+
+        if (ext.listeners) {
+          if (typeof ext.listeners !== 'object') {
+            ret.valid = false;
+            ret.error = baseMsg + '"listeners" property must be an object but ' + typeof ext.listeners + ' given';
+            return ret;
+          }
+          for (var ln in ext.listeners) {
+            if (ext.listeners.hasOwnProperty(ln)) {
+              if (typeof ext.listeners[ln] !== 'function') {
+                ret.valid = false;
+                ret.error = baseMsg + '"listeners" property must be an hash of [event name]: [callback]. listeners.' + ln +
+                  ' must be a function but ' + typeof ext.listeners[ln] + ' given';
+                return ret;
+              }
+            }
+          }
+        }
+
+        if (ext.filter) {
+          if (typeof ext.filter !== 'function') {
+            ret.valid = false;
+            ret.error = baseMsg + '"filter" must be a function, but ' + typeof ext.filter + ' given';
+            return ret;
+          }
+        } else if (ext.regex) {
+          if (showdown.helper.isString(ext.regex)) {
+            ext.regex = new RegExp(ext.regex, 'g');
+          }
+          if (!(ext.regex instanceof RegExp)) {
+            ret.valid = false;
+            ret.error = baseMsg + '"regex" property must either be a string or a RegExp object, but ' + typeof ext.regex + ' given';
+            return ret;
+          }
+          if (showdown.helper.isUndefined(ext.replace)) {
+            ret.valid = false;
+            ret.error = baseMsg + '"regex" extensions must implement a replace string or function';
+            return ret;
+          }
+        }
+      }
+      return ret;
+    }
+
+    /**
+     * Validate extension
+     * @param {object} ext
+     * @returns {boolean}
+     */
+    showdown.validateExtension = function (ext) {
+
+      var validateExtension = validate(ext, null);
+      if (!validateExtension.valid) {
+        console.warn(validateExtension.error);
+        return false;
+      }
+      return true;
+    };
+
+    /**
+     * showdownjs helper functions
+     */
+
+    if (!showdown.hasOwnProperty('helper')) {
+      showdown.helper = {};
+    }
+
+    /**
+     * Check if var is string
+     * @static
+     * @param {string} a
+     * @returns {boolean}
+     */
+    showdown.helper.isString = function (a) {
+      return (typeof a === 'string' || a instanceof String);
+    };
+
+    /**
+     * Check if var is a function
+     * @static
+     * @param {*} a
+     * @returns {boolean}
+     */
+    showdown.helper.isFunction = function (a) {
+      var getType = {};
+      return a && getType.toString.call(a) === '[object Function]';
+    };
+
+    /**
+     * isArray helper function
+     * @static
+     * @param {*} a
+     * @returns {boolean}
+     */
+    showdown.helper.isArray = function (a) {
+      return Array.isArray(a);
+    };
+
+    /**
+     * Check if value is undefined
+     * @static
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is `undefined`, else `false`.
+     */
+    showdown.helper.isUndefined = function (value) {
+      return typeof value === 'undefined';
+    };
+
+    /**
+     * ForEach helper function
+     * Iterates over Arrays and Objects (own properties only)
+     * @static
+     * @param {*} obj
+     * @param {function} callback Accepts 3 params: 1. value, 2. key, 3. the original array/object
+     */
+    showdown.helper.forEach = function (obj, callback) {
+      // check if obj is defined
+      if (showdown.helper.isUndefined(obj)) {
+        throw new Error('obj param is required');
+      }
+
+      if (showdown.helper.isUndefined(callback)) {
+        throw new Error('callback param is required');
+      }
+
+      if (!showdown.helper.isFunction(callback)) {
+        throw new Error('callback param must be a function/closure');
+      }
+
+      if (typeof obj.forEach === 'function') {
+        obj.forEach(callback);
+      } else if (showdown.helper.isArray(obj)) {
+        for (var i = 0; i < obj.length; i++) {
+          callback(obj[i], i, obj);
+        }
+      } else if (typeof (obj) === 'object') {
+        for (var prop in obj) {
+          if (obj.hasOwnProperty(prop)) {
+            callback(obj[prop], prop, obj);
+          }
+        }
+      } else {
+        throw new Error('obj does not seem to be an array or an iterable object');
+      }
+    };
+
+    /**
+     * Standardidize extension name
+     * @static
+     * @param {string} s extension name
+     * @returns {string}
+     */
+    showdown.helper.stdExtName = function (s) {
+      return s.replace(/[_?*+\/\\.^-]/g, '').replace(/\s/g, '').toLowerCase();
+    };
+
+    function escapeCharactersCallback (wholeMatch, m1) {
+      var charCodeToEscape = m1.charCodeAt(0);
+      return '¨E' + charCodeToEscape + 'E';
+    }
+
+    /**
+     * Callback used to escape characters when passing through String.replace
+     * @static
+     * @param {string} wholeMatch
+     * @param {string} m1
+     * @returns {string}
+     */
+    showdown.helper.escapeCharactersCallback = escapeCharactersCallback;
+
+    /**
+     * Escape characters in a string
+     * @static
+     * @param {string} text
+     * @param {string} charsToEscape
+     * @param {boolean} afterBackslash
+     * @returns {XML|string|void|*}
+     */
+    showdown.helper.escapeCharacters = function (text, charsToEscape, afterBackslash) {
+      // First we have to escape the escape characters so that
+      // we can build a character class out of them
+      var regexString = '([' + charsToEscape.replace(/([\[\]\\])/g, '\\$1') + '])';
+
+      if (afterBackslash) {
+        regexString = '\\\\' + regexString;
+      }
+
+      var regex = new RegExp(regexString, 'g');
+      text = text.replace(regex, escapeCharactersCallback);
+
+      return text;
+    };
+
+    /**
+     * Unescape HTML entities
+     * @param txt
+     * @returns {string}
+     */
+    showdown.helper.unescapeHTMLEntities = function (txt) {
+
+      return txt
+        .replace(/&quot;/g, '"')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&amp;/g, '&');
+    };
+
+    var rgxFindMatchPos = function (str, left, right, flags) {
+      var f = flags || '',
+          g = f.indexOf('g') > -1,
+          x = new RegExp(left + '|' + right, 'g' + f.replace(/g/g, '')),
+          l = new RegExp(left, f.replace(/g/g, '')),
+          pos = [],
+          t, s, m, start, end;
+
+      do {
+        t = 0;
+        while ((m = x.exec(str))) {
+          if (l.test(m[0])) {
+            if (!(t++)) {
+              s = x.lastIndex;
+              start = s - m[0].length;
+            }
+          } else if (t) {
+            if (!--t) {
+              end = m.index + m[0].length;
+              var obj = {
+                left: {start: start, end: s},
+                match: {start: s, end: m.index},
+                right: {start: m.index, end: end},
+                wholeMatch: {start: start, end: end}
+              };
+              pos.push(obj);
+              if (!g) {
+                return pos;
+              }
+            }
+          }
+        }
+      } while (t && (x.lastIndex = s));
+
+      return pos;
+    };
+
+    /**
+     * matchRecursiveRegExp
+     *
+     * (c) 2007 Steven Levithan <stevenlevithan.com>
+     * MIT License
+     *
+     * Accepts a string to search, a left and right format delimiter
+     * as regex patterns, and optional regex flags. Returns an array
+     * of matches, allowing nested instances of left/right delimiters.
+     * Use the "g" flag to return all matches, otherwise only the
+     * first is returned. Be careful to ensure that the left and
+     * right format delimiters produce mutually exclusive matches.
+     * Backreferences are not supported within the right delimiter
+     * due to how it is internally combined with the left delimiter.
+     * When matching strings whose format delimiters are unbalanced
+     * to the left or right, the output is intentionally as a
+     * conventional regex library with recursion support would
+     * produce, e.g. "<<x>" and "<x>>" both produce ["x"] when using
+     * "<" and ">" as the delimiters (both strings contain a single,
+     * balanced instance of "<x>").
+     *
+     * examples:
+     * matchRecursiveRegExp("test", "\\(", "\\)")
+     * returns: []
+     * matchRecursiveRegExp("<t<<e>><s>>t<>", "<", ">", "g")
+     * returns: ["t<<e>><s>", ""]
+     * matchRecursiveRegExp("<div id=\"x\">test</div>", "<div\\b[^>]*>", "</div>", "gi")
+     * returns: ["test"]
+     */
+    showdown.helper.matchRecursiveRegExp = function (str, left, right, flags) {
+
+      var matchPos = rgxFindMatchPos (str, left, right, flags),
+          results = [];
+
+      for (var i = 0; i < matchPos.length; ++i) {
+        results.push([
+          str.slice(matchPos[i].wholeMatch.start, matchPos[i].wholeMatch.end),
+          str.slice(matchPos[i].match.start, matchPos[i].match.end),
+          str.slice(matchPos[i].left.start, matchPos[i].left.end),
+          str.slice(matchPos[i].right.start, matchPos[i].right.end)
+        ]);
+      }
+      return results;
+    };
+
+    /**
+     *
+     * @param {string} str
+     * @param {string|function} replacement
+     * @param {string} left
+     * @param {string} right
+     * @param {string} flags
+     * @returns {string}
+     */
+    showdown.helper.replaceRecursiveRegExp = function (str, replacement, left, right, flags) {
+
+      if (!showdown.helper.isFunction(replacement)) {
+        var repStr = replacement;
+        replacement = function () {
+          return repStr;
+        };
+      }
+
+      var matchPos = rgxFindMatchPos(str, left, right, flags),
+          finalStr = str,
+          lng = matchPos.length;
+
+      if (lng > 0) {
+        var bits = [];
+        if (matchPos[0].wholeMatch.start !== 0) {
+          bits.push(str.slice(0, matchPos[0].wholeMatch.start));
+        }
+        for (var i = 0; i < lng; ++i) {
+          bits.push(
+            replacement(
+              str.slice(matchPos[i].wholeMatch.start, matchPos[i].wholeMatch.end),
+              str.slice(matchPos[i].match.start, matchPos[i].match.end),
+              str.slice(matchPos[i].left.start, matchPos[i].left.end),
+              str.slice(matchPos[i].right.start, matchPos[i].right.end)
+            )
+          );
+          if (i < lng - 1) {
+            bits.push(str.slice(matchPos[i].wholeMatch.end, matchPos[i + 1].wholeMatch.start));
+          }
+        }
+        if (matchPos[lng - 1].wholeMatch.end < str.length) {
+          bits.push(str.slice(matchPos[lng - 1].wholeMatch.end));
+        }
+        finalStr = bits.join('');
+      }
+      return finalStr;
+    };
+
+    /**
+     * Returns the index within the passed String object of the first occurrence of the specified regex,
+     * starting the search at fromIndex. Returns -1 if the value is not found.
+     *
+     * @param {string} str string to search
+     * @param {RegExp} regex Regular expression to search
+     * @param {int} [fromIndex = 0] Index to start the search
+     * @returns {Number}
+     * @throws InvalidArgumentError
+     */
+    showdown.helper.regexIndexOf = function (str, regex, fromIndex) {
+      if (!showdown.helper.isString(str)) {
+        throw 'InvalidArgumentError: first parameter of showdown.helper.regexIndexOf function must be a string';
+      }
+      if (regex instanceof RegExp === false) {
+        throw 'InvalidArgumentError: second parameter of showdown.helper.regexIndexOf function must be an instance of RegExp';
+      }
+      var indexOf = str.substring(fromIndex || 0).search(regex);
+      return (indexOf >= 0) ? (indexOf + (fromIndex || 0)) : indexOf;
+    };
+
+    /**
+     * Splits the passed string object at the defined index, and returns an array composed of the two substrings
+     * @param {string} str string to split
+     * @param {int} index index to split string at
+     * @returns {[string,string]}
+     * @throws InvalidArgumentError
+     */
+    showdown.helper.splitAtIndex = function (str, index) {
+      if (!showdown.helper.isString(str)) {
+        throw 'InvalidArgumentError: first parameter of showdown.helper.regexIndexOf function must be a string';
+      }
+      return [str.substring(0, index), str.substring(index)];
+    };
+
+    /**
+     * Obfuscate an e-mail address through the use of Character Entities,
+     * transforming ASCII characters into their equivalent decimal or hex entities.
+     *
+     * Since it has a random component, subsequent calls to this function produce different results
+     *
+     * @param {string} mail
+     * @returns {string}
+     */
+    showdown.helper.encodeEmailAddress = function (mail) {
+      var encode = [
+        function (ch) {
+          return '&#' + ch.charCodeAt(0) + ';';
+        },
+        function (ch) {
+          return '&#x' + ch.charCodeAt(0).toString(16) + ';';
+        },
+        function (ch) {
+          return ch;
+        }
+      ];
+
+      mail = mail.replace(/./g, function (ch) {
+        if (ch === '@') {
+          // this *must* be encoded. I insist.
+          ch = encode[Math.floor(Math.random() * 2)](ch);
+        } else {
+          var r = Math.random();
+          // roughly 10% raw, 45% hex, 45% dec
+          ch = (
+            r > 0.9 ? encode[2](ch) : r > 0.45 ? encode[1](ch) : encode[0](ch)
+          );
+        }
+        return ch;
+      });
+
+      return mail;
+    };
+
+    /**
+     *
+     * @param str
+     * @param targetLength
+     * @param padString
+     * @returns {string}
+     */
+    showdown.helper.padEnd = function padEnd (str, targetLength, padString) {
+      /*jshint bitwise: false*/
+      // eslint-disable-next-line space-infix-ops
+      targetLength = targetLength>>0; //floor if number or convert non-number to 0;
+      /*jshint bitwise: true*/
+      padString = String(padString || ' ');
+      if (str.length > targetLength) {
+        return String(str);
+      } else {
+        targetLength = targetLength - str.length;
+        if (targetLength > padString.length) {
+          padString += padString.repeat(targetLength / padString.length); //append to original to ensure we are longer than needed
+        }
+        return String(str) + padString.slice(0,targetLength);
+      }
+    };
+
+    /**
+     * POLYFILLS
+     */
+    // use this instead of builtin is undefined for IE8 compatibility
+    if (typeof console === 'undefined') {
+      console = {
+        warn: function (msg) {
+          alert(msg);
+        },
+        log: function (msg) {
+          alert(msg);
+        },
+        error: function (msg) {
+          throw msg;
+        }
+      };
+    }
+
+    /**
+     * Common regexes.
+     * We declare some common regexes to improve performance
+     */
+    showdown.helper.regexes = {
+      asteriskDashAndColon: /([*_:~])/g
+    };
+
+    /**
+     * EMOJIS LIST
+     */
+    showdown.helper.emojis = {
+      '+1':'\ud83d\udc4d',
+      '-1':'\ud83d\udc4e',
+      '100':'\ud83d\udcaf',
+      '1234':'\ud83d\udd22',
+      '1st_place_medal':'\ud83e\udd47',
+      '2nd_place_medal':'\ud83e\udd48',
+      '3rd_place_medal':'\ud83e\udd49',
+      '8ball':'\ud83c\udfb1',
+      'a':'\ud83c\udd70\ufe0f',
+      'ab':'\ud83c\udd8e',
+      'abc':'\ud83d\udd24',
+      'abcd':'\ud83d\udd21',
+      'accept':'\ud83c\ude51',
+      'aerial_tramway':'\ud83d\udea1',
+      'airplane':'\u2708\ufe0f',
+      'alarm_clock':'\u23f0',
+      'alembic':'\u2697\ufe0f',
+      'alien':'\ud83d\udc7d',
+      'ambulance':'\ud83d\ude91',
+      'amphora':'\ud83c\udffa',
+      'anchor':'\u2693\ufe0f',
+      'angel':'\ud83d\udc7c',
+      'anger':'\ud83d\udca2',
+      'angry':'\ud83d\ude20',
+      'anguished':'\ud83d\ude27',
+      'ant':'\ud83d\udc1c',
+      'apple':'\ud83c\udf4e',
+      'aquarius':'\u2652\ufe0f',
+      'aries':'\u2648\ufe0f',
+      'arrow_backward':'\u25c0\ufe0f',
+      'arrow_double_down':'\u23ec',
+      'arrow_double_up':'\u23eb',
+      'arrow_down':'\u2b07\ufe0f',
+      'arrow_down_small':'\ud83d\udd3d',
+      'arrow_forward':'\u25b6\ufe0f',
+      'arrow_heading_down':'\u2935\ufe0f',
+      'arrow_heading_up':'\u2934\ufe0f',
+      'arrow_left':'\u2b05\ufe0f',
+      'arrow_lower_left':'\u2199\ufe0f',
+      'arrow_lower_right':'\u2198\ufe0f',
+      'arrow_right':'\u27a1\ufe0f',
+      'arrow_right_hook':'\u21aa\ufe0f',
+      'arrow_up':'\u2b06\ufe0f',
+      'arrow_up_down':'\u2195\ufe0f',
+      'arrow_up_small':'\ud83d\udd3c',
+      'arrow_upper_left':'\u2196\ufe0f',
+      'arrow_upper_right':'\u2197\ufe0f',
+      'arrows_clockwise':'\ud83d\udd03',
+      'arrows_counterclockwise':'\ud83d\udd04',
+      'art':'\ud83c\udfa8',
+      'articulated_lorry':'\ud83d\ude9b',
+      'artificial_satellite':'\ud83d\udef0',
+      'astonished':'\ud83d\ude32',
+      'athletic_shoe':'\ud83d\udc5f',
+      'atm':'\ud83c\udfe7',
+      'atom_symbol':'\u269b\ufe0f',
+      'avocado':'\ud83e\udd51',
+      'b':'\ud83c\udd71\ufe0f',
+      'baby':'\ud83d\udc76',
+      'baby_bottle':'\ud83c\udf7c',
+      'baby_chick':'\ud83d\udc24',
+      'baby_symbol':'\ud83d\udebc',
+      'back':'\ud83d\udd19',
+      'bacon':'\ud83e\udd53',
+      'badminton':'\ud83c\udff8',
+      'baggage_claim':'\ud83d\udec4',
+      'baguette_bread':'\ud83e\udd56',
+      'balance_scale':'\u2696\ufe0f',
+      'balloon':'\ud83c\udf88',
+      'ballot_box':'\ud83d\uddf3',
+      'ballot_box_with_check':'\u2611\ufe0f',
+      'bamboo':'\ud83c\udf8d',
+      'banana':'\ud83c\udf4c',
+      'bangbang':'\u203c\ufe0f',
+      'bank':'\ud83c\udfe6',
+      'bar_chart':'\ud83d\udcca',
+      'barber':'\ud83d\udc88',
+      'baseball':'\u26be\ufe0f',
+      'basketball':'\ud83c\udfc0',
+      'basketball_man':'\u26f9\ufe0f',
+      'basketball_woman':'\u26f9\ufe0f&zwj;\u2640\ufe0f',
+      'bat':'\ud83e\udd87',
+      'bath':'\ud83d\udec0',
+      'bathtub':'\ud83d\udec1',
+      'battery':'\ud83d\udd0b',
+      'beach_umbrella':'\ud83c\udfd6',
+      'bear':'\ud83d\udc3b',
+      'bed':'\ud83d\udecf',
+      'bee':'\ud83d\udc1d',
+      'beer':'\ud83c\udf7a',
+      'beers':'\ud83c\udf7b',
+      'beetle':'\ud83d\udc1e',
+      'beginner':'\ud83d\udd30',
+      'bell':'\ud83d\udd14',
+      'bellhop_bell':'\ud83d\udece',
+      'bento':'\ud83c\udf71',
+      'biking_man':'\ud83d\udeb4',
+      'bike':'\ud83d\udeb2',
+      'biking_woman':'\ud83d\udeb4&zwj;\u2640\ufe0f',
+      'bikini':'\ud83d\udc59',
+      'biohazard':'\u2623\ufe0f',
+      'bird':'\ud83d\udc26',
+      'birthday':'\ud83c\udf82',
+      'black_circle':'\u26ab\ufe0f',
+      'black_flag':'\ud83c\udff4',
+      'black_heart':'\ud83d\udda4',
+      'black_joker':'\ud83c\udccf',
+      'black_large_square':'\u2b1b\ufe0f',
+      'black_medium_small_square':'\u25fe\ufe0f',
+      'black_medium_square':'\u25fc\ufe0f',
+      'black_nib':'\u2712\ufe0f',
+      'black_small_square':'\u25aa\ufe0f',
+      'black_square_button':'\ud83d\udd32',
+      'blonde_man':'\ud83d\udc71',
+      'blonde_woman':'\ud83d\udc71&zwj;\u2640\ufe0f',
+      'blossom':'\ud83c\udf3c',
+      'blowfish':'\ud83d\udc21',
+      'blue_book':'\ud83d\udcd8',
+      'blue_car':'\ud83d\ude99',
+      'blue_heart':'\ud83d\udc99',
+      'blush':'\ud83d\ude0a',
+      'boar':'\ud83d\udc17',
+      'boat':'\u26f5\ufe0f',
+      'bomb':'\ud83d\udca3',
+      'book':'\ud83d\udcd6',
+      'bookmark':'\ud83d\udd16',
+      'bookmark_tabs':'\ud83d\udcd1',
+      'books':'\ud83d\udcda',
+      'boom':'\ud83d\udca5',
+      'boot':'\ud83d\udc62',
+      'bouquet':'\ud83d\udc90',
+      'bowing_man':'\ud83d\ude47',
+      'bow_and_arrow':'\ud83c\udff9',
+      'bowing_woman':'\ud83d\ude47&zwj;\u2640\ufe0f',
+      'bowling':'\ud83c\udfb3',
+      'boxing_glove':'\ud83e\udd4a',
+      'boy':'\ud83d\udc66',
+      'bread':'\ud83c\udf5e',
+      'bride_with_veil':'\ud83d\udc70',
+      'bridge_at_night':'\ud83c\udf09',
+      'briefcase':'\ud83d\udcbc',
+      'broken_heart':'\ud83d\udc94',
+      'bug':'\ud83d\udc1b',
+      'building_construction':'\ud83c\udfd7',
+      'bulb':'\ud83d\udca1',
+      'bullettrain_front':'\ud83d\ude85',
+      'bullettrain_side':'\ud83d\ude84',
+      'burrito':'\ud83c\udf2f',
+      'bus':'\ud83d\ude8c',
+      'business_suit_levitating':'\ud83d\udd74',
+      'busstop':'\ud83d\ude8f',
+      'bust_in_silhouette':'\ud83d\udc64',
+      'busts_in_silhouette':'\ud83d\udc65',
+      'butterfly':'\ud83e\udd8b',
+      'cactus':'\ud83c\udf35',
+      'cake':'\ud83c\udf70',
+      'calendar':'\ud83d\udcc6',
+      'call_me_hand':'\ud83e\udd19',
+      'calling':'\ud83d\udcf2',
+      'camel':'\ud83d\udc2b',
+      'camera':'\ud83d\udcf7',
+      'camera_flash':'\ud83d\udcf8',
+      'camping':'\ud83c\udfd5',
+      'cancer':'\u264b\ufe0f',
+      'candle':'\ud83d\udd6f',
+      'candy':'\ud83c\udf6c',
+      'canoe':'\ud83d\udef6',
+      'capital_abcd':'\ud83d\udd20',
+      'capricorn':'\u2651\ufe0f',
+      'car':'\ud83d\ude97',
+      'card_file_box':'\ud83d\uddc3',
+      'card_index':'\ud83d\udcc7',
+      'card_index_dividers':'\ud83d\uddc2',
+      'carousel_horse':'\ud83c\udfa0',
+      'carrot':'\ud83e\udd55',
+      'cat':'\ud83d\udc31',
+      'cat2':'\ud83d\udc08',
+      'cd':'\ud83d\udcbf',
+      'chains':'\u26d3',
+      'champagne':'\ud83c\udf7e',
+      'chart':'\ud83d\udcb9',
+      'chart_with_downwards_trend':'\ud83d\udcc9',
+      'chart_with_upwards_trend':'\ud83d\udcc8',
+      'checkered_flag':'\ud83c\udfc1',
+      'cheese':'\ud83e\uddc0',
+      'cherries':'\ud83c\udf52',
+      'cherry_blossom':'\ud83c\udf38',
+      'chestnut':'\ud83c\udf30',
+      'chicken':'\ud83d\udc14',
+      'children_crossing':'\ud83d\udeb8',
+      'chipmunk':'\ud83d\udc3f',
+      'chocolate_bar':'\ud83c\udf6b',
+      'christmas_tree':'\ud83c\udf84',
+      'church':'\u26ea\ufe0f',
+      'cinema':'\ud83c\udfa6',
+      'circus_tent':'\ud83c\udfaa',
+      'city_sunrise':'\ud83c\udf07',
+      'city_sunset':'\ud83c\udf06',
+      'cityscape':'\ud83c\udfd9',
+      'cl':'\ud83c\udd91',
+      'clamp':'\ud83d\udddc',
+      'clap':'\ud83d\udc4f',
+      'clapper':'\ud83c\udfac',
+      'classical_building':'\ud83c\udfdb',
+      'clinking_glasses':'\ud83e\udd42',
+      'clipboard':'\ud83d\udccb',
+      'clock1':'\ud83d\udd50',
+      'clock10':'\ud83d\udd59',
+      'clock1030':'\ud83d\udd65',
+      'clock11':'\ud83d\udd5a',
+      'clock1130':'\ud83d\udd66',
+      'clock12':'\ud83d\udd5b',
+      'clock1230':'\ud83d\udd67',
+      'clock130':'\ud83d\udd5c',
+      'clock2':'\ud83d\udd51',
+      'clock230':'\ud83d\udd5d',
+      'clock3':'\ud83d\udd52',
+      'clock330':'\ud83d\udd5e',
+      'clock4':'\ud83d\udd53',
+      'clock430':'\ud83d\udd5f',
+      'clock5':'\ud83d\udd54',
+      'clock530':'\ud83d\udd60',
+      'clock6':'\ud83d\udd55',
+      'clock630':'\ud83d\udd61',
+      'clock7':'\ud83d\udd56',
+      'clock730':'\ud83d\udd62',
+      'clock8':'\ud83d\udd57',
+      'clock830':'\ud83d\udd63',
+      'clock9':'\ud83d\udd58',
+      'clock930':'\ud83d\udd64',
+      'closed_book':'\ud83d\udcd5',
+      'closed_lock_with_key':'\ud83d\udd10',
+      'closed_umbrella':'\ud83c\udf02',
+      'cloud':'\u2601\ufe0f',
+      'cloud_with_lightning':'\ud83c\udf29',
+      'cloud_with_lightning_and_rain':'\u26c8',
+      'cloud_with_rain':'\ud83c\udf27',
+      'cloud_with_snow':'\ud83c\udf28',
+      'clown_face':'\ud83e\udd21',
+      'clubs':'\u2663\ufe0f',
+      'cocktail':'\ud83c\udf78',
+      'coffee':'\u2615\ufe0f',
+      'coffin':'\u26b0\ufe0f',
+      'cold_sweat':'\ud83d\ude30',
+      'comet':'\u2604\ufe0f',
+      'computer':'\ud83d\udcbb',
+      'computer_mouse':'\ud83d\uddb1',
+      'confetti_ball':'\ud83c\udf8a',
+      'confounded':'\ud83d\ude16',
+      'confused':'\ud83d\ude15',
+      'congratulations':'\u3297\ufe0f',
+      'construction':'\ud83d\udea7',
+      'construction_worker_man':'\ud83d\udc77',
+      'construction_worker_woman':'\ud83d\udc77&zwj;\u2640\ufe0f',
+      'control_knobs':'\ud83c\udf9b',
+      'convenience_store':'\ud83c\udfea',
+      'cookie':'\ud83c\udf6a',
+      'cool':'\ud83c\udd92',
+      'policeman':'\ud83d\udc6e',
+      'copyright':'\u00a9\ufe0f',
+      'corn':'\ud83c\udf3d',
+      'couch_and_lamp':'\ud83d\udecb',
+      'couple':'\ud83d\udc6b',
+      'couple_with_heart_woman_man':'\ud83d\udc91',
+      'couple_with_heart_man_man':'\ud83d\udc68&zwj;\u2764\ufe0f&zwj;\ud83d\udc68',
+      'couple_with_heart_woman_woman':'\ud83d\udc69&zwj;\u2764\ufe0f&zwj;\ud83d\udc69',
+      'couplekiss_man_man':'\ud83d\udc68&zwj;\u2764\ufe0f&zwj;\ud83d\udc8b&zwj;\ud83d\udc68',
+      'couplekiss_man_woman':'\ud83d\udc8f',
+      'couplekiss_woman_woman':'\ud83d\udc69&zwj;\u2764\ufe0f&zwj;\ud83d\udc8b&zwj;\ud83d\udc69',
+      'cow':'\ud83d\udc2e',
+      'cow2':'\ud83d\udc04',
+      'cowboy_hat_face':'\ud83e\udd20',
+      'crab':'\ud83e\udd80',
+      'crayon':'\ud83d\udd8d',
+      'credit_card':'\ud83d\udcb3',
+      'crescent_moon':'\ud83c\udf19',
+      'cricket':'\ud83c\udfcf',
+      'crocodile':'\ud83d\udc0a',
+      'croissant':'\ud83e\udd50',
+      'crossed_fingers':'\ud83e\udd1e',
+      'crossed_flags':'\ud83c\udf8c',
+      'crossed_swords':'\u2694\ufe0f',
+      'crown':'\ud83d\udc51',
+      'cry':'\ud83d\ude22',
+      'crying_cat_face':'\ud83d\ude3f',
+      'crystal_ball':'\ud83d\udd2e',
+      'cucumber':'\ud83e\udd52',
+      'cupid':'\ud83d\udc98',
+      'curly_loop':'\u27b0',
+      'currency_exchange':'\ud83d\udcb1',
+      'curry':'\ud83c\udf5b',
+      'custard':'\ud83c\udf6e',
+      'customs':'\ud83d\udec3',
+      'cyclone':'\ud83c\udf00',
+      'dagger':'\ud83d\udde1',
+      'dancer':'\ud83d\udc83',
+      'dancing_women':'\ud83d\udc6f',
+      'dancing_men':'\ud83d\udc6f&zwj;\u2642\ufe0f',
+      'dango':'\ud83c\udf61',
+      'dark_sunglasses':'\ud83d\udd76',
+      'dart':'\ud83c\udfaf',
+      'dash':'\ud83d\udca8',
+      'date':'\ud83d\udcc5',
+      'deciduous_tree':'\ud83c\udf33',
+      'deer':'\ud83e\udd8c',
+      'department_store':'\ud83c\udfec',
+      'derelict_house':'\ud83c\udfda',
+      'desert':'\ud83c\udfdc',
+      'desert_island':'\ud83c\udfdd',
+      'desktop_computer':'\ud83d\udda5',
+      'male_detective':'\ud83d\udd75\ufe0f',
+      'diamond_shape_with_a_dot_inside':'\ud83d\udca0',
+      'diamonds':'\u2666\ufe0f',
+      'disappointed':'\ud83d\ude1e',
+      'disappointed_relieved':'\ud83d\ude25',
+      'dizzy':'\ud83d\udcab',
+      'dizzy_face':'\ud83d\ude35',
+      'do_not_litter':'\ud83d\udeaf',
+      'dog':'\ud83d\udc36',
+      'dog2':'\ud83d\udc15',
+      'dollar':'\ud83d\udcb5',
+      'dolls':'\ud83c\udf8e',
+      'dolphin':'\ud83d\udc2c',
+      'door':'\ud83d\udeaa',
+      'doughnut':'\ud83c\udf69',
+      'dove':'\ud83d\udd4a',
+      'dragon':'\ud83d\udc09',
+      'dragon_face':'\ud83d\udc32',
+      'dress':'\ud83d\udc57',
+      'dromedary_camel':'\ud83d\udc2a',
+      'drooling_face':'\ud83e\udd24',
+      'droplet':'\ud83d\udca7',
+      'drum':'\ud83e\udd41',
+      'duck':'\ud83e\udd86',
+      'dvd':'\ud83d\udcc0',
+      'e-mail':'\ud83d\udce7',
+      'eagle':'\ud83e\udd85',
+      'ear':'\ud83d\udc42',
+      'ear_of_rice':'\ud83c\udf3e',
+      'earth_africa':'\ud83c\udf0d',
+      'earth_americas':'\ud83c\udf0e',
+      'earth_asia':'\ud83c\udf0f',
+      'egg':'\ud83e\udd5a',
+      'eggplant':'\ud83c\udf46',
+      'eight_pointed_black_star':'\u2734\ufe0f',
+      'eight_spoked_asterisk':'\u2733\ufe0f',
+      'electric_plug':'\ud83d\udd0c',
+      'elephant':'\ud83d\udc18',
+      'email':'\u2709\ufe0f',
+      'end':'\ud83d\udd1a',
+      'envelope_with_arrow':'\ud83d\udce9',
+      'euro':'\ud83d\udcb6',
+      'european_castle':'\ud83c\udff0',
+      'european_post_office':'\ud83c\udfe4',
+      'evergreen_tree':'\ud83c\udf32',
+      'exclamation':'\u2757\ufe0f',
+      'expressionless':'\ud83d\ude11',
+      'eye':'\ud83d\udc41',
+      'eye_speech_bubble':'\ud83d\udc41&zwj;\ud83d\udde8',
+      'eyeglasses':'\ud83d\udc53',
+      'eyes':'\ud83d\udc40',
+      'face_with_head_bandage':'\ud83e\udd15',
+      'face_with_thermometer':'\ud83e\udd12',
+      'fist_oncoming':'\ud83d\udc4a',
+      'factory':'\ud83c\udfed',
+      'fallen_leaf':'\ud83c\udf42',
+      'family_man_woman_boy':'\ud83d\udc6a',
+      'family_man_boy':'\ud83d\udc68&zwj;\ud83d\udc66',
+      'family_man_boy_boy':'\ud83d\udc68&zwj;\ud83d\udc66&zwj;\ud83d\udc66',
+      'family_man_girl':'\ud83d\udc68&zwj;\ud83d\udc67',
+      'family_man_girl_boy':'\ud83d\udc68&zwj;\ud83d\udc67&zwj;\ud83d\udc66',
+      'family_man_girl_girl':'\ud83d\udc68&zwj;\ud83d\udc67&zwj;\ud83d\udc67',
+      'family_man_man_boy':'\ud83d\udc68&zwj;\ud83d\udc68&zwj;\ud83d\udc66',
+      'family_man_man_boy_boy':'\ud83d\udc68&zwj;\ud83d\udc68&zwj;\ud83d\udc66&zwj;\ud83d\udc66',
+      'family_man_man_girl':'\ud83d\udc68&zwj;\ud83d\udc68&zwj;\ud83d\udc67',
+      'family_man_man_girl_boy':'\ud83d\udc68&zwj;\ud83d\udc68&zwj;\ud83d\udc67&zwj;\ud83d\udc66',
+      'family_man_man_girl_girl':'\ud83d\udc68&zwj;\ud83d\udc68&zwj;\ud83d\udc67&zwj;\ud83d\udc67',
+      'family_man_woman_boy_boy':'\ud83d\udc68&zwj;\ud83d\udc69&zwj;\ud83d\udc66&zwj;\ud83d\udc66',
+      'family_man_woman_girl':'\ud83d\udc68&zwj;\ud83d\udc69&zwj;\ud83d\udc67',
+      'family_man_woman_girl_boy':'\ud83d\udc68&zwj;\ud83d\udc69&zwj;\ud83d\udc67&zwj;\ud83d\udc66',
+      'family_man_woman_girl_girl':'\ud83d\udc68&zwj;\ud83d\udc69&zwj;\ud83d\udc67&zwj;\ud83d\udc67',
+      'family_woman_boy':'\ud83d\udc69&zwj;\ud83d\udc66',
+      'family_woman_boy_boy':'\ud83d\udc69&zwj;\ud83d\udc66&zwj;\ud83d\udc66',
+      'family_woman_girl':'\ud83d\udc69&zwj;\ud83d\udc67',
+      'family_woman_girl_boy':'\ud83d\udc69&zwj;\ud83d\udc67&zwj;\ud83d\udc66',
+      'family_woman_girl_girl':'\ud83d\udc69&zwj;\ud83d\udc67&zwj;\ud83d\udc67',
+      'family_woman_woman_boy':'\ud83d\udc69&zwj;\ud83d\udc69&zwj;\ud83d\udc66',
+      'family_woman_woman_boy_boy':'\ud83d\udc69&zwj;\ud83d\udc69&zwj;\ud83d\udc66&zwj;\ud83d\udc66',
+      'family_woman_woman_girl':'\ud83d\udc69&zwj;\ud83d\udc69&zwj;\ud83d\udc67',
+      'family_woman_woman_girl_boy':'\ud83d\udc69&zwj;\ud83d\udc69&zwj;\ud83d\udc67&zwj;\ud83d\udc66',
+      'family_woman_woman_girl_girl':'\ud83d\udc69&zwj;\ud83d\udc69&zwj;\ud83d\udc67&zwj;\ud83d\udc67',
+      'fast_forward':'\u23e9',
+      'fax':'\ud83d\udce0',
+      'fearful':'\ud83d\ude28',
+      'feet':'\ud83d\udc3e',
+      'female_detective':'\ud83d\udd75\ufe0f&zwj;\u2640\ufe0f',
+      'ferris_wheel':'\ud83c\udfa1',
+      'ferry':'\u26f4',
+      'field_hockey':'\ud83c\udfd1',
+      'file_cabinet':'\ud83d\uddc4',
+      'file_folder':'\ud83d\udcc1',
+      'film_projector':'\ud83d\udcfd',
+      'film_strip':'\ud83c\udf9e',
+      'fire':'\ud83d\udd25',
+      'fire_engine':'\ud83d\ude92',
+      'fireworks':'\ud83c\udf86',
+      'first_quarter_moon':'\ud83c\udf13',
+      'first_quarter_moon_with_face':'\ud83c\udf1b',
+      'fish':'\ud83d\udc1f',
+      'fish_cake':'\ud83c\udf65',
+      'fishing_pole_and_fish':'\ud83c\udfa3',
+      'fist_raised':'\u270a',
+      'fist_left':'\ud83e\udd1b',
+      'fist_right':'\ud83e\udd1c',
+      'flags':'\ud83c\udf8f',
+      'flashlight':'\ud83d\udd26',
+      'fleur_de_lis':'\u269c\ufe0f',
+      'flight_arrival':'\ud83d\udeec',
+      'flight_departure':'\ud83d\udeeb',
+      'floppy_disk':'\ud83d\udcbe',
+      'flower_playing_cards':'\ud83c\udfb4',
+      'flushed':'\ud83d\ude33',
+      'fog':'\ud83c\udf2b',
+      'foggy':'\ud83c\udf01',
+      'football':'\ud83c\udfc8',
+      'footprints':'\ud83d\udc63',
+      'fork_and_knife':'\ud83c\udf74',
+      'fountain':'\u26f2\ufe0f',
+      'fountain_pen':'\ud83d\udd8b',
+      'four_leaf_clover':'\ud83c\udf40',
+      'fox_face':'\ud83e\udd8a',
+      'framed_picture':'\ud83d\uddbc',
+      'free':'\ud83c\udd93',
+      'fried_egg':'\ud83c\udf73',
+      'fried_shrimp':'\ud83c\udf64',
+      'fries':'\ud83c\udf5f',
+      'frog':'\ud83d\udc38',
+      'frowning':'\ud83d\ude26',
+      'frowning_face':'\u2639\ufe0f',
+      'frowning_man':'\ud83d\ude4d&zwj;\u2642\ufe0f',
+      'frowning_woman':'\ud83d\ude4d',
+      'middle_finger':'\ud83d\udd95',
+      'fuelpump':'\u26fd\ufe0f',
+      'full_moon':'\ud83c\udf15',
+      'full_moon_with_face':'\ud83c\udf1d',
+      'funeral_urn':'\u26b1\ufe0f',
+      'game_die':'\ud83c\udfb2',
+      'gear':'\u2699\ufe0f',
+      'gem':'\ud83d\udc8e',
+      'gemini':'\u264a\ufe0f',
+      'ghost':'\ud83d\udc7b',
+      'gift':'\ud83c\udf81',
+      'gift_heart':'\ud83d\udc9d',
+      'girl':'\ud83d\udc67',
+      'globe_with_meridians':'\ud83c\udf10',
+      'goal_net':'\ud83e\udd45',
+      'goat':'\ud83d\udc10',
+      'golf':'\u26f3\ufe0f',
+      'golfing_man':'\ud83c\udfcc\ufe0f',
+      'golfing_woman':'\ud83c\udfcc\ufe0f&zwj;\u2640\ufe0f',
+      'gorilla':'\ud83e\udd8d',
+      'grapes':'\ud83c\udf47',
+      'green_apple':'\ud83c\udf4f',
+      'green_book':'\ud83d\udcd7',
+      'green_heart':'\ud83d\udc9a',
+      'green_salad':'\ud83e\udd57',
+      'grey_exclamation':'\u2755',
+      'grey_question':'\u2754',
+      'grimacing':'\ud83d\ude2c',
+      'grin':'\ud83d\ude01',
+      'grinning':'\ud83d\ude00',
+      'guardsman':'\ud83d\udc82',
+      'guardswoman':'\ud83d\udc82&zwj;\u2640\ufe0f',
+      'guitar':'\ud83c\udfb8',
+      'gun':'\ud83d\udd2b',
+      'haircut_woman':'\ud83d\udc87',
+      'haircut_man':'\ud83d\udc87&zwj;\u2642\ufe0f',
+      'hamburger':'\ud83c\udf54',
+      'hammer':'\ud83d\udd28',
+      'hammer_and_pick':'\u2692',
+      'hammer_and_wrench':'\ud83d\udee0',
+      'hamster':'\ud83d\udc39',
+      'hand':'\u270b',
+      'handbag':'\ud83d\udc5c',
+      'handshake':'\ud83e\udd1d',
+      'hankey':'\ud83d\udca9',
+      'hatched_chick':'\ud83d\udc25',
+      'hatching_chick':'\ud83d\udc23',
+      'headphones':'\ud83c\udfa7',
+      'hear_no_evil':'\ud83d\ude49',
+      'heart':'\u2764\ufe0f',
+      'heart_decoration':'\ud83d\udc9f',
+      'heart_eyes':'\ud83d\ude0d',
+      'heart_eyes_cat':'\ud83d\ude3b',
+      'heartbeat':'\ud83d\udc93',
+      'heartpulse':'\ud83d\udc97',
+      'hearts':'\u2665\ufe0f',
+      'heavy_check_mark':'\u2714\ufe0f',
+      'heavy_division_sign':'\u2797',
+      'heavy_dollar_sign':'\ud83d\udcb2',
+      'heavy_heart_exclamation':'\u2763\ufe0f',
+      'heavy_minus_sign':'\u2796',
+      'heavy_multiplication_x':'\u2716\ufe0f',
+      'heavy_plus_sign':'\u2795',
+      'helicopter':'\ud83d\ude81',
+      'herb':'\ud83c\udf3f',
+      'hibiscus':'\ud83c\udf3a',
+      'high_brightness':'\ud83d\udd06',
+      'high_heel':'\ud83d\udc60',
+      'hocho':'\ud83d\udd2a',
+      'hole':'\ud83d\udd73',
+      'honey_pot':'\ud83c\udf6f',
+      'horse':'\ud83d\udc34',
+      'horse_racing':'\ud83c\udfc7',
+      'hospital':'\ud83c\udfe5',
+      'hot_pepper':'\ud83c\udf36',
+      'hotdog':'\ud83c\udf2d',
+      'hotel':'\ud83c\udfe8',
+      'hotsprings':'\u2668\ufe0f',
+      'hourglass':'\u231b\ufe0f',
+      'hourglass_flowing_sand':'\u23f3',
+      'house':'\ud83c\udfe0',
+      'house_with_garden':'\ud83c\udfe1',
+      'houses':'\ud83c\udfd8',
+      'hugs':'\ud83e\udd17',
+      'hushed':'\ud83d\ude2f',
+      'ice_cream':'\ud83c\udf68',
+      'ice_hockey':'\ud83c\udfd2',
+      'ice_skate':'\u26f8',
+      'icecream':'\ud83c\udf66',
+      'id':'\ud83c\udd94',
+      'ideograph_advantage':'\ud83c\ude50',
+      'imp':'\ud83d\udc7f',
+      'inbox_tray':'\ud83d\udce5',
+      'incoming_envelope':'\ud83d\udce8',
+      'tipping_hand_woman':'\ud83d\udc81',
+      'information_source':'\u2139\ufe0f',
+      'innocent':'\ud83d\ude07',
+      'interrobang':'\u2049\ufe0f',
+      'iphone':'\ud83d\udcf1',
+      'izakaya_lantern':'\ud83c\udfee',
+      'jack_o_lantern':'\ud83c\udf83',
+      'japan':'\ud83d\uddfe',
+      'japanese_castle':'\ud83c\udfef',
+      'japanese_goblin':'\ud83d\udc7a',
+      'japanese_ogre':'\ud83d\udc79',
+      'jeans':'\ud83d\udc56',
+      'joy':'\ud83d\ude02',
+      'joy_cat':'\ud83d\ude39',
+      'joystick':'\ud83d\udd79',
+      'kaaba':'\ud83d\udd4b',
+      'key':'\ud83d\udd11',
+      'keyboard':'\u2328\ufe0f',
+      'keycap_ten':'\ud83d\udd1f',
+      'kick_scooter':'\ud83d\udef4',
+      'kimono':'\ud83d\udc58',
+      'kiss':'\ud83d\udc8b',
+      'kissing':'\ud83d\ude17',
+      'kissing_cat':'\ud83d\ude3d',
+      'kissing_closed_eyes':'\ud83d\ude1a',
+      'kissing_heart':'\ud83d\ude18',
+      'kissing_smiling_eyes':'\ud83d\ude19',
+      'kiwi_fruit':'\ud83e\udd5d',
+      'koala':'\ud83d\udc28',
+      'koko':'\ud83c\ude01',
+      'label':'\ud83c\udff7',
+      'large_blue_circle':'\ud83d\udd35',
+      'large_blue_diamond':'\ud83d\udd37',
+      'large_orange_diamond':'\ud83d\udd36',
+      'last_quarter_moon':'\ud83c\udf17',
+      'last_quarter_moon_with_face':'\ud83c\udf1c',
+      'latin_cross':'\u271d\ufe0f',
+      'laughing':'\ud83d\ude06',
+      'leaves':'\ud83c\udf43',
+      'ledger':'\ud83d\udcd2',
+      'left_luggage':'\ud83d\udec5',
+      'left_right_arrow':'\u2194\ufe0f',
+      'leftwards_arrow_with_hook':'\u21a9\ufe0f',
+      'lemon':'\ud83c\udf4b',
+      'leo':'\u264c\ufe0f',
+      'leopard':'\ud83d\udc06',
+      'level_slider':'\ud83c\udf9a',
+      'libra':'\u264e\ufe0f',
+      'light_rail':'\ud83d\ude88',
+      'link':'\ud83d\udd17',
+      'lion':'\ud83e\udd81',
+      'lips':'\ud83d\udc44',
+      'lipstick':'\ud83d\udc84',
+      'lizard':'\ud83e\udd8e',
+      'lock':'\ud83d\udd12',
+      'lock_with_ink_pen':'\ud83d\udd0f',
+      'lollipop':'\ud83c\udf6d',
+      'loop':'\u27bf',
+      'loud_sound':'\ud83d\udd0a',
+      'loudspeaker':'\ud83d\udce2',
+      'love_hotel':'\ud83c\udfe9',
+      'love_letter':'\ud83d\udc8c',
+      'low_brightness':'\ud83d\udd05',
+      'lying_face':'\ud83e\udd25',
+      'm':'\u24c2\ufe0f',
+      'mag':'\ud83d\udd0d',
+      'mag_right':'\ud83d\udd0e',
+      'mahjong':'\ud83c\udc04\ufe0f',
+      'mailbox':'\ud83d\udceb',
+      'mailbox_closed':'\ud83d\udcea',
+      'mailbox_with_mail':'\ud83d\udcec',
+      'mailbox_with_no_mail':'\ud83d\udced',
+      'man':'\ud83d\udc68',
+      'man_artist':'\ud83d\udc68&zwj;\ud83c\udfa8',
+      'man_astronaut':'\ud83d\udc68&zwj;\ud83d\ude80',
+      'man_cartwheeling':'\ud83e\udd38&zwj;\u2642\ufe0f',
+      'man_cook':'\ud83d\udc68&zwj;\ud83c\udf73',
+      'man_dancing':'\ud83d\udd7a',
+      'man_facepalming':'\ud83e\udd26&zwj;\u2642\ufe0f',
+      'man_factory_worker':'\ud83d\udc68&zwj;\ud83c\udfed',
+      'man_farmer':'\ud83d\udc68&zwj;\ud83c\udf3e',
+      'man_firefighter':'\ud83d\udc68&zwj;\ud83d\ude92',
+      'man_health_worker':'\ud83d\udc68&zwj;\u2695\ufe0f',
+      'man_in_tuxedo':'\ud83e\udd35',
+      'man_judge':'\ud83d\udc68&zwj;\u2696\ufe0f',
+      'man_juggling':'\ud83e\udd39&zwj;\u2642\ufe0f',
+      'man_mechanic':'\ud83d\udc68&zwj;\ud83d\udd27',
+      'man_office_worker':'\ud83d\udc68&zwj;\ud83d\udcbc',
+      'man_pilot':'\ud83d\udc68&zwj;\u2708\ufe0f',
+      'man_playing_handball':'\ud83e\udd3e&zwj;\u2642\ufe0f',
+      'man_playing_water_polo':'\ud83e\udd3d&zwj;\u2642\ufe0f',
+      'man_scientist':'\ud83d\udc68&zwj;\ud83d\udd2c',
+      'man_shrugging':'\ud83e\udd37&zwj;\u2642\ufe0f',
+      'man_singer':'\ud83d\udc68&zwj;\ud83c\udfa4',
+      'man_student':'\ud83d\udc68&zwj;\ud83c\udf93',
+      'man_teacher':'\ud83d\udc68&zwj;\ud83c\udfeb',
+      'man_technologist':'\ud83d\udc68&zwj;\ud83d\udcbb',
+      'man_with_gua_pi_mao':'\ud83d\udc72',
+      'man_with_turban':'\ud83d\udc73',
+      'tangerine':'\ud83c\udf4a',
+      'mans_shoe':'\ud83d\udc5e',
+      'mantelpiece_clock':'\ud83d\udd70',
+      'maple_leaf':'\ud83c\udf41',
+      'martial_arts_uniform':'\ud83e\udd4b',
+      'mask':'\ud83d\ude37',
+      'massage_woman':'\ud83d\udc86',
+      'massage_man':'\ud83d\udc86&zwj;\u2642\ufe0f',
+      'meat_on_bone':'\ud83c\udf56',
+      'medal_military':'\ud83c\udf96',
+      'medal_sports':'\ud83c\udfc5',
+      'mega':'\ud83d\udce3',
+      'melon':'\ud83c\udf48',
+      'memo':'\ud83d\udcdd',
+      'men_wrestling':'\ud83e\udd3c&zwj;\u2642\ufe0f',
+      'menorah':'\ud83d\udd4e',
+      'mens':'\ud83d\udeb9',
+      'metal':'\ud83e\udd18',
+      'metro':'\ud83d\ude87',
+      'microphone':'\ud83c\udfa4',
+      'microscope':'\ud83d\udd2c',
+      'milk_glass':'\ud83e\udd5b',
+      'milky_way':'\ud83c\udf0c',
+      'minibus':'\ud83d\ude90',
+      'minidisc':'\ud83d\udcbd',
+      'mobile_phone_off':'\ud83d\udcf4',
+      'money_mouth_face':'\ud83e\udd11',
+      'money_with_wings':'\ud83d\udcb8',
+      'moneybag':'\ud83d\udcb0',
+      'monkey':'\ud83d\udc12',
+      'monkey_face':'\ud83d\udc35',
+      'monorail':'\ud83d\ude9d',
+      'moon':'\ud83c\udf14',
+      'mortar_board':'\ud83c\udf93',
+      'mosque':'\ud83d\udd4c',
+      'motor_boat':'\ud83d\udee5',
+      'motor_scooter':'\ud83d\udef5',
+      'motorcycle':'\ud83c\udfcd',
+      'motorway':'\ud83d\udee3',
+      'mount_fuji':'\ud83d\uddfb',
+      'mountain':'\u26f0',
+      'mountain_biking_man':'\ud83d\udeb5',
+      'mountain_biking_woman':'\ud83d\udeb5&zwj;\u2640\ufe0f',
+      'mountain_cableway':'\ud83d\udea0',
+      'mountain_railway':'\ud83d\ude9e',
+      'mountain_snow':'\ud83c\udfd4',
+      'mouse':'\ud83d\udc2d',
+      'mouse2':'\ud83d\udc01',
+      'movie_camera':'\ud83c\udfa5',
+      'moyai':'\ud83d\uddff',
+      'mrs_claus':'\ud83e\udd36',
+      'muscle':'\ud83d\udcaa',
+      'mushroom':'\ud83c\udf44',
+      'musical_keyboard':'\ud83c\udfb9',
+      'musical_note':'\ud83c\udfb5',
+      'musical_score':'\ud83c\udfbc',
+      'mute':'\ud83d\udd07',
+      'nail_care':'\ud83d\udc85',
+      'name_badge':'\ud83d\udcdb',
+      'national_park':'\ud83c\udfde',
+      'nauseated_face':'\ud83e\udd22',
+      'necktie':'\ud83d\udc54',
+      'negative_squared_cross_mark':'\u274e',
+      'nerd_face':'\ud83e\udd13',
+      'neutral_face':'\ud83d\ude10',
+      'new':'\ud83c\udd95',
+      'new_moon':'\ud83c\udf11',
+      'new_moon_with_face':'\ud83c\udf1a',
+      'newspaper':'\ud83d\udcf0',
+      'newspaper_roll':'\ud83d\uddde',
+      'next_track_button':'\u23ed',
+      'ng':'\ud83c\udd96',
+      'no_good_man':'\ud83d\ude45&zwj;\u2642\ufe0f',
+      'no_good_woman':'\ud83d\ude45',
+      'night_with_stars':'\ud83c\udf03',
+      'no_bell':'\ud83d\udd15',
+      'no_bicycles':'\ud83d\udeb3',
+      'no_entry':'\u26d4\ufe0f',
+      'no_entry_sign':'\ud83d\udeab',
+      'no_mobile_phones':'\ud83d\udcf5',
+      'no_mouth':'\ud83d\ude36',
+      'no_pedestrians':'\ud83d\udeb7',
+      'no_smoking':'\ud83d\udead',
+      'non-potable_water':'\ud83d\udeb1',
+      'nose':'\ud83d\udc43',
+      'notebook':'\ud83d\udcd3',
+      'notebook_with_decorative_cover':'\ud83d\udcd4',
+      'notes':'\ud83c\udfb6',
+      'nut_and_bolt':'\ud83d\udd29',
+      'o':'\u2b55\ufe0f',
+      'o2':'\ud83c\udd7e\ufe0f',
+      'ocean':'\ud83c\udf0a',
+      'octopus':'\ud83d\udc19',
+      'oden':'\ud83c\udf62',
+      'office':'\ud83c\udfe2',
+      'oil_drum':'\ud83d\udee2',
+      'ok':'\ud83c\udd97',
+      'ok_hand':'\ud83d\udc4c',
+      'ok_man':'\ud83d\ude46&zwj;\u2642\ufe0f',
+      'ok_woman':'\ud83d\ude46',
+      'old_key':'\ud83d\udddd',
+      'older_man':'\ud83d\udc74',
+      'older_woman':'\ud83d\udc75',
+      'om':'\ud83d\udd49',
+      'on':'\ud83d\udd1b',
+      'oncoming_automobile':'\ud83d\ude98',
+      'oncoming_bus':'\ud83d\ude8d',
+      'oncoming_police_car':'\ud83d\ude94',
+      'oncoming_taxi':'\ud83d\ude96',
+      'open_file_folder':'\ud83d\udcc2',
+      'open_hands':'\ud83d\udc50',
+      'open_mouth':'\ud83d\ude2e',
+      'open_umbrella':'\u2602\ufe0f',
+      'ophiuchus':'\u26ce',
+      'orange_book':'\ud83d\udcd9',
+      'orthodox_cross':'\u2626\ufe0f',
+      'outbox_tray':'\ud83d\udce4',
+      'owl':'\ud83e\udd89',
+      'ox':'\ud83d\udc02',
+      'package':'\ud83d\udce6',
+      'page_facing_up':'\ud83d\udcc4',
+      'page_with_curl':'\ud83d\udcc3',
+      'pager':'\ud83d\udcdf',
+      'paintbrush':'\ud83d\udd8c',
+      'palm_tree':'\ud83c\udf34',
+      'pancakes':'\ud83e\udd5e',
+      'panda_face':'\ud83d\udc3c',
+      'paperclip':'\ud83d\udcce',
+      'paperclips':'\ud83d\udd87',
+      'parasol_on_ground':'\u26f1',
+      'parking':'\ud83c\udd7f\ufe0f',
+      'part_alternation_mark':'\u303d\ufe0f',
+      'partly_sunny':'\u26c5\ufe0f',
+      'passenger_ship':'\ud83d\udef3',
+      'passport_control':'\ud83d\udec2',
+      'pause_button':'\u23f8',
+      'peace_symbol':'\u262e\ufe0f',
+      'peach':'\ud83c\udf51',
+      'peanuts':'\ud83e\udd5c',
+      'pear':'\ud83c\udf50',
+      'pen':'\ud83d\udd8a',
+      'pencil2':'\u270f\ufe0f',
+      'penguin':'\ud83d\udc27',
+      'pensive':'\ud83d\ude14',
+      'performing_arts':'\ud83c\udfad',
+      'persevere':'\ud83d\ude23',
+      'person_fencing':'\ud83e\udd3a',
+      'pouting_woman':'\ud83d\ude4e',
+      'phone':'\u260e\ufe0f',
+      'pick':'\u26cf',
+      'pig':'\ud83d\udc37',
+      'pig2':'\ud83d\udc16',
+      'pig_nose':'\ud83d\udc3d',
+      'pill':'\ud83d\udc8a',
+      'pineapple':'\ud83c\udf4d',
+      'ping_pong':'\ud83c\udfd3',
+      'pisces':'\u2653\ufe0f',
+      'pizza':'\ud83c\udf55',
+      'place_of_worship':'\ud83d\uded0',
+      'plate_with_cutlery':'\ud83c\udf7d',
+      'play_or_pause_button':'\u23ef',
+      'point_down':'\ud83d\udc47',
+      'point_left':'\ud83d\udc48',
+      'point_right':'\ud83d\udc49',
+      'point_up':'\u261d\ufe0f',
+      'point_up_2':'\ud83d\udc46',
+      'police_car':'\ud83d\ude93',
+      'policewoman':'\ud83d\udc6e&zwj;\u2640\ufe0f',
+      'poodle':'\ud83d\udc29',
+      'popcorn':'\ud83c\udf7f',
+      'post_office':'\ud83c\udfe3',
+      'postal_horn':'\ud83d\udcef',
+      'postbox':'\ud83d\udcee',
+      'potable_water':'\ud83d\udeb0',
+      'potato':'\ud83e\udd54',
+      'pouch':'\ud83d\udc5d',
+      'poultry_leg':'\ud83c\udf57',
+      'pound':'\ud83d\udcb7',
+      'rage':'\ud83d\ude21',
+      'pouting_cat':'\ud83d\ude3e',
+      'pouting_man':'\ud83d\ude4e&zwj;\u2642\ufe0f',
+      'pray':'\ud83d\ude4f',
+      'prayer_beads':'\ud83d\udcff',
+      'pregnant_woman':'\ud83e\udd30',
+      'previous_track_button':'\u23ee',
+      'prince':'\ud83e\udd34',
+      'princess':'\ud83d\udc78',
+      'printer':'\ud83d\udda8',
+      'purple_heart':'\ud83d\udc9c',
+      'purse':'\ud83d\udc5b',
+      'pushpin':'\ud83d\udccc',
+      'put_litter_in_its_place':'\ud83d\udeae',
+      'question':'\u2753',
+      'rabbit':'\ud83d\udc30',
+      'rabbit2':'\ud83d\udc07',
+      'racehorse':'\ud83d\udc0e',
+      'racing_car':'\ud83c\udfce',
+      'radio':'\ud83d\udcfb',
+      'radio_button':'\ud83d\udd18',
+      'radioactive':'\u2622\ufe0f',
+      'railway_car':'\ud83d\ude83',
+      'railway_track':'\ud83d\udee4',
+      'rainbow':'\ud83c\udf08',
+      'rainbow_flag':'\ud83c\udff3\ufe0f&zwj;\ud83c\udf08',
+      'raised_back_of_hand':'\ud83e\udd1a',
+      'raised_hand_with_fingers_splayed':'\ud83d\udd90',
+      'raised_hands':'\ud83d\ude4c',
+      'raising_hand_woman':'\ud83d\ude4b',
+      'raising_hand_man':'\ud83d\ude4b&zwj;\u2642\ufe0f',
+      'ram':'\ud83d\udc0f',
+      'ramen':'\ud83c\udf5c',
+      'rat':'\ud83d\udc00',
+      'record_button':'\u23fa',
+      'recycle':'\u267b\ufe0f',
+      'red_circle':'\ud83d\udd34',
+      'registered':'\u00ae\ufe0f',
+      'relaxed':'\u263a\ufe0f',
+      'relieved':'\ud83d\ude0c',
+      'reminder_ribbon':'\ud83c\udf97',
+      'repeat':'\ud83d\udd01',
+      'repeat_one':'\ud83d\udd02',
+      'rescue_worker_helmet':'\u26d1',
+      'restroom':'\ud83d\udebb',
+      'revolving_hearts':'\ud83d\udc9e',
+      'rewind':'\u23ea',
+      'rhinoceros':'\ud83e\udd8f',
+      'ribbon':'\ud83c\udf80',
+      'rice':'\ud83c\udf5a',
+      'rice_ball':'\ud83c\udf59',
+      'rice_cracker':'\ud83c\udf58',
+      'rice_scene':'\ud83c\udf91',
+      'right_anger_bubble':'\ud83d\uddef',
+      'ring':'\ud83d\udc8d',
+      'robot':'\ud83e\udd16',
+      'rocket':'\ud83d\ude80',
+      'rofl':'\ud83e\udd23',
+      'roll_eyes':'\ud83d\ude44',
+      'roller_coaster':'\ud83c\udfa2',
+      'rooster':'\ud83d\udc13',
+      'rose':'\ud83c\udf39',
+      'rosette':'\ud83c\udff5',
+      'rotating_light':'\ud83d\udea8',
+      'round_pushpin':'\ud83d\udccd',
+      'rowing_man':'\ud83d\udea3',
+      'rowing_woman':'\ud83d\udea3&zwj;\u2640\ufe0f',
+      'rugby_football':'\ud83c\udfc9',
+      'running_man':'\ud83c\udfc3',
+      'running_shirt_with_sash':'\ud83c\udfbd',
+      'running_woman':'\ud83c\udfc3&zwj;\u2640\ufe0f',
+      'sa':'\ud83c\ude02\ufe0f',
+      'sagittarius':'\u2650\ufe0f',
+      'sake':'\ud83c\udf76',
+      'sandal':'\ud83d\udc61',
+      'santa':'\ud83c\udf85',
+      'satellite':'\ud83d\udce1',
+      'saxophone':'\ud83c\udfb7',
+      'school':'\ud83c\udfeb',
+      'school_satchel':'\ud83c\udf92',
+      'scissors':'\u2702\ufe0f',
+      'scorpion':'\ud83e\udd82',
+      'scorpius':'\u264f\ufe0f',
+      'scream':'\ud83d\ude31',
+      'scream_cat':'\ud83d\ude40',
+      'scroll':'\ud83d\udcdc',
+      'seat':'\ud83d\udcba',
+      'secret':'\u3299\ufe0f',
+      'see_no_evil':'\ud83d\ude48',
+      'seedling':'\ud83c\udf31',
+      'selfie':'\ud83e\udd33',
+      'shallow_pan_of_food':'\ud83e\udd58',
+      'shamrock':'\u2618\ufe0f',
+      'shark':'\ud83e\udd88',
+      'shaved_ice':'\ud83c\udf67',
+      'sheep':'\ud83d\udc11',
+      'shell':'\ud83d\udc1a',
+      'shield':'\ud83d\udee1',
+      'shinto_shrine':'\u26e9',
+      'ship':'\ud83d\udea2',
+      'shirt':'\ud83d\udc55',
+      'shopping':'\ud83d\udecd',
+      'shopping_cart':'\ud83d\uded2',
+      'shower':'\ud83d\udebf',
+      'shrimp':'\ud83e\udd90',
+      'signal_strength':'\ud83d\udcf6',
+      'six_pointed_star':'\ud83d\udd2f',
+      'ski':'\ud83c\udfbf',
+      'skier':'\u26f7',
+      'skull':'\ud83d\udc80',
+      'skull_and_crossbones':'\u2620\ufe0f',
+      'sleeping':'\ud83d\ude34',
+      'sleeping_bed':'\ud83d\udecc',
+      'sleepy':'\ud83d\ude2a',
+      'slightly_frowning_face':'\ud83d\ude41',
+      'slightly_smiling_face':'\ud83d\ude42',
+      'slot_machine':'\ud83c\udfb0',
+      'small_airplane':'\ud83d\udee9',
+      'small_blue_diamond':'\ud83d\udd39',
+      'small_orange_diamond':'\ud83d\udd38',
+      'small_red_triangle':'\ud83d\udd3a',
+      'small_red_triangle_down':'\ud83d\udd3b',
+      'smile':'\ud83d\ude04',
+      'smile_cat':'\ud83d\ude38',
+      'smiley':'\ud83d\ude03',
+      'smiley_cat':'\ud83d\ude3a',
+      'smiling_imp':'\ud83d\ude08',
+      'smirk':'\ud83d\ude0f',
+      'smirk_cat':'\ud83d\ude3c',
+      'smoking':'\ud83d\udeac',
+      'snail':'\ud83d\udc0c',
+      'snake':'\ud83d\udc0d',
+      'sneezing_face':'\ud83e\udd27',
+      'snowboarder':'\ud83c\udfc2',
+      'snowflake':'\u2744\ufe0f',
+      'snowman':'\u26c4\ufe0f',
+      'snowman_with_snow':'\u2603\ufe0f',
+      'sob':'\ud83d\ude2d',
+      'soccer':'\u26bd\ufe0f',
+      'soon':'\ud83d\udd1c',
+      'sos':'\ud83c\udd98',
+      'sound':'\ud83d\udd09',
+      'space_invader':'\ud83d\udc7e',
+      'spades':'\u2660\ufe0f',
+      'spaghetti':'\ud83c\udf5d',
+      'sparkle':'\u2747\ufe0f',
+      'sparkler':'\ud83c\udf87',
+      'sparkles':'\u2728',
+      'sparkling_heart':'\ud83d\udc96',
+      'speak_no_evil':'\ud83d\ude4a',
+      'speaker':'\ud83d\udd08',
+      'speaking_head':'\ud83d\udde3',
+      'speech_balloon':'\ud83d\udcac',
+      'speedboat':'\ud83d\udea4',
+      'spider':'\ud83d\udd77',
+      'spider_web':'\ud83d\udd78',
+      'spiral_calendar':'\ud83d\uddd3',
+      'spiral_notepad':'\ud83d\uddd2',
+      'spoon':'\ud83e\udd44',
+      'squid':'\ud83e\udd91',
+      'stadium':'\ud83c\udfdf',
+      'star':'\u2b50\ufe0f',
+      'star2':'\ud83c\udf1f',
+      'star_and_crescent':'\u262a\ufe0f',
+      'star_of_david':'\u2721\ufe0f',
+      'stars':'\ud83c\udf20',
+      'station':'\ud83d\ude89',
+      'statue_of_liberty':'\ud83d\uddfd',
+      'steam_locomotive':'\ud83d\ude82',
+      'stew':'\ud83c\udf72',
+      'stop_button':'\u23f9',
+      'stop_sign':'\ud83d\uded1',
+      'stopwatch':'\u23f1',
+      'straight_ruler':'\ud83d\udccf',
+      'strawberry':'\ud83c\udf53',
+      'stuck_out_tongue':'\ud83d\ude1b',
+      'stuck_out_tongue_closed_eyes':'\ud83d\ude1d',
+      'stuck_out_tongue_winking_eye':'\ud83d\ude1c',
+      'studio_microphone':'\ud83c\udf99',
+      'stuffed_flatbread':'\ud83e\udd59',
+      'sun_behind_large_cloud':'\ud83c\udf25',
+      'sun_behind_rain_cloud':'\ud83c\udf26',
+      'sun_behind_small_cloud':'\ud83c\udf24',
+      'sun_with_face':'\ud83c\udf1e',
+      'sunflower':'\ud83c\udf3b',
+      'sunglasses':'\ud83d\ude0e',
+      'sunny':'\u2600\ufe0f',
+      'sunrise':'\ud83c\udf05',
+      'sunrise_over_mountains':'\ud83c\udf04',
+      'surfing_man':'\ud83c\udfc4',
+      'surfing_woman':'\ud83c\udfc4&zwj;\u2640\ufe0f',
+      'sushi':'\ud83c\udf63',
+      'suspension_railway':'\ud83d\ude9f',
+      'sweat':'\ud83d\ude13',
+      'sweat_drops':'\ud83d\udca6',
+      'sweat_smile':'\ud83d\ude05',
+      'sweet_potato':'\ud83c\udf60',
+      'swimming_man':'\ud83c\udfca',
+      'swimming_woman':'\ud83c\udfca&zwj;\u2640\ufe0f',
+      'symbols':'\ud83d\udd23',
+      'synagogue':'\ud83d\udd4d',
+      'syringe':'\ud83d\udc89',
+      'taco':'\ud83c\udf2e',
+      'tada':'\ud83c\udf89',
+      'tanabata_tree':'\ud83c\udf8b',
+      'taurus':'\u2649\ufe0f',
+      'taxi':'\ud83d\ude95',
+      'tea':'\ud83c\udf75',
+      'telephone_receiver':'\ud83d\udcde',
+      'telescope':'\ud83d\udd2d',
+      'tennis':'\ud83c\udfbe',
+      'tent':'\u26fa\ufe0f',
+      'thermometer':'\ud83c\udf21',
+      'thinking':'\ud83e\udd14',
+      'thought_balloon':'\ud83d\udcad',
+      'ticket':'\ud83c\udfab',
+      'tickets':'\ud83c\udf9f',
+      'tiger':'\ud83d\udc2f',
+      'tiger2':'\ud83d\udc05',
+      'timer_clock':'\u23f2',
+      'tipping_hand_man':'\ud83d\udc81&zwj;\u2642\ufe0f',
+      'tired_face':'\ud83d\ude2b',
+      'tm':'\u2122\ufe0f',
+      'toilet':'\ud83d\udebd',
+      'tokyo_tower':'\ud83d\uddfc',
+      'tomato':'\ud83c\udf45',
+      'tongue':'\ud83d\udc45',
+      'top':'\ud83d\udd1d',
+      'tophat':'\ud83c\udfa9',
+      'tornado':'\ud83c\udf2a',
+      'trackball':'\ud83d\uddb2',
+      'tractor':'\ud83d\ude9c',
+      'traffic_light':'\ud83d\udea5',
+      'train':'\ud83d\ude8b',
+      'train2':'\ud83d\ude86',
+      'tram':'\ud83d\ude8a',
+      'triangular_flag_on_post':'\ud83d\udea9',
+      'triangular_ruler':'\ud83d\udcd0',
+      'trident':'\ud83d\udd31',
+      'triumph':'\ud83d\ude24',
+      'trolleybus':'\ud83d\ude8e',
+      'trophy':'\ud83c\udfc6',
+      'tropical_drink':'\ud83c\udf79',
+      'tropical_fish':'\ud83d\udc20',
+      'truck':'\ud83d\ude9a',
+      'trumpet':'\ud83c\udfba',
+      'tulip':'\ud83c\udf37',
+      'tumbler_glass':'\ud83e\udd43',
+      'turkey':'\ud83e\udd83',
+      'turtle':'\ud83d\udc22',
+      'tv':'\ud83d\udcfa',
+      'twisted_rightwards_arrows':'\ud83d\udd00',
+      'two_hearts':'\ud83d\udc95',
+      'two_men_holding_hands':'\ud83d\udc6c',
+      'two_women_holding_hands':'\ud83d\udc6d',
+      'u5272':'\ud83c\ude39',
+      'u5408':'\ud83c\ude34',
+      'u55b6':'\ud83c\ude3a',
+      'u6307':'\ud83c\ude2f\ufe0f',
+      'u6708':'\ud83c\ude37\ufe0f',
+      'u6709':'\ud83c\ude36',
+      'u6e80':'\ud83c\ude35',
+      'u7121':'\ud83c\ude1a\ufe0f',
+      'u7533':'\ud83c\ude38',
+      'u7981':'\ud83c\ude32',
+      'u7a7a':'\ud83c\ude33',
+      'umbrella':'\u2614\ufe0f',
+      'unamused':'\ud83d\ude12',
+      'underage':'\ud83d\udd1e',
+      'unicorn':'\ud83e\udd84',
+      'unlock':'\ud83d\udd13',
+      'up':'\ud83c\udd99',
+      'upside_down_face':'\ud83d\ude43',
+      'v':'\u270c\ufe0f',
+      'vertical_traffic_light':'\ud83d\udea6',
+      'vhs':'\ud83d\udcfc',
+      'vibration_mode':'\ud83d\udcf3',
+      'video_camera':'\ud83d\udcf9',
+      'video_game':'\ud83c\udfae',
+      'violin':'\ud83c\udfbb',
+      'virgo':'\u264d\ufe0f',
+      'volcano':'\ud83c\udf0b',
+      'volleyball':'\ud83c\udfd0',
+      'vs':'\ud83c\udd9a',
+      'vulcan_salute':'\ud83d\udd96',
+      'walking_man':'\ud83d\udeb6',
+      'walking_woman':'\ud83d\udeb6&zwj;\u2640\ufe0f',
+      'waning_crescent_moon':'\ud83c\udf18',
+      'waning_gibbous_moon':'\ud83c\udf16',
+      'warning':'\u26a0\ufe0f',
+      'wastebasket':'\ud83d\uddd1',
+      'watch':'\u231a\ufe0f',
+      'water_buffalo':'\ud83d\udc03',
+      'watermelon':'\ud83c\udf49',
+      'wave':'\ud83d\udc4b',
+      'wavy_dash':'\u3030\ufe0f',
+      'waxing_crescent_moon':'\ud83c\udf12',
+      'wc':'\ud83d\udebe',
+      'weary':'\ud83d\ude29',
+      'wedding':'\ud83d\udc92',
+      'weight_lifting_man':'\ud83c\udfcb\ufe0f',
+      'weight_lifting_woman':'\ud83c\udfcb\ufe0f&zwj;\u2640\ufe0f',
+      'whale':'\ud83d\udc33',
+      'whale2':'\ud83d\udc0b',
+      'wheel_of_dharma':'\u2638\ufe0f',
+      'wheelchair':'\u267f\ufe0f',
+      'white_check_mark':'\u2705',
+      'white_circle':'\u26aa\ufe0f',
+      'white_flag':'\ud83c\udff3\ufe0f',
+      'white_flower':'\ud83d\udcae',
+      'white_large_square':'\u2b1c\ufe0f',
+      'white_medium_small_square':'\u25fd\ufe0f',
+      'white_medium_square':'\u25fb\ufe0f',
+      'white_small_square':'\u25ab\ufe0f',
+      'white_square_button':'\ud83d\udd33',
+      'wilted_flower':'\ud83e\udd40',
+      'wind_chime':'\ud83c\udf90',
+      'wind_face':'\ud83c\udf2c',
+      'wine_glass':'\ud83c\udf77',
+      'wink':'\ud83d\ude09',
+      'wolf':'\ud83d\udc3a',
+      'woman':'\ud83d\udc69',
+      'woman_artist':'\ud83d\udc69&zwj;\ud83c\udfa8',
+      'woman_astronaut':'\ud83d\udc69&zwj;\ud83d\ude80',
+      'woman_cartwheeling':'\ud83e\udd38&zwj;\u2640\ufe0f',
+      'woman_cook':'\ud83d\udc69&zwj;\ud83c\udf73',
+      'woman_facepalming':'\ud83e\udd26&zwj;\u2640\ufe0f',
+      'woman_factory_worker':'\ud83d\udc69&zwj;\ud83c\udfed',
+      'woman_farmer':'\ud83d\udc69&zwj;\ud83c\udf3e',
+      'woman_firefighter':'\ud83d\udc69&zwj;\ud83d\ude92',
+      'woman_health_worker':'\ud83d\udc69&zwj;\u2695\ufe0f',
+      'woman_judge':'\ud83d\udc69&zwj;\u2696\ufe0f',
+      'woman_juggling':'\ud83e\udd39&zwj;\u2640\ufe0f',
+      'woman_mechanic':'\ud83d\udc69&zwj;\ud83d\udd27',
+      'woman_office_worker':'\ud83d\udc69&zwj;\ud83d\udcbc',
+      'woman_pilot':'\ud83d\udc69&zwj;\u2708\ufe0f',
+      'woman_playing_handball':'\ud83e\udd3e&zwj;\u2640\ufe0f',
+      'woman_playing_water_polo':'\ud83e\udd3d&zwj;\u2640\ufe0f',
+      'woman_scientist':'\ud83d\udc69&zwj;\ud83d\udd2c',
+      'woman_shrugging':'\ud83e\udd37&zwj;\u2640\ufe0f',
+      'woman_singer':'\ud83d\udc69&zwj;\ud83c\udfa4',
+      'woman_student':'\ud83d\udc69&zwj;\ud83c\udf93',
+      'woman_teacher':'\ud83d\udc69&zwj;\ud83c\udfeb',
+      'woman_technologist':'\ud83d\udc69&zwj;\ud83d\udcbb',
+      'woman_with_turban':'\ud83d\udc73&zwj;\u2640\ufe0f',
+      'womans_clothes':'\ud83d\udc5a',
+      'womans_hat':'\ud83d\udc52',
+      'women_wrestling':'\ud83e\udd3c&zwj;\u2640\ufe0f',
+      'womens':'\ud83d\udeba',
+      'world_map':'\ud83d\uddfa',
+      'worried':'\ud83d\ude1f',
+      'wrench':'\ud83d\udd27',
+      'writing_hand':'\u270d\ufe0f',
+      'x':'\u274c',
+      'yellow_heart':'\ud83d\udc9b',
+      'yen':'\ud83d\udcb4',
+      'yin_yang':'\u262f\ufe0f',
+      'yum':'\ud83d\ude0b',
+      'zap':'\u26a1\ufe0f',
+      'zipper_mouth_face':'\ud83e\udd10',
+      'zzz':'\ud83d\udca4',
+
+      /* special emojis :P */
+      'octocat':  '<img alt=":octocat:" height="20" width="20" align="absmiddle" src="https://assets-cdn.github.com/images/icons/emoji/octocat.png">',
+      'showdown': '<span style="font-family: \'Anonymous Pro\', monospace; text-decoration: underline; text-decoration-style: dashed; text-decoration-color: #3e8b8a;text-underline-position: under;">S</span>'
+    };
+
+    /**
+     * Created by Estevao on 31-05-2015.
+     */
+
+    /**
+     * Showdown Converter class
+     * @class
+     * @param {object} [converterOptions]
+     * @returns {Converter}
+     */
+    showdown.Converter = function (converterOptions) {
+
+      var
+          /**
+           * Options used by this converter
+           * @private
+           * @type {{}}
+           */
+          options = {},
+
+          /**
+           * Language extensions used by this converter
+           * @private
+           * @type {Array}
+           */
+          langExtensions = [],
+
+          /**
+           * Output modifiers extensions used by this converter
+           * @private
+           * @type {Array}
+           */
+          outputModifiers = [],
+
+          /**
+           * Event listeners
+           * @private
+           * @type {{}}
+           */
+          listeners = {},
+
+          /**
+           * The flavor set in this converter
+           */
+          setConvFlavor = setFlavor,
+
+          /**
+           * Metadata of the document
+           * @type {{parsed: {}, raw: string, format: string}}
+           */
+          metadata = {
+            parsed: {},
+            raw: '',
+            format: ''
+          };
+
+      _constructor();
+
+      /**
+       * Converter constructor
+       * @private
+       */
+      function _constructor () {
+        converterOptions = converterOptions || {};
+
+        for (var gOpt in globalOptions) {
+          if (globalOptions.hasOwnProperty(gOpt)) {
+            options[gOpt] = globalOptions[gOpt];
+          }
+        }
+
+        // Merge options
+        if (typeof converterOptions === 'object') {
+          for (var opt in converterOptions) {
+            if (converterOptions.hasOwnProperty(opt)) {
+              options[opt] = converterOptions[opt];
+            }
+          }
+        } else {
+          throw Error('Converter expects the passed parameter to be an object, but ' + typeof converterOptions +
+          ' was passed instead.');
+        }
+
+        if (options.extensions) {
+          showdown.helper.forEach(options.extensions, _parseExtension);
+        }
+      }
+
+      /**
+       * Parse extension
+       * @param {*} ext
+       * @param {string} [name='']
+       * @private
+       */
+      function _parseExtension (ext, name) {
+
+        name = name || null;
+        // If it's a string, the extension was previously loaded
+        if (showdown.helper.isString(ext)) {
+          ext = showdown.helper.stdExtName(ext);
+          name = ext;
+
+          // LEGACY_SUPPORT CODE
+          if (showdown.extensions[ext]) {
+            console.warn('DEPRECATION WARNING: ' + ext + ' is an old extension that uses a deprecated loading method.' +
+              'Please inform the developer that the extension should be updated!');
+            legacyExtensionLoading(showdown.extensions[ext], ext);
+            return;
+            // END LEGACY SUPPORT CODE
+
+          } else if (!showdown.helper.isUndefined(extensions[ext])) {
+            ext = extensions[ext];
+
+          } else {
+            throw Error('Extension "' + ext + '" could not be loaded. It was either not found or is not a valid extension.');
+          }
+        }
+
+        if (typeof ext === 'function') {
+          ext = ext();
+        }
+
+        if (!showdown.helper.isArray(ext)) {
+          ext = [ext];
+        }
+
+        var validExt = validate(ext, name);
+        if (!validExt.valid) {
+          throw Error(validExt.error);
+        }
+
+        for (var i = 0; i < ext.length; ++i) {
+          switch (ext[i].type) {
+
+            case 'lang':
+              langExtensions.push(ext[i]);
+              break;
+
+            case 'output':
+              outputModifiers.push(ext[i]);
+              break;
+          }
+          if (ext[i].hasOwnProperty('listeners')) {
+            for (var ln in ext[i].listeners) {
+              if (ext[i].listeners.hasOwnProperty(ln)) {
+                listen(ln, ext[i].listeners[ln]);
+              }
+            }
+          }
+        }
+
+      }
+
+      /**
+       * LEGACY_SUPPORT
+       * @param {*} ext
+       * @param {string} name
+       */
+      function legacyExtensionLoading (ext, name) {
+        if (typeof ext === 'function') {
+          ext = ext(new showdown.Converter());
+        }
+        if (!showdown.helper.isArray(ext)) {
+          ext = [ext];
+        }
+        var valid = validate(ext, name);
+
+        if (!valid.valid) {
+          throw Error(valid.error);
+        }
+
+        for (var i = 0; i < ext.length; ++i) {
+          switch (ext[i].type) {
+            case 'lang':
+              langExtensions.push(ext[i]);
+              break;
+            case 'output':
+              outputModifiers.push(ext[i]);
+              break;
+            default:// should never reach here
+              throw Error('Extension loader error: Type unrecognized!!!');
+          }
+        }
+      }
+
+      /**
+       * Listen to an event
+       * @param {string} name
+       * @param {function} callback
+       */
+      function listen (name, callback) {
+        if (!showdown.helper.isString(name)) {
+          throw Error('Invalid argument in converter.listen() method: name must be a string, but ' + typeof name + ' given');
+        }
+
+        if (typeof callback !== 'function') {
+          throw Error('Invalid argument in converter.listen() method: callback must be a function, but ' + typeof callback + ' given');
+        }
+
+        if (!listeners.hasOwnProperty(name)) {
+          listeners[name] = [];
+        }
+        listeners[name].push(callback);
+      }
+
+      function rTrimInputText (text) {
+        var rsp = text.match(/^\s*/)[0].length,
+            rgx = new RegExp('^\\s{0,' + rsp + '}', 'gm');
+        return text.replace(rgx, '');
+      }
+
+      /**
+       * Dispatch an event
+       * @private
+       * @param {string} evtName Event name
+       * @param {string} text Text
+       * @param {{}} options Converter Options
+       * @param {{}} globals
+       * @returns {string}
+       */
+      this._dispatch = function dispatch (evtName, text, options, globals) {
+        if (listeners.hasOwnProperty(evtName)) {
+          for (var ei = 0; ei < listeners[evtName].length; ++ei) {
+            var nText = listeners[evtName][ei](evtName, text, this, options, globals);
+            if (nText && typeof nText !== 'undefined') {
+              text = nText;
+            }
+          }
+        }
+        return text;
+      };
+
+      /**
+       * Listen to an event
+       * @param {string} name
+       * @param {function} callback
+       * @returns {showdown.Converter}
+       */
+      this.listen = function (name, callback) {
+        listen(name, callback);
+        return this;
+      };
+
+      /**
+       * Converts a markdown string into HTML
+       * @param {string} text
+       * @returns {*}
+       */
+      this.makeHtml = function (text) {
+        //check if text is not falsy
+        if (!text) {
+          return text;
+        }
+
+        var globals = {
+          gHtmlBlocks:     [],
+          gHtmlMdBlocks:   [],
+          gHtmlSpans:      [],
+          gUrls:           {},
+          gTitles:         {},
+          gDimensions:     {},
+          gListLevel:      0,
+          hashLinkCounts:  {},
+          langExtensions:  langExtensions,
+          outputModifiers: outputModifiers,
+          converter:       this,
+          ghCodeBlocks:    [],
+          metadata: {
+            parsed: {},
+            raw: '',
+            format: ''
+          }
+        };
+
+        // This lets us use ¨ trema as an escape char to avoid md5 hashes
+        // The choice of character is arbitrary; anything that isn't
+        // magic in Markdown will work.
+        text = text.replace(/¨/g, '¨T');
+
+        // Replace $ with ¨D
+        // RegExp interprets $ as a special character
+        // when it's in a replacement string
+        text = text.replace(/\$/g, '¨D');
+
+        // Standardize line endings
+        text = text.replace(/\r\n/g, '\n'); // DOS to Unix
+        text = text.replace(/\r/g, '\n'); // Mac to Unix
+
+        // Stardardize line spaces
+        text = text.replace(/\u00A0/g, '&nbsp;');
+
+        if (options.smartIndentationFix) {
+          text = rTrimInputText(text);
+        }
+
+        // Make sure text begins and ends with a couple of newlines:
+        text = '\n\n' + text + '\n\n';
+
+        // detab
+        text = showdown.subParser('detab')(text, options, globals);
+
+        /**
+         * Strip any lines consisting only of spaces and tabs.
+         * This makes subsequent regexs easier to write, because we can
+         * match consecutive blank lines with /\n+/ instead of something
+         * contorted like /[ \t]*\n+/
+         */
+        text = text.replace(/^[ \t]+$/mg, '');
+
+        //run languageExtensions
+        showdown.helper.forEach(langExtensions, function (ext) {
+          text = showdown.subParser('runExtension')(ext, text, options, globals);
+        });
+
+        // run the sub parsers
+        text = showdown.subParser('metadata')(text, options, globals);
+        text = showdown.subParser('hashPreCodeTags')(text, options, globals);
+        text = showdown.subParser('githubCodeBlocks')(text, options, globals);
+        text = showdown.subParser('hashHTMLBlocks')(text, options, globals);
+        text = showdown.subParser('hashCodeTags')(text, options, globals);
+        text = showdown.subParser('stripLinkDefinitions')(text, options, globals);
+        text = showdown.subParser('blockGamut')(text, options, globals);
+        text = showdown.subParser('unhashHTMLSpans')(text, options, globals);
+        text = showdown.subParser('unescapeSpecialChars')(text, options, globals);
+
+        // attacklab: Restore dollar signs
+        text = text.replace(/¨D/g, '$$');
+
+        // attacklab: Restore tremas
+        text = text.replace(/¨T/g, '¨');
+
+        // render a complete html document instead of a partial if the option is enabled
+        text = showdown.subParser('completeHTMLDocument')(text, options, globals);
+
+        // Run output modifiers
+        showdown.helper.forEach(outputModifiers, function (ext) {
+          text = showdown.subParser('runExtension')(ext, text, options, globals);
+        });
+
+        // update metadata
+        metadata = globals.metadata;
+        return text;
+      };
+
+      /**
+       * Converts an HTML string into a markdown string
+       * @param src
+       * @param [HTMLParser] A WHATWG DOM and HTML parser, such as JSDOM. If none is supplied, window.document will be used.
+       * @returns {string}
+       */
+      this.makeMarkdown = this.makeMd = function (src, HTMLParser) {
+
+        // replace \r\n with \n
+        src = src.replace(/\r\n/g, '\n');
+        src = src.replace(/\r/g, '\n'); // old macs
+
+        // due to an edge case, we need to find this: > <
+        // to prevent removing of non silent white spaces
+        // ex: <em>this is</em> <strong>sparta</strong>
+        src = src.replace(/>[ \t]+</, '>¨NBSP;<');
+
+        if (!HTMLParser) {
+          if (window && window.document) {
+            HTMLParser = window.document;
+          } else {
+            throw new Error('HTMLParser is undefined. If in a webworker or nodejs environment, you need to provide a WHATWG DOM and HTML such as JSDOM');
+          }
+        }
+
+        var doc = HTMLParser.createElement('div');
+        doc.innerHTML = src;
+
+        var globals = {
+          preList: substitutePreCodeTags(doc)
+        };
+
+        // remove all newlines and collapse spaces
+        clean(doc);
+
+        // some stuff, like accidental reference links must now be escaped
+        // TODO
+        // doc.innerHTML = doc.innerHTML.replace(/\[[\S\t ]]/);
+
+        var nodes = doc.childNodes,
+            mdDoc = '';
+
+        for (var i = 0; i < nodes.length; i++) {
+          mdDoc += showdown.subParser('makeMarkdown.node')(nodes[i], globals);
+        }
+
+        function clean (node) {
+          for (var n = 0; n < node.childNodes.length; ++n) {
+            var child = node.childNodes[n];
+            if (child.nodeType === 3) {
+              if (!/\S/.test(child.nodeValue)) {
+                node.removeChild(child);
+                --n;
+              } else {
+                child.nodeValue = child.nodeValue.split('\n').join(' ');
+                child.nodeValue = child.nodeValue.replace(/(\s)+/g, '$1');
+              }
+            } else if (child.nodeType === 1) {
+              clean(child);
+            }
+          }
+        }
+
+        // find all pre tags and replace contents with placeholder
+        // we need this so that we can remove all indentation from html
+        // to ease up parsing
+        function substitutePreCodeTags (doc) {
+
+          var pres = doc.querySelectorAll('pre'),
+              presPH = [];
+
+          for (var i = 0; i < pres.length; ++i) {
+
+            if (pres[i].childElementCount === 1 && pres[i].firstChild.tagName.toLowerCase() === 'code') {
+              var content = pres[i].firstChild.innerHTML.trim(),
+                  language = pres[i].firstChild.getAttribute('data-language') || '';
+
+              // if data-language attribute is not defined, then we look for class language-*
+              if (language === '') {
+                var classes = pres[i].firstChild.className.split(' ');
+                for (var c = 0; c < classes.length; ++c) {
+                  var matches = classes[c].match(/^language-(.+)$/);
+                  if (matches !== null) {
+                    language = matches[1];
+                    break;
+                  }
+                }
+              }
+
+              // unescape html entities in content
+              content = showdown.helper.unescapeHTMLEntities(content);
+
+              presPH.push(content);
+              pres[i].outerHTML = '<precode language="' + language + '" precodenum="' + i.toString() + '"></precode>';
+            } else {
+              presPH.push(pres[i].innerHTML);
+              pres[i].innerHTML = '';
+              pres[i].setAttribute('prenum', i.toString());
+            }
+          }
+          return presPH;
+        }
+
+        return mdDoc;
+      };
+
+      /**
+       * Set an option of this Converter instance
+       * @param {string} key
+       * @param {*} value
+       */
+      this.setOption = function (key, value) {
+        options[key] = value;
+      };
+
+      /**
+       * Get the option of this Converter instance
+       * @param {string} key
+       * @returns {*}
+       */
+      this.getOption = function (key) {
+        return options[key];
+      };
+
+      /**
+       * Get the options of this Converter instance
+       * @returns {{}}
+       */
+      this.getOptions = function () {
+        return options;
+      };
+
+      /**
+       * Add extension to THIS converter
+       * @param {{}} extension
+       * @param {string} [name=null]
+       */
+      this.addExtension = function (extension, name) {
+        name = name || null;
+        _parseExtension(extension, name);
+      };
+
+      /**
+       * Use a global registered extension with THIS converter
+       * @param {string} extensionName Name of the previously registered extension
+       */
+      this.useExtension = function (extensionName) {
+        _parseExtension(extensionName);
+      };
+
+      /**
+       * Set the flavor THIS converter should use
+       * @param {string} name
+       */
+      this.setFlavor = function (name) {
+        if (!flavor.hasOwnProperty(name)) {
+          throw Error(name + ' flavor was not found');
+        }
+        var preset = flavor[name];
+        setConvFlavor = name;
+        for (var option in preset) {
+          if (preset.hasOwnProperty(option)) {
+            options[option] = preset[option];
+          }
+        }
+      };
+
+      /**
+       * Get the currently set flavor of this converter
+       * @returns {string}
+       */
+      this.getFlavor = function () {
+        return setConvFlavor;
+      };
+
+      /**
+       * Remove an extension from THIS converter.
+       * Note: This is a costly operation. It's better to initialize a new converter
+       * and specify the extensions you wish to use
+       * @param {Array} extension
+       */
+      this.removeExtension = function (extension) {
+        if (!showdown.helper.isArray(extension)) {
+          extension = [extension];
+        }
+        for (var a = 0; a < extension.length; ++a) {
+          var ext = extension[a];
+          for (var i = 0; i < langExtensions.length; ++i) {
+            if (langExtensions[i] === ext) {
+              langExtensions[i].splice(i, 1);
+            }
+          }
+          for (var ii = 0; ii < outputModifiers.length; ++i) {
+            if (outputModifiers[ii] === ext) {
+              outputModifiers[ii].splice(i, 1);
+            }
+          }
+        }
+      };
+
+      /**
+       * Get all extension of THIS converter
+       * @returns {{language: Array, output: Array}}
+       */
+      this.getAllExtensions = function () {
+        return {
+          language: langExtensions,
+          output: outputModifiers
+        };
+      };
+
+      /**
+       * Get the metadata of the previously parsed document
+       * @param raw
+       * @returns {string|{}}
+       */
+      this.getMetadata = function (raw) {
+        if (raw) {
+          return metadata.raw;
+        } else {
+          return metadata.parsed;
+        }
+      };
+
+      /**
+       * Get the metadata format of the previously parsed document
+       * @returns {string}
+       */
+      this.getMetadataFormat = function () {
+        return metadata.format;
+      };
+
+      /**
+       * Private: set a single key, value metadata pair
+       * @param {string} key
+       * @param {string} value
+       */
+      this._setMetadataPair = function (key, value) {
+        metadata.parsed[key] = value;
+      };
+
+      /**
+       * Private: set metadata format
+       * @param {string} format
+       */
+      this._setMetadataFormat = function (format) {
+        metadata.format = format;
+      };
+
+      /**
+       * Private: set metadata raw text
+       * @param {string} raw
+       */
+      this._setMetadataRaw = function (raw) {
+        metadata.raw = raw;
+      };
+    };
+
+    /**
+     * Turn Markdown link shortcuts into XHTML <a> tags.
+     */
+    showdown.subParser('anchors', function (text, options, globals) {
+
+      text = globals.converter._dispatch('anchors.before', text, options, globals);
+
+      var writeAnchorTag = function (wholeMatch, linkText, linkId, url, m5, m6, title) {
+        if (showdown.helper.isUndefined(title)) {
+          title = '';
+        }
+        linkId = linkId.toLowerCase();
+
+        // Special case for explicit empty url
+        if (wholeMatch.search(/\(<?\s*>? ?(['"].*['"])?\)$/m) > -1) {
+          url = '';
+        } else if (!url) {
+          if (!linkId) {
+            // lower-case and turn embedded newlines into spaces
+            linkId = linkText.toLowerCase().replace(/ ?\n/g, ' ');
+          }
+          url = '#' + linkId;
+
+          if (!showdown.helper.isUndefined(globals.gUrls[linkId])) {
+            url = globals.gUrls[linkId];
+            if (!showdown.helper.isUndefined(globals.gTitles[linkId])) {
+              title = globals.gTitles[linkId];
+            }
+          } else {
+            return wholeMatch;
+          }
+        }
+
+        //url = showdown.helper.escapeCharacters(url, '*_', false); // replaced line to improve performance
+        url = url.replace(showdown.helper.regexes.asteriskDashAndColon, showdown.helper.escapeCharactersCallback);
+
+        var result = '<a href="' + url + '"';
+
+        if (title !== '' && title !== null) {
+          title = title.replace(/"/g, '&quot;');
+          //title = showdown.helper.escapeCharacters(title, '*_', false); // replaced line to improve performance
+          title = title.replace(showdown.helper.regexes.asteriskDashAndColon, showdown.helper.escapeCharactersCallback);
+          result += ' title="' + title + '"';
+        }
+
+        // optionLinksInNewWindow only applies
+        // to external links. Hash links (#) open in same page
+        if (options.openLinksInNewWindow && !/^#/.test(url)) {
+          // escaped _
+          result += ' rel="noopener noreferrer" target="¨E95Eblank"';
+        }
+
+        result += '>' + linkText + '</a>';
+
+        return result;
+      };
+
+      // First, handle reference-style links: [link text] [id]
+      text = text.replace(/\[((?:\[[^\]]*]|[^\[\]])*)] ?(?:\n *)?\[(.*?)]()()()()/g, writeAnchorTag);
+
+      // Next, inline-style links: [link text](url "optional title")
+      // cases with crazy urls like ./image/cat1).png
+      text = text.replace(/\[((?:\[[^\]]*]|[^\[\]])*)]()[ \t]*\([ \t]?<([^>]*)>(?:[ \t]*((["'])([^"]*?)\5))?[ \t]?\)/g,
+        writeAnchorTag);
+
+      // normal cases
+      text = text.replace(/\[((?:\[[^\]]*]|[^\[\]])*)]()[ \t]*\([ \t]?<?([\S]+?(?:\([\S]*?\)[\S]*?)?)>?(?:[ \t]*((["'])([^"]*?)\5))?[ \t]?\)/g,
+        writeAnchorTag);
+
+      // handle reference-style shortcuts: [link text]
+      // These must come last in case you've also got [link test][1]
+      // or [link test](/foo)
+      text = text.replace(/\[([^\[\]]+)]()()()()()/g, writeAnchorTag);
+
+      // Lastly handle GithubMentions if option is enabled
+      if (options.ghMentions) {
+        text = text.replace(/(^|\s)(\\)?(@([a-z\d]+(?:[a-z\d.-]+?[a-z\d]+)*))/gmi, function (wm, st, escape, mentions, username) {
+          if (escape === '\\') {
+            return st + mentions;
+          }
+
+          //check if options.ghMentionsLink is a string
+          if (!showdown.helper.isString(options.ghMentionsLink)) {
+            throw new Error('ghMentionsLink option must be a string');
+          }
+          var lnk = options.ghMentionsLink.replace(/\{u}/g, username),
+              target = '';
+          if (options.openLinksInNewWindow) {
+            target = ' rel="noopener noreferrer" target="¨E95Eblank"';
+          }
+          return st + '<a href="' + lnk + '"' + target + '>' + mentions + '</a>';
+        });
+      }
+
+      text = globals.converter._dispatch('anchors.after', text, options, globals);
+      return text;
+    });
+
+    // url allowed chars [a-z\d_.~:/?#[]@!$&'()*+,;=-]
+
+    var simpleURLRegex  = /([*~_]+|\b)(((https?|ftp|dict):\/\/|www\.)[^'">\s]+?\.[^'">\s]+?)()(\1)?(?=\s|$)(?!["<>])/gi,
+        simpleURLRegex2 = /([*~_]+|\b)(((https?|ftp|dict):\/\/|www\.)[^'">\s]+\.[^'">\s]+?)([.!?,()\[\]])?(\1)?(?=\s|$)(?!["<>])/gi,
+        delimUrlRegex   = /()<(((https?|ftp|dict):\/\/|www\.)[^'">\s]+)()>()/gi,
+        simpleMailRegex = /(^|\s)(?:mailto:)?([A-Za-z0-9!#$%&'*+-/=?^_`{|}~.]+@[-a-z0-9]+(\.[-a-z0-9]+)*\.[a-z]+)(?=$|\s)/gmi,
+        delimMailRegex  = /<()(?:mailto:)?([-.\w]+@[-a-z0-9]+(\.[-a-z0-9]+)*\.[a-z]+)>/gi,
+
+        replaceLink = function (options) {
+          return function (wm, leadingMagicChars, link, m2, m3, trailingPunctuation, trailingMagicChars) {
+            link = link.replace(showdown.helper.regexes.asteriskDashAndColon, showdown.helper.escapeCharactersCallback);
+            var lnkTxt = link,
+                append = '',
+                target = '',
+                lmc    = leadingMagicChars || '',
+                tmc    = trailingMagicChars || '';
+            if (/^www\./i.test(link)) {
+              link = link.replace(/^www\./i, 'http://www.');
+            }
+            if (options.excludeTrailingPunctuationFromURLs && trailingPunctuation) {
+              append = trailingPunctuation;
+            }
+            if (options.openLinksInNewWindow) {
+              target = ' rel="noopener noreferrer" target="¨E95Eblank"';
+            }
+            return lmc + '<a href="' + link + '"' + target + '>' + lnkTxt + '</a>' + append + tmc;
+          };
+        },
+
+        replaceMail = function (options, globals) {
+          return function (wholeMatch, b, mail) {
+            var href = 'mailto:';
+            b = b || '';
+            mail = showdown.subParser('unescapeSpecialChars')(mail, options, globals);
+            if (options.encodeEmails) {
+              href = showdown.helper.encodeEmailAddress(href + mail);
+              mail = showdown.helper.encodeEmailAddress(mail);
+            } else {
+              href = href + mail;
+            }
+            return b + '<a href="' + href + '">' + mail + '</a>';
+          };
+        };
+
+    showdown.subParser('autoLinks', function (text, options, globals) {
+
+      text = globals.converter._dispatch('autoLinks.before', text, options, globals);
+
+      text = text.replace(delimUrlRegex, replaceLink(options));
+      text = text.replace(delimMailRegex, replaceMail(options, globals));
+
+      text = globals.converter._dispatch('autoLinks.after', text, options, globals);
+
+      return text;
+    });
+
+    showdown.subParser('simplifiedAutoLinks', function (text, options, globals) {
+
+      if (!options.simplifiedAutoLink) {
+        return text;
+      }
+
+      text = globals.converter._dispatch('simplifiedAutoLinks.before', text, options, globals);
+
+      if (options.excludeTrailingPunctuationFromURLs) {
+        text = text.replace(simpleURLRegex2, replaceLink(options));
+      } else {
+        text = text.replace(simpleURLRegex, replaceLink(options));
+      }
+      text = text.replace(simpleMailRegex, replaceMail(options, globals));
+
+      text = globals.converter._dispatch('simplifiedAutoLinks.after', text, options, globals);
+
+      return text;
+    });
+
+    /**
+     * These are all the transformations that form block-level
+     * tags like paragraphs, headers, and list items.
+     */
+    showdown.subParser('blockGamut', function (text, options, globals) {
+
+      text = globals.converter._dispatch('blockGamut.before', text, options, globals);
+
+      // we parse blockquotes first so that we can have headings and hrs
+      // inside blockquotes
+      text = showdown.subParser('blockQuotes')(text, options, globals);
+      text = showdown.subParser('headers')(text, options, globals);
+
+      // Do Horizontal Rules:
+      text = showdown.subParser('horizontalRule')(text, options, globals);
+
+      text = showdown.subParser('lists')(text, options, globals);
+      text = showdown.subParser('codeBlocks')(text, options, globals);
+      text = showdown.subParser('tables')(text, options, globals);
+
+      // We already ran _HashHTMLBlocks() before, in Markdown(), but that
+      // was to escape raw HTML in the original Markdown source. This time,
+      // we're escaping the markup we've just created, so that we don't wrap
+      // <p> tags around block-level tags.
+      text = showdown.subParser('hashHTMLBlocks')(text, options, globals);
+      text = showdown.subParser('paragraphs')(text, options, globals);
+
+      text = globals.converter._dispatch('blockGamut.after', text, options, globals);
+
+      return text;
+    });
+
+    showdown.subParser('blockQuotes', function (text, options, globals) {
+
+      text = globals.converter._dispatch('blockQuotes.before', text, options, globals);
+
+      // add a couple extra lines after the text and endtext mark
+      text = text + '\n\n';
+
+      var rgx = /(^ {0,3}>[ \t]?.+\n(.+\n)*\n*)+/gm;
+
+      if (options.splitAdjacentBlockquotes) {
+        rgx = /^ {0,3}>[\s\S]*?(?:\n\n)/gm;
+      }
+
+      text = text.replace(rgx, function (bq) {
+        // attacklab: hack around Konqueror 3.5.4 bug:
+        // "----------bug".replace(/^-/g,"") == "bug"
+        bq = bq.replace(/^[ \t]*>[ \t]?/gm, ''); // trim one level of quoting
+
+        // attacklab: clean up hack
+        bq = bq.replace(/¨0/g, '');
+
+        bq = bq.replace(/^[ \t]+$/gm, ''); // trim whitespace-only lines
+        bq = showdown.subParser('githubCodeBlocks')(bq, options, globals);
+        bq = showdown.subParser('blockGamut')(bq, options, globals); // recurse
+
+        bq = bq.replace(/(^|\n)/g, '$1  ');
+        // These leading spaces screw with <pre> content, so we need to fix that:
+        bq = bq.replace(/(\s*<pre>[^\r]+?<\/pre>)/gm, function (wholeMatch, m1) {
+          var pre = m1;
+          // attacklab: hack around Konqueror 3.5.4 bug:
+          pre = pre.replace(/^  /mg, '¨0');
+          pre = pre.replace(/¨0/g, '');
+          return pre;
+        });
+
+        return showdown.subParser('hashBlock')('<blockquote>\n' + bq + '\n</blockquote>', options, globals);
+      });
+
+      text = globals.converter._dispatch('blockQuotes.after', text, options, globals);
+      return text;
+    });
+
+    /**
+     * Process Markdown `<pre><code>` blocks.
+     */
+    showdown.subParser('codeBlocks', function (text, options, globals) {
+
+      text = globals.converter._dispatch('codeBlocks.before', text, options, globals);
+
+      // sentinel workarounds for lack of \A and \Z, safari\khtml bug
+      text += '¨0';
+
+      var pattern = /(?:\n\n|^)((?:(?:[ ]{4}|\t).*\n+)+)(\n*[ ]{0,3}[^ \t\n]|(?=¨0))/g;
+      text = text.replace(pattern, function (wholeMatch, m1, m2) {
+        var codeblock = m1,
+            nextChar = m2,
+            end = '\n';
+
+        codeblock = showdown.subParser('outdent')(codeblock, options, globals);
+        codeblock = showdown.subParser('encodeCode')(codeblock, options, globals);
+        codeblock = showdown.subParser('detab')(codeblock, options, globals);
+        codeblock = codeblock.replace(/^\n+/g, ''); // trim leading newlines
+        codeblock = codeblock.replace(/\n+$/g, ''); // trim trailing newlines
+
+        if (options.omitExtraWLInCodeBlocks) {
+          end = '';
+        }
+
+        codeblock = '<pre><code>' + codeblock + end + '</code></pre>';
+
+        return showdown.subParser('hashBlock')(codeblock, options, globals) + nextChar;
+      });
+
+      // strip sentinel
+      text = text.replace(/¨0/, '');
+
+      text = globals.converter._dispatch('codeBlocks.after', text, options, globals);
+      return text;
+    });
+
+    /**
+     *
+     *   *  Backtick quotes are used for <code></code> spans.
+     *
+     *   *  You can use multiple backticks as the delimiters if you want to
+     *     include literal backticks in the code span. So, this input:
+     *
+     *         Just type ``foo `bar` baz`` at the prompt.
+     *
+     *       Will translate to:
+     *
+     *         <p>Just type <code>foo `bar` baz</code> at the prompt.</p>
+     *
+     *    There's no arbitrary limit to the number of backticks you
+     *    can use as delimters. If you need three consecutive backticks
+     *    in your code, use four for delimiters, etc.
+     *
+     *  *  You can use spaces to get literal backticks at the edges:
+     *
+     *         ... type `` `bar` `` ...
+     *
+     *       Turns to:
+     *
+     *         ... type <code>`bar`</code> ...
+     */
+    showdown.subParser('codeSpans', function (text, options, globals) {
+
+      text = globals.converter._dispatch('codeSpans.before', text, options, globals);
+
+      if (typeof text === 'undefined') {
+        text = '';
+      }
+      text = text.replace(/(^|[^\\])(`+)([^\r]*?[^`])\2(?!`)/gm,
+        function (wholeMatch, m1, m2, m3) {
+          var c = m3;
+          c = c.replace(/^([ \t]*)/g, '');	// leading whitespace
+          c = c.replace(/[ \t]*$/g, '');	// trailing whitespace
+          c = showdown.subParser('encodeCode')(c, options, globals);
+          c = m1 + '<code>' + c + '</code>';
+          c = showdown.subParser('hashHTMLSpans')(c, options, globals);
+          return c;
+        }
+      );
+
+      text = globals.converter._dispatch('codeSpans.after', text, options, globals);
+      return text;
+    });
+
+    /**
+     * Create a full HTML document from the processed markdown
+     */
+    showdown.subParser('completeHTMLDocument', function (text, options, globals) {
+
+      if (!options.completeHTMLDocument) {
+        return text;
+      }
+
+      text = globals.converter._dispatch('completeHTMLDocument.before', text, options, globals);
+
+      var doctype = 'html',
+          doctypeParsed = '<!DOCTYPE HTML>\n',
+          title = '',
+          charset = '<meta charset="utf-8">\n',
+          lang = '',
+          metadata = '';
+
+      if (typeof globals.metadata.parsed.doctype !== 'undefined') {
+        doctypeParsed = '<!DOCTYPE ' +  globals.metadata.parsed.doctype + '>\n';
+        doctype = globals.metadata.parsed.doctype.toString().toLowerCase();
+        if (doctype === 'html' || doctype === 'html5') {
+          charset = '<meta charset="utf-8">';
+        }
+      }
+
+      for (var meta in globals.metadata.parsed) {
+        if (globals.metadata.parsed.hasOwnProperty(meta)) {
+          switch (meta.toLowerCase()) {
+            case 'doctype':
+              break;
+
+            case 'title':
+              title = '<title>' +  globals.metadata.parsed.title + '</title>\n';
+              break;
+
+            case 'charset':
+              if (doctype === 'html' || doctype === 'html5') {
+                charset = '<meta charset="' + globals.metadata.parsed.charset + '">\n';
+              } else {
+                charset = '<meta name="charset" content="' + globals.metadata.parsed.charset + '">\n';
+              }
+              break;
+
+            case 'language':
+            case 'lang':
+              lang = ' lang="' + globals.metadata.parsed[meta] + '"';
+              metadata += '<meta name="' + meta + '" content="' + globals.metadata.parsed[meta] + '">\n';
+              break;
+
+            default:
+              metadata += '<meta name="' + meta + '" content="' + globals.metadata.parsed[meta] + '">\n';
+          }
+        }
+      }
+
+      text = doctypeParsed + '<html' + lang + '>\n<head>\n' + title + charset + metadata + '</head>\n<body>\n' + text.trim() + '\n</body>\n</html>';
+
+      text = globals.converter._dispatch('completeHTMLDocument.after', text, options, globals);
+      return text;
+    });
+
+    /**
+     * Convert all tabs to spaces
+     */
+    showdown.subParser('detab', function (text, options, globals) {
+      text = globals.converter._dispatch('detab.before', text, options, globals);
+
+      // expand first n-1 tabs
+      text = text.replace(/\t(?=\t)/g, '    '); // g_tab_width
+
+      // replace the nth with two sentinels
+      text = text.replace(/\t/g, '¨A¨B');
+
+      // use the sentinel to anchor our regex so it doesn't explode
+      text = text.replace(/¨B(.+?)¨A/g, function (wholeMatch, m1) {
+        var leadingText = m1,
+            numSpaces = 4 - leadingText.length % 4;  // g_tab_width
+
+        // there *must* be a better way to do this:
+        for (var i = 0; i < numSpaces; i++) {
+          leadingText += ' ';
+        }
+
+        return leadingText;
+      });
+
+      // clean up sentinels
+      text = text.replace(/¨A/g, '    ');  // g_tab_width
+      text = text.replace(/¨B/g, '');
+
+      text = globals.converter._dispatch('detab.after', text, options, globals);
+      return text;
+    });
+
+    showdown.subParser('ellipsis', function (text, options, globals) {
+
+      text = globals.converter._dispatch('ellipsis.before', text, options, globals);
+
+      text = text.replace(/\.\.\./g, '…');
+
+      text = globals.converter._dispatch('ellipsis.after', text, options, globals);
+
+      return text;
+    });
+
+    /**
+     * Turn emoji codes into emojis
+     *
+     * List of supported emojis: https://github.com/showdownjs/showdown/wiki/Emojis
+     */
+    showdown.subParser('emoji', function (text, options, globals) {
+
+      if (!options.emoji) {
+        return text;
+      }
+
+      text = globals.converter._dispatch('emoji.before', text, options, globals);
+
+      var emojiRgx = /:([\S]+?):/g;
+
+      text = text.replace(emojiRgx, function (wm, emojiCode) {
+        if (showdown.helper.emojis.hasOwnProperty(emojiCode)) {
+          return showdown.helper.emojis[emojiCode];
+        }
+        return wm;
+      });
+
+      text = globals.converter._dispatch('emoji.after', text, options, globals);
+
+      return text;
+    });
+
+    /**
+     * Smart processing for ampersands and angle brackets that need to be encoded.
+     */
+    showdown.subParser('encodeAmpsAndAngles', function (text, options, globals) {
+      text = globals.converter._dispatch('encodeAmpsAndAngles.before', text, options, globals);
+
+      // Ampersand-encoding based entirely on Nat Irons's Amputator MT plugin:
+      // http://bumppo.net/projects/amputator/
+      text = text.replace(/&(?!#?[xX]?(?:[0-9a-fA-F]+|\w+);)/g, '&amp;');
+
+      // Encode naked <'s
+      text = text.replace(/<(?![a-z\/?$!])/gi, '&lt;');
+
+      // Encode <
+      text = text.replace(/</g, '&lt;');
+
+      // Encode >
+      text = text.replace(/>/g, '&gt;');
+
+      text = globals.converter._dispatch('encodeAmpsAndAngles.after', text, options, globals);
+      return text;
+    });
+
+    /**
+     * Returns the string, with after processing the following backslash escape sequences.
+     *
+     * attacklab: The polite way to do this is with the new escapeCharacters() function:
+     *
+     *    text = escapeCharacters(text,"\\",true);
+     *    text = escapeCharacters(text,"`*_{}[]()>#+-.!",true);
+     *
+     * ...but we're sidestepping its use of the (slow) RegExp constructor
+     * as an optimization for Firefox.  This function gets called a LOT.
+     */
+    showdown.subParser('encodeBackslashEscapes', function (text, options, globals) {
+      text = globals.converter._dispatch('encodeBackslashEscapes.before', text, options, globals);
+
+      text = text.replace(/\\(\\)/g, showdown.helper.escapeCharactersCallback);
+      text = text.replace(/\\([`*_{}\[\]()>#+.!~=|-])/g, showdown.helper.escapeCharactersCallback);
+
+      text = globals.converter._dispatch('encodeBackslashEscapes.after', text, options, globals);
+      return text;
+    });
+
+    /**
+     * Encode/escape certain characters inside Markdown code runs.
+     * The point is that in code, these characters are literals,
+     * and lose their special Markdown meanings.
+     */
+    showdown.subParser('encodeCode', function (text, options, globals) {
+
+      text = globals.converter._dispatch('encodeCode.before', text, options, globals);
+
+      // Encode all ampersands; HTML entities are not
+      // entities within a Markdown code span.
+      text = text
+        .replace(/&/g, '&amp;')
+      // Do the angle bracket song and dance:
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+      // Now, escape characters that are magic in Markdown:
+        .replace(/([*_{}\[\]\\=~-])/g, showdown.helper.escapeCharactersCallback);
+
+      text = globals.converter._dispatch('encodeCode.after', text, options, globals);
+      return text;
+    });
+
+    /**
+     * Within tags -- meaning between < and > -- encode [\ ` * _ ~ =] so they
+     * don't conflict with their use in Markdown for code, italics and strong.
+     */
+    showdown.subParser('escapeSpecialCharsWithinTagAttributes', function (text, options, globals) {
+      text = globals.converter._dispatch('escapeSpecialCharsWithinTagAttributes.before', text, options, globals);
+
+      // Build a regex to find HTML tags.
+      var tags     = /<\/?[a-z\d_:-]+(?:[\s]+[\s\S]+?)?>/gi,
+          comments = /<!(--(?:(?:[^>-]|-[^>])(?:[^-]|-[^-])*)--)>/gi;
+
+      text = text.replace(tags, function (wholeMatch) {
+        return wholeMatch
+          .replace(/(.)<\/?code>(?=.)/g, '$1`')
+          .replace(/([\\`*_~=|])/g, showdown.helper.escapeCharactersCallback);
+      });
+
+      text = text.replace(comments, function (wholeMatch) {
+        return wholeMatch
+          .replace(/([\\`*_~=|])/g, showdown.helper.escapeCharactersCallback);
+      });
+
+      text = globals.converter._dispatch('escapeSpecialCharsWithinTagAttributes.after', text, options, globals);
+      return text;
+    });
+
+    /**
+     * Handle github codeblocks prior to running HashHTML so that
+     * HTML contained within the codeblock gets escaped properly
+     * Example:
+     * ```ruby
+     *     def hello_world(x)
+     *       puts "Hello, #{x}"
+     *     end
+     * ```
+     */
+    showdown.subParser('githubCodeBlocks', function (text, options, globals) {
+
+      // early exit if option is not enabled
+      if (!options.ghCodeBlocks) {
+        return text;
+      }
+
+      text = globals.converter._dispatch('githubCodeBlocks.before', text, options, globals);
+
+      text += '¨0';
+
+      text = text.replace(/(?:^|\n)(?: {0,3})(```+|~~~+)(?: *)([^\s`~]*)\n([\s\S]*?)\n(?: {0,3})\1/g, function (wholeMatch, delim, language, codeblock) {
+        var end = (options.omitExtraWLInCodeBlocks) ? '' : '\n';
+
+        // First parse the github code block
+        codeblock = showdown.subParser('encodeCode')(codeblock, options, globals);
+        codeblock = showdown.subParser('detab')(codeblock, options, globals);
+        codeblock = codeblock.replace(/^\n+/g, ''); // trim leading newlines
+        codeblock = codeblock.replace(/\n+$/g, ''); // trim trailing whitespace
+
+        codeblock = '<pre><code' + (language ? ' class="' + language + ' language-' + language + '"' : '') + '>' + codeblock + end + '</code></pre>';
+
+        codeblock = showdown.subParser('hashBlock')(codeblock, options, globals);
+
+        // Since GHCodeblocks can be false positives, we need to
+        // store the primitive text and the parsed text in a global var,
+        // and then return a token
+        return '\n\n¨G' + (globals.ghCodeBlocks.push({text: wholeMatch, codeblock: codeblock}) - 1) + 'G\n\n';
+      });
+
+      // attacklab: strip sentinel
+      text = text.replace(/¨0/, '');
+
+      return globals.converter._dispatch('githubCodeBlocks.after', text, options, globals);
+    });
+
+    showdown.subParser('hashBlock', function (text, options, globals) {
+      text = globals.converter._dispatch('hashBlock.before', text, options, globals);
+      text = text.replace(/(^\n+|\n+$)/g, '');
+      text = '\n\n¨K' + (globals.gHtmlBlocks.push(text) - 1) + 'K\n\n';
+      text = globals.converter._dispatch('hashBlock.after', text, options, globals);
+      return text;
+    });
+
+    /**
+     * Hash and escape <code> elements that should not be parsed as markdown
+     */
+    showdown.subParser('hashCodeTags', function (text, options, globals) {
+      text = globals.converter._dispatch('hashCodeTags.before', text, options, globals);
+
+      var repFunc = function (wholeMatch, match, left, right) {
+        var codeblock = left + showdown.subParser('encodeCode')(match, options, globals) + right;
+        return '¨C' + (globals.gHtmlSpans.push(codeblock) - 1) + 'C';
+      };
+
+      // Hash naked <code>
+      text = showdown.helper.replaceRecursiveRegExp(text, repFunc, '<code\\b[^>]*>', '</code>', 'gim');
+
+      text = globals.converter._dispatch('hashCodeTags.after', text, options, globals);
+      return text;
+    });
+
+    showdown.subParser('hashElement', function (text, options, globals) {
+
+      return function (wholeMatch, m1) {
+        var blockText = m1;
+
+        // Undo double lines
+        blockText = blockText.replace(/\n\n/g, '\n');
+        blockText = blockText.replace(/^\n/, '');
+
+        // strip trailing blank lines
+        blockText = blockText.replace(/\n+$/g, '');
+
+        // Replace the element text with a marker ("¨KxK" where x is its key)
+        blockText = '\n\n¨K' + (globals.gHtmlBlocks.push(blockText) - 1) + 'K\n\n';
+
+        return blockText;
+      };
+    });
+
+    showdown.subParser('hashHTMLBlocks', function (text, options, globals) {
+      text = globals.converter._dispatch('hashHTMLBlocks.before', text, options, globals);
+
+      var blockTags = [
+            'pre',
+            'div',
+            'h1',
+            'h2',
+            'h3',
+            'h4',
+            'h5',
+            'h6',
+            'blockquote',
+            'table',
+            'dl',
+            'ol',
+            'ul',
+            'script',
+            'noscript',
+            'form',
+            'fieldset',
+            'iframe',
+            'math',
+            'style',
+            'section',
+            'header',
+            'footer',
+            'nav',
+            'article',
+            'aside',
+            'address',
+            'audio',
+            'canvas',
+            'figure',
+            'hgroup',
+            'output',
+            'video',
+            'p'
+          ],
+          repFunc = function (wholeMatch, match, left, right) {
+            var txt = wholeMatch;
+            // check if this html element is marked as markdown
+            // if so, it's contents should be parsed as markdown
+            if (left.search(/\bmarkdown\b/) !== -1) {
+              txt = left + globals.converter.makeHtml(match) + right;
+            }
+            return '\n\n¨K' + (globals.gHtmlBlocks.push(txt) - 1) + 'K\n\n';
+          };
+
+      if (options.backslashEscapesHTMLTags) {
+        // encode backslash escaped HTML tags
+        text = text.replace(/\\<(\/?[^>]+?)>/g, function (wm, inside) {
+          return '&lt;' + inside + '&gt;';
+        });
+      }
+
+      // hash HTML Blocks
+      for (var i = 0; i < blockTags.length; ++i) {
+
+        var opTagPos,
+            rgx1     = new RegExp('^ {0,3}(<' + blockTags[i] + '\\b[^>]*>)', 'im'),
+            patLeft  = '<' + blockTags[i] + '\\b[^>]*>',
+            patRight = '</' + blockTags[i] + '>';
+        // 1. Look for the first position of the first opening HTML tag in the text
+        while ((opTagPos = showdown.helper.regexIndexOf(text, rgx1)) !== -1) {
+
+          // if the HTML tag is \ escaped, we need to escape it and break
+
+
+          //2. Split the text in that position
+          var subTexts = showdown.helper.splitAtIndex(text, opTagPos),
+              //3. Match recursively
+              newSubText1 = showdown.helper.replaceRecursiveRegExp(subTexts[1], repFunc, patLeft, patRight, 'im');
+
+          // prevent an infinite loop
+          if (newSubText1 === subTexts[1]) {
+            break;
+          }
+          text = subTexts[0].concat(newSubText1);
+        }
+      }
+      // HR SPECIAL CASE
+      text = text.replace(/(\n {0,3}(<(hr)\b([^<>])*?\/?>)[ \t]*(?=\n{2,}))/g,
+        showdown.subParser('hashElement')(text, options, globals));
+
+      // Special case for standalone HTML comments
+      text = showdown.helper.replaceRecursiveRegExp(text, function (txt) {
+        return '\n\n¨K' + (globals.gHtmlBlocks.push(txt) - 1) + 'K\n\n';
+      }, '^ {0,3}<!--', '-->', 'gm');
+
+      // PHP and ASP-style processor instructions (<?...?> and <%...%>)
+      text = text.replace(/(?:\n\n)( {0,3}(?:<([?%])[^\r]*?\2>)[ \t]*(?=\n{2,}))/g,
+        showdown.subParser('hashElement')(text, options, globals));
+
+      text = globals.converter._dispatch('hashHTMLBlocks.after', text, options, globals);
+      return text;
+    });
+
+    /**
+     * Hash span elements that should not be parsed as markdown
+     */
+    showdown.subParser('hashHTMLSpans', function (text, options, globals) {
+      text = globals.converter._dispatch('hashHTMLSpans.before', text, options, globals);
+
+      function hashHTMLSpan (html) {
+        return '¨C' + (globals.gHtmlSpans.push(html) - 1) + 'C';
+      }
+
+      // Hash Self Closing tags
+      text = text.replace(/<[^>]+?\/>/gi, function (wm) {
+        return hashHTMLSpan(wm);
+      });
+
+      // Hash tags without properties
+      text = text.replace(/<([^>]+?)>[\s\S]*?<\/\1>/g, function (wm) {
+        return hashHTMLSpan(wm);
+      });
+
+      // Hash tags with properties
+      text = text.replace(/<([^>]+?)\s[^>]+?>[\s\S]*?<\/\1>/g, function (wm) {
+        return hashHTMLSpan(wm);
+      });
+
+      // Hash self closing tags without />
+      text = text.replace(/<[^>]+?>/gi, function (wm) {
+        return hashHTMLSpan(wm);
+      });
+
+      /*showdown.helper.matchRecursiveRegExp(text, '<code\\b[^>]*>', '</code>', 'gi');*/
+
+      text = globals.converter._dispatch('hashHTMLSpans.after', text, options, globals);
+      return text;
+    });
+
+    /**
+     * Unhash HTML spans
+     */
+    showdown.subParser('unhashHTMLSpans', function (text, options, globals) {
+      text = globals.converter._dispatch('unhashHTMLSpans.before', text, options, globals);
+
+      for (var i = 0; i < globals.gHtmlSpans.length; ++i) {
+        var repText = globals.gHtmlSpans[i],
+            // limiter to prevent infinite loop (assume 10 as limit for recurse)
+            limit = 0;
+
+        while (/¨C(\d+)C/.test(repText)) {
+          var num = RegExp.$1;
+          repText = repText.replace('¨C' + num + 'C', globals.gHtmlSpans[num]);
+          if (limit === 10) {
+            console.error('maximum nesting of 10 spans reached!!!');
+            break;
+          }
+          ++limit;
+        }
+        text = text.replace('¨C' + i + 'C', repText);
+      }
+
+      text = globals.converter._dispatch('unhashHTMLSpans.after', text, options, globals);
+      return text;
+    });
+
+    /**
+     * Hash and escape <pre><code> elements that should not be parsed as markdown
+     */
+    showdown.subParser('hashPreCodeTags', function (text, options, globals) {
+      text = globals.converter._dispatch('hashPreCodeTags.before', text, options, globals);
+
+      var repFunc = function (wholeMatch, match, left, right) {
+        // encode html entities
+        var codeblock = left + showdown.subParser('encodeCode')(match, options, globals) + right;
+        return '\n\n¨G' + (globals.ghCodeBlocks.push({text: wholeMatch, codeblock: codeblock}) - 1) + 'G\n\n';
+      };
+
+      // Hash <pre><code>
+      text = showdown.helper.replaceRecursiveRegExp(text, repFunc, '^ {0,3}<pre\\b[^>]*>\\s*<code\\b[^>]*>', '^ {0,3}</code>\\s*</pre>', 'gim');
+
+      text = globals.converter._dispatch('hashPreCodeTags.after', text, options, globals);
+      return text;
+    });
+
+    showdown.subParser('headers', function (text, options, globals) {
+
+      text = globals.converter._dispatch('headers.before', text, options, globals);
+
+      var headerLevelStart = (isNaN(parseInt(options.headerLevelStart))) ? 1 : parseInt(options.headerLevelStart),
+
+          // Set text-style headers:
+          //	Header 1
+          //	========
+          //
+          //	Header 2
+          //	--------
+          //
+          setextRegexH1 = (options.smoothLivePreview) ? /^(.+)[ \t]*\n={2,}[ \t]*\n+/gm : /^(.+)[ \t]*\n=+[ \t]*\n+/gm,
+          setextRegexH2 = (options.smoothLivePreview) ? /^(.+)[ \t]*\n-{2,}[ \t]*\n+/gm : /^(.+)[ \t]*\n-+[ \t]*\n+/gm;
+
+      text = text.replace(setextRegexH1, function (wholeMatch, m1) {
+
+        var spanGamut = showdown.subParser('spanGamut')(m1, options, globals),
+            hID = (options.noHeaderId) ? '' : ' id="' + headerId(m1) + '"',
+            hLevel = headerLevelStart,
+            hashBlock = '<h' + hLevel + hID + '>' + spanGamut + '</h' + hLevel + '>';
+        return showdown.subParser('hashBlock')(hashBlock, options, globals);
+      });
+
+      text = text.replace(setextRegexH2, function (matchFound, m1) {
+        var spanGamut = showdown.subParser('spanGamut')(m1, options, globals),
+            hID = (options.noHeaderId) ? '' : ' id="' + headerId(m1) + '"',
+            hLevel = headerLevelStart + 1,
+            hashBlock = '<h' + hLevel + hID + '>' + spanGamut + '</h' + hLevel + '>';
+        return showdown.subParser('hashBlock')(hashBlock, options, globals);
+      });
+
+      // atx-style headers:
+      //  # Header 1
+      //  ## Header 2
+      //  ## Header 2 with closing hashes ##
+      //  ...
+      //  ###### Header 6
+      //
+      var atxStyle = (options.requireSpaceBeforeHeadingText) ? /^(#{1,6})[ \t]+(.+?)[ \t]*#*\n+/gm : /^(#{1,6})[ \t]*(.+?)[ \t]*#*\n+/gm;
+
+      text = text.replace(atxStyle, function (wholeMatch, m1, m2) {
+        var hText = m2;
+        if (options.customizedHeaderId) {
+          hText = m2.replace(/\s?\{([^{]+?)}\s*$/, '');
+        }
+
+        var span = showdown.subParser('spanGamut')(hText, options, globals),
+            hID = (options.noHeaderId) ? '' : ' id="' + headerId(m2) + '"',
+            hLevel = headerLevelStart - 1 + m1.length,
+            header = '<h' + hLevel + hID + '>' + span + '</h' + hLevel + '>';
+
+        return showdown.subParser('hashBlock')(header, options, globals);
+      });
+
+      function headerId (m) {
+        var title,
+            prefix;
+
+        // It is separate from other options to allow combining prefix and customized
+        if (options.customizedHeaderId) {
+          var match = m.match(/\{([^{]+?)}\s*$/);
+          if (match && match[1]) {
+            m = match[1];
+          }
+        }
+
+        title = m;
+
+        // Prefix id to prevent causing inadvertent pre-existing style matches.
+        if (showdown.helper.isString(options.prefixHeaderId)) {
+          prefix = options.prefixHeaderId;
+        } else if (options.prefixHeaderId === true) {
+          prefix = 'section-';
+        } else {
+          prefix = '';
+        }
+
+        if (!options.rawPrefixHeaderId) {
+          title = prefix + title;
+        }
+
+        if (options.ghCompatibleHeaderId) {
+          title = title
+            .replace(/ /g, '-')
+            // replace previously escaped chars (&, ¨ and $)
+            .replace(/&amp;/g, '')
+            .replace(/¨T/g, '')
+            .replace(/¨D/g, '')
+            // replace rest of the chars (&~$ are repeated as they might have been escaped)
+            // borrowed from github's redcarpet (some they should produce similar results)
+            .replace(/[&+$,\/:;=?@"#{}|^¨~\[\]`\\*)(%.!'<>]/g, '')
+            .toLowerCase();
+        } else if (options.rawHeaderId) {
+          title = title
+            .replace(/ /g, '-')
+            // replace previously escaped chars (&, ¨ and $)
+            .replace(/&amp;/g, '&')
+            .replace(/¨T/g, '¨')
+            .replace(/¨D/g, '$')
+            // replace " and '
+            .replace(/["']/g, '-')
+            .toLowerCase();
+        } else {
+          title = title
+            .replace(/[^\w]/g, '')
+            .toLowerCase();
+        }
+
+        if (options.rawPrefixHeaderId) {
+          title = prefix + title;
+        }
+
+        if (globals.hashLinkCounts[title]) {
+          title = title + '-' + (globals.hashLinkCounts[title]++);
+        } else {
+          globals.hashLinkCounts[title] = 1;
+        }
+        return title;
+      }
+
+      text = globals.converter._dispatch('headers.after', text, options, globals);
+      return text;
+    });
+
+    /**
+     * Turn Markdown link shortcuts into XHTML <a> tags.
+     */
+    showdown.subParser('horizontalRule', function (text, options, globals) {
+      text = globals.converter._dispatch('horizontalRule.before', text, options, globals);
+
+      var key = showdown.subParser('hashBlock')('<hr />', options, globals);
+      text = text.replace(/^ {0,2}( ?-){3,}[ \t]*$/gm, key);
+      text = text.replace(/^ {0,2}( ?\*){3,}[ \t]*$/gm, key);
+      text = text.replace(/^ {0,2}( ?_){3,}[ \t]*$/gm, key);
+
+      text = globals.converter._dispatch('horizontalRule.after', text, options, globals);
+      return text;
+    });
+
+    /**
+     * Turn Markdown image shortcuts into <img> tags.
+     */
+    showdown.subParser('images', function (text, options, globals) {
+
+      text = globals.converter._dispatch('images.before', text, options, globals);
+
+      var inlineRegExp      = /!\[([^\]]*?)][ \t]*()\([ \t]?<?([\S]+?(?:\([\S]*?\)[\S]*?)?)>?(?: =([*\d]+[A-Za-z%]{0,4})x([*\d]+[A-Za-z%]{0,4}))?[ \t]*(?:(["'])([^"]*?)\6)?[ \t]?\)/g,
+          crazyRegExp       = /!\[([^\]]*?)][ \t]*()\([ \t]?<([^>]*)>(?: =([*\d]+[A-Za-z%]{0,4})x([*\d]+[A-Za-z%]{0,4}))?[ \t]*(?:(?:(["'])([^"]*?)\6))?[ \t]?\)/g,
+          base64RegExp      = /!\[([^\]]*?)][ \t]*()\([ \t]?<?(data:.+?\/.+?;base64,[A-Za-z0-9+/=\n]+?)>?(?: =([*\d]+[A-Za-z%]{0,4})x([*\d]+[A-Za-z%]{0,4}))?[ \t]*(?:(["'])([^"]*?)\6)?[ \t]?\)/g,
+          referenceRegExp   = /!\[([^\]]*?)] ?(?:\n *)?\[([\s\S]*?)]()()()()()/g,
+          refShortcutRegExp = /!\[([^\[\]]+)]()()()()()/g;
+
+      function writeImageTagBase64 (wholeMatch, altText, linkId, url, width, height, m5, title) {
+        url = url.replace(/\s/g, '');
+        return writeImageTag (wholeMatch, altText, linkId, url, width, height, m5, title);
+      }
+
+      function writeImageTag (wholeMatch, altText, linkId, url, width, height, m5, title) {
+
+        var gUrls   = globals.gUrls,
+            gTitles = globals.gTitles,
+            gDims   = globals.gDimensions;
+
+        linkId = linkId.toLowerCase();
+
+        if (!title) {
+          title = '';
+        }
+        // Special case for explicit empty url
+        if (wholeMatch.search(/\(<?\s*>? ?(['"].*['"])?\)$/m) > -1) {
+          url = '';
+
+        } else if (url === '' || url === null) {
+          if (linkId === '' || linkId === null) {
+            // lower-case and turn embedded newlines into spaces
+            linkId = altText.toLowerCase().replace(/ ?\n/g, ' ');
+          }
+          url = '#' + linkId;
+
+          if (!showdown.helper.isUndefined(gUrls[linkId])) {
+            url = gUrls[linkId];
+            if (!showdown.helper.isUndefined(gTitles[linkId])) {
+              title = gTitles[linkId];
+            }
+            if (!showdown.helper.isUndefined(gDims[linkId])) {
+              width = gDims[linkId].width;
+              height = gDims[linkId].height;
+            }
+          } else {
+            return wholeMatch;
+          }
+        }
+
+        altText = altText
+          .replace(/"/g, '&quot;')
+        //altText = showdown.helper.escapeCharacters(altText, '*_', false);
+          .replace(showdown.helper.regexes.asteriskDashAndColon, showdown.helper.escapeCharactersCallback);
+        //url = showdown.helper.escapeCharacters(url, '*_', false);
+        url = url.replace(showdown.helper.regexes.asteriskDashAndColon, showdown.helper.escapeCharactersCallback);
+        var result = '<img src="' + url + '" alt="' + altText + '"';
+
+        if (title && showdown.helper.isString(title)) {
+          title = title
+            .replace(/"/g, '&quot;')
+          //title = showdown.helper.escapeCharacters(title, '*_', false);
+            .replace(showdown.helper.regexes.asteriskDashAndColon, showdown.helper.escapeCharactersCallback);
+          result += ' title="' + title + '"';
+        }
+
+        if (width && height) {
+          width  = (width === '*') ? 'auto' : width;
+          height = (height === '*') ? 'auto' : height;
+
+          result += ' width="' + width + '"';
+          result += ' height="' + height + '"';
+        }
+
+        result += ' />';
+
+        return result;
+      }
+
+      // First, handle reference-style labeled images: ![alt text][id]
+      text = text.replace(referenceRegExp, writeImageTag);
+
+      // Next, handle inline images:  ![alt text](url =<width>x<height> "optional title")
+
+      // base64 encoded images
+      text = text.replace(base64RegExp, writeImageTagBase64);
+
+      // cases with crazy urls like ./image/cat1).png
+      text = text.replace(crazyRegExp, writeImageTag);
+
+      // normal cases
+      text = text.replace(inlineRegExp, writeImageTag);
+
+      // handle reference-style shortcuts: ![img text]
+      text = text.replace(refShortcutRegExp, writeImageTag);
+
+      text = globals.converter._dispatch('images.after', text, options, globals);
+      return text;
+    });
+
+    showdown.subParser('italicsAndBold', function (text, options, globals) {
+
+      text = globals.converter._dispatch('italicsAndBold.before', text, options, globals);
+
+      // it's faster to have 3 separate regexes for each case than have just one
+      // because of backtracing, in some cases, it could lead to an exponential effect
+      // called "catastrophic backtrace". Ominous!
+
+      function parseInside (txt, left, right) {
+        /*
+        if (options.simplifiedAutoLink) {
+          txt = showdown.subParser('simplifiedAutoLinks')(txt, options, globals);
+        }
+        */
+        return left + txt + right;
+      }
+
+      // Parse underscores
+      if (options.literalMidWordUnderscores) {
+        text = text.replace(/\b___(\S[\s\S]*?)___\b/g, function (wm, txt) {
+          return parseInside (txt, '<strong><em>', '</em></strong>');
+        });
+        text = text.replace(/\b__(\S[\s\S]*?)__\b/g, function (wm, txt) {
+          return parseInside (txt, '<strong>', '</strong>');
+        });
+        text = text.replace(/\b_(\S[\s\S]*?)_\b/g, function (wm, txt) {
+          return parseInside (txt, '<em>', '</em>');
+        });
+      } else {
+        text = text.replace(/___(\S[\s\S]*?)___/g, function (wm, m) {
+          return (/\S$/.test(m)) ? parseInside (m, '<strong><em>', '</em></strong>') : wm;
+        });
+        text = text.replace(/__(\S[\s\S]*?)__/g, function (wm, m) {
+          return (/\S$/.test(m)) ? parseInside (m, '<strong>', '</strong>') : wm;
+        });
+        text = text.replace(/_([^\s_][\s\S]*?)_/g, function (wm, m) {
+          // !/^_[^_]/.test(m) - test if it doesn't start with __ (since it seems redundant, we removed it)
+          return (/\S$/.test(m)) ? parseInside (m, '<em>', '</em>') : wm;
+        });
+      }
+
+      // Now parse asterisks
+      if (options.literalMidWordAsterisks) {
+        text = text.replace(/([^*]|^)\B\*\*\*(\S[\s\S]*?)\*\*\*\B(?!\*)/g, function (wm, lead, txt) {
+          return parseInside (txt, lead + '<strong><em>', '</em></strong>');
+        });
+        text = text.replace(/([^*]|^)\B\*\*(\S[\s\S]*?)\*\*\B(?!\*)/g, function (wm, lead, txt) {
+          return parseInside (txt, lead + '<strong>', '</strong>');
+        });
+        text = text.replace(/([^*]|^)\B\*(\S[\s\S]*?)\*\B(?!\*)/g, function (wm, lead, txt) {
+          return parseInside (txt, lead + '<em>', '</em>');
+        });
+      } else {
+        text = text.replace(/\*\*\*(\S[\s\S]*?)\*\*\*/g, function (wm, m) {
+          return (/\S$/.test(m)) ? parseInside (m, '<strong><em>', '</em></strong>') : wm;
+        });
+        text = text.replace(/\*\*(\S[\s\S]*?)\*\*/g, function (wm, m) {
+          return (/\S$/.test(m)) ? parseInside (m, '<strong>', '</strong>') : wm;
+        });
+        text = text.replace(/\*([^\s*][\s\S]*?)\*/g, function (wm, m) {
+          // !/^\*[^*]/.test(m) - test if it doesn't start with ** (since it seems redundant, we removed it)
+          return (/\S$/.test(m)) ? parseInside (m, '<em>', '</em>') : wm;
+        });
+      }
+
+
+      text = globals.converter._dispatch('italicsAndBold.after', text, options, globals);
+      return text;
+    });
+
+    /**
+     * Form HTML ordered (numbered) and unordered (bulleted) lists.
+     */
+    showdown.subParser('lists', function (text, options, globals) {
+
+      /**
+       * Process the contents of a single ordered or unordered list, splitting it
+       * into individual list items.
+       * @param {string} listStr
+       * @param {boolean} trimTrailing
+       * @returns {string}
+       */
+      function processListItems (listStr, trimTrailing) {
+        // The $g_list_level global keeps track of when we're inside a list.
+        // Each time we enter a list, we increment it; when we leave a list,
+        // we decrement. If it's zero, we're not in a list anymore.
+        //
+        // We do this because when we're not inside a list, we want to treat
+        // something like this:
+        //
+        //    I recommend upgrading to version
+        //    8. Oops, now this line is treated
+        //    as a sub-list.
+        //
+        // As a single paragraph, despite the fact that the second line starts
+        // with a digit-period-space sequence.
+        //
+        // Whereas when we're inside a list (or sub-list), that line will be
+        // treated as the start of a sub-list. What a kludge, huh? This is
+        // an aspect of Markdown's syntax that's hard to parse perfectly
+        // without resorting to mind-reading. Perhaps the solution is to
+        // change the syntax rules such that sub-lists must start with a
+        // starting cardinal number; e.g. "1." or "a.".
+        globals.gListLevel++;
+
+        // trim trailing blank lines:
+        listStr = listStr.replace(/\n{2,}$/, '\n');
+
+        // attacklab: add sentinel to emulate \z
+        listStr += '¨0';
+
+        var rgx = /(\n)?(^ {0,3})([*+-]|\d+[.])[ \t]+((\[(x|X| )?])?[ \t]*[^\r]+?(\n{1,2}))(?=\n*(¨0| {0,3}([*+-]|\d+[.])[ \t]+))/gm,
+            isParagraphed = (/\n[ \t]*\n(?!¨0)/.test(listStr));
+
+        // Since version 1.5, nesting sublists requires 4 spaces (or 1 tab) indentation,
+        // which is a syntax breaking change
+        // activating this option reverts to old behavior
+        if (options.disableForced4SpacesIndentedSublists) {
+          rgx = /(\n)?(^ {0,3})([*+-]|\d+[.])[ \t]+((\[(x|X| )?])?[ \t]*[^\r]+?(\n{1,2}))(?=\n*(¨0|\2([*+-]|\d+[.])[ \t]+))/gm;
+        }
+
+        listStr = listStr.replace(rgx, function (wholeMatch, m1, m2, m3, m4, taskbtn, checked) {
+          checked = (checked && checked.trim() !== '');
+
+          var item = showdown.subParser('outdent')(m4, options, globals),
+              bulletStyle = '';
+
+          // Support for github tasklists
+          if (taskbtn && options.tasklists) {
+            bulletStyle = ' class="task-list-item" style="list-style-type: none;"';
+            item = item.replace(/^[ \t]*\[(x|X| )?]/m, function () {
+              var otp = '<input type="checkbox" disabled style="margin: 0px 0.35em 0.25em -1.6em; vertical-align: middle;"';
+              if (checked) {
+                otp += ' checked';
+              }
+              otp += '>';
+              return otp;
+            });
+          }
+
+          // ISSUE #312
+          // This input: - - - a
+          // causes trouble to the parser, since it interprets it as:
+          // <ul><li><li><li>a</li></li></li></ul>
+          // instead of:
+          // <ul><li>- - a</li></ul>
+          // So, to prevent it, we will put a marker (¨A)in the beginning of the line
+          // Kind of hackish/monkey patching, but seems more effective than overcomplicating the list parser
+          item = item.replace(/^([-*+]|\d\.)[ \t]+[\S\n ]*/g, function (wm2) {
+            return '¨A' + wm2;
+          });
+
+          // m1 - Leading line or
+          // Has a double return (multi paragraph) or
+          // Has sublist
+          if (m1 || (item.search(/\n{2,}/) > -1)) {
+            item = showdown.subParser('githubCodeBlocks')(item, options, globals);
+            item = showdown.subParser('blockGamut')(item, options, globals);
+          } else {
+            // Recursion for sub-lists:
+            item = showdown.subParser('lists')(item, options, globals);
+            item = item.replace(/\n$/, ''); // chomp(item)
+            item = showdown.subParser('hashHTMLBlocks')(item, options, globals);
+
+            // Colapse double linebreaks
+            item = item.replace(/\n\n+/g, '\n\n');
+            if (isParagraphed) {
+              item = showdown.subParser('paragraphs')(item, options, globals);
+            } else {
+              item = showdown.subParser('spanGamut')(item, options, globals);
+            }
+          }
+
+          // now we need to remove the marker (¨A)
+          item = item.replace('¨A', '');
+          // we can finally wrap the line in list item tags
+          item =  '<li' + bulletStyle + '>' + item + '</li>\n';
+
+          return item;
+        });
+
+        // attacklab: strip sentinel
+        listStr = listStr.replace(/¨0/g, '');
+
+        globals.gListLevel--;
+
+        if (trimTrailing) {
+          listStr = listStr.replace(/\s+$/, '');
+        }
+
+        return listStr;
+      }
+
+      function styleStartNumber (list, listType) {
+        // check if ol and starts by a number different than 1
+        if (listType === 'ol') {
+          var res = list.match(/^ *(\d+)\./);
+          if (res && res[1] !== '1') {
+            return ' start="' + res[1] + '"';
+          }
+        }
+        return '';
+      }
+
+      /**
+       * Check and parse consecutive lists (better fix for issue #142)
+       * @param {string} list
+       * @param {string} listType
+       * @param {boolean} trimTrailing
+       * @returns {string}
+       */
+      function parseConsecutiveLists (list, listType, trimTrailing) {
+        // check if we caught 2 or more consecutive lists by mistake
+        // we use the counterRgx, meaning if listType is UL we look for OL and vice versa
+        var olRgx = (options.disableForced4SpacesIndentedSublists) ? /^ ?\d+\.[ \t]/gm : /^ {0,3}\d+\.[ \t]/gm,
+            ulRgx = (options.disableForced4SpacesIndentedSublists) ? /^ ?[*+-][ \t]/gm : /^ {0,3}[*+-][ \t]/gm,
+            counterRxg = (listType === 'ul') ? olRgx : ulRgx,
+            result = '';
+
+        if (list.search(counterRxg) !== -1) {
+          (function parseCL (txt) {
+            var pos = txt.search(counterRxg),
+                style = styleStartNumber(list, listType);
+            if (pos !== -1) {
+              // slice
+              result += '\n\n<' + listType + style + '>\n' + processListItems(txt.slice(0, pos), !!trimTrailing) + '</' + listType + '>\n';
+
+              // invert counterType and listType
+              listType = (listType === 'ul') ? 'ol' : 'ul';
+              counterRxg = (listType === 'ul') ? olRgx : ulRgx;
+
+              //recurse
+              parseCL(txt.slice(pos));
+            } else {
+              result += '\n\n<' + listType + style + '>\n' + processListItems(txt, !!trimTrailing) + '</' + listType + '>\n';
+            }
+          })(list);
+        } else {
+          var style = styleStartNumber(list, listType);
+          result = '\n\n<' + listType + style + '>\n' + processListItems(list, !!trimTrailing) + '</' + listType + '>\n';
+        }
+
+        return result;
+      }
+
+      /** Start of list parsing **/
+      text = globals.converter._dispatch('lists.before', text, options, globals);
+      // add sentinel to hack around khtml/safari bug:
+      // http://bugs.webkit.org/show_bug.cgi?id=11231
+      text += '¨0';
+
+      if (globals.gListLevel) {
+        text = text.replace(/^(( {0,3}([*+-]|\d+[.])[ \t]+)[^\r]+?(¨0|\n{2,}(?=\S)(?![ \t]*(?:[*+-]|\d+[.])[ \t]+)))/gm,
+          function (wholeMatch, list, m2) {
+            var listType = (m2.search(/[*+-]/g) > -1) ? 'ul' : 'ol';
+            return parseConsecutiveLists(list, listType, true);
+          }
+        );
+      } else {
+        text = text.replace(/(\n\n|^\n?)(( {0,3}([*+-]|\d+[.])[ \t]+)[^\r]+?(¨0|\n{2,}(?=\S)(?![ \t]*(?:[*+-]|\d+[.])[ \t]+)))/gm,
+          function (wholeMatch, m1, list, m3) {
+            var listType = (m3.search(/[*+-]/g) > -1) ? 'ul' : 'ol';
+            return parseConsecutiveLists(list, listType, false);
+          }
+        );
+      }
+
+      // strip sentinel
+      text = text.replace(/¨0/, '');
+      text = globals.converter._dispatch('lists.after', text, options, globals);
+      return text;
+    });
+
+    /**
+     * Parse metadata at the top of the document
+     */
+    showdown.subParser('metadata', function (text, options, globals) {
+
+      if (!options.metadata) {
+        return text;
+      }
+
+      text = globals.converter._dispatch('metadata.before', text, options, globals);
+
+      function parseMetadataContents (content) {
+        // raw is raw so it's not changed in any way
+        globals.metadata.raw = content;
+
+        // escape chars forbidden in html attributes
+        // double quotes
+        content = content
+          // ampersand first
+          .replace(/&/g, '&amp;')
+          // double quotes
+          .replace(/"/g, '&quot;');
+
+        content = content.replace(/\n {4}/g, ' ');
+        content.replace(/^([\S ]+): +([\s\S]+?)$/gm, function (wm, key, value) {
+          globals.metadata.parsed[key] = value;
+          return '';
+        });
+      }
+
+      text = text.replace(/^\s*«««+(\S*?)\n([\s\S]+?)\n»»»+\n/, function (wholematch, format, content) {
+        parseMetadataContents(content);
+        return '¨M';
+      });
+
+      text = text.replace(/^\s*---+(\S*?)\n([\s\S]+?)\n---+\n/, function (wholematch, format, content) {
+        if (format) {
+          globals.metadata.format = format;
+        }
+        parseMetadataContents(content);
+        return '¨M';
+      });
+
+      text = text.replace(/¨M/g, '');
+
+      text = globals.converter._dispatch('metadata.after', text, options, globals);
+      return text;
+    });
+
+    /**
+     * Remove one level of line-leading tabs or spaces
+     */
+    showdown.subParser('outdent', function (text, options, globals) {
+      text = globals.converter._dispatch('outdent.before', text, options, globals);
+
+      // attacklab: hack around Konqueror 3.5.4 bug:
+      // "----------bug".replace(/^-/g,"") == "bug"
+      text = text.replace(/^(\t|[ ]{1,4})/gm, '¨0'); // attacklab: g_tab_width
+
+      // attacklab: clean up hack
+      text = text.replace(/¨0/g, '');
+
+      text = globals.converter._dispatch('outdent.after', text, options, globals);
+      return text;
+    });
+
+    /**
+     *
+     */
+    showdown.subParser('paragraphs', function (text, options, globals) {
+
+      text = globals.converter._dispatch('paragraphs.before', text, options, globals);
+      // Strip leading and trailing lines:
+      text = text.replace(/^\n+/g, '');
+      text = text.replace(/\n+$/g, '');
+
+      var grafs = text.split(/\n{2,}/g),
+          grafsOut = [],
+          end = grafs.length; // Wrap <p> tags
+
+      for (var i = 0; i < end; i++) {
+        var str = grafs[i];
+        // if this is an HTML marker, copy it
+        if (str.search(/¨(K|G)(\d+)\1/g) >= 0) {
+          grafsOut.push(str);
+
+        // test for presence of characters to prevent empty lines being parsed
+        // as paragraphs (resulting in undesired extra empty paragraphs)
+        } else if (str.search(/\S/) >= 0) {
+          str = showdown.subParser('spanGamut')(str, options, globals);
+          str = str.replace(/^([ \t]*)/g, '<p>');
+          str += '</p>';
+          grafsOut.push(str);
+        }
+      }
+
+      /** Unhashify HTML blocks */
+      end = grafsOut.length;
+      for (i = 0; i < end; i++) {
+        var blockText = '',
+            grafsOutIt = grafsOut[i],
+            codeFlag = false;
+        // if this is a marker for an html block...
+        // use RegExp.test instead of string.search because of QML bug
+        while (/¨(K|G)(\d+)\1/.test(grafsOutIt)) {
+          var delim = RegExp.$1,
+              num   = RegExp.$2;
+
+          if (delim === 'K') {
+            blockText = globals.gHtmlBlocks[num];
+          } else {
+            // we need to check if ghBlock is a false positive
+            if (codeFlag) {
+              // use encoded version of all text
+              blockText = showdown.subParser('encodeCode')(globals.ghCodeBlocks[num].text, options, globals);
+            } else {
+              blockText = globals.ghCodeBlocks[num].codeblock;
+            }
+          }
+          blockText = blockText.replace(/\$/g, '$$$$'); // Escape any dollar signs
+
+          grafsOutIt = grafsOutIt.replace(/(\n\n)?¨(K|G)\d+\2(\n\n)?/, blockText);
+          // Check if grafsOutIt is a pre->code
+          if (/^<pre\b[^>]*>\s*<code\b[^>]*>/.test(grafsOutIt)) {
+            codeFlag = true;
+          }
+        }
+        grafsOut[i] = grafsOutIt;
+      }
+      text = grafsOut.join('\n');
+      // Strip leading and trailing lines:
+      text = text.replace(/^\n+/g, '');
+      text = text.replace(/\n+$/g, '');
+      return globals.converter._dispatch('paragraphs.after', text, options, globals);
+    });
+
+    /**
+     * Run extension
+     */
+    showdown.subParser('runExtension', function (ext, text, options, globals) {
+
+      if (ext.filter) {
+        text = ext.filter(text, globals.converter, options);
+
+      } else if (ext.regex) {
+        // TODO remove this when old extension loading mechanism is deprecated
+        var re = ext.regex;
+        if (!(re instanceof RegExp)) {
+          re = new RegExp(re, 'g');
+        }
+        text = text.replace(re, ext.replace);
+      }
+
+      return text;
+    });
+
+    /**
+     * These are all the transformations that occur *within* block-level
+     * tags like paragraphs, headers, and list items.
+     */
+    showdown.subParser('spanGamut', function (text, options, globals) {
+
+      text = globals.converter._dispatch('spanGamut.before', text, options, globals);
+      text = showdown.subParser('codeSpans')(text, options, globals);
+      text = showdown.subParser('escapeSpecialCharsWithinTagAttributes')(text, options, globals);
+      text = showdown.subParser('encodeBackslashEscapes')(text, options, globals);
+
+      // Process anchor and image tags. Images must come first,
+      // because ![foo][f] looks like an anchor.
+      text = showdown.subParser('images')(text, options, globals);
+      text = showdown.subParser('anchors')(text, options, globals);
+
+      // Make links out of things like `<http://example.com/>`
+      // Must come after anchors, because you can use < and >
+      // delimiters in inline links like [this](<url>).
+      text = showdown.subParser('autoLinks')(text, options, globals);
+      text = showdown.subParser('simplifiedAutoLinks')(text, options, globals);
+      text = showdown.subParser('emoji')(text, options, globals);
+      text = showdown.subParser('underline')(text, options, globals);
+      text = showdown.subParser('italicsAndBold')(text, options, globals);
+      text = showdown.subParser('strikethrough')(text, options, globals);
+      text = showdown.subParser('ellipsis')(text, options, globals);
+
+      // we need to hash HTML tags inside spans
+      text = showdown.subParser('hashHTMLSpans')(text, options, globals);
+
+      // now we encode amps and angles
+      text = showdown.subParser('encodeAmpsAndAngles')(text, options, globals);
+
+      // Do hard breaks
+      if (options.simpleLineBreaks) {
+        // GFM style hard breaks
+        // only add line breaks if the text does not contain a block (special case for lists)
+        if (!/\n\n¨K/.test(text)) {
+          text = text.replace(/\n+/g, '<br />\n');
+        }
+      } else {
+        // Vanilla hard breaks
+        text = text.replace(/  +\n/g, '<br />\n');
+      }
+
+      text = globals.converter._dispatch('spanGamut.after', text, options, globals);
+      return text;
+    });
+
+    showdown.subParser('strikethrough', function (text, options, globals) {
+
+      function parseInside (txt) {
+        if (options.simplifiedAutoLink) {
+          txt = showdown.subParser('simplifiedAutoLinks')(txt, options, globals);
+        }
+        return '<del>' + txt + '</del>';
+      }
+
+      if (options.strikethrough) {
+        text = globals.converter._dispatch('strikethrough.before', text, options, globals);
+        text = text.replace(/(?:~){2}([\s\S]+?)(?:~){2}/g, function (wm, txt) { return parseInside(txt); });
+        text = globals.converter._dispatch('strikethrough.after', text, options, globals);
+      }
+
+      return text;
+    });
+
+    /**
+     * Strips link definitions from text, stores the URLs and titles in
+     * hash references.
+     * Link defs are in the form: ^[id]: url "optional title"
+     */
+    showdown.subParser('stripLinkDefinitions', function (text, options, globals) {
+
+      var regex       = /^ {0,3}\[(.+)]:[ \t]*\n?[ \t]*<?([^>\s]+)>?(?: =([*\d]+[A-Za-z%]{0,4})x([*\d]+[A-Za-z%]{0,4}))?[ \t]*\n?[ \t]*(?:(\n*)["|'(](.+?)["|')][ \t]*)?(?:\n+|(?=¨0))/gm,
+          base64Regex = /^ {0,3}\[(.+)]:[ \t]*\n?[ \t]*<?(data:.+?\/.+?;base64,[A-Za-z0-9+/=\n]+?)>?(?: =([*\d]+[A-Za-z%]{0,4})x([*\d]+[A-Za-z%]{0,4}))?[ \t]*\n?[ \t]*(?:(\n*)["|'(](.+?)["|')][ \t]*)?(?:\n\n|(?=¨0)|(?=\n\[))/gm;
+
+      // attacklab: sentinel workarounds for lack of \A and \Z, safari\khtml bug
+      text += '¨0';
+
+      var replaceFunc = function (wholeMatch, linkId, url, width, height, blankLines, title) {
+        linkId = linkId.toLowerCase();
+        if (url.match(/^data:.+?\/.+?;base64,/)) {
+          // remove newlines
+          globals.gUrls[linkId] = url.replace(/\s/g, '');
+        } else {
+          globals.gUrls[linkId] = showdown.subParser('encodeAmpsAndAngles')(url, options, globals);  // Link IDs are case-insensitive
+        }
+
+        if (blankLines) {
+          // Oops, found blank lines, so it's not a title.
+          // Put back the parenthetical statement we stole.
+          return blankLines + title;
+
+        } else {
+          if (title) {
+            globals.gTitles[linkId] = title.replace(/"|'/g, '&quot;');
+          }
+          if (options.parseImgDimensions && width && height) {
+            globals.gDimensions[linkId] = {
+              width:  width,
+              height: height
+            };
+          }
+        }
+        // Completely remove the definition from the text
+        return '';
+      };
+
+      // first we try to find base64 link references
+      text = text.replace(base64Regex, replaceFunc);
+
+      text = text.replace(regex, replaceFunc);
+
+      // attacklab: strip sentinel
+      text = text.replace(/¨0/, '');
+
+      return text;
+    });
+
+    showdown.subParser('tables', function (text, options, globals) {
+
+      if (!options.tables) {
+        return text;
+      }
+
+      var tableRgx       = /^ {0,3}\|?.+\|.+\n {0,3}\|?[ \t]*:?[ \t]*(?:[-=]){2,}[ \t]*:?[ \t]*\|[ \t]*:?[ \t]*(?:[-=]){2,}[\s\S]+?(?:\n\n|¨0)/gm,
+          //singeColTblRgx = /^ {0,3}\|.+\|\n {0,3}\|[ \t]*:?[ \t]*(?:[-=]){2,}[ \t]*:?[ \t]*\|[ \t]*\n(?: {0,3}\|.+\|\n)+(?:\n\n|¨0)/gm;
+          singeColTblRgx = /^ {0,3}\|.+\|[ \t]*\n {0,3}\|[ \t]*:?[ \t]*(?:[-=]){2,}[ \t]*:?[ \t]*\|[ \t]*\n( {0,3}\|.+\|[ \t]*\n)*(?:\n|¨0)/gm;
+
+      function parseStyles (sLine) {
+        if (/^:[ \t]*--*$/.test(sLine)) {
+          return ' style="text-align:left;"';
+        } else if (/^--*[ \t]*:[ \t]*$/.test(sLine)) {
+          return ' style="text-align:right;"';
+        } else if (/^:[ \t]*--*[ \t]*:$/.test(sLine)) {
+          return ' style="text-align:center;"';
+        } else {
+          return '';
+        }
+      }
+
+      function parseHeaders (header, style) {
+        var id = '';
+        header = header.trim();
+        // support both tablesHeaderId and tableHeaderId due to error in documentation so we don't break backwards compatibility
+        if (options.tablesHeaderId || options.tableHeaderId) {
+          id = ' id="' + header.replace(/ /g, '_').toLowerCase() + '"';
+        }
+        header = showdown.subParser('spanGamut')(header, options, globals);
+
+        return '<th' + id + style + '>' + header + '</th>\n';
+      }
+
+      function parseCells (cell, style) {
+        var subText = showdown.subParser('spanGamut')(cell, options, globals);
+        return '<td' + style + '>' + subText + '</td>\n';
+      }
+
+      function buildTable (headers, cells) {
+        var tb = '<table>\n<thead>\n<tr>\n',
+            tblLgn = headers.length;
+
+        for (var i = 0; i < tblLgn; ++i) {
+          tb += headers[i];
+        }
+        tb += '</tr>\n</thead>\n<tbody>\n';
+
+        for (i = 0; i < cells.length; ++i) {
+          tb += '<tr>\n';
+          for (var ii = 0; ii < tblLgn; ++ii) {
+            tb += cells[i][ii];
+          }
+          tb += '</tr>\n';
+        }
+        tb += '</tbody>\n</table>\n';
+        return tb;
+      }
+
+      function parseTable (rawTable) {
+        var i, tableLines = rawTable.split('\n');
+
+        for (i = 0; i < tableLines.length; ++i) {
+          // strip wrong first and last column if wrapped tables are used
+          if (/^ {0,3}\|/.test(tableLines[i])) {
+            tableLines[i] = tableLines[i].replace(/^ {0,3}\|/, '');
+          }
+          if (/\|[ \t]*$/.test(tableLines[i])) {
+            tableLines[i] = tableLines[i].replace(/\|[ \t]*$/, '');
+          }
+          // parse code spans first, but we only support one line code spans
+          tableLines[i] = showdown.subParser('codeSpans')(tableLines[i], options, globals);
+        }
+
+        var rawHeaders = tableLines[0].split('|').map(function (s) { return s.trim();}),
+            rawStyles = tableLines[1].split('|').map(function (s) { return s.trim();}),
+            rawCells = [],
+            headers = [],
+            styles = [],
+            cells = [];
+
+        tableLines.shift();
+        tableLines.shift();
+
+        for (i = 0; i < tableLines.length; ++i) {
+          if (tableLines[i].trim() === '') {
+            continue;
+          }
+          rawCells.push(
+            tableLines[i]
+              .split('|')
+              .map(function (s) {
+                return s.trim();
+              })
+          );
+        }
+
+        if (rawHeaders.length < rawStyles.length) {
+          return rawTable;
+        }
+
+        for (i = 0; i < rawStyles.length; ++i) {
+          styles.push(parseStyles(rawStyles[i]));
+        }
+
+        for (i = 0; i < rawHeaders.length; ++i) {
+          if (showdown.helper.isUndefined(styles[i])) {
+            styles[i] = '';
+          }
+          headers.push(parseHeaders(rawHeaders[i], styles[i]));
+        }
+
+        for (i = 0; i < rawCells.length; ++i) {
+          var row = [];
+          for (var ii = 0; ii < headers.length; ++ii) {
+            if (showdown.helper.isUndefined(rawCells[i][ii])) ;
+            row.push(parseCells(rawCells[i][ii], styles[ii]));
+          }
+          cells.push(row);
+        }
+
+        return buildTable(headers, cells);
+      }
+
+      text = globals.converter._dispatch('tables.before', text, options, globals);
+
+      // find escaped pipe characters
+      text = text.replace(/\\(\|)/g, showdown.helper.escapeCharactersCallback);
+
+      // parse multi column tables
+      text = text.replace(tableRgx, parseTable);
+
+      // parse one column tables
+      text = text.replace(singeColTblRgx, parseTable);
+
+      text = globals.converter._dispatch('tables.after', text, options, globals);
+
+      return text;
+    });
+
+    showdown.subParser('underline', function (text, options, globals) {
+
+      if (!options.underline) {
+        return text;
+      }
+
+      text = globals.converter._dispatch('underline.before', text, options, globals);
+
+      if (options.literalMidWordUnderscores) {
+        text = text.replace(/\b___(\S[\s\S]*?)___\b/g, function (wm, txt) {
+          return '<u>' + txt + '</u>';
+        });
+        text = text.replace(/\b__(\S[\s\S]*?)__\b/g, function (wm, txt) {
+          return '<u>' + txt + '</u>';
+        });
+      } else {
+        text = text.replace(/___(\S[\s\S]*?)___/g, function (wm, m) {
+          return (/\S$/.test(m)) ? '<u>' + m + '</u>' : wm;
+        });
+        text = text.replace(/__(\S[\s\S]*?)__/g, function (wm, m) {
+          return (/\S$/.test(m)) ? '<u>' + m + '</u>' : wm;
+        });
+      }
+
+      // escape remaining underscores to prevent them being parsed by italic and bold
+      text = text.replace(/(_)/g, showdown.helper.escapeCharactersCallback);
+
+      text = globals.converter._dispatch('underline.after', text, options, globals);
+
+      return text;
+    });
+
+    /**
+     * Swap back in all the special characters we've hidden.
+     */
+    showdown.subParser('unescapeSpecialChars', function (text, options, globals) {
+      text = globals.converter._dispatch('unescapeSpecialChars.before', text, options, globals);
+
+      text = text.replace(/¨E(\d+)E/g, function (wholeMatch, m1) {
+        var charCodeToReplace = parseInt(m1);
+        return String.fromCharCode(charCodeToReplace);
+      });
+
+      text = globals.converter._dispatch('unescapeSpecialChars.after', text, options, globals);
+      return text;
+    });
+
+    showdown.subParser('makeMarkdown.blockquote', function (node, globals) {
+
+      var txt = '';
+      if (node.hasChildNodes()) {
+        var children = node.childNodes,
+            childrenLength = children.length;
+
+        for (var i = 0; i < childrenLength; ++i) {
+          var innerTxt = showdown.subParser('makeMarkdown.node')(children[i], globals);
+
+          if (innerTxt === '') {
+            continue;
+          }
+          txt += innerTxt;
+        }
+      }
+      // cleanup
+      txt = txt.trim();
+      txt = '> ' + txt.split('\n').join('\n> ');
+      return txt;
+    });
+
+    showdown.subParser('makeMarkdown.codeBlock', function (node, globals) {
+
+      var lang = node.getAttribute('language'),
+          num  = node.getAttribute('precodenum');
+      return '```' + lang + '\n' + globals.preList[num] + '\n```';
+    });
+
+    showdown.subParser('makeMarkdown.codeSpan', function (node) {
+
+      return '`' + node.innerHTML + '`';
+    });
+
+    showdown.subParser('makeMarkdown.emphasis', function (node, globals) {
+
+      var txt = '';
+      if (node.hasChildNodes()) {
+        txt += '*';
+        var children = node.childNodes,
+            childrenLength = children.length;
+        for (var i = 0; i < childrenLength; ++i) {
+          txt += showdown.subParser('makeMarkdown.node')(children[i], globals);
+        }
+        txt += '*';
+      }
+      return txt;
+    });
+
+    showdown.subParser('makeMarkdown.header', function (node, globals, headerLevel) {
+
+      var headerMark = new Array(headerLevel + 1).join('#'),
+          txt = '';
+
+      if (node.hasChildNodes()) {
+        txt = headerMark + ' ';
+        var children = node.childNodes,
+            childrenLength = children.length;
+
+        for (var i = 0; i < childrenLength; ++i) {
+          txt += showdown.subParser('makeMarkdown.node')(children[i], globals);
+        }
+      }
+      return txt;
+    });
+
+    showdown.subParser('makeMarkdown.hr', function () {
+
+      return '---';
+    });
+
+    showdown.subParser('makeMarkdown.image', function (node) {
+
+      var txt = '';
+      if (node.hasAttribute('src')) {
+        txt += '![' + node.getAttribute('alt') + '](';
+        txt += '<' + node.getAttribute('src') + '>';
+        if (node.hasAttribute('width') && node.hasAttribute('height')) {
+          txt += ' =' + node.getAttribute('width') + 'x' + node.getAttribute('height');
+        }
+
+        if (node.hasAttribute('title')) {
+          txt += ' "' + node.getAttribute('title') + '"';
+        }
+        txt += ')';
+      }
+      return txt;
+    });
+
+    showdown.subParser('makeMarkdown.links', function (node, globals) {
+
+      var txt = '';
+      if (node.hasChildNodes() && node.hasAttribute('href')) {
+        var children = node.childNodes,
+            childrenLength = children.length;
+        txt = '[';
+        for (var i = 0; i < childrenLength; ++i) {
+          txt += showdown.subParser('makeMarkdown.node')(children[i], globals);
+        }
+        txt += '](';
+        txt += '<' + node.getAttribute('href') + '>';
+        if (node.hasAttribute('title')) {
+          txt += ' "' + node.getAttribute('title') + '"';
+        }
+        txt += ')';
+      }
+      return txt;
+    });
+
+    showdown.subParser('makeMarkdown.list', function (node, globals, type) {
+
+      var txt = '';
+      if (!node.hasChildNodes()) {
+        return '';
+      }
+      var listItems       = node.childNodes,
+          listItemsLenght = listItems.length,
+          listNum = node.getAttribute('start') || 1;
+
+      for (var i = 0; i < listItemsLenght; ++i) {
+        if (typeof listItems[i].tagName === 'undefined' || listItems[i].tagName.toLowerCase() !== 'li') {
+          continue;
+        }
+
+        // define the bullet to use in list
+        var bullet = '';
+        if (type === 'ol') {
+          bullet = listNum.toString() + '. ';
+        } else {
+          bullet = '- ';
+        }
+
+        // parse list item
+        txt += bullet + showdown.subParser('makeMarkdown.listItem')(listItems[i], globals);
+        ++listNum;
+      }
+
+      // add comment at the end to prevent consecutive lists to be parsed as one
+      txt += '\n<!-- -->\n';
+      return txt.trim();
+    });
+
+    showdown.subParser('makeMarkdown.listItem', function (node, globals) {
+
+      var listItemTxt = '';
+
+      var children = node.childNodes,
+          childrenLenght = children.length;
+
+      for (var i = 0; i < childrenLenght; ++i) {
+        listItemTxt += showdown.subParser('makeMarkdown.node')(children[i], globals);
+      }
+      // if it's only one liner, we need to add a newline at the end
+      if (!/\n$/.test(listItemTxt)) {
+        listItemTxt += '\n';
+      } else {
+        // it's multiparagraph, so we need to indent
+        listItemTxt = listItemTxt
+          .split('\n')
+          .join('\n    ')
+          .replace(/^ {4}$/gm, '')
+          .replace(/\n\n+/g, '\n\n');
+      }
+
+      return listItemTxt;
+    });
+
+
+
+    showdown.subParser('makeMarkdown.node', function (node, globals, spansOnly) {
+
+      spansOnly = spansOnly || false;
+
+      var txt = '';
+
+      // edge case of text without wrapper paragraph
+      if (node.nodeType === 3) {
+        return showdown.subParser('makeMarkdown.txt')(node, globals);
+      }
+
+      // HTML comment
+      if (node.nodeType === 8) {
+        return '<!--' + node.data + '-->\n\n';
+      }
+
+      // process only node elements
+      if (node.nodeType !== 1) {
+        return '';
+      }
+
+      var tagName = node.tagName.toLowerCase();
+
+      switch (tagName) {
+
+        //
+        // BLOCKS
+        //
+        case 'h1':
+          if (!spansOnly) { txt = showdown.subParser('makeMarkdown.header')(node, globals, 1) + '\n\n'; }
+          break;
+        case 'h2':
+          if (!spansOnly) { txt = showdown.subParser('makeMarkdown.header')(node, globals, 2) + '\n\n'; }
+          break;
+        case 'h3':
+          if (!spansOnly) { txt = showdown.subParser('makeMarkdown.header')(node, globals, 3) + '\n\n'; }
+          break;
+        case 'h4':
+          if (!spansOnly) { txt = showdown.subParser('makeMarkdown.header')(node, globals, 4) + '\n\n'; }
+          break;
+        case 'h5':
+          if (!spansOnly) { txt = showdown.subParser('makeMarkdown.header')(node, globals, 5) + '\n\n'; }
+          break;
+        case 'h6':
+          if (!spansOnly) { txt = showdown.subParser('makeMarkdown.header')(node, globals, 6) + '\n\n'; }
+          break;
+
+        case 'p':
+          if (!spansOnly) { txt = showdown.subParser('makeMarkdown.paragraph')(node, globals) + '\n\n'; }
+          break;
+
+        case 'blockquote':
+          if (!spansOnly) { txt = showdown.subParser('makeMarkdown.blockquote')(node, globals) + '\n\n'; }
+          break;
+
+        case 'hr':
+          if (!spansOnly) { txt = showdown.subParser('makeMarkdown.hr')(node, globals) + '\n\n'; }
+          break;
+
+        case 'ol':
+          if (!spansOnly) { txt = showdown.subParser('makeMarkdown.list')(node, globals, 'ol') + '\n\n'; }
+          break;
+
+        case 'ul':
+          if (!spansOnly) { txt = showdown.subParser('makeMarkdown.list')(node, globals, 'ul') + '\n\n'; }
+          break;
+
+        case 'precode':
+          if (!spansOnly) { txt = showdown.subParser('makeMarkdown.codeBlock')(node, globals) + '\n\n'; }
+          break;
+
+        case 'pre':
+          if (!spansOnly) { txt = showdown.subParser('makeMarkdown.pre')(node, globals) + '\n\n'; }
+          break;
+
+        case 'table':
+          if (!spansOnly) { txt = showdown.subParser('makeMarkdown.table')(node, globals) + '\n\n'; }
+          break;
+
+        //
+        // SPANS
+        //
+        case 'code':
+          txt = showdown.subParser('makeMarkdown.codeSpan')(node, globals);
+          break;
+
+        case 'em':
+        case 'i':
+          txt = showdown.subParser('makeMarkdown.emphasis')(node, globals);
+          break;
+
+        case 'strong':
+        case 'b':
+          txt = showdown.subParser('makeMarkdown.strong')(node, globals);
+          break;
+
+        case 'del':
+          txt = showdown.subParser('makeMarkdown.strikethrough')(node, globals);
+          break;
+
+        case 'a':
+          txt = showdown.subParser('makeMarkdown.links')(node, globals);
+          break;
+
+        case 'img':
+          txt = showdown.subParser('makeMarkdown.image')(node, globals);
+          break;
+
+        default:
+          txt = node.outerHTML + '\n\n';
+      }
+
+      // common normalization
+      // TODO eventually
+
+      return txt;
+    });
+
+    showdown.subParser('makeMarkdown.paragraph', function (node, globals) {
+
+      var txt = '';
+      if (node.hasChildNodes()) {
+        var children = node.childNodes,
+            childrenLength = children.length;
+        for (var i = 0; i < childrenLength; ++i) {
+          txt += showdown.subParser('makeMarkdown.node')(children[i], globals);
+        }
+      }
+
+      // some text normalization
+      txt = txt.trim();
+
+      return txt;
+    });
+
+    showdown.subParser('makeMarkdown.pre', function (node, globals) {
+
+      var num  = node.getAttribute('prenum');
+      return '<pre>' + globals.preList[num] + '</pre>';
+    });
+
+    showdown.subParser('makeMarkdown.strikethrough', function (node, globals) {
+
+      var txt = '';
+      if (node.hasChildNodes()) {
+        txt += '~~';
+        var children = node.childNodes,
+            childrenLength = children.length;
+        for (var i = 0; i < childrenLength; ++i) {
+          txt += showdown.subParser('makeMarkdown.node')(children[i], globals);
+        }
+        txt += '~~';
+      }
+      return txt;
+    });
+
+    showdown.subParser('makeMarkdown.strong', function (node, globals) {
+
+      var txt = '';
+      if (node.hasChildNodes()) {
+        txt += '**';
+        var children = node.childNodes,
+            childrenLength = children.length;
+        for (var i = 0; i < childrenLength; ++i) {
+          txt += showdown.subParser('makeMarkdown.node')(children[i], globals);
+        }
+        txt += '**';
+      }
+      return txt;
+    });
+
+    showdown.subParser('makeMarkdown.table', function (node, globals) {
+
+      var txt = '',
+          tableArray = [[], []],
+          headings   = node.querySelectorAll('thead>tr>th'),
+          rows       = node.querySelectorAll('tbody>tr'),
+          i, ii;
+      for (i = 0; i < headings.length; ++i) {
+        var headContent = showdown.subParser('makeMarkdown.tableCell')(headings[i], globals),
+            allign = '---';
+
+        if (headings[i].hasAttribute('style')) {
+          var style = headings[i].getAttribute('style').toLowerCase().replace(/\s/g, '');
+          switch (style) {
+            case 'text-align:left;':
+              allign = ':---';
+              break;
+            case 'text-align:right;':
+              allign = '---:';
+              break;
+            case 'text-align:center;':
+              allign = ':---:';
+              break;
+          }
+        }
+        tableArray[0][i] = headContent.trim();
+        tableArray[1][i] = allign;
+      }
+
+      for (i = 0; i < rows.length; ++i) {
+        var r = tableArray.push([]) - 1,
+            cols = rows[i].getElementsByTagName('td');
+
+        for (ii = 0; ii < headings.length; ++ii) {
+          var cellContent = ' ';
+          if (typeof cols[ii] !== 'undefined') {
+            cellContent = showdown.subParser('makeMarkdown.tableCell')(cols[ii], globals);
+          }
+          tableArray[r].push(cellContent);
+        }
+      }
+
+      var cellSpacesCount = 3;
+      for (i = 0; i < tableArray.length; ++i) {
+        for (ii = 0; ii < tableArray[i].length; ++ii) {
+          var strLen = tableArray[i][ii].length;
+          if (strLen > cellSpacesCount) {
+            cellSpacesCount = strLen;
+          }
+        }
+      }
+
+      for (i = 0; i < tableArray.length; ++i) {
+        for (ii = 0; ii < tableArray[i].length; ++ii) {
+          if (i === 1) {
+            if (tableArray[i][ii].slice(-1) === ':') {
+              tableArray[i][ii] = showdown.helper.padEnd(tableArray[i][ii].slice(-1), cellSpacesCount - 1, '-') + ':';
+            } else {
+              tableArray[i][ii] = showdown.helper.padEnd(tableArray[i][ii], cellSpacesCount, '-');
+            }
+          } else {
+            tableArray[i][ii] = showdown.helper.padEnd(tableArray[i][ii], cellSpacesCount);
+          }
+        }
+        txt += '| ' + tableArray[i].join(' | ') + ' |\n';
+      }
+
+      return txt.trim();
+    });
+
+    showdown.subParser('makeMarkdown.tableCell', function (node, globals) {
+
+      var txt = '';
+      if (!node.hasChildNodes()) {
+        return '';
+      }
+      var children = node.childNodes,
+          childrenLength = children.length;
+
+      for (var i = 0; i < childrenLength; ++i) {
+        txt += showdown.subParser('makeMarkdown.node')(children[i], globals, true);
+      }
+      return txt.trim();
+    });
+
+    showdown.subParser('makeMarkdown.txt', function (node) {
+
+      var txt = node.nodeValue;
+
+      // multiple spaces are collapsed
+      txt = txt.replace(/ +/g, ' ');
+
+      // replace the custom ¨NBSP; with a space
+      txt = txt.replace(/¨NBSP;/g, ' ');
+
+      // ", <, > and & should replace escaped html entities
+      txt = showdown.helper.unescapeHTMLEntities(txt);
+
+      // escape markdown magic characters
+      // emphasis, strong and strikethrough - can appear everywhere
+      // we also escape pipe (|) because of tables
+      // and escape ` because of code blocks and spans
+      txt = txt.replace(/([*_~|`])/g, '\\$1');
+
+      // escape > because of blockquotes
+      txt = txt.replace(/^(\s*)>/g, '\\$1>');
+
+      // hash character, only troublesome at the beginning of a line because of headers
+      txt = txt.replace(/^#/gm, '\\#');
+
+      // horizontal rules
+      txt = txt.replace(/^(\s*)([-=]{3,})(\s*)$/, '$1\\$2$3');
+
+      // dot, because of ordered lists, only troublesome at the beginning of a line when preceded by an integer
+      txt = txt.replace(/^( {0,3}\d+)\./gm, '$1\\.');
+
+      // +, * and -, at the beginning of a line becomes a list, so we need to escape them also (asterisk was already escaped)
+      txt = txt.replace(/^( {0,3})([+-])/gm, '$1\\$2');
+
+      // images and links, ] followed by ( is problematic, so we escape it
+      txt = txt.replace(/]([\s]*)\(/g, '\\]$1\\(');
+
+      // reference URIs must also be escaped
+      txt = txt.replace(/^ {0,3}\[([\S \t]*?)]:/gm, '\\[$1]:');
+
+      return txt;
+    });
+
+    var root = this;
+
+    // AMD Loader
+    if ( module.exports) {
+      module.exports = showdown;
+
+    // Regular Browser loader
+    } else {
+      root.showdown = showdown;
+    }
+    }).call(commonjsGlobal);
+
+    //# sourceMappingURL=showdown.js.map
+    });
+
+    function getBasicAuthHeader(username = null, password = null) {
+      const header = `${username || ''}:${password || ''}`;
+      const authString = btoa(header); // eslint-disable-line no-undef
+
+      return {
+        name: 'Authorization',
+        value: `Basic ${authString}`
+      };
+    }
+
+    function getBearerAuthHeader(token, prefix) {
+      return {
+        name: 'Authorization',
+        value: `${prefix || 'Bearer'} ${token}`
+      };
+    }
+
+    function getOAuth1Header(opts) {
+      const {
+        callback,
+        consumerKey,
+        nonce,
+        signatureMethod,
+        timestamp,
+        tokenKey
+      } = opts;
+
+      const value = `OAuth oauth_callback="${callback}",
+oauth_consumer_key="${consumerKey}",
+oauth_nonce="${nonce || '{{oauth_nonce}}'}",
+oauth_signature="{{oauth_signature}}",
+oauth_signature_method="${signatureMethod}",
+oauth_timestamp="${timestamp || 1103493600}",
+oauth_token="${tokenKey}",
+oauth_version="1.0"`.split('\n').join(' ');
+
+      return {
+        name: 'Authorization',
+        value
+      };
+    }
+
+    // WIP.
+
+    function getOAuth2Header() {
+      return {
+        name: 'Authorization',
+        value: 'OAuth {{params}}, oauth_version="2.0"'
+      };
+    }
+
+    function getHawkAuthHeader(id) {
+      return {
+        name: 'Authorization',
+        value: `Hawk id="${id}", ts="1103493600", nonce="{{hawk_nonce}}", mac="{{hawk_mac}}"`
+      };
+    }
+
+    function getNTLMAuthHeader() {
+      return {
+        name: 'Authorization',
+        value: 'NTLM {{ntlm_token}}'
+      };
+    }
+
+    function getASAPHeader() {
+      return {
+        name: 'Authorization',
+        value: 'Bearer {{jwt_token}}'
+      };
+    }
+
+    function getDefaultAuthHeader() {
+      return {
+        name: 'Authorization',
+        value: '{{authorization}}'
+      };
+    }
+
+    function generateAuthHeader(auth) {
+      switch (auth.type) {
+        case 'basic':
+          return getBasicAuthHeader(auth.username, auth.password);
+        case 'bearer':
+          return getBearerAuthHeader(auth.token, auth.prefix);
+        case 'oauth1':
+          return getOAuth1Header(auth);
+        case 'oauth2':
+          return getOAuth2Header();
+        case 'hawk':
+          return getHawkAuthHeader(auth.id);
+        case 'ntlm':
+          return getNTLMAuthHeader();
+        case 'asap':
+          return getASAPHeader();
+        default:
+          return getDefaultAuthHeader();
+      }
+    }
+
+    function parseUrlWithParams(url, req) {
+      const params = req.parameters;
+
+      if (!params || !params.length) {
+        return url;
+      }
+
+      url = `${url}?`;
+
+      url += params.map(param => {
+        return `${encodeURIComponent(param.name)}=${encodeURIComponent(param.value)}`;
+      }).join('&');
+
+      return url;
+    }
+
+    function escape$2 (str) {
+      return JSON.stringify(str).slice(1, -1);
+    }
+
+    function curl(url, req) {
+      let code = `curl "${parseUrlWithParams(url, req)}" \\\n`;
+
+      req.headers.forEach(header => {
+        code += `  -H '${header.name}: ${header.value || ''}' \\\n`;
+      });
+
+      if (req.authHeader) {
+        code += `  -H '${req.authHeader.name}: ${escape$2(req.authHeader.value || '')}' \\\n`;
+      }
+
+      code += `  -X ${req.method} \\\n`;
+
+      if (req.cookies && req.cookies.length) {
+        req.cookies.forEach(cookie => {
+          code += `  -b '${cookie.key}'='${cookie.value}' \\\n`;
+        });
+      }
+
+      if (req.body && req.body.params && req.body.params.length) {
+        req.body.params.forEach(param => {
+          if (param.value === null) {
+            return false;
+          }
+
+          if (param.value.indexOf('\'') >= 0 && param.value.indexOf('"') >= 0) {
+            code += `  -F "${param.name}=${param.value.replace('"', '\\"')}"`;
+          } else if (param.value.indexOf('\'') >= 0) {
+            code += `  -F "${param.name}=${param.value}"`;
+          } else if (param.value.indexOf('"') >= 0) {
+            code += `  -F '${param.name}=${param.value}'`;
+          } else {
+            code += `  -F '${param.name}=${param.value}'`;
+          }
+          code += ' \\\n';
+        });
+      }
+
+      if (req.body && req.body.text) {
+        code += `  -d '${req.body.text.replace(/\t/g, '  ')}' \\\n`;
+      }
+
+      return code.slice(0, -2);
+    }
+
+    function parseBody(mime, body) {
+      if (mime === 'application/json' && body.text) {
+        return JSON.parse(body.text);
+      }
+
+      if (mime === 'application/x-www-form-urlencoded') {
+        return body.params.map(p => `${encodeURIComponent(p.name)}=${encodeURIComponent(p.value)}`).join('&');
+      }
+
+      // xml to JS object conversion to be added
+
+      return body.text;
+    }
+
+    function javascript$1(url, req) {
+      let code = '';
+      let hasForm = false;
+
+      if (req.body && req.body.mimeType === 'multipart/form-data') {
+        hasForm = true;
+
+        code += 'const form = new FormData();\n';
+
+        req.body.params.forEach(param => {
+          code += `form.append("${param.name}", "${param.value}");\n`;
+        });
+
+        code += '\n';
+      }
+
+      code += `fetch("${parseUrlWithParams(url, req)}", `;
+
+      const opts = {
+        method: req.method
+      };
+
+      if (req.headers && req.headers.length) {
+        opts.headers = {};
+
+        req.headers.forEach(header => {
+          opts.headers[header.name] = header.value;
+        });
+      }
+
+      if (req.authHeader) {
+        if (!opts.headers) {
+          opts.headers = {};
+        }
+
+        opts.headers[req.authHeader.name] = req.authHeader.value;
+      }
+
+      if (req.cookies && req.cookies.length) {
+        if (!opts.headers) {
+          opts.headers = {};
+        }
+
+        opts.headers.cookie = req.cookies.map(cookie => `${encodeURIComponent(cookie.key)}=${encodeURIComponent(cookie.value)}`).join('; ');
+      }
+
+      if (!hasForm && req.body && req.body.mimeType !== 'multipart/form-data') {
+        opts.body = parseBody(req.body.mimeType, req.body);
+      }
+
+      if (hasForm) {
+        opts.body = '{{formVariable}}';
+      }
+
+      code += JSON.stringify(opts, null, 2);
+
+      if (hasForm) {
+        code = code.replace('"{{formVariable}}"', 'form');
+      }
+
+      code += ')\n  .then(response => console.log(response))\n';
+      code += '  .catch(err => console.error(err));';
+
+      return code;
+    }
+
+    function parseBody$1(body) {
+      const mime = body.mimeType;
+
+      if (mime === 'application/x-www-form-urlencoded') {
+        return `payload = ${body.params.map(p => `${encodeURIComponent(p.name)}=${encodeURIComponent(p.value)}`).join('&')}`;
+      }
+
+      if (mime === 'multipart/form-data') {
+        const payload = {};
+        const files = {};
+        body.params.forEach(p => {
+          if (p.type === 'file') {
+            files[p.name] = p.value;
+          } else {
+            payload[p.name] = p.value;
+          }
+        });
+
+        return `payload = ${JSON.stringify(payload, null, 2)}\n\nfiles = ${JSON.stringify(files, null, 2)}`;
+      }
+
+      if (mime === 'application/json' && body.text) {
+        return `payload = ${JSON.stringify(JSON.parse(body.text), null, 2)}`;
+      }
+
+      return `payload = ${body.text}`;
+    }
+
+    function python$1(url, req) {
+      let code = 'import requests\n\n';
+      code += `url = '${url}'\n`;
+
+      if (req.parameters && req.parameters.length) {
+        const params = {};
+        req.parameters.forEach(p => {
+          params[p.name] = p.value;
+        });
+        code += `querystring = ${JSON.stringify(params)}\n`;
+      }
+
+      const headers = {};
+
+      if (req.authHeader) {
+        headers[req.authHeader.name] = req.authHeader.value;
+      }
+
+      if (req.headers && req.headers.length) {
+        req.headers.forEach(h => {
+          headers[h.name] = h.value;
+        });
+      }
+
+      if (req.cookies && req.cookies.length) {
+        headers.cookie = req.cookies.map(cookie => `${encodeURIComponent(cookie.key)}=${encodeURIComponent(cookie.value)}`).join('; ');
+      }
+
+      if (headers) {
+        code += `headers = ${JSON.stringify(headers, null, 2)}\n`;
+      }
+
+      const payload = parseBody$1(req.body);
+      if (payload) {
+        code += `${payload}\n`;
+      }
+
+      code += `\nresponse = requests.request('${req.method}', url, data=payload, headers=headers, files=files)\n`;
+      code += 'print(response.text)';
+
+      return code;
+    }
+
+    function parseBody$2(body) {
+      const mime = body.mimeType;
+
+      if (mime === 'application/x-www-form-urlencoded') {
+        return body.params.map(p => `${encodeURIComponent(p.name)}=${encodeURIComponent(p.value)}`).join('&');
+      }
+
+      if (mime === 'multipart/form-data') {
+        const boundary = '-----011000010111000001101001'; // api :)
+        const payload = body.params.map(p => {
+          return `${boundary}
+Content-Disposition: form-data; name="${p.name}"
+
+${p.value}`;
+        }).join('\n');
+        return `"${escape$2(payload)}\n${boundary}--"`;
+      }
+
+      return JSON.stringify(body.text);
+    }
+
+    function getMethod(method) {
+      switch (method) {
+        case 'GET':
+          return 'Get';
+        case 'POST':
+          return 'Post';
+        case 'PATCH':
+          return 'Patch';
+        case 'PUT':
+          return 'Put';
+        case 'DELETE':
+          return 'Delete';
+        default:
+          return '{{METHOD}}';
+      }
+    }
+
+    function ruby$1(url, req) {
+      url = parseUrlWithParams(url, req);
+      const isHTTPS = url.startsWith('https://');
+
+      let code = "require 'uri'\nrequire 'net/http'\n";
+
+      if (isHTTPS) {
+        code += "require 'openssl'\n";
+      }
+
+      code += `\nurl = URI("${url}")\n\nhttp = Net::HTTP.new(url.host, url.port)\n`;
+
+      if (isHTTPS) {
+        code += 'http.use_ssl = true\nhttp.verify_mode = OpenSSL::SSL::VERIFY_NONE\n';
+      }
+
+      code += `\nrequest = Net::HTTP::${getMethod(req.method)}.new(url)\n`;
+
+      if (req.cookies && req.cookies.length) {
+        const cookies = [];
+        req.cookies.forEach(c => cookies.push(`${encodeURIComponent(c.key)}=${encodeURIComponent(c.value)}`));
+        code += `request["cookie"] = '${cookies.join('; ')}'\n`;
+      }
+
+      if (req.headers && req.headers.length) {
+        req.headers.forEach(header => {
+          code += `request["${header.name}"] = ${JSON.stringify(header.value)}\n`;
+        });
+      }
+
+      if (req.authHeader) {
+        code += `request["${req.authHeader.name}"] = ${JSON.stringify(req.authHeader.value)}\n`;
+      }
+
+      if (req.body) {
+        const body = parseBody$2(req.body);
+
+        if (body) {
+          code += `request.body = ${body}\n`;
+        }
+      }
+
+      code += '\nresponse = http.request(request)\nputs response.read_body';
+
+      return code;
+    }
+
+    function php$1(url, req) {
+      let code = `<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  `;
+
+      const opts = [
+        `CURLOPT_URL => "${parseUrlWithParams(url, req)}"`,
+        'CURLOPT_RETURNTRANSFER => true',
+        'CURLOPT_ENCODING => ""',
+        'CURLOPT_MAXREDIRS => 10',
+        'CURLOPT_TIMEOUT => 30',
+        'CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1',
+        `CURLOPT_CUSTOMREQUEST => "${req.method}"`
+      ];
+
+      const body = parseBody$2(req.body);
+      if (body) {
+        opts.push(`CURLOPT_POSTFIELDS => ${body}`);
+      }
+
+      if (req.cookies && req.cookies.length) {
+        const cookies = [];
+        req.cookies.forEach(c => cookies.push(`${encodeURIComponent(c.key)}=${encodeURIComponent(c.value)}`));
+        opts.push(`CURLOPT_COOKIE => '${cookies.join('; ')}'`);
+      }
+
+      const headers = [];
+
+      if (req.headers && req.headers.length) {
+        req.headers.forEach(h => headers.push(`${h.name}: ${escape$2(h.value)}`));
+      }
+
+      if (req.authHeader) {
+        headers.push(`${req.authHeader.name}: ${req.authHeader.value}`);
+      }
+
+      if (headers.length) {
+        opts.push(`CURLOPTS_HTTPHEADER => array(
+    ${headers.join(',\n    ')}
+  )`);
+      }
+
+      code += `${opts.join(',\n  ')}
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}`;
+
+      return code;
+    }
+
+    function parseBody$3(body) {
+      const mime = body.mimeType;
+
+      if (mime === 'application/x-www-form-urlencoded') {
+        return '"' + body.params.map(p => `${encodeURIComponent(p.name)}=${encodeURIComponent(p.value)}`).join('&') + '"';
+      }
+
+      if (mime === 'multipart/form-data') {
+        const boundary = '-----011000010111000001101001'; // api :)
+        const payload = body.params.map(p => {
+          return `${boundary}
+Content-Disposition: form-data; name="${p.name}"
+
+${p.value}`;
+        }).join('\n');
+        return `"${escape(payload)}\n${boundary}--"`;
+      }
+
+      return JSON.stringify(body.text);
+    }
+
+    function golang(url, req) {
+      const body = req.body && parseBody$3(req.body);
+
+      let code = `package main
+
+import (
+  "fmt"${body ? '\n"strings"' : ''}
+  "net/http"
+  "io/ioutil"
+)
+
+func main() {
+
+  `;
+
+      code += `url := "${parseUrlWithParams(url, req)}"\n`;
+
+      if (body) {
+        code += `  payload := strings.NewReader(${body})\n`;
+      }
+
+      code += `  req, _ := http.NewRequest("${req.method}" url, ${body ? 'payload' : 'nil'})\n\n`;
+
+      if (req.cookies && req.cookies.length) {
+        const cookies = [];
+        req.cookies.forEach(c => cookies.push(`${encodeURIComponent(c.key)}=${encodeURIComponent(c.value)}`));
+        code += `  req.Header.Add("cookie", ${JSON.stringify(cookies.join(';'))})\n`;
+      }
+
+      req.headers.forEach(h => {
+        code += `  req.Header.Add("${h.name}", ${JSON.stringify(h.value)})\n`;
+      });
+
+      if (req.authHeader) {
+        code += `  req.Header.Add("${req.authHeader.name}", ${JSON.stringify(req.authHeader.value)})\n`;
+      }
+
+      code += `  res, _ := http.DefaultClient.Do(req)
+
+  defer res.Body.Close()
+  body, _ := ioutil.ReadAll(res.Body)
+
+  fmt.Println(res)
+  fmt.Println(string(body))
+
+}`;
+
+      return code;
+    }
+
+    class CodeGenerator {
+      constructor(request, url, cookiejars) {
+        this.request = request;
+        this.url = url;
+        this.cookiejars = cookiejars;
+        this.code = null;
+
+        this.request.cookies = this.appendCookies();
+
+        if (this.request.authentication && this.request.authentication.type) {
+          this.request.authHeader = generateAuthHeader(this.request.authentication);
+        }
+      }
+
+      generate(language) {
+        switch (language) {
+          case 'curl':
+            this.code = curl;
+            break;
+          case 'javascript':
+            this.code = javascript$1;
+            break;
+          case 'python':
+            this.code = python$1;
+            break;
+          case 'node':
+            return `const fetch = require('node-fetch');\n\n${javascript$1(this.url, this.request)}`;
+          case 'ruby':
+            this.code = ruby$1;
+            break;
+          case 'php':
+            this.code = php$1;
+            break;
+          case 'golang':
+            this.code = golang;
+            break;
+          default:
+            return 'Not implemented yet...';
+        }
+
+        return this.code(this.url, this.request);
+      }
+
+      appendCookies() {
+        const cookies = [];
+
+        this.cookiejars.forEach(jar => {
+          if (!jar.cookies || !jar.cookies.length) {
+            return;
+          }
+
+          jar.cookies.forEach(cookie => {
+            if (this.url && this.url.includes(cookie.domain) && (cookie.path === '/' || this.url.includes(cookie.path))) {
+              cookies.push({
+                key: cookie.key,
+                value: cookie.value
+              });
+            }
+          });
+        });
+
+        return cookies;
+      }
+    }
+
+    var generateCode = (request, url, language, cookiejars) => new CodeGenerator(request, url, cookiejars).generate(language);
+
+    function formatEnv (variable) {
+      return variable.replace(/{{\s*([a-zA-Z0-9_]+)\s*}}/g, '<span class="env-variable">$1</span>');
+    }
+
+    class BodyParser {
+      constructor(body) {
+        this.body = body;
+        this.mime = body.mimeType;
+      }
+
+      __parseJSON() {
+        if (!this.body.text) {
+          return;
+        }
+
+        this.body.text = this.body.text.replace(new RegExp('{{.*}}', 'g'), '"!!Missing declaration in environment!!"');
+        const text = JSON.stringify(JSON.parse(this.body.text), null, 2);
+
+        return {
+          type: 'plain',
+          note: 'json',
+          text: `<pre>${text}</pre>`
+        };
+      }
+
+      __parseMultipart() {
+        const rows = this.body.params.map(p => {
+          return {
+            name: p.name,
+            value: p.value,
+            description: p.description
+          };
+        });
+
+        return {
+          type: 'array',
+          note: 'formdata',
+          rows
+        };
+      }
+
+      __parsePlain() {
+        return {
+          type: 'plain',
+          note: 'raw',
+          text: `<pre>${this.body.text}</pre>`
+        };
+      }
+
+      parse() {
+        switch (this.mime) {
+          case 'application/json':
+            return this.__parseJSON();
+          case 'multipart/form-data':
+          case 'application/x-www-form-urlencoded':
+            return this.__parseMultipart();
+          default:
+            return this.__parsePlain();
+        }
+      }
+    }
+
+    class ContentGenerator {
+      constructor(req) {
+        this.req = req;
+        this.reType = /^<(\*?\w+)>:\s/;
+      }
+
+      pathParams() {
+        const rows = [];
+
+        this.req.pathParams.forEach(param => {
+          const row = {
+            name: param.name,
+            value: '',
+            description: param.description || ''
+          };
+
+          const match = this.reType.exec(row.description.trim());
+          if (match) {
+            row.value = match[1];
+            row.description = row.description.replace(this.reType, '');
+          }
+
+          rows.push(row);
+        });
+
+        return {
+          title: 'Path Parameters',
+          rows
+        };
+      }
+
+      params() {
+        const rows = [];
+
+        this.req.parameters.forEach(param => {
+          const row = {
+            name: param.name,
+            value: '',
+            description: param.description || ''
+          };
+
+          const match = this.reType.exec(row.description.trim());
+          if (match) {
+            row.value = match[1];
+            row.description = row.description.replace(this.reType, '');
+          }
+
+          rows.push(row);
+        });
+
+        return {
+          title: 'Query Parameters',
+          rows
+        };
+      }
+
+      headers() {
+        const rows = [];
+
+        this.req.headers.forEach(header => {
+          rows.push({
+            name: header.name,
+            value: formatEnv(header.value || ''),
+            description: header.description
+          });
+        });
+
+        if (this.req.authentication && this.req.authentication.type) {
+          const authHeader = generateAuthHeader(this.req.authentication);
+
+          rows.push({
+            name: authHeader.name,
+            value: `<pre>${formatEnv(authHeader.value)}</pre>`
+          });
+        }
+
+        return {
+          title: 'Headers',
+          rows
+        };
+      }
+
+      body() {
+        const parser = new BodyParser(this.req.body);
+        const data = parser.parse();
+
+        switch (data.type) {
+          case 'array':
+            return {
+              title: 'Body',
+              note: data.note,
+              rows: data.rows
+            };
+          case 'plain':
+            return {
+              title: 'Body',
+              note: data.note,
+              text: data.text
+            };
+        }
+      }
+    }
+
+    function trimUrlDomain (url) {
+      if (url) {
+        let start = url.indexOf('://');
+        if (start !== -1) {
+          start = url.indexOf('/', start + 3);
+          url = url.substr(start);
+        }
+      }
+      return url;
+    }
+
+    function collapse (node, params) {
+
+        const defaultParams = {
+            open: true,
+            duration: 0.2,
+            easing: 'ease'
+        };
+
+        params = Object.assign(defaultParams, params);
+
+        const noop = () => {};
+        let transitionEndResolve = noop;
+        let transitionEndReject = noop;
+
+        const listener = node.addEventListener('transitionend', () => {
+            transitionEndResolve();
+            transitionEndResolve = noop;
+            transitionEndReject = noop;
+        });
+
+        // convenience functions
+        async function asyncTransitionEnd () {
+            return new Promise((resolve, reject) => {
+                transitionEndResolve = resolve;
+                transitionEndReject = reject;
+            })
+        }
+
+        async function nextFrame () {
+            return new Promise(requestAnimationFrame)
+        }
+
+        function transition () {
+            return `height ${params.duration}s ${params.easing}`
+        }
+
+        // set initial styles
+        node.style.overflow = 'hidden';
+        node.style.transition = transition();
+        node.style.height = params.open ? 'auto' : '0px';
+
+        async function enter () {
+
+            // height is already in pixels
+            // start the transition
+            node.style.height = node.scrollHeight + 'px';
+
+            // wait for transition to end,
+            // then switch back to height auto
+            try {
+                await asyncTransitionEnd();
+                node.style.height = 'auto';
+            } catch(err) {
+                // interrupted by a leave transition
+            }
+
+        }
+
+        async function leave () {
+
+            if (node.style.height === 'auto') {
+
+                // temporarily turn transitions off
+                node.style.transition = 'none';
+                await nextFrame();
+
+                // set height to pixels, and turn transition back on
+                node.style.height = node.scrollHeight + 'px';
+                node.style.transition = transition();
+                await nextFrame();
+
+                // start the transition
+                node.style.height = '0px';
+
+            }
+            else {
+
+                // we are interrupting an enter transition
+                transitionEndReject();
+                node.style.height = '0px';
+
+            }
+
+        }
+
+        function update (newParams) {
+            params = Object.assign(params, newParams);
+            params.open ? enter() : leave();
+        }
+
+        function destroy () {
+            node.removeEventListener('transitionend', listener);
+        }
+
+        return { update, destroy }
+
+    }
+
+    /* src/components/content/Table.svelte generated by Svelte v3.12.1 */
+
+    const file$3 = "src/components/content/Table.svelte";
+
+    function get_each_context$1(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.row = list[i];
+    	return child_ctx;
+    }
+
+    // (26:4) {#if data.note}
+    function create_if_block_3(ctx) {
+    	var span, t_value = ctx.data.note + "", t;
+
+    	const block = {
+    		c: function create() {
+    			span = element("span");
+    			t = text(t_value);
+    			attr_dev(span, "class", "note svelte-d5vskm");
+    			add_location(span, file$3, 26, 6, 581);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, span, anchor);
+    			append_dev(span, t);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.data) && t_value !== (t_value = ctx.data.note + "")) {
+    				set_data_dev(t, t_value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(span);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_3.name, type: "if", source: "(26:4) {#if data.note}", ctx });
+    	return block;
+    }
+
+    // (35:4) {#if data.text}
+    function create_if_block_2(ctx) {
+    	var div, raw_value = ctx.data.text + "";
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			attr_dev(div, "class", "raw-data");
+    			add_location(div, file$3, 35, 6, 865);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			div.innerHTML = raw_value;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.data) && raw_value !== (raw_value = ctx.data.text + "")) {
+    				div.innerHTML = raw_value;
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_2.name, type: "if", source: "(35:4) {#if data.text}", ctx });
+    	return block;
+    }
+
+    // (39:4) {#if data.rows && data.rows.length}
+    function create_if_block$1(ctx) {
+    	var each_1_anchor;
+
+    	let each_value = ctx.data.rows;
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.data) {
+    				each_value = ctx.data.rows;
+
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$1(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks[i] = create_each_block$1(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+    				each_blocks.length = each_value.length;
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+
+    			if (detaching) {
+    				detach_dev(each_1_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$1.name, type: "if", source: "(39:4) {#if data.rows && data.rows.length}", ctx });
+    	return block;
+    }
+
+    // (45:8) {#if row.description}
+    function create_if_block_1$1(ctx) {
+    	var div, html_tag, raw_value = ctx.row.description + "", t;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			t = space();
+    			html_tag = new HtmlTag(raw_value, t);
+    			attr_dev(div, "class", "row description svelte-d5vskm");
+    			add_location(div, file$3, 45, 8, 1170);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			html_tag.m(div);
+    			append_dev(div, t);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.data) && raw_value !== (raw_value = ctx.row.description + "")) {
+    				html_tag.p(raw_value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1$1.name, type: "if", source: "(45:8) {#if row.description}", ctx });
+    	return block;
+    }
+
+    // (40:6) {#each data.rows as row}
+    function create_each_block$1(ctx) {
+    	var div2, div0, t0_value = ctx.row.name + "", t0, t1, div1, raw_value = ctx.row.value + "", t2, if_block_anchor;
+
+    	var if_block = (ctx.row.description) && create_if_block_1$1(ctx);
+
+    	const block = {
+    		c: function create() {
+    			div2 = element("div");
+    			div0 = element("div");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			div1 = element("div");
+    			t2 = space();
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    			attr_dev(div0, "class", "name svelte-d5vskm");
+    			add_location(div0, file$3, 41, 10, 1029);
+    			attr_dev(div1, "class", "value svelte-d5vskm");
+    			add_location(div1, file$3, 42, 10, 1074);
+    			attr_dev(div2, "class", "row svelte-d5vskm");
+    			add_location(div2, file$3, 40, 8, 1001);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div0);
+    			append_dev(div0, t0);
+    			append_dev(div2, t1);
+    			append_dev(div2, div1);
+    			div1.innerHTML = raw_value;
+    			insert_dev(target, t2, anchor);
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.data) && t0_value !== (t0_value = ctx.row.name + "")) {
+    				set_data_dev(t0, t0_value);
+    			}
+
+    			if ((changed.data) && raw_value !== (raw_value = ctx.row.value + "")) {
+    				div1.innerHTML = raw_value;
+    			}
+
+    			if (ctx.row.description) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    				} else {
+    					if_block = create_if_block_1$1(ctx);
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div2);
+    				detach_dev(t2);
+    			}
+
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$1.name, type: "each", source: "(40:6) {#each data.rows as row}", ctx });
+    	return block;
+    }
+
+    function create_fragment$3(ctx) {
+    	var div2, div0, span0, t0_value = ctx.data.title + "", t0, t1, t2, span1, img, t3, div1, t4, collapse_action, dispose;
+
+    	var if_block0 = (ctx.data.note) && create_if_block_3(ctx);
+
+    	var if_block1 = (ctx.data.text) && create_if_block_2(ctx);
+
+    	var if_block2 = (ctx.data.rows && ctx.data.rows.length) && create_if_block$1(ctx);
+
+    	const block = {
+    		c: function create() {
+    			div2 = element("div");
+    			div0 = element("div");
+    			span0 = element("span");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			if (if_block0) if_block0.c();
+    			t2 = space();
+    			span1 = element("span");
+    			img = element("img");
+    			t3 = space();
+    			div1 = element("div");
+    			if (if_block1) if_block1.c();
+    			t4 = space();
+    			if (if_block2) if_block2.c();
+    			attr_dev(span0, "class", "title svelte-d5vskm");
+    			add_location(span0, file$3, 24, 4, 515);
+    			attr_dev(img, "src", "chevron.png");
+    			attr_dev(img, "alt", "Show/Hide");
+    			attr_dev(img, "width", "16");
+    			attr_dev(img, "height", "16");
+    			add_location(img, file$3, 29, 6, 686);
+    			attr_dev(span1, "class", "chevron svelte-d5vskm");
+    			add_location(span1, file$3, 28, 4, 633);
+    			attr_dev(div0, "class", "header svelte-d5vskm");
+    			add_location(div0, file$3, 23, 2, 490);
+    			attr_dev(div1, "class", "table-body svelte-d5vskm");
+    			add_location(div1, file$3, 33, 2, 774);
+    			attr_dev(div2, "class", "table svelte-d5vskm");
+    			add_location(div2, file$3, 22, 0, 468);
+    			dispose = listen_dev(span1, "click", ctx.handleToggle);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div0);
+    			append_dev(div0, span0);
+    			append_dev(span0, t0);
+    			append_dev(div0, t1);
+    			if (if_block0) if_block0.m(div0, null);
+    			append_dev(div0, t2);
+    			append_dev(div0, span1);
+    			append_dev(span1, img);
+    			append_dev(div2, t3);
+    			append_dev(div2, div1);
+    			if (if_block1) if_block1.m(div1, null);
+    			append_dev(div1, t4);
+    			if (if_block2) if_block2.m(div1, null);
+    			collapse_action = collapse.call(null, div1, {open: ctx.open, duration: ctx.duration, easing: ctx.easing}) || {};
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.data) && t0_value !== (t0_value = ctx.data.title + "")) {
+    				set_data_dev(t0, t0_value);
+    			}
+
+    			if (ctx.data.note) {
+    				if (if_block0) {
+    					if_block0.p(changed, ctx);
+    				} else {
+    					if_block0 = create_if_block_3(ctx);
+    					if_block0.c();
+    					if_block0.m(div0, t2);
+    				}
+    			} else if (if_block0) {
+    				if_block0.d(1);
+    				if_block0 = null;
+    			}
+
+    			if (ctx.data.text) {
+    				if (if_block1) {
+    					if_block1.p(changed, ctx);
+    				} else {
+    					if_block1 = create_if_block_2(ctx);
+    					if_block1.c();
+    					if_block1.m(div1, t4);
+    				}
+    			} else if (if_block1) {
+    				if_block1.d(1);
+    				if_block1 = null;
+    			}
+
+    			if (ctx.data.rows && ctx.data.rows.length) {
+    				if (if_block2) {
+    					if_block2.p(changed, ctx);
+    				} else {
+    					if_block2 = create_if_block$1(ctx);
+    					if_block2.c();
+    					if_block2.m(div1, null);
+    				}
+    			} else if (if_block2) {
+    				if_block2.d(1);
+    				if_block2 = null;
+    			}
+
+    			if (typeof collapse_action.update === 'function' && (changed.open || changed.duration || changed.easing)) {
+    				collapse_action.update.call(null, {open: ctx.open, duration: ctx.duration, easing: ctx.easing});
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div2);
+    			}
+
+    			if (if_block0) if_block0.d();
+    			if (if_block1) if_block1.d();
+    			if (if_block2) if_block2.d();
+    			if (collapse_action && typeof collapse_action.destroy === 'function') collapse_action.destroy();
+    			dispose();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$3.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function instance$3($$self, $$props, $$invalidate) {
+    	
+
+      let { data, open = !!(data.rows && data.rows.length < 5) || !!data.text, duration = 0.2, easing = 'ease-in' } = $$props;
+      const dispatch = createEventDispatcher();
+
+      function handleToggle () {
+          $$invalidate('open', open = !open);
+          if (open) {
+              dispatch('open');
+          }
+          else {
+              dispatch('close');
+          }
+      }
+
+    	const writable_props = ['data', 'open', 'duration', 'easing'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<Table> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('data' in $$props) $$invalidate('data', data = $$props.data);
+    		if ('open' in $$props) $$invalidate('open', open = $$props.open);
+    		if ('duration' in $$props) $$invalidate('duration', duration = $$props.duration);
+    		if ('easing' in $$props) $$invalidate('easing', easing = $$props.easing);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { data, open, duration, easing };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('data' in $$props) $$invalidate('data', data = $$props.data);
+    		if ('open' in $$props) $$invalidate('open', open = $$props.open);
+    		if ('duration' in $$props) $$invalidate('duration', duration = $$props.duration);
+    		if ('easing' in $$props) $$invalidate('easing', easing = $$props.easing);
+    	};
+
+    	return {
+    		data,
+    		open,
+    		duration,
+    		easing,
+    		handleToggle
+    	};
+    }
+
+    class Table extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$3, create_fragment$3, safe_not_equal, ["data", "open", "duration", "easing"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Table", options, id: create_fragment$3.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.data === undefined && !('data' in props)) {
+    			console.warn("<Table> was created without expected prop 'data'");
+    		}
+    	}
+
+    	get data() {
+    		throw new Error("<Table>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set data(value) {
+    		throw new Error("<Table>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get open() {
+    		throw new Error("<Table>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set open(value) {
+    		throw new Error("<Table>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get duration() {
+    		throw new Error("<Table>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set duration(value) {
+    		throw new Error("<Table>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get easing() {
+    		throw new Error("<Table>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set easing(value) {
+    		throw new Error("<Table>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/components/content/Request.svelte generated by Svelte v3.12.1 */
+    const { console: console_1 } = globals;
+
+    const file$4 = "src/components/content/Request.svelte";
+
+    function get_each_context$2(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.example = list[i];
+    	return child_ctx;
+    }
+
+    // (94:8) {#if description}
+    function create_if_block_6(ctx) {
+    	var div;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			attr_dev(div, "class", "description");
+    			add_location(div, file$4, 94, 12, 2494);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			div.innerHTML = ctx.description;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.description) {
+    				div.innerHTML = ctx.description;
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_6.name, type: "if", source: "(94:8) {#if description}", ctx });
+    	return block;
+    }
+
+    // (100:12) {#if request.pathParams && request.pathParams.length}
+    function create_if_block_5(ctx) {
+    	var current;
+
+    	var table = new Table({
+    		props: { data: ctx.content.pathParams() },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			table.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(table, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var table_changes = {};
+    			if (changed.content) table_changes.data = ctx.content.pathParams();
+    			table.$set(table_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(table.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(table.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(table, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_5.name, type: "if", source: "(100:12) {#if request.pathParams && request.pathParams.length}", ctx });
+    	return block;
+    }
+
+    // (104:12) {#if request.parameters && request.parameters.length}
+    function create_if_block_4(ctx) {
+    	var current;
+
+    	var table = new Table({
+    		props: { data: ctx.content.params() },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			table.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(table, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var table_changes = {};
+    			if (changed.content) table_changes.data = ctx.content.params();
+    			table.$set(table_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(table.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(table.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(table, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_4.name, type: "if", source: "(104:12) {#if request.parameters && request.parameters.length}", ctx });
+    	return block;
+    }
+
+    // (108:12) {#if (request.headers && request.headers.length) || (request.authentication && request.authentication.type)}
+    function create_if_block_3$1(ctx) {
+    	var current;
+
+    	var table = new Table({
+    		props: { data: ctx.content.headers() },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			table.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(table, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var table_changes = {};
+    			if (changed.content) table_changes.data = ctx.content.headers();
+    			table.$set(table_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(table.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(table.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(table, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_3$1.name, type: "if", source: "(108:12) {#if (request.headers && request.headers.length) || (request.authentication && request.authentication.type)}", ctx });
+    	return block;
+    }
+
+    // (112:12) {#if request.body && (request.body.text || request.body.params)}
+    function create_if_block_2$1(ctx) {
+    	var current;
+
+    	var table = new Table({
+    		props: { data: ctx.content.body() },
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			table.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(table, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var table_changes = {};
+    			if (changed.content) table_changes.data = ctx.content.body();
+    			table.$set(table_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(table.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(table.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(table, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_2$1.name, type: "if", source: "(112:12) {#if request.body && (request.body.text || request.body.params)}", ctx });
+    	return block;
+    }
+
+    // (130:8) {#if reqData.exampleResponses && reqData.exampleResponses.length}
+    function create_if_block$2(ctx) {
+    	var each_1_anchor;
+
+    	let each_value = ctx.reqData.exampleResponses;
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.reqData || changed.getClassForStatusCode || changed.hljs) {
+    				each_value = ctx.reqData.exampleResponses;
+
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$2(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks[i] = create_each_block$2(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+    				each_blocks.length = each_value.length;
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+
+    			if (detaching) {
+    				detach_dev(each_1_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$2.name, type: "if", source: "(130:8) {#if reqData.exampleResponses && reqData.exampleResponses.length}", ctx });
+    	return block;
+    }
+
+    // (132:16) {#if example.value}
+    function create_if_block_1$2(ctx) {
+    	var div2, div1, div0, t0, t1_value = ctx.example.code && ctx.example.code.length ? ` - ${ctx.example.code}` : '' + "", t1, t2, t3, pre, raw_value = core.highlightAuto(ctx.example.value).value + "", t4, div2_class_value;
+
+    	const block = {
+    		c: function create() {
+    			div2 = element("div");
+    			div1 = element("div");
+    			div0 = element("div");
+    			t0 = text("Example\n                                response");
+    			t1 = text(t1_value);
+    			t2 = text(":");
+    			t3 = space();
+    			pre = element("pre");
+    			t4 = space();
+    			attr_dev(div0, "class", "title svelte-bexg59");
+    			add_location(div0, file$4, 134, 28, 3969);
+    			attr_dev(div1, "class", "header svelte-bexg59");
+    			add_location(div1, file$4, 133, 24, 3920);
+    			attr_dev(pre, "class", "svelte-bexg59");
+    			add_location(pre, file$4, 138, 24, 4195);
+    			attr_dev(div2, "class", div2_class_value = "" + null_to_empty(('code-example example-response ' + ctx.getClassForStatusCode(ctx.example.code))) + " svelte-bexg59");
+    			add_location(div2, file$4, 132, 20, 3811);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div1);
+    			append_dev(div1, div0);
+    			append_dev(div0, t0);
+    			append_dev(div0, t1);
+    			append_dev(div0, t2);
+    			append_dev(div2, t3);
+    			append_dev(div2, pre);
+    			pre.innerHTML = raw_value;
+    			append_dev(div2, t4);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.reqData) && t1_value !== (t1_value = ctx.example.code && ctx.example.code.length ? ` - ${ctx.example.code}` : '' + "")) {
+    				set_data_dev(t1, t1_value);
+    			}
+
+    			if ((changed.reqData) && raw_value !== (raw_value = core.highlightAuto(ctx.example.value).value + "")) {
+    				pre.innerHTML = raw_value;
+    			}
+
+    			if ((changed.reqData) && div2_class_value !== (div2_class_value = "" + null_to_empty(('code-example example-response ' + ctx.getClassForStatusCode(ctx.example.code))) + " svelte-bexg59")) {
+    				attr_dev(div2, "class", div2_class_value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div2);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1$2.name, type: "if", source: "(132:16) {#if example.value}", ctx });
+    	return block;
+    }
+
+    // (131:12) {#each reqData.exampleResponses as example}
+    function create_each_block$2(ctx) {
+    	var if_block_anchor;
+
+    	var if_block = (ctx.example.value) && create_if_block_1$2(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (ctx.example.value) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    				} else {
+    					if_block = create_if_block_1$2(ctx);
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$2.name, type: "each", source: "(131:12) {#each reqData.exampleResponses as example}", ctx });
+    	return block;
+    }
+
+    function create_fragment$4(ctx) {
+    	var div8, div2, div0, t0, div0_id_value, t1, h3, strong, t2_value = ctx.request.method + "", t2, strong_class_value, t3, t4_value = ctx.reqData.name + "", t4, t5, pre0, raw0_value = ctx.reqData.url + "", t6, t7, div1, t8, t9, t10, t11, hr, t12, div7, div6, div5, div3, t14, div4, a, t15, t16, pre1, t17, current;
+
+    	var if_block0 = (ctx.description) && create_if_block_6(ctx);
+
+    	var if_block1 = (ctx.request.pathParams && ctx.request.pathParams.length) && create_if_block_5(ctx);
+
+    	var if_block2 = (ctx.request.parameters && ctx.request.parameters.length) && create_if_block_4(ctx);
+
+    	var if_block3 = ((ctx.request.headers && ctx.request.headers.length) || (ctx.request.authentication && ctx.request.authentication.type)) && create_if_block_3$1(ctx);
+
+    	var if_block4 = (ctx.request.body && (ctx.request.body.text || ctx.request.body.params)) && create_if_block_2$1(ctx);
+
+    	var if_block5 = (ctx.reqData.exampleResponses && ctx.reqData.exampleResponses.length) && create_if_block$2(ctx);
+
+    	const block = {
+    		c: function create() {
+    			div8 = element("div");
+    			div2 = element("div");
+    			div0 = element("div");
+    			t0 = text(" ");
+    			t1 = space();
+    			h3 = element("h3");
+    			strong = element("strong");
+    			t2 = text(t2_value);
+    			t3 = space();
+    			t4 = text(t4_value);
+    			t5 = space();
+    			pre0 = element("pre");
+    			t6 = space();
+    			if (if_block0) if_block0.c();
+    			t7 = space();
+    			div1 = element("div");
+    			if (if_block1) if_block1.c();
+    			t8 = space();
+    			if (if_block2) if_block2.c();
+    			t9 = space();
+    			if (if_block3) if_block3.c();
+    			t10 = space();
+    			if (if_block4) if_block4.c();
+    			t11 = space();
+    			hr = element("hr");
+    			t12 = space();
+    			div7 = element("div");
+    			div6 = element("div");
+    			div5 = element("div");
+    			div3 = element("div");
+    			div3.textContent = "Example request:";
+    			t14 = space();
+    			div4 = element("div");
+    			a = element("a");
+    			t15 = text(ctx.copyText);
+    			t16 = space();
+    			pre1 = element("pre");
+    			t17 = space();
+    			if (if_block5) if_block5.c();
+    			attr_dev(div0, "class", "anchor svelte-bexg59");
+    			attr_dev(div0, "id", div0_id_value = ctx.request._id);
+    			add_location(div0, file$4, 88, 8, 2220);
+    			attr_dev(strong, "class", strong_class_value = "" + null_to_empty(ctx.request.method.toLowerCase()) + " svelte-bexg59");
+    			add_location(strong, file$4, 89, 34, 2304);
+    			attr_dev(h3, "class", "request-title");
+    			add_location(h3, file$4, 89, 8, 2278);
+    			attr_dev(pre0, "class", "url svelte-bexg59");
+    			add_location(pre0, file$4, 91, 8, 2412);
+    			attr_dev(div1, "class", "tables");
+    			add_location(div1, file$4, 97, 8, 2568);
+    			add_location(hr, file$4, 117, 8, 3219);
+    			attr_dev(div2, "class", "left");
+    			add_location(div2, file$4, 87, 4, 2193);
+    			attr_dev(div3, "class", "title svelte-bexg59");
+    			add_location(div3, file$4, 122, 16, 3344);
+    			attr_dev(a, "href", "javascript:");
+    			attr_dev(a, "class", "svelte-bexg59");
+    			add_location(a, file$4, 124, 20, 3441);
+    			attr_dev(div4, "class", "copy");
+    			add_location(div4, file$4, 123, 16, 3402);
+    			attr_dev(div5, "class", "header svelte-bexg59");
+    			add_location(div5, file$4, 121, 12, 3307);
+    			attr_dev(pre1, "class", "svelte-bexg59");
+    			add_location(pre1, file$4, 127, 12, 3555);
+    			attr_dev(div6, "class", "code-example svelte-bexg59");
+    			add_location(div6, file$4, 120, 8, 3268);
+    			attr_dev(div7, "class", "right");
+    			add_location(div7, file$4, 119, 4, 3240);
+    			attr_dev(div8, "class", "row");
+    			add_location(div8, file$4, 86, 0, 2171);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div8, anchor);
+    			append_dev(div8, div2);
+    			append_dev(div2, div0);
+    			append_dev(div0, t0);
+    			append_dev(div2, t1);
+    			append_dev(div2, h3);
+    			append_dev(h3, strong);
+    			append_dev(strong, t2);
+    			append_dev(h3, t3);
+    			append_dev(h3, t4);
+    			append_dev(div2, t5);
+    			append_dev(div2, pre0);
+    			pre0.innerHTML = raw0_value;
+    			append_dev(div2, t6);
+    			if (if_block0) if_block0.m(div2, null);
+    			append_dev(div2, t7);
+    			append_dev(div2, div1);
+    			if (if_block1) if_block1.m(div1, null);
+    			append_dev(div1, t8);
+    			if (if_block2) if_block2.m(div1, null);
+    			append_dev(div1, t9);
+    			if (if_block3) if_block3.m(div1, null);
+    			append_dev(div1, t10);
+    			if (if_block4) if_block4.m(div1, null);
+    			append_dev(div2, t11);
+    			append_dev(div2, hr);
+    			append_dev(div8, t12);
+    			append_dev(div8, div7);
+    			append_dev(div7, div6);
+    			append_dev(div6, div5);
+    			append_dev(div5, div3);
+    			append_dev(div5, t14);
+    			append_dev(div5, div4);
+    			append_dev(div4, a);
+    			append_dev(a, t15);
+    			ctx.a_binding(a);
+    			append_dev(div6, t16);
+    			append_dev(div6, pre1);
+    			pre1.innerHTML = ctx.exampleHTML;
+    			ctx.pre1_binding(pre1);
+    			append_dev(div7, t17);
+    			if (if_block5) if_block5.m(div7, null);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.request) && div0_id_value !== (div0_id_value = ctx.request._id)) {
+    				attr_dev(div0, "id", div0_id_value);
+    			}
+
+    			if ((!current || changed.request) && t2_value !== (t2_value = ctx.request.method + "")) {
+    				set_data_dev(t2, t2_value);
+    			}
+
+    			if ((!current || changed.request) && strong_class_value !== (strong_class_value = "" + null_to_empty(ctx.request.method.toLowerCase()) + " svelte-bexg59")) {
+    				attr_dev(strong, "class", strong_class_value);
+    			}
+
+    			if ((!current || changed.reqData) && t4_value !== (t4_value = ctx.reqData.name + "")) {
+    				set_data_dev(t4, t4_value);
+    			}
+
+    			if ((!current || changed.reqData) && raw0_value !== (raw0_value = ctx.reqData.url + "")) {
+    				pre0.innerHTML = raw0_value;
+    			}
+
+    			if (ctx.description) {
+    				if (if_block0) {
+    					if_block0.p(changed, ctx);
+    				} else {
+    					if_block0 = create_if_block_6(ctx);
+    					if_block0.c();
+    					if_block0.m(div2, t7);
+    				}
+    			} else if (if_block0) {
+    				if_block0.d(1);
+    				if_block0 = null;
+    			}
+
+    			if (ctx.request.pathParams && ctx.request.pathParams.length) {
+    				if (if_block1) {
+    					if_block1.p(changed, ctx);
+    					transition_in(if_block1, 1);
+    				} else {
+    					if_block1 = create_if_block_5(ctx);
+    					if_block1.c();
+    					transition_in(if_block1, 1);
+    					if_block1.m(div1, t8);
+    				}
+    			} else if (if_block1) {
+    				group_outros();
+    				transition_out(if_block1, 1, 1, () => {
+    					if_block1 = null;
+    				});
+    				check_outros();
+    			}
+
+    			if (ctx.request.parameters && ctx.request.parameters.length) {
+    				if (if_block2) {
+    					if_block2.p(changed, ctx);
+    					transition_in(if_block2, 1);
+    				} else {
+    					if_block2 = create_if_block_4(ctx);
+    					if_block2.c();
+    					transition_in(if_block2, 1);
+    					if_block2.m(div1, t9);
+    				}
+    			} else if (if_block2) {
+    				group_outros();
+    				transition_out(if_block2, 1, 1, () => {
+    					if_block2 = null;
+    				});
+    				check_outros();
+    			}
+
+    			if ((ctx.request.headers && ctx.request.headers.length) || (ctx.request.authentication && ctx.request.authentication.type)) {
+    				if (if_block3) {
+    					if_block3.p(changed, ctx);
+    					transition_in(if_block3, 1);
+    				} else {
+    					if_block3 = create_if_block_3$1(ctx);
+    					if_block3.c();
+    					transition_in(if_block3, 1);
+    					if_block3.m(div1, t10);
+    				}
+    			} else if (if_block3) {
+    				group_outros();
+    				transition_out(if_block3, 1, 1, () => {
+    					if_block3 = null;
+    				});
+    				check_outros();
+    			}
+
+    			if (ctx.request.body && (ctx.request.body.text || ctx.request.body.params)) {
+    				if (if_block4) {
+    					if_block4.p(changed, ctx);
+    					transition_in(if_block4, 1);
+    				} else {
+    					if_block4 = create_if_block_2$1(ctx);
+    					if_block4.c();
+    					transition_in(if_block4, 1);
+    					if_block4.m(div1, null);
+    				}
+    			} else if (if_block4) {
+    				group_outros();
+    				transition_out(if_block4, 1, 1, () => {
+    					if_block4 = null;
+    				});
+    				check_outros();
+    			}
+
+    			if (!current || changed.copyText) {
+    				set_data_dev(t15, ctx.copyText);
+    			}
+
+    			if (!current || changed.exampleHTML) {
+    				pre1.innerHTML = ctx.exampleHTML;
+    			}
+
+    			if (ctx.reqData.exampleResponses && ctx.reqData.exampleResponses.length) {
+    				if (if_block5) {
+    					if_block5.p(changed, ctx);
+    				} else {
+    					if_block5 = create_if_block$2(ctx);
+    					if_block5.c();
+    					if_block5.m(div7, null);
+    				}
+    			} else if (if_block5) {
+    				if_block5.d(1);
+    				if_block5 = null;
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block1);
+    			transition_in(if_block2);
+    			transition_in(if_block3);
+    			transition_in(if_block4);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block1);
+    			transition_out(if_block2);
+    			transition_out(if_block3);
+    			transition_out(if_block4);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div8);
+    			}
+
+    			if (if_block0) if_block0.d();
+    			if (if_block1) if_block1.d();
+    			if (if_block2) if_block2.d();
+    			if (if_block3) if_block3.d();
+    			if (if_block4) if_block4.d();
+    			ctx.a_binding(null);
+    			ctx.pre1_binding(null);
+    			if (if_block5) if_block5.d();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$4.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function instance$4($$self, $$props, $$invalidate) {
+    	
+
+      const markdown = new showdown.Converter({
+        simplifiedAutoLink: true,
+        openLinksInNewWindow: true,
+        excludeTrailingPunctuationFromURLs: true,
+        tables: true
+      });
+
+      let { request, env, language = null, cookiejars } = $$props;
+
+      let copyText = 'Copy to clipboard';
+      let copyButton;
+      let codeElement;
+
+      const code = document.createElement('code');
+
+      function getClassForStatusCode(code) {
+        if (!code) {
+          return 'default';
+        }
+
+        switch (code[0]) {
+          case '1':
+            return 'info';
+          case '2':
+            return 'success';
+          case '3':
+            return 'redirect';
+          case '4':
+            return 'client-error';
+          case '5':
+            return 'server-error';
+          default:
+            return 'default';
+        }
+      }
+
+    	const writable_props = ['request', 'env', 'language', 'cookiejars'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console_1.warn(`<Request> was created with unknown prop '${key}'`);
+    	});
+
+    	function a_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			$$invalidate('copyButton', copyButton = $$value);
+    		});
+    	}
+
+    	function pre1_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			$$invalidate('codeElement', codeElement = $$value);
+    		});
+    	}
+
+    	$$self.$set = $$props => {
+    		if ('request' in $$props) $$invalidate('request', request = $$props.request);
+    		if ('env' in $$props) $$invalidate('env', env = $$props.env);
+    		if ('language' in $$props) $$invalidate('language', language = $$props.language);
+    		if ('cookiejars' in $$props) $$invalidate('cookiejars', cookiejars = $$props.cookiejars);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { request, env, language, cookiejars, copyText, copyButton, codeElement, content, reqData, exampleCode, exampleHTML, clipboard, description };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('request' in $$props) $$invalidate('request', request = $$props.request);
+    		if ('env' in $$props) $$invalidate('env', env = $$props.env);
+    		if ('language' in $$props) $$invalidate('language', language = $$props.language);
+    		if ('cookiejars' in $$props) $$invalidate('cookiejars', cookiejars = $$props.cookiejars);
+    		if ('copyText' in $$props) $$invalidate('copyText', copyText = $$props.copyText);
+    		if ('copyButton' in $$props) $$invalidate('copyButton', copyButton = $$props.copyButton);
+    		if ('codeElement' in $$props) $$invalidate('codeElement', codeElement = $$props.codeElement);
+    		if ('content' in $$props) $$invalidate('content', content = $$props.content);
+    		if ('reqData' in $$props) $$invalidate('reqData', reqData = $$props.reqData);
+    		if ('exampleCode' in $$props) $$invalidate('exampleCode', exampleCode = $$props.exampleCode);
+    		if ('exampleHTML' in $$props) $$invalidate('exampleHTML', exampleHTML = $$props.exampleHTML);
+    		if ('clipboard' in $$props) $$invalidate('clipboard', clipboard = $$props.clipboard);
+    		if ('description' in $$props) $$invalidate('description', description = $$props.description);
+    	};
+
+    	let content, reqData, exampleCode, exampleHTML, clipboard, description;
+
+    	$$self.$$.update = ($$dirty = { request: 1, language: 1, cookiejars: 1, exampleCode: 1, code: 1, copyButton: 1, codeElement: 1, clipboard: 1, reqData: 1 }) => {
+    		if ($$dirty.request) { $$invalidate('content', content = new ContentGenerator(request)); }
+    		if ($$dirty.request) { $$invalidate('reqData', reqData = {
+            method: request.method,
+            url: trimUrlDomain(formatEnv(request.url)),
+            name: request.name,
+            description: request.description,
+            exampleResponses: request.exampleResponses
+          }); }
+    		if ($$dirty.request || $$dirty.language || $$dirty.cookiejars) { $$invalidate('exampleCode', exampleCode = generateCode(request, request.url, language, cookiejars)); }
+    		if ($$dirty.language) { $$invalidate('code', code.className = language, code); }
+    		if ($$dirty.exampleCode) { $$invalidate('code', code.textContent = exampleCode, code); }
+    		if ($$dirty.code) { core.highlightBlock(code); }
+    		if ($$dirty.code) { $$invalidate('exampleHTML', exampleHTML = code.outerHTML); }
+    		if ($$dirty.copyButton || $$dirty.codeElement) { $$invalidate('clipboard', clipboard = copyButton && new ClipboardJS(copyButton, {
+            target: function () {
+              return codeElement;
+            }
+          })); }
+    		if ($$dirty.clipboard) { clipboard && clipboard.on('success', function () {
+            $$invalidate('copyText', copyText = 'Copied!');
+            setTimeout(() => $$invalidate('copyText', copyText = 'Copy to Clipboard'), 5000);
+          }); }
+    		if ($$dirty.clipboard) { clipboard && clipboard.on('error', function (err) {
+            console.error(err);
+            $$invalidate('copyText', copyText = 'Failed to copy :(');
+            setTimeout(() => $$invalidate('copyText', copyText = 'Copy to Clipboard'), 5000);
+          }); }
+    		if ($$dirty.reqData) { $$invalidate('description', description = reqData.description && markdown.makeHtml(reqData.description)); }
+    	};
+
+    	return {
+    		request,
+    		env,
+    		language,
+    		cookiejars,
+    		copyText,
+    		copyButton,
+    		codeElement,
+    		getClassForStatusCode,
+    		content,
+    		reqData,
+    		exampleHTML,
+    		description,
+    		a_binding,
+    		pre1_binding
+    	};
+    }
+
+    class Request$1 extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$4, create_fragment$4, safe_not_equal, ["request", "env", "language", "cookiejars"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Request", options, id: create_fragment$4.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.request === undefined && !('request' in props)) {
+    			console_1.warn("<Request> was created without expected prop 'request'");
+    		}
+    		if (ctx.env === undefined && !('env' in props)) {
+    			console_1.warn("<Request> was created without expected prop 'env'");
+    		}
+    		if (ctx.cookiejars === undefined && !('cookiejars' in props)) {
+    			console_1.warn("<Request> was created without expected prop 'cookiejars'");
+    		}
+    	}
+
+    	get request() {
+    		throw new Error("<Request>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set request(value) {
+    		throw new Error("<Request>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get env() {
+    		throw new Error("<Request>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set env(value) {
+    		throw new Error("<Request>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get language() {
+    		throw new Error("<Request>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set language(value) {
+    		throw new Error("<Request>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get cookiejars() {
+    		throw new Error("<Request>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set cookiejars(value) {
+    		throw new Error("<Request>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    function applyEnv (value, env) {
+      if (!value) {
+        return null;
+      }
+
+      Object.keys(env.data).forEach(key => {
+        value = value.replace(new RegExp('{{(\\s*' + key + '\\s*)}}', 'g'), env.data[key]);
+      });
+
+      return value;
+    }
+
+    /* src/components/content/Group.svelte generated by Svelte v3.12.1 */
+
+    const file$5 = "src/components/content/Group.svelte";
+
+    // (31:4) {#if description}
+    function create_if_block$3(ctx) {
+    	var div;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			attr_dev(div, "class", "description");
+    			add_location(div, file$5, 31, 6, 895);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			div.innerHTML = ctx.description;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.description) {
+    				div.innerHTML = ctx.description;
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$3.name, type: "if", source: "(31:4) {#if description}", ctx });
+    	return block;
+    }
+
+    function create_fragment$5(ctx) {
+    	var div2, div0, h2, t0_value = ctx.groupData.name + "", t0, t1, t2, hr, t3, div1;
+
+    	var if_block = (ctx.description) && create_if_block$3(ctx);
+
+    	const block = {
+    		c: function create() {
+    			div2 = element("div");
+    			div0 = element("div");
+    			h2 = element("h2");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			if (if_block) if_block.c();
+    			t2 = space();
+    			hr = element("hr");
+    			t3 = space();
+    			div1 = element("div");
+    			add_location(h2, file$5, 28, 4, 840);
+    			add_location(hr, file$5, 34, 4, 961);
+    			attr_dev(div0, "class", "left");
+    			add_location(div0, file$5, 27, 2, 817);
+    			attr_dev(div1, "class", "right");
+    			add_location(div1, file$5, 36, 2, 979);
+    			attr_dev(div2, "class", "row");
+    			add_location(div2, file$5, 26, 0, 797);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div0);
+    			append_dev(div0, h2);
+    			append_dev(h2, t0);
+    			append_dev(div0, t1);
+    			if (if_block) if_block.m(div0, null);
+    			append_dev(div0, t2);
+    			append_dev(div0, hr);
+    			append_dev(div2, t3);
+    			append_dev(div2, div1);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.groupData) && t0_value !== (t0_value = ctx.groupData.name + "")) {
+    				set_data_dev(t0, t0_value);
+    			}
+
+    			if (ctx.description) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    				} else {
+    					if_block = create_if_block$3(ctx);
+    					if_block.c();
+    					if_block.m(div0, t2);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div2);
+    			}
+
+    			if (if_block) if_block.d();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$5.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function instance$5($$self, $$props, $$invalidate) {
+    	
+      const markdown = new showdown.Converter({
+        simplifiedAutoLink: true,
+        openLinksInNewWindow: true,
+        excludeTrailingPunctuationFromURLs: true,
+        tables: true
+      });
+
+      let { group, env } = $$props;
+
+    	const writable_props = ['group', 'env'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<Group> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('group' in $$props) $$invalidate('group', group = $$props.group);
+    		if ('env' in $$props) $$invalidate('env', env = $$props.env);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { group, env, groupData, description };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('group' in $$props) $$invalidate('group', group = $$props.group);
+    		if ('env' in $$props) $$invalidate('env', env = $$props.env);
+    		if ('groupData' in $$props) $$invalidate('groupData', groupData = $$props.groupData);
+    		if ('description' in $$props) $$invalidate('description', description = $$props.description);
+    	};
+
+    	let groupData, description;
+
+    	$$self.$$.update = ($$dirty = { group: 1, env: 1, groupData: 1 }) => {
+    		if ($$dirty.group || $$dirty.env) { $$invalidate('groupData', groupData = {
+            name: applyEnv(group.name, env),
+            description: applyEnv(group.description, env)
+          }); }
+    		if ($$dirty.groupData) { $$invalidate('description', description = groupData.description && markdown.makeHtml(groupData.description)); }
+    	};
+
+    	return { group, env, groupData, description };
+    }
+
+    class Group$1 extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$5, create_fragment$5, safe_not_equal, ["group", "env"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Group", options, id: create_fragment$5.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.group === undefined && !('group' in props)) {
+    			console.warn("<Group> was created without expected prop 'group'");
+    		}
+    		if (ctx.env === undefined && !('env' in props)) {
+    			console.warn("<Group> was created without expected prop 'env'");
+    		}
+    	}
+
+    	get group() {
+    		throw new Error("<Group>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set group(value) {
+    		throw new Error("<Group>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get env() {
+    		throw new Error("<Group>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set env(value) {
+    		throw new Error("<Group>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/components/content/Rows.svelte generated by Svelte v3.12.1 */
+
+    function get_each_context$3(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.row = list[i];
+    	return child_ctx;
+    }
+
+    // (14:2) {:else}
+    function create_else_block(ctx) {
+    	var t, current;
+
+    	var group = new Group$1({
+    		props: { group: ctx.row, env: ctx.env },
+    		$$inline: true
+    	});
+
+    	var rows = new Rows({
+    		props: {
+    		content: [...ctx.row.requests, ...ctx.row.children],
+    		env: ctx.env,
+    		language: ctx.language,
+    		cookiejars: ctx.cookiejars
+    	},
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			group.$$.fragment.c();
+    			t = space();
+    			rows.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(group, target, anchor);
+    			insert_dev(target, t, anchor);
+    			mount_component(rows, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var group_changes = {};
+    			if (changed.content) group_changes.group = ctx.row;
+    			if (changed.env) group_changes.env = ctx.env;
+    			group.$set(group_changes);
+
+    			var rows_changes = {};
+    			if (changed.content) rows_changes.content = [...ctx.row.requests, ...ctx.row.children];
+    			if (changed.env) rows_changes.env = ctx.env;
+    			if (changed.language) rows_changes.language = ctx.language;
+    			if (changed.cookiejars) rows_changes.cookiejars = ctx.cookiejars;
+    			rows.$set(rows_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(group.$$.fragment, local);
+
+    			transition_in(rows.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(group.$$.fragment, local);
+    			transition_out(rows.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(group, detaching);
+
+    			if (detaching) {
+    				detach_dev(t);
+    			}
+
+    			destroy_component(rows, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block.name, type: "else", source: "(14:2) {:else}", ctx });
+    	return block;
+    }
+
+    // (12:2) {#if row._type === 'request'}
+    function create_if_block$4(ctx) {
+    	var current;
+
+    	var request = new Request$1({
+    		props: {
+    		request: ctx.row,
+    		env: ctx.env,
+    		language: ctx.language,
+    		cookiejars: ctx.cookiejars
+    	},
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			request.$$.fragment.c();
+    		},
+
+    		m: function mount(target, anchor) {
+    			mount_component(request, target, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var request_changes = {};
+    			if (changed.content) request_changes.request = ctx.row;
+    			if (changed.env) request_changes.env = ctx.env;
+    			if (changed.language) request_changes.language = ctx.language;
+    			if (changed.cookiejars) request_changes.cookiejars = ctx.cookiejars;
+    			request.$set(request_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(request.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(request.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_component(request, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$4.name, type: "if", source: "(12:2) {#if row._type === 'request'}", ctx });
+    	return block;
+    }
+
+    // (11:0) {#each content as row}
+    function create_each_block$3(ctx) {
+    	var current_block_type_index, if_block, if_block_anchor, current;
+
+    	var if_block_creators = [
+    		create_if_block$4,
+    		create_else_block
+    	];
+
+    	var if_blocks = [];
+
+    	function select_block_type(changed, ctx) {
+    		if (ctx.row._type === 'request') return 0;
+    		return 1;
+    	}
+
+    	current_block_type_index = select_block_type(null, ctx);
+    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+    	const block = {
+    		c: function create() {
+    			if_block.c();
+    			if_block_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			if_blocks[current_block_type_index].m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type(changed, ctx);
+    			if (current_block_type_index === previous_block_index) {
+    				if_blocks[current_block_type_index].p(changed, ctx);
+    			} else {
+    				group_outros();
+    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    					if_blocks[previous_block_index] = null;
+    				});
+    				check_outros();
+
+    				if_block = if_blocks[current_block_type_index];
+    				if (!if_block) {
+    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    					if_block.c();
+    				}
+    				transition_in(if_block, 1);
+    				if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if_blocks[current_block_type_index].d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$3.name, type: "each", source: "(11:0) {#each content as row}", ctx });
+    	return block;
+    }
+
+    function create_fragment$6(ctx) {
+    	var each_1_anchor, current;
+
+    	let each_value = ctx.content;
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$3(get_each_context$3(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.content || changed.env || changed.language || changed.cookiejars) {
+    				each_value = ctx.content;
+
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$3(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$3(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+
+    			if (detaching) {
+    				detach_dev(each_1_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$6.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function instance$6($$self, $$props, $$invalidate) {
+    	
+
+      let { content, env, language, cookiejars } = $$props;
+
+    	const writable_props = ['content', 'env', 'language', 'cookiejars'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<Rows> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('content' in $$props) $$invalidate('content', content = $$props.content);
+    		if ('env' in $$props) $$invalidate('env', env = $$props.env);
+    		if ('language' in $$props) $$invalidate('language', language = $$props.language);
+    		if ('cookiejars' in $$props) $$invalidate('cookiejars', cookiejars = $$props.cookiejars);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { content, env, language, cookiejars };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('content' in $$props) $$invalidate('content', content = $$props.content);
+    		if ('env' in $$props) $$invalidate('env', env = $$props.env);
+    		if ('language' in $$props) $$invalidate('language', language = $$props.language);
+    		if ('cookiejars' in $$props) $$invalidate('cookiejars', cookiejars = $$props.cookiejars);
+    	};
+
+    	return { content, env, language, cookiejars };
+    }
+
+    class Rows extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$6, create_fragment$6, safe_not_equal, ["content", "env", "language", "cookiejars"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Rows", options, id: create_fragment$6.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.content === undefined && !('content' in props)) {
+    			console.warn("<Rows> was created without expected prop 'content'");
+    		}
+    		if (ctx.env === undefined && !('env' in props)) {
+    			console.warn("<Rows> was created without expected prop 'env'");
+    		}
+    		if (ctx.language === undefined && !('language' in props)) {
+    			console.warn("<Rows> was created without expected prop 'language'");
+    		}
+    		if (ctx.cookiejars === undefined && !('cookiejars' in props)) {
+    			console.warn("<Rows> was created without expected prop 'cookiejars'");
+    		}
+    	}
+
+    	get content() {
+    		throw new Error("<Rows>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set content(value) {
+    		throw new Error("<Rows>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get env() {
+    		throw new Error("<Rows>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set env(value) {
+    		throw new Error("<Rows>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get language() {
+    		throw new Error("<Rows>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set language(value) {
+    		throw new Error("<Rows>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get cookiejars() {
+    		throw new Error("<Rows>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set cookiejars(value) {
+    		throw new Error("<Rows>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* node_modules/svelte-select/src/Item.svelte generated by Svelte v3.12.1 */
+
+    const file$6 = "node_modules/svelte-select/src/Item.svelte";
+
+    function create_fragment$7(ctx) {
+    	var div, raw_value = ctx.getOptionLabel(ctx.item, ctx.filterText) + "", div_class_value;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			attr_dev(div, "class", div_class_value = "item " + ctx.itemClasses + " svelte-1xfc328");
+    			add_location(div, file$6, 60, 0, 1286);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			div.innerHTML = raw_value;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.getOptionLabel || changed.item || changed.filterText) && raw_value !== (raw_value = ctx.getOptionLabel(ctx.item, ctx.filterText) + "")) {
+    				div.innerHTML = raw_value;
+    			}
+
+    			if ((changed.itemClasses) && div_class_value !== (div_class_value = "item " + ctx.itemClasses + " svelte-1xfc328")) {
+    				attr_dev(div, "class", div_class_value);
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$7.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function instance$7($$self, $$props, $$invalidate) {
+    	let { isActive = false, isFirst = false, isHover = false, getOptionLabel = undefined, item = undefined, filterText = '' } = $$props;
+
+      let itemClasses = '';
+
+    	const writable_props = ['isActive', 'isFirst', 'isHover', 'getOptionLabel', 'item', 'filterText'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<Item> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('isActive' in $$props) $$invalidate('isActive', isActive = $$props.isActive);
+    		if ('isFirst' in $$props) $$invalidate('isFirst', isFirst = $$props.isFirst);
+    		if ('isHover' in $$props) $$invalidate('isHover', isHover = $$props.isHover);
+    		if ('getOptionLabel' in $$props) $$invalidate('getOptionLabel', getOptionLabel = $$props.getOptionLabel);
+    		if ('item' in $$props) $$invalidate('item', item = $$props.item);
+    		if ('filterText' in $$props) $$invalidate('filterText', filterText = $$props.filterText);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { isActive, isFirst, isHover, getOptionLabel, item, filterText, itemClasses };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('isActive' in $$props) $$invalidate('isActive', isActive = $$props.isActive);
+    		if ('isFirst' in $$props) $$invalidate('isFirst', isFirst = $$props.isFirst);
+    		if ('isHover' in $$props) $$invalidate('isHover', isHover = $$props.isHover);
+    		if ('getOptionLabel' in $$props) $$invalidate('getOptionLabel', getOptionLabel = $$props.getOptionLabel);
+    		if ('item' in $$props) $$invalidate('item', item = $$props.item);
+    		if ('filterText' in $$props) $$invalidate('filterText', filterText = $$props.filterText);
+    		if ('itemClasses' in $$props) $$invalidate('itemClasses', itemClasses = $$props.itemClasses);
+    	};
+
+    	$$self.$$.update = ($$dirty = { isActive: 1, isFirst: 1, isHover: 1, item: 1 }) => {
+    		if ($$dirty.isActive || $$dirty.isFirst || $$dirty.isHover || $$dirty.item) { {
+            const classes = [];
+            if (isActive) { classes.push('active'); }
+            if (isFirst) { classes.push('first'); }
+            if (isHover) { classes.push('hover'); }
+            if (item.isGroupHeader) { classes.push('groupHeader'); }
+            if (item.isGroupItem) { classes.push('groupItem'); }
+            $$invalidate('itemClasses', itemClasses = classes.join(' '));
+          } }
+    	};
+
+    	return {
+    		isActive,
+    		isFirst,
+    		isHover,
+    		getOptionLabel,
+    		item,
+    		filterText,
+    		itemClasses
+    	};
+    }
+
+    class Item extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$7, create_fragment$7, safe_not_equal, ["isActive", "isFirst", "isHover", "getOptionLabel", "item", "filterText"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Item", options, id: create_fragment$7.name });
+    	}
+
+    	get isActive() {
+    		throw new Error("<Item>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isActive(value) {
+    		throw new Error("<Item>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get isFirst() {
+    		throw new Error("<Item>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isFirst(value) {
+    		throw new Error("<Item>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get isHover() {
+    		throw new Error("<Item>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isHover(value) {
+    		throw new Error("<Item>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get getOptionLabel() {
+    		throw new Error("<Item>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set getOptionLabel(value) {
+    		throw new Error("<Item>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get item() {
+    		throw new Error("<Item>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set item(value) {
+    		throw new Error("<Item>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get filterText() {
+    		throw new Error("<Item>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set filterText(value) {
+    		throw new Error("<Item>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* node_modules/svelte-select/src/VirtualList.svelte generated by Svelte v3.12.1 */
+
+    const file$7 = "node_modules/svelte-select/src/VirtualList.svelte";
+
+    const get_default_slot_changes = ({ row, visible, hoverItemIndex }) => ({
+    	item: visible,
+    	i: visible,
+    	hoverItemIndex: hoverItemIndex
+    });
+    const get_default_slot_context = ({ row, visible, hoverItemIndex }) => ({
+    	item: row.data,
+    	i: row.index,
+    	hoverItemIndex: hoverItemIndex
+    });
+
+    function get_each_context$4(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.row = list[i];
+    	return child_ctx;
+    }
+
+    // (158:2) {#each visible as row (row.index)}
+    function create_each_block$4(key_1, ctx) {
+    	var svelte_virtual_list_row, t0, t1, current;
+
+    	const default_slot_template = ctx.$$slots.default;
+    	const default_slot = create_slot(default_slot_template, ctx, get_default_slot_context);
+
+    	const block = {
+    		key: key_1,
+
+    		first: null,
+
+    		c: function create() {
+    			svelte_virtual_list_row = element("svelte-virtual-list-row");
+
+    			if (!default_slot) {
+    				t0 = text("Missing template");
+    			}
+
+    			if (default_slot) default_slot.c();
+    			t1 = space();
+
+    			set_custom_element_data(svelte_virtual_list_row, "class", "svelte-p6ehlv");
+    			add_location(svelte_virtual_list_row, file$7, 158, 3, 3514);
+    			this.first = svelte_virtual_list_row;
+    		},
+
+    		l: function claim(nodes) {
+    			if (default_slot) default_slot.l(svelte_virtual_list_row_nodes);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, svelte_virtual_list_row, anchor);
+
+    			if (!default_slot) {
+    				append_dev(svelte_virtual_list_row, t0);
+    			}
+
+    			else {
+    				default_slot.m(svelte_virtual_list_row, null);
+    			}
+
+    			append_dev(svelte_virtual_list_row, t1);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (default_slot && default_slot.p && (changed.$$scope || changed.visible || changed.hoverItemIndex)) {
+    				default_slot.p(
+    					get_slot_changes(default_slot_template, ctx, changed, get_default_slot_changes),
+    					get_slot_context(default_slot_template, ctx, get_default_slot_context)
+    				);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(default_slot, local);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(default_slot, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(svelte_virtual_list_row);
+    			}
+
+    			if (default_slot) default_slot.d(detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$4.name, type: "each", source: "(158:2) {#each visible as row (row.index)}", ctx });
+    	return block;
+    }
+
+    function create_fragment$8(ctx) {
+    	var svelte_virtual_list_viewport, svelte_virtual_list_contents, each_blocks = [], each_1_lookup = new Map(), svelte_virtual_list_viewport_resize_listener, current, dispose;
+
+    	let each_value = ctx.visible;
+
+    	const get_key = ctx => ctx.row.index;
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		let child_ctx = get_each_context$4(ctx, each_value, i);
+    		let key = get_key(child_ctx);
+    		each_1_lookup.set(key, each_blocks[i] = create_each_block$4(key, child_ctx));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			svelte_virtual_list_viewport = element("svelte-virtual-list-viewport");
+    			svelte_virtual_list_contents = element("svelte-virtual-list-contents");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+    			set_style(svelte_virtual_list_contents, "padding-top", "" + ctx.top + "px");
+    			set_style(svelte_virtual_list_contents, "padding-bottom", "" + ctx.bottom + "px");
+    			set_custom_element_data(svelte_virtual_list_contents, "class", "svelte-p6ehlv");
+    			add_location(svelte_virtual_list_contents, file$7, 156, 1, 3364);
+    			add_render_callback(() => ctx.svelte_virtual_list_viewport_resize_handler.call(svelte_virtual_list_viewport));
+    			set_style(svelte_virtual_list_viewport, "height", ctx.height);
+    			set_custom_element_data(svelte_virtual_list_viewport, "class", "svelte-p6ehlv");
+    			add_location(svelte_virtual_list_viewport, file$7, 154, 0, 3222);
+    			dispose = listen_dev(svelte_virtual_list_viewport, "scroll", ctx.handle_scroll);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, svelte_virtual_list_viewport, anchor);
+    			append_dev(svelte_virtual_list_viewport, svelte_virtual_list_contents);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(svelte_virtual_list_contents, null);
+    			}
+
+    			ctx.svelte_virtual_list_contents_binding(svelte_virtual_list_contents);
+    			svelte_virtual_list_viewport_resize_listener = add_resize_listener(svelte_virtual_list_viewport, ctx.svelte_virtual_list_viewport_resize_handler.bind(svelte_virtual_list_viewport));
+    			ctx.svelte_virtual_list_viewport_binding(svelte_virtual_list_viewport);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			const each_value = ctx.visible;
+
+    			group_outros();
+    			each_blocks = update_keyed_each(each_blocks, changed, get_key, 1, ctx, each_value, each_1_lookup, svelte_virtual_list_contents, outro_and_destroy_block, create_each_block$4, null, get_each_context$4);
+    			check_outros();
+
+    			if (!current || changed.top) {
+    				set_style(svelte_virtual_list_contents, "padding-top", "" + ctx.top + "px");
+    			}
+
+    			if (!current || changed.bottom) {
+    				set_style(svelte_virtual_list_contents, "padding-bottom", "" + ctx.bottom + "px");
+    			}
+
+    			if (!current || changed.height) {
+    				set_style(svelte_virtual_list_viewport, "height", ctx.height);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(svelte_virtual_list_viewport);
+    			}
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].d();
+    			}
+
+    			ctx.svelte_virtual_list_contents_binding(null);
+    			svelte_virtual_list_viewport_resize_listener.cancel();
+    			ctx.svelte_virtual_list_viewport_binding(null);
+    			dispose();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$8.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function instance$8($$self, $$props, $$invalidate) {
+    	// props
+    	let { items = undefined, height = '100%', itemHeight = 40, hoverItemIndex = 0, start = 0, end = 0 } = $$props;
+
+    	// local state
+    	let height_map = [];
+    	let rows;
+    	let viewport;
+    	let contents;
+    	let viewport_height = 0;
+    	let visible;
+    	let mounted;
+
+    	let top = 0;
+    	let bottom = 0;
+    	let average_height;
+
+    	async function refresh(items, viewport_height, itemHeight) {
+    		const { scrollTop } = viewport;
+
+    		await tick(); // wait until the DOM is up to date
+
+    		let content_height = top - scrollTop;
+    		let i = start;
+
+    		while (content_height < viewport_height && i < items.length) {
+    			let row = rows[i - start];
+
+    			if (!row) {
+    				$$invalidate('end', end = i + 1);
+    				await tick(); // render the newly visible row
+    				row = rows[i - start];
+    			}
+
+    			const row_height = height_map[i] = itemHeight || row.offsetHeight;
+    			content_height += row_height;
+    			i += 1;
+    		}
+
+    		$$invalidate('end', end = i);
+
+    		const remaining = items.length - end;
+    		average_height = (top + content_height) / end;
+
+    		$$invalidate('bottom', bottom = remaining * average_height);
+    		height_map.length = items.length;
+
+    		$$invalidate('viewport', viewport.scrollTop = 0, viewport);
+    	}
+
+    	async function handle_scroll() {
+    		const { scrollTop } = viewport;
+
+    		const old_start = start;
+
+    		for (let v = 0; v < rows.length; v += 1) {
+    			height_map[start + v] = itemHeight || rows[v].offsetHeight;
+    		}
+
+    		let i = 0;
+    		let y = 0;
+
+    		while (i < items.length) {
+    			const row_height = height_map[i] || average_height;
+    			if (y + row_height > scrollTop) {
+    				$$invalidate('start', start = i);
+    				$$invalidate('top', top = y);
+
+    				break;
+    			}
+
+    			y += row_height;
+    			i += 1;
+    		}
+
+    		while (i < items.length) {
+    			y += height_map[i] || average_height;
+    			i += 1;
+
+    			if (y > scrollTop + viewport_height) break;
+    		}
+
+    		$$invalidate('end', end = i);
+
+    		const remaining = items.length - end;
+    		average_height = y / end;
+
+    		while (i < items.length) height_map[i++] = average_height;
+    		$$invalidate('bottom', bottom = remaining * average_height);
+
+    		// prevent jumping if we scrolled up into unknown territory
+    		if (start < old_start) {
+    			await tick();
+
+    			let expected_height = 0;
+    			let actual_height = 0;
+
+    			for (let i = start; i < old_start; i += 1) {
+    				if (rows[i - start]) {
+    					expected_height += height_map[i];
+    					actual_height += itemHeight || rows[i - start].offsetHeight;
+    				}
+    			}
+
+    			const d = actual_height - expected_height;
+    			viewport.scrollTo(0, scrollTop + d);
+    		}
+
+    		// TODO if we overestimated the space these
+    		// rows would occupy we may need to add some
+    		// more. maybe we can just call handle_scroll again?
+    	}
+
+    	// trigger initial refresh
+    	onMount(() => {
+    		rows = contents.getElementsByTagName('svelte-virtual-list-row');
+    		$$invalidate('mounted', mounted = true);
+    	});
+
+    	const writable_props = ['items', 'height', 'itemHeight', 'hoverItemIndex', 'start', 'end'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<VirtualList> was created with unknown prop '${key}'`);
+    	});
+
+    	let { $$slots = {}, $$scope } = $$props;
+
+    	function svelte_virtual_list_contents_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			$$invalidate('contents', contents = $$value);
+    		});
+    	}
+
+    	function svelte_virtual_list_viewport_resize_handler() {
+    		viewport_height = this.offsetHeight;
+    		$$invalidate('viewport_height', viewport_height);
+    	}
+
+    	function svelte_virtual_list_viewport_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			$$invalidate('viewport', viewport = $$value);
+    		});
+    	}
+
+    	$$self.$set = $$props => {
+    		if ('items' in $$props) $$invalidate('items', items = $$props.items);
+    		if ('height' in $$props) $$invalidate('height', height = $$props.height);
+    		if ('itemHeight' in $$props) $$invalidate('itemHeight', itemHeight = $$props.itemHeight);
+    		if ('hoverItemIndex' in $$props) $$invalidate('hoverItemIndex', hoverItemIndex = $$props.hoverItemIndex);
+    		if ('start' in $$props) $$invalidate('start', start = $$props.start);
+    		if ('end' in $$props) $$invalidate('end', end = $$props.end);
+    		if ('$$scope' in $$props) $$invalidate('$$scope', $$scope = $$props.$$scope);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { items, height, itemHeight, hoverItemIndex, start, end, height_map, rows, viewport, contents, viewport_height, visible, mounted, top, bottom, average_height };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('items' in $$props) $$invalidate('items', items = $$props.items);
+    		if ('height' in $$props) $$invalidate('height', height = $$props.height);
+    		if ('itemHeight' in $$props) $$invalidate('itemHeight', itemHeight = $$props.itemHeight);
+    		if ('hoverItemIndex' in $$props) $$invalidate('hoverItemIndex', hoverItemIndex = $$props.hoverItemIndex);
+    		if ('start' in $$props) $$invalidate('start', start = $$props.start);
+    		if ('end' in $$props) $$invalidate('end', end = $$props.end);
+    		if ('height_map' in $$props) height_map = $$props.height_map;
+    		if ('rows' in $$props) rows = $$props.rows;
+    		if ('viewport' in $$props) $$invalidate('viewport', viewport = $$props.viewport);
+    		if ('contents' in $$props) $$invalidate('contents', contents = $$props.contents);
+    		if ('viewport_height' in $$props) $$invalidate('viewport_height', viewport_height = $$props.viewport_height);
+    		if ('visible' in $$props) $$invalidate('visible', visible = $$props.visible);
+    		if ('mounted' in $$props) $$invalidate('mounted', mounted = $$props.mounted);
+    		if ('top' in $$props) $$invalidate('top', top = $$props.top);
+    		if ('bottom' in $$props) $$invalidate('bottom', bottom = $$props.bottom);
+    		if ('average_height' in $$props) average_height = $$props.average_height;
+    	};
+
+    	$$self.$$.update = ($$dirty = { items: 1, start: 1, end: 1, mounted: 1, viewport_height: 1, itemHeight: 1 }) => {
+    		if ($$dirty.items || $$dirty.start || $$dirty.end) { $$invalidate('visible', visible = items.slice(start, end).map((data, i) => {
+    				return { index: i + start, data };
+    			})); }
+    		if ($$dirty.mounted || $$dirty.items || $$dirty.viewport_height || $$dirty.itemHeight) { if (mounted) refresh(items, viewport_height, itemHeight); }
+    	};
+
+    	return {
+    		items,
+    		height,
+    		itemHeight,
+    		hoverItemIndex,
+    		start,
+    		end,
+    		viewport,
+    		contents,
+    		viewport_height,
+    		visible,
+    		top,
+    		bottom,
+    		handle_scroll,
+    		svelte_virtual_list_contents_binding,
+    		svelte_virtual_list_viewport_resize_handler,
+    		svelte_virtual_list_viewport_binding,
+    		$$slots,
+    		$$scope
+    	};
+    }
+
+    class VirtualList extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$8, create_fragment$8, safe_not_equal, ["items", "height", "itemHeight", "hoverItemIndex", "start", "end"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "VirtualList", options, id: create_fragment$8.name });
+    	}
+
+    	get items() {
+    		throw new Error("<VirtualList>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set items(value) {
+    		throw new Error("<VirtualList>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get height() {
+    		throw new Error("<VirtualList>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set height(value) {
+    		throw new Error("<VirtualList>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get itemHeight() {
+    		throw new Error("<VirtualList>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set itemHeight(value) {
+    		throw new Error("<VirtualList>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get hoverItemIndex() {
+    		throw new Error("<VirtualList>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set hoverItemIndex(value) {
+    		throw new Error("<VirtualList>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get start() {
+    		throw new Error("<VirtualList>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set start(value) {
+    		throw new Error("<VirtualList>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get end() {
+    		throw new Error("<VirtualList>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set end(value) {
+    		throw new Error("<VirtualList>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* node_modules/svelte-select/src/List.svelte generated by Svelte v3.12.1 */
+
+    const file$8 = "node_modules/svelte-select/src/List.svelte";
+
+    function get_each_context$5(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.item = list[i];
+    	child_ctx.i = i;
+    	return child_ctx;
+    }
+
+    // (207:0) {#if isVirtualList}
+    function create_if_block_3$2(ctx) {
+    	var div, current;
+
+    	var virtuallist = new VirtualList({
+    		props: {
+    		items: ctx.items,
+    		itemHeight: ctx.itemHeight,
+    		$$slots: {
+    		default: [create_default_slot, ({ item, i }) => ({ item, i })]
+    	},
+    		$$scope: { ctx }
+    	},
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			virtuallist.$$.fragment.c();
+    			attr_dev(div, "class", "listContainer virtualList svelte-bqv8jo");
+    			add_location(div, file$8, 207, 0, 5855);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			mount_component(virtuallist, div, null);
+    			ctx.div_binding(div);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var virtuallist_changes = {};
+    			if (changed.items) virtuallist_changes.items = ctx.items;
+    			if (changed.itemHeight) virtuallist_changes.itemHeight = ctx.itemHeight;
+    			if (changed.$$scope || changed.Item || changed.filterText || changed.getOptionLabel || changed.selectedValue || changed.optionIdentifier || changed.hoverItemIndex || changed.items) virtuallist_changes.$$scope = { changed, ctx };
+    			virtuallist.$set(virtuallist_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(virtuallist.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(virtuallist.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+
+    			destroy_component(virtuallist);
+
+    			ctx.div_binding(null);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_3$2.name, type: "if", source: "(207:0) {#if isVirtualList}", ctx });
+    	return block;
+    }
+
+    // (210:2) <VirtualList {items} {itemHeight} let:item let:i>
+    function create_default_slot(ctx) {
+    	var div, current, dispose;
+
+    	var switch_value = ctx.Item;
+
+    	function switch_props(ctx) {
+    		return {
+    			props: {
+    			item: ctx.item,
+    			filterText: ctx.filterText,
+    			getOptionLabel: ctx.getOptionLabel,
+    			isFirst: isItemFirst(ctx.i),
+    			isActive: isItemActive(ctx.item, ctx.selectedValue, ctx.optionIdentifier),
+    			isHover: isItemHover(ctx.hoverItemIndex, ctx.item, ctx.i, ctx.items)
+    		},
+    			$$inline: true
+    		};
+    	}
+
+    	if (switch_value) {
+    		var switch_instance = new switch_value(switch_props(ctx));
+    	}
+
+    	function mouseover_handler() {
+    		return ctx.mouseover_handler(ctx);
+    	}
+
+    	function click_handler(...args) {
+    		return ctx.click_handler(ctx, ...args);
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			if (switch_instance) switch_instance.$$.fragment.c();
+    			attr_dev(div, "class", "listItem");
+    			add_location(div, file$8, 211, 4, 5977);
+
+    			dispose = [
+    				listen_dev(div, "mouseover", mouseover_handler),
+    				listen_dev(div, "click", click_handler)
+    			];
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+
+    			if (switch_instance) {
+    				mount_component(switch_instance, div, null);
+    			}
+
+    			current = true;
+    		},
+
+    		p: function update(changed, new_ctx) {
+    			ctx = new_ctx;
+    			var switch_instance_changes = {};
+    			if (changed.item) switch_instance_changes.item = ctx.item;
+    			if (changed.filterText) switch_instance_changes.filterText = ctx.filterText;
+    			if (changed.getOptionLabel) switch_instance_changes.getOptionLabel = ctx.getOptionLabel;
+    			if (changed.i) switch_instance_changes.isFirst = isItemFirst(ctx.i);
+    			if (changed.item || changed.selectedValue || changed.optionIdentifier) switch_instance_changes.isActive = isItemActive(ctx.item, ctx.selectedValue, ctx.optionIdentifier);
+    			if (changed.hoverItemIndex || changed.item || changed.i || changed.items) switch_instance_changes.isHover = isItemHover(ctx.hoverItemIndex, ctx.item, ctx.i, ctx.items);
+
+    			if (switch_value !== (switch_value = ctx.Item)) {
+    				if (switch_instance) {
+    					group_outros();
+    					const old_component = switch_instance;
+    					transition_out(old_component.$$.fragment, 1, 0, () => {
+    						destroy_component(old_component, 1);
+    					});
+    					check_outros();
+    				}
+
+    				if (switch_value) {
+    					switch_instance = new switch_value(switch_props(ctx));
+
+    					switch_instance.$$.fragment.c();
+    					transition_in(switch_instance.$$.fragment, 1);
+    					mount_component(switch_instance, div, null);
+    				} else {
+    					switch_instance = null;
+    				}
+    			}
+
+    			else if (switch_value) {
+    				switch_instance.$set(switch_instance_changes);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			if (switch_instance) transition_in(switch_instance.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			if (switch_instance) transition_out(switch_instance.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+
+    			if (switch_instance) destroy_component(switch_instance);
+    			run_all(dispose);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_default_slot.name, type: "slot", source: "(210:2) <VirtualList {items} {itemHeight} let:item let:i>", ctx });
+    	return block;
+    }
+
+    // (229:0) {#if !isVirtualList}
+    function create_if_block$5(ctx) {
+    	var div, current;
+
+    	let each_value = ctx.items;
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$5(get_each_context$5(ctx, each_value, i));
+    	}
+
+    	const out = i => transition_out(each_blocks[i], 1, 1, () => {
+    		each_blocks[i] = null;
+    	});
+
+    	let each_1_else = null;
+
+    	if (!each_value.length) {
+    		each_1_else = create_else_block_1(ctx);
+    		each_1_else.c();
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+    			attr_dev(div, "class", "listContainer svelte-bqv8jo");
+    			add_location(div, file$8, 229, 0, 6487);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div, null);
+    			}
+
+    			if (each_1_else) {
+    				each_1_else.m(div, null);
+    			}
+
+    			ctx.div_binding_1(div);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.items || changed.getGroupHeaderLabel || changed.Item || changed.filterText || changed.getOptionLabel || changed.isItemFirst || changed.isItemActive || changed.selectedValue || changed.optionIdentifier || changed.isItemHover || changed.hoverItemIndex || changed.hideEmptyState || changed.noOptionsMessage) {
+    				each_value = ctx.items;
+
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$5(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    						transition_in(each_blocks[i], 1);
+    					} else {
+    						each_blocks[i] = create_each_block$5(child_ctx);
+    						each_blocks[i].c();
+    						transition_in(each_blocks[i], 1);
+    						each_blocks[i].m(div, null);
+    					}
+    				}
+
+    				group_outros();
+    				for (i = each_value.length; i < each_blocks.length; i += 1) {
+    					out(i);
+    				}
+    				check_outros();
+    			}
+
+    			if (!each_value.length && each_1_else) {
+    				each_1_else.p(changed, ctx);
+    			} else if (!each_value.length) {
+    				each_1_else = create_else_block_1(ctx);
+    				each_1_else.c();
+    				each_1_else.m(div, null);
+    			} else if (each_1_else) {
+    				each_1_else.d(1);
+    				each_1_else = null;
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			for (let i = 0; i < each_value.length; i += 1) {
+    				transition_in(each_blocks[i]);
+    			}
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			each_blocks = each_blocks.filter(Boolean);
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				transition_out(each_blocks[i]);
+    			}
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+
+    			if (each_1_else) each_1_else.d();
+
+    			ctx.div_binding_1(null);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$5.name, type: "if", source: "(229:0) {#if !isVirtualList}", ctx });
+    	return block;
+    }
+
+    // (251:2) {:else}
+    function create_else_block_1(ctx) {
+    	var if_block_anchor;
+
+    	var if_block = (!ctx.hideEmptyState) && create_if_block_2$2(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (!ctx.hideEmptyState) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    				} else {
+    					if_block = create_if_block_2$2(ctx);
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block_1.name, type: "else", source: "(251:2) {:else}", ctx });
+    	return block;
+    }
+
+    // (252:4) {#if !hideEmptyState}
+    function create_if_block_2$2(ctx) {
+    	var div, t;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			t = text(ctx.noOptionsMessage);
+    			attr_dev(div, "class", "empty svelte-bqv8jo");
+    			add_location(div, file$8, 252, 6, 7191);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, t);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.noOptionsMessage) {
+    				set_data_dev(t, ctx.noOptionsMessage);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_2$2.name, type: "if", source: "(252:4) {#if !hideEmptyState}", ctx });
+    	return block;
+    }
+
+    // (234:4) { :else }
+    function create_else_block$1(ctx) {
+    	var div, t, current, dispose;
+
+    	var switch_value = ctx.Item;
+
+    	function switch_props(ctx) {
+    		return {
+    			props: {
+    			item: ctx.item,
+    			filterText: ctx.filterText,
+    			getOptionLabel: ctx.getOptionLabel,
+    			isFirst: isItemFirst(ctx.i),
+    			isActive: isItemActive(ctx.item, ctx.selectedValue, ctx.optionIdentifier),
+    			isHover: isItemHover(ctx.hoverItemIndex, ctx.item, ctx.i, ctx.items)
+    		},
+    			$$inline: true
+    		};
+    	}
+
+    	if (switch_value) {
+    		var switch_instance = new switch_value(switch_props(ctx));
+    	}
+
+    	function mouseover_handler_1() {
+    		return ctx.mouseover_handler_1(ctx);
+    	}
+
+    	function click_handler_1(...args) {
+    		return ctx.click_handler_1(ctx, ...args);
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			if (switch_instance) switch_instance.$$.fragment.c();
+    			t = space();
+    			attr_dev(div, "class", "listItem");
+    			add_location(div, file$8, 234, 4, 6701);
+
+    			dispose = [
+    				listen_dev(div, "mouseover", mouseover_handler_1),
+    				listen_dev(div, "click", click_handler_1)
+    			];
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+
+    			if (switch_instance) {
+    				mount_component(switch_instance, div, null);
+    			}
+
+    			append_dev(div, t);
+    			current = true;
+    		},
+
+    		p: function update(changed, new_ctx) {
+    			ctx = new_ctx;
+    			var switch_instance_changes = {};
+    			if (changed.items) switch_instance_changes.item = ctx.item;
+    			if (changed.filterText) switch_instance_changes.filterText = ctx.filterText;
+    			if (changed.getOptionLabel) switch_instance_changes.getOptionLabel = ctx.getOptionLabel;
+    			if (changed.items || changed.selectedValue || changed.optionIdentifier) switch_instance_changes.isActive = isItemActive(ctx.item, ctx.selectedValue, ctx.optionIdentifier);
+    			if (changed.hoverItemIndex || changed.items) switch_instance_changes.isHover = isItemHover(ctx.hoverItemIndex, ctx.item, ctx.i, ctx.items);
+
+    			if (switch_value !== (switch_value = ctx.Item)) {
+    				if (switch_instance) {
+    					group_outros();
+    					const old_component = switch_instance;
+    					transition_out(old_component.$$.fragment, 1, 0, () => {
+    						destroy_component(old_component, 1);
+    					});
+    					check_outros();
+    				}
+
+    				if (switch_value) {
+    					switch_instance = new switch_value(switch_props(ctx));
+
+    					switch_instance.$$.fragment.c();
+    					transition_in(switch_instance.$$.fragment, 1);
+    					mount_component(switch_instance, div, t);
+    				} else {
+    					switch_instance = null;
+    				}
+    			}
+
+    			else if (switch_value) {
+    				switch_instance.$set(switch_instance_changes);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			if (switch_instance) transition_in(switch_instance.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			if (switch_instance) transition_out(switch_instance.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+
+    			if (switch_instance) destroy_component(switch_instance);
+    			run_all(dispose);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_else_block$1.name, type: "else", source: "(234:4) { :else }", ctx });
+    	return block;
+    }
+
+    // (232:4) {#if item.isGroupHeader && !item.isSelectable}
+    function create_if_block_1$3(ctx) {
+    	var div, t_value = ctx.getGroupHeaderLabel(ctx.item) + "", t;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			t = text(t_value);
+    			attr_dev(div, "class", "listGroupTitle svelte-bqv8jo");
+    			add_location(div, file$8, 232, 6, 6621);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, t);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.getGroupHeaderLabel || changed.items) && t_value !== (t_value = ctx.getGroupHeaderLabel(ctx.item) + "")) {
+    				set_data_dev(t, t_value);
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1$3.name, type: "if", source: "(232:4) {#if item.isGroupHeader && !item.isSelectable}", ctx });
+    	return block;
+    }
+
+    // (231:2) {#each items as item, i}
+    function create_each_block$5(ctx) {
+    	var current_block_type_index, if_block, if_block_anchor, current;
+
+    	var if_block_creators = [
+    		create_if_block_1$3,
+    		create_else_block$1
+    	];
+
+    	var if_blocks = [];
+
+    	function select_block_type(changed, ctx) {
+    		if (ctx.item.isGroupHeader && !ctx.item.isSelectable) return 0;
+    		return 1;
+    	}
+
+    	current_block_type_index = select_block_type(null, ctx);
+    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+    	const block = {
+    		c: function create() {
+    			if_block.c();
+    			if_block_anchor = empty();
+    		},
+
+    		m: function mount(target, anchor) {
+    			if_blocks[current_block_type_index].m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type(changed, ctx);
+    			if (current_block_type_index === previous_block_index) {
+    				if_blocks[current_block_type_index].p(changed, ctx);
+    			} else {
+    				group_outros();
+    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    					if_blocks[previous_block_index] = null;
+    				});
+    				check_outros();
+
+    				if_block = if_blocks[current_block_type_index];
+    				if (!if_block) {
+    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    					if_block.c();
+    				}
+    				transition_in(if_block, 1);
+    				if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if_blocks[current_block_type_index].d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$5.name, type: "each", source: "(231:2) {#each items as item, i}", ctx });
+    	return block;
+    }
+
+    function create_fragment$9(ctx) {
+    	var t, if_block1_anchor, current, dispose;
+
+    	var if_block0 = (ctx.isVirtualList) && create_if_block_3$2(ctx);
+
+    	var if_block1 = (!ctx.isVirtualList) && create_if_block$5(ctx);
+
+    	const block = {
+    		c: function create() {
+    			if (if_block0) if_block0.c();
+    			t = space();
+    			if (if_block1) if_block1.c();
+    			if_block1_anchor = empty();
+    			dispose = listen_dev(window, "keydown", ctx.handleKeyDown);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			if (if_block0) if_block0.m(target, anchor);
+    			insert_dev(target, t, anchor);
+    			if (if_block1) if_block1.m(target, anchor);
+    			insert_dev(target, if_block1_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (ctx.isVirtualList) {
+    				if (if_block0) {
+    					if_block0.p(changed, ctx);
+    					transition_in(if_block0, 1);
+    				} else {
+    					if_block0 = create_if_block_3$2(ctx);
+    					if_block0.c();
+    					transition_in(if_block0, 1);
+    					if_block0.m(t.parentNode, t);
+    				}
+    			} else if (if_block0) {
+    				group_outros();
+    				transition_out(if_block0, 1, 1, () => {
+    					if_block0 = null;
+    				});
+    				check_outros();
+    			}
+
+    			if (!ctx.isVirtualList) {
+    				if (if_block1) {
+    					if_block1.p(changed, ctx);
+    					transition_in(if_block1, 1);
+    				} else {
+    					if_block1 = create_if_block$5(ctx);
+    					if_block1.c();
+    					transition_in(if_block1, 1);
+    					if_block1.m(if_block1_anchor.parentNode, if_block1_anchor);
+    				}
+    			} else if (if_block1) {
+    				group_outros();
+    				transition_out(if_block1, 1, 1, () => {
+    					if_block1 = null;
+    				});
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block0);
+    			transition_in(if_block1);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block0);
+    			transition_out(if_block1);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (if_block0) if_block0.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(t);
+    			}
+
+    			if (if_block1) if_block1.d(detaching);
+
+    			if (detaching) {
+    				detach_dev(if_block1_anchor);
+    			}
+
+    			dispose();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$9.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function isItemActive(item, selectedValue, optionIdentifier) {
+      return selectedValue && (selectedValue[optionIdentifier] === item[optionIdentifier]);
+    }
+
+    function isItemFirst(itemIndex) {
+      return itemIndex === 0;
+    }
+
+    function isItemHover(hoverItemIndex, item, itemIndex, items) {
+      return hoverItemIndex === itemIndex || items.length === 1;
+    }
+
+    function instance$9($$self, $$props, $$invalidate) {
+    	const dispatch = createEventDispatcher();
+
+      let { container = undefined } = $$props;
+
+      let { Item: Item$1 = Item, isVirtualList = false, items = [], getOptionLabel = (option, filterText) => {
+        if (option) return option.isCreator ? `Create \"${filterText}\"` : option.label;
+      } } = $$props;
+      let { getGroupHeaderLabel = (option) => { return option.label } } = $$props;
+      let { itemHeight = 40, hoverItemIndex = 0, selectedValue = undefined, start = 0, end = 0, optionIdentifier = 'value', hideEmptyState = false, noOptionsMessage = 'No options', getOptionString = (option) => option } = $$props;
+      let { isMulti = false, activeItemIndex = 0, filterText = '', isCreatable = false } = $$props;
+
+      let isScrollingTimer = 0;
+      let isScrolling = false;
+      let prev_items;
+      let prev_activeItemIndex;
+      let prev_selectedValue;
+
+      onMount(() => {
+        if (items.length > 0 && !isMulti && selectedValue) {
+          const _hoverItemIndex = items.findIndex((item) => item[optionIdentifier] === selectedValue[optionIdentifier]);
+
+          if (_hoverItemIndex) {
+            $$invalidate('hoverItemIndex', hoverItemIndex = _hoverItemIndex);
+          }
+        }
+
+        scrollToActiveItem('active');
+
+
+        container.addEventListener('scroll', () => {
+          clearTimeout(isScrollingTimer);
+
+          isScrollingTimer = setTimeout(() => {
+            isScrolling = false;
+          }, 100);
+        }, false);
+      });
+
+      onDestroy(() => {
+        // clearTimeout(isScrollingTimer);
+      });
+
+      beforeUpdate(() => {
+
+        if (items !== prev_items && items.length > 0) {
+          $$invalidate('hoverItemIndex', hoverItemIndex = 0);
+        }
+
+
+        // if (prev_activeItemIndex && activeItemIndex > -1) {
+        //   hoverItemIndex = activeItemIndex;
+
+        //   scrollToActiveItem('active');
+        // }
+        // if (prev_selectedValue && selectedValue) {
+        //   scrollToActiveItem('active');
+
+        //   if (items && !isMulti) {
+        //     const hoverItemIndex = items.findIndex((item) => item[optionIdentifier] === selectedValue[optionIdentifier]);
+
+        //     if (hoverItemIndex) {
+        //       hoverItemIndex = hoverItemIndex;
+        //     }
+        //   }
+        // }
+
+        prev_items = items;
+        prev_activeItemIndex = activeItemIndex;
+        prev_selectedValue = selectedValue;
+      });
+
+      function handleSelect(item) {
+        if (item.isCreator) return;
+        dispatch('itemSelected', item);
+      }
+
+      function handleHover(i) {
+        if (isScrolling) return;
+        $$invalidate('hoverItemIndex', hoverItemIndex = i);
+      }
+
+      function handleClick(args) {
+        const { item, i, event } = args;
+        event.stopPropagation();
+
+        if (selectedValue && !isMulti && selectedValue[optionIdentifier] === item[optionIdentifier]) return;
+
+        if (item.isCreator) {
+          dispatch('itemCreated', filterText);
+        } else {
+          $$invalidate('activeItemIndex', activeItemIndex = i);
+          $$invalidate('hoverItemIndex', hoverItemIndex = i);
+          handleSelect(item);
+        }
+      }
+
+      async function updateHoverItem(increment) {
+        if (isVirtualList) return;
+
+        let isNonSelectableItem = true;
+
+        while (isNonSelectableItem) {
+          if (increment > 0 && hoverItemIndex === (items.length - 1)) {
+            $$invalidate('hoverItemIndex', hoverItemIndex = 0);
+          }
+          else if (increment < 0 && hoverItemIndex === 0) {
+            $$invalidate('hoverItemIndex', hoverItemIndex = items.length - 1);
+          }
+          else {
+            $$invalidate('hoverItemIndex', hoverItemIndex = hoverItemIndex + increment);
+          }
+
+          isNonSelectableItem = items[hoverItemIndex].isGroupHeader && !items[hoverItemIndex].isSelectable;
+        }
+
+        await tick();
+
+        scrollToActiveItem('hover');
+      }
+
+      function handleKeyDown(e) {
+        switch (e.key) {
+          case 'ArrowDown':
+            e.preventDefault();
+            items.length && updateHoverItem(1);
+            break;
+          case 'ArrowUp':
+            e.preventDefault();
+            items.length && updateHoverItem(-1);
+            break;
+          case 'Enter':
+            e.preventDefault();
+            if (items.length === 0) break;
+            const hoverItem = items[hoverItemIndex];
+            if (selectedValue && !isMulti && selectedValue[optionIdentifier] === hoverItem[optionIdentifier]) break;
+
+            if (hoverItem.isCreator) {
+              dispatch('itemCreated', filterText);
+            } else {
+              $$invalidate('activeItemIndex', activeItemIndex = hoverItemIndex);
+              handleSelect(items[hoverItemIndex]);
+            }
+            break;
+          case 'Tab':
+            e.preventDefault();
+            if (items.length === 0) break;
+            if (selectedValue && selectedValue[optionIdentifier] === items[hoverItemIndex][optionIdentifier]) return;
+            $$invalidate('activeItemIndex', activeItemIndex = hoverItemIndex);
+            handleSelect(items[hoverItemIndex]);
+            break;
+        }
+      }
+
+      function scrollToActiveItem(className) {
+        if (isVirtualList || !container) return;
+
+        let offsetBounding;
+        const focusedElemBounding = container.querySelector(`.listItem .${className}`);
+
+        if (focusedElemBounding) {
+          offsetBounding = container.getBoundingClientRect().bottom - focusedElemBounding.getBoundingClientRect().bottom;
+        }
+
+        $$invalidate('container', container.scrollTop -= offsetBounding, container);
+      }
+    	const writable_props = ['container', 'Item', 'isVirtualList', 'items', 'getOptionLabel', 'getGroupHeaderLabel', 'itemHeight', 'hoverItemIndex', 'selectedValue', 'start', 'end', 'optionIdentifier', 'hideEmptyState', 'noOptionsMessage', 'getOptionString', 'isMulti', 'activeItemIndex', 'filterText', 'isCreatable'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<List> was created with unknown prop '${key}'`);
+    	});
+
+    	const mouseover_handler = ({ i }) => handleHover(i);
+
+    	const click_handler = ({ item, i }, event) => handleClick({item, i, event});
+
+    	function div_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			$$invalidate('container', container = $$value);
+    		});
+    	}
+
+    	const mouseover_handler_1 = ({ i }) => handleHover(i);
+
+    	const click_handler_1 = ({ item, i }, event) => handleClick({item, i, event});
+
+    	function div_binding_1($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			$$invalidate('container', container = $$value);
+    		});
+    	}
+
+    	$$self.$set = $$props => {
+    		if ('container' in $$props) $$invalidate('container', container = $$props.container);
+    		if ('Item' in $$props) $$invalidate('Item', Item$1 = $$props.Item);
+    		if ('isVirtualList' in $$props) $$invalidate('isVirtualList', isVirtualList = $$props.isVirtualList);
+    		if ('items' in $$props) $$invalidate('items', items = $$props.items);
+    		if ('getOptionLabel' in $$props) $$invalidate('getOptionLabel', getOptionLabel = $$props.getOptionLabel);
+    		if ('getGroupHeaderLabel' in $$props) $$invalidate('getGroupHeaderLabel', getGroupHeaderLabel = $$props.getGroupHeaderLabel);
+    		if ('itemHeight' in $$props) $$invalidate('itemHeight', itemHeight = $$props.itemHeight);
+    		if ('hoverItemIndex' in $$props) $$invalidate('hoverItemIndex', hoverItemIndex = $$props.hoverItemIndex);
+    		if ('selectedValue' in $$props) $$invalidate('selectedValue', selectedValue = $$props.selectedValue);
+    		if ('start' in $$props) $$invalidate('start', start = $$props.start);
+    		if ('end' in $$props) $$invalidate('end', end = $$props.end);
+    		if ('optionIdentifier' in $$props) $$invalidate('optionIdentifier', optionIdentifier = $$props.optionIdentifier);
+    		if ('hideEmptyState' in $$props) $$invalidate('hideEmptyState', hideEmptyState = $$props.hideEmptyState);
+    		if ('noOptionsMessage' in $$props) $$invalidate('noOptionsMessage', noOptionsMessage = $$props.noOptionsMessage);
+    		if ('getOptionString' in $$props) $$invalidate('getOptionString', getOptionString = $$props.getOptionString);
+    		if ('isMulti' in $$props) $$invalidate('isMulti', isMulti = $$props.isMulti);
+    		if ('activeItemIndex' in $$props) $$invalidate('activeItemIndex', activeItemIndex = $$props.activeItemIndex);
+    		if ('filterText' in $$props) $$invalidate('filterText', filterText = $$props.filterText);
+    		if ('isCreatable' in $$props) $$invalidate('isCreatable', isCreatable = $$props.isCreatable);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { container, Item: Item$1, isVirtualList, items, getOptionLabel, getGroupHeaderLabel, itemHeight, hoverItemIndex, selectedValue, start, end, optionIdentifier, hideEmptyState, noOptionsMessage, getOptionString, isMulti, activeItemIndex, filterText, isCreatable, isScrollingTimer, isScrolling, prev_items, prev_activeItemIndex, prev_selectedValue };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('container' in $$props) $$invalidate('container', container = $$props.container);
+    		if ('Item' in $$props) $$invalidate('Item', Item$1 = $$props.Item);
+    		if ('isVirtualList' in $$props) $$invalidate('isVirtualList', isVirtualList = $$props.isVirtualList);
+    		if ('items' in $$props) $$invalidate('items', items = $$props.items);
+    		if ('getOptionLabel' in $$props) $$invalidate('getOptionLabel', getOptionLabel = $$props.getOptionLabel);
+    		if ('getGroupHeaderLabel' in $$props) $$invalidate('getGroupHeaderLabel', getGroupHeaderLabel = $$props.getGroupHeaderLabel);
+    		if ('itemHeight' in $$props) $$invalidate('itemHeight', itemHeight = $$props.itemHeight);
+    		if ('hoverItemIndex' in $$props) $$invalidate('hoverItemIndex', hoverItemIndex = $$props.hoverItemIndex);
+    		if ('selectedValue' in $$props) $$invalidate('selectedValue', selectedValue = $$props.selectedValue);
+    		if ('start' in $$props) $$invalidate('start', start = $$props.start);
+    		if ('end' in $$props) $$invalidate('end', end = $$props.end);
+    		if ('optionIdentifier' in $$props) $$invalidate('optionIdentifier', optionIdentifier = $$props.optionIdentifier);
+    		if ('hideEmptyState' in $$props) $$invalidate('hideEmptyState', hideEmptyState = $$props.hideEmptyState);
+    		if ('noOptionsMessage' in $$props) $$invalidate('noOptionsMessage', noOptionsMessage = $$props.noOptionsMessage);
+    		if ('getOptionString' in $$props) $$invalidate('getOptionString', getOptionString = $$props.getOptionString);
+    		if ('isMulti' in $$props) $$invalidate('isMulti', isMulti = $$props.isMulti);
+    		if ('activeItemIndex' in $$props) $$invalidate('activeItemIndex', activeItemIndex = $$props.activeItemIndex);
+    		if ('filterText' in $$props) $$invalidate('filterText', filterText = $$props.filterText);
+    		if ('isCreatable' in $$props) $$invalidate('isCreatable', isCreatable = $$props.isCreatable);
+    		if ('isScrollingTimer' in $$props) isScrollingTimer = $$props.isScrollingTimer;
+    		if ('isScrolling' in $$props) isScrolling = $$props.isScrolling;
+    		if ('prev_items' in $$props) prev_items = $$props.prev_items;
+    		if ('prev_activeItemIndex' in $$props) prev_activeItemIndex = $$props.prev_activeItemIndex;
+    		if ('prev_selectedValue' in $$props) prev_selectedValue = $$props.prev_selectedValue;
+    	};
+
+    	return {
+    		container,
+    		Item: Item$1,
+    		isVirtualList,
+    		items,
+    		getOptionLabel,
+    		getGroupHeaderLabel,
+    		itemHeight,
+    		hoverItemIndex,
+    		selectedValue,
+    		start,
+    		end,
+    		optionIdentifier,
+    		hideEmptyState,
+    		noOptionsMessage,
+    		getOptionString,
+    		isMulti,
+    		activeItemIndex,
+    		filterText,
+    		isCreatable,
+    		handleHover,
+    		handleClick,
+    		handleKeyDown,
+    		mouseover_handler,
+    		click_handler,
+    		div_binding,
+    		mouseover_handler_1,
+    		click_handler_1,
+    		div_binding_1
+    	};
+    }
+
+    class List extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$9, create_fragment$9, safe_not_equal, ["container", "Item", "isVirtualList", "items", "getOptionLabel", "getGroupHeaderLabel", "itemHeight", "hoverItemIndex", "selectedValue", "start", "end", "optionIdentifier", "hideEmptyState", "noOptionsMessage", "getOptionString", "isMulti", "activeItemIndex", "filterText", "isCreatable"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "List", options, id: create_fragment$9.name });
+    	}
+
+    	get container() {
+    		throw new Error("<List>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set container(value) {
+    		throw new Error("<List>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get Item() {
+    		throw new Error("<List>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set Item(value) {
+    		throw new Error("<List>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get isVirtualList() {
+    		throw new Error("<List>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isVirtualList(value) {
+    		throw new Error("<List>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get items() {
+    		throw new Error("<List>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set items(value) {
+    		throw new Error("<List>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get getOptionLabel() {
+    		throw new Error("<List>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set getOptionLabel(value) {
+    		throw new Error("<List>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get getGroupHeaderLabel() {
+    		throw new Error("<List>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set getGroupHeaderLabel(value) {
+    		throw new Error("<List>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get itemHeight() {
+    		throw new Error("<List>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set itemHeight(value) {
+    		throw new Error("<List>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get hoverItemIndex() {
+    		throw new Error("<List>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set hoverItemIndex(value) {
+    		throw new Error("<List>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get selectedValue() {
+    		throw new Error("<List>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set selectedValue(value) {
+    		throw new Error("<List>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get start() {
+    		throw new Error("<List>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set start(value) {
+    		throw new Error("<List>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get end() {
+    		throw new Error("<List>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set end(value) {
+    		throw new Error("<List>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get optionIdentifier() {
+    		throw new Error("<List>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set optionIdentifier(value) {
+    		throw new Error("<List>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get hideEmptyState() {
+    		throw new Error("<List>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set hideEmptyState(value) {
+    		throw new Error("<List>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get noOptionsMessage() {
+    		throw new Error("<List>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set noOptionsMessage(value) {
+    		throw new Error("<List>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get getOptionString() {
+    		throw new Error("<List>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set getOptionString(value) {
+    		throw new Error("<List>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get isMulti() {
+    		throw new Error("<List>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isMulti(value) {
+    		throw new Error("<List>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get activeItemIndex() {
+    		throw new Error("<List>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set activeItemIndex(value) {
+    		throw new Error("<List>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get filterText() {
+    		throw new Error("<List>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set filterText(value) {
+    		throw new Error("<List>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get isCreatable() {
+    		throw new Error("<List>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isCreatable(value) {
+    		throw new Error("<List>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* node_modules/svelte-select/src/Selection.svelte generated by Svelte v3.12.1 */
+
+    const file$9 = "node_modules/svelte-select/src/Selection.svelte";
+
+    function create_fragment$a(ctx) {
+    	var div, raw_value = ctx.getSelectionLabel(ctx.item) + "";
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			attr_dev(div, "class", "selection");
+    			add_location(div, file$9, 5, 0, 95);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			div.innerHTML = raw_value;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.getSelectionLabel || changed.item) && raw_value !== (raw_value = ctx.getSelectionLabel(ctx.item) + "")) {
+    				div.innerHTML = raw_value;
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$a.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function instance$a($$self, $$props, $$invalidate) {
+    	let { getSelectionLabel = undefined, item = undefined } = $$props;
+
+    	const writable_props = ['getSelectionLabel', 'item'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<Selection> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('getSelectionLabel' in $$props) $$invalidate('getSelectionLabel', getSelectionLabel = $$props.getSelectionLabel);
+    		if ('item' in $$props) $$invalidate('item', item = $$props.item);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { getSelectionLabel, item };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('getSelectionLabel' in $$props) $$invalidate('getSelectionLabel', getSelectionLabel = $$props.getSelectionLabel);
+    		if ('item' in $$props) $$invalidate('item', item = $$props.item);
+    	};
+
+    	return { getSelectionLabel, item };
+    }
+
+    class Selection extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$a, create_fragment$a, safe_not_equal, ["getSelectionLabel", "item"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Selection", options, id: create_fragment$a.name });
+    	}
+
+    	get getSelectionLabel() {
+    		throw new Error("<Selection>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set getSelectionLabel(value) {
+    		throw new Error("<Selection>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get item() {
+    		throw new Error("<Selection>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set item(value) {
+    		throw new Error("<Selection>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* node_modules/svelte-select/src/MultiSelection.svelte generated by Svelte v3.12.1 */
+
+    const file$a = "node_modules/svelte-select/src/MultiSelection.svelte";
+
+    function get_each_context$6(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.value = list[i];
+    	child_ctx.i = i;
+    	return child_ctx;
+    }
+
+    // (22:2) {#if !isDisabled}
+    function create_if_block$6(ctx) {
+    	var div, svg, path, dispose;
+
+    	function click_handler(...args) {
+    		return ctx.click_handler(ctx, ...args);
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			svg = svg_element("svg");
+    			path = svg_element("path");
+    			attr_dev(path, "d", "M34.923,37.251L24,26.328L13.077,37.251L9.436,33.61l10.923-10.923L9.436,11.765l3.641-3.641L24,19.047L34.923,8.124 l3.641,3.641L27.641,22.688L38.564,33.61L34.923,37.251z");
+    			add_location(path, file$a, 24, 6, 806);
+    			attr_dev(svg, "width", "100%");
+    			attr_dev(svg, "height", "100%");
+    			attr_dev(svg, "viewBox", "-2 -2 50 50");
+    			attr_dev(svg, "focusable", "false");
+    			attr_dev(svg, "role", "presentation");
+    			attr_dev(svg, "class", "svelte-rtzfov");
+    			add_location(svg, file$a, 23, 4, 707);
+    			attr_dev(div, "class", "multiSelectItem_clear svelte-rtzfov");
+    			add_location(div, file$a, 22, 2, 623);
+    			dispose = listen_dev(div, "click", click_handler);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, svg);
+    			append_dev(svg, path);
+    		},
+
+    		p: function update(changed, new_ctx) {
+    			ctx = new_ctx;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+
+    			dispose();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$6.name, type: "if", source: "(22:2) {#if !isDisabled}", ctx });
+    	return block;
+    }
+
+    // (17:0) {#each selectedValue as value, i}
+    function create_each_block$6(ctx) {
+    	var div1, div0, raw_value = ctx.getSelectionLabel(ctx.value) + "", t0, t1, div1_class_value;
+
+    	var if_block = (!ctx.isDisabled) && create_if_block$6(ctx);
+
+    	const block = {
+    		c: function create() {
+    			div1 = element("div");
+    			div0 = element("div");
+    			t0 = space();
+    			if (if_block) if_block.c();
+    			t1 = space();
+    			attr_dev(div0, "class", "multiSelectItem_label svelte-rtzfov");
+    			add_location(div0, file$a, 18, 2, 519);
+    			attr_dev(div1, "class", div1_class_value = "multiSelectItem " + (ctx.activeSelectedValue === ctx.i ? 'active' : '') + " " + (ctx.isDisabled ? 'disabled' : '') + " svelte-rtzfov");
+    			add_location(div1, file$a, 17, 0, 412);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, div0);
+    			div0.innerHTML = raw_value;
+    			append_dev(div1, t0);
+    			if (if_block) if_block.m(div1, null);
+    			append_dev(div1, t1);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.getSelectionLabel || changed.selectedValue) && raw_value !== (raw_value = ctx.getSelectionLabel(ctx.value) + "")) {
+    				div0.innerHTML = raw_value;
+    			}
+
+    			if (!ctx.isDisabled) {
+    				if (!if_block) {
+    					if_block = create_if_block$6(ctx);
+    					if_block.c();
+    					if_block.m(div1, t1);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
+    			if ((changed.activeSelectedValue || changed.isDisabled) && div1_class_value !== (div1_class_value = "multiSelectItem " + (ctx.activeSelectedValue === ctx.i ? 'active' : '') + " " + (ctx.isDisabled ? 'disabled' : '') + " svelte-rtzfov")) {
+    				attr_dev(div1, "class", div1_class_value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div1);
+    			}
+
+    			if (if_block) if_block.d();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$6.name, type: "each", source: "(17:0) {#each selectedValue as value, i}", ctx });
+    	return block;
+    }
+
+    function create_fragment$b(ctx) {
+    	var each_1_anchor;
+
+    	let each_value = ctx.selectedValue;
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$6(get_each_context$6(ctx, each_value, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.activeSelectedValue || changed.isDisabled || changed.getSelectionLabel || changed.selectedValue) {
+    				each_value = ctx.selectedValue;
+
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$6(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks[i] = create_each_block$6(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+    				each_blocks.length = each_value.length;
+    			}
+    		},
+
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			destroy_each(each_blocks, detaching);
+
+    			if (detaching) {
+    				detach_dev(each_1_anchor);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$b.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function instance$b($$self, $$props, $$invalidate) {
+    	const dispatch = createEventDispatcher();
+
+      let { selectedValue = [], activeSelectedValue = undefined, isDisabled = false, getSelectionLabel = undefined } = $$props;
+
+      function handleClear(i, event) {
+        event.stopPropagation();
+        dispatch('multiItemClear', {i});
+      }
+
+    	const writable_props = ['selectedValue', 'activeSelectedValue', 'isDisabled', 'getSelectionLabel'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<MultiSelection> was created with unknown prop '${key}'`);
+    	});
+
+    	const click_handler = ({ i }, event) => handleClear(i, event);
+
+    	$$self.$set = $$props => {
+    		if ('selectedValue' in $$props) $$invalidate('selectedValue', selectedValue = $$props.selectedValue);
+    		if ('activeSelectedValue' in $$props) $$invalidate('activeSelectedValue', activeSelectedValue = $$props.activeSelectedValue);
+    		if ('isDisabled' in $$props) $$invalidate('isDisabled', isDisabled = $$props.isDisabled);
+    		if ('getSelectionLabel' in $$props) $$invalidate('getSelectionLabel', getSelectionLabel = $$props.getSelectionLabel);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { selectedValue, activeSelectedValue, isDisabled, getSelectionLabel };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('selectedValue' in $$props) $$invalidate('selectedValue', selectedValue = $$props.selectedValue);
+    		if ('activeSelectedValue' in $$props) $$invalidate('activeSelectedValue', activeSelectedValue = $$props.activeSelectedValue);
+    		if ('isDisabled' in $$props) $$invalidate('isDisabled', isDisabled = $$props.isDisabled);
+    		if ('getSelectionLabel' in $$props) $$invalidate('getSelectionLabel', getSelectionLabel = $$props.getSelectionLabel);
+    	};
+
+    	return {
+    		selectedValue,
+    		activeSelectedValue,
+    		isDisabled,
+    		getSelectionLabel,
+    		handleClear,
+    		click_handler
+    	};
+    }
+
+    class MultiSelection extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$b, create_fragment$b, safe_not_equal, ["selectedValue", "activeSelectedValue", "isDisabled", "getSelectionLabel"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "MultiSelection", options, id: create_fragment$b.name });
+    	}
+
+    	get selectedValue() {
+    		throw new Error("<MultiSelection>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set selectedValue(value) {
+    		throw new Error("<MultiSelection>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get activeSelectedValue() {
+    		throw new Error("<MultiSelection>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set activeSelectedValue(value) {
+    		throw new Error("<MultiSelection>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get isDisabled() {
+    		throw new Error("<MultiSelection>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isDisabled(value) {
+    		throw new Error("<MultiSelection>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get getSelectionLabel() {
+    		throw new Error("<MultiSelection>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set getSelectionLabel(value) {
+    		throw new Error("<MultiSelection>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    function isOutOfViewport(elem) {
+      const bounding = elem.getBoundingClientRect();
+      const out = {};
+
+      out.top = bounding.top < 0;
+      out.left = bounding.left < 0;
+      out.bottom = bounding.bottom > (window.innerHeight || document.documentElement.clientHeight);
+      out.right = bounding.right > (window.innerWidth || document.documentElement.clientWidth);
+      out.any = out.top || out.left || out.bottom || out.right;
+
+      return out;
+    }
+
+    function debounce(func, wait, immediate) {
+      let timeout;
+
+      return function executedFunction() {
+        let context = this;
+        let args = arguments;
+    	    
+        let later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+
+        let callNow = immediate && !timeout;
+    	
+        clearTimeout(timeout);
+
+        timeout = setTimeout(later, wait);
+    	
+        if (callNow) func.apply(context, args);
+      };
+    }
+
+    /* node_modules/svelte-select/src/Select.svelte generated by Svelte v3.12.1 */
+    const { Object: Object_1 } = globals;
+
+    const file$b = "node_modules/svelte-select/src/Select.svelte";
+
+    // (568:2) {#if isMulti && selectedValue && selectedValue.length > 0}
+    function create_if_block_4$1(ctx) {
+    	var switch_instance_anchor, current;
+
+    	var switch_value = ctx.MultiSelection;
+
+    	function switch_props(ctx) {
+    		return {
+    			props: {
+    			selectedValue: ctx.selectedValue,
+    			getSelectionLabel: ctx.getSelectionLabel,
+    			activeSelectedValue: ctx.activeSelectedValue,
+    			isDisabled: ctx.isDisabled
+    		},
+    			$$inline: true
+    		};
+    	}
+
+    	if (switch_value) {
+    		var switch_instance = new switch_value(switch_props(ctx));
+    		switch_instance.$on("multiItemClear", ctx.handleMultiItemClear);
+    		switch_instance.$on("focus", ctx.handleFocus);
+    	}
+
+    	const block = {
+    		c: function create() {
+    			if (switch_instance) switch_instance.$$.fragment.c();
+    			switch_instance_anchor = empty();
+    		},
+
+    		m: function mount(target_1, anchor) {
+    			if (switch_instance) {
+    				mount_component(switch_instance, target_1, anchor);
+    			}
+
+    			insert_dev(target_1, switch_instance_anchor, anchor);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var switch_instance_changes = {};
+    			if (changed.selectedValue) switch_instance_changes.selectedValue = ctx.selectedValue;
+    			if (changed.getSelectionLabel) switch_instance_changes.getSelectionLabel = ctx.getSelectionLabel;
+    			if (changed.activeSelectedValue) switch_instance_changes.activeSelectedValue = ctx.activeSelectedValue;
+    			if (changed.isDisabled) switch_instance_changes.isDisabled = ctx.isDisabled;
+
+    			if (switch_value !== (switch_value = ctx.MultiSelection)) {
+    				if (switch_instance) {
+    					group_outros();
+    					const old_component = switch_instance;
+    					transition_out(old_component.$$.fragment, 1, 0, () => {
+    						destroy_component(old_component, 1);
+    					});
+    					check_outros();
+    				}
+
+    				if (switch_value) {
+    					switch_instance = new switch_value(switch_props(ctx));
+    					switch_instance.$on("multiItemClear", ctx.handleMultiItemClear);
+    					switch_instance.$on("focus", ctx.handleFocus);
+
+    					switch_instance.$$.fragment.c();
+    					transition_in(switch_instance.$$.fragment, 1);
+    					mount_component(switch_instance, switch_instance_anchor.parentNode, switch_instance_anchor);
+    				} else {
+    					switch_instance = null;
+    				}
+    			}
+
+    			else if (switch_value) {
+    				switch_instance.$set(switch_instance_changes);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			if (switch_instance) transition_in(switch_instance.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			if (switch_instance) transition_out(switch_instance.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(switch_instance_anchor);
+    			}
+
+    			if (switch_instance) destroy_component(switch_instance, detaching);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_4$1.name, type: "if", source: "(568:2) {#if isMulti && selectedValue && selectedValue.length > 0}", ctx });
+    	return block;
+    }
+
+    // (590:2) {#if !isMulti && showSelectedItem }
+    function create_if_block_3$3(ctx) {
+    	var div, current, dispose;
+
+    	var switch_value = ctx.Selection;
+
+    	function switch_props(ctx) {
+    		return {
+    			props: {
+    			item: ctx.selectedValue,
+    			getSelectionLabel: ctx.getSelectionLabel
+    		},
+    			$$inline: true
+    		};
+    	}
+
+    	if (switch_value) {
+    		var switch_instance = new switch_value(switch_props(ctx));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			if (switch_instance) switch_instance.$$.fragment.c();
+    			attr_dev(div, "class", "selectedItem svelte-1ik40xa");
+    			add_location(div, file$b, 590, 2, 15289);
+    			dispose = listen_dev(div, "focus", ctx.handleFocus);
+    		},
+
+    		m: function mount(target_1, anchor) {
+    			insert_dev(target_1, div, anchor);
+
+    			if (switch_instance) {
+    				mount_component(switch_instance, div, null);
+    			}
+
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			var switch_instance_changes = {};
+    			if (changed.selectedValue) switch_instance_changes.item = ctx.selectedValue;
+    			if (changed.getSelectionLabel) switch_instance_changes.getSelectionLabel = ctx.getSelectionLabel;
+
+    			if (switch_value !== (switch_value = ctx.Selection)) {
+    				if (switch_instance) {
+    					group_outros();
+    					const old_component = switch_instance;
+    					transition_out(old_component.$$.fragment, 1, 0, () => {
+    						destroy_component(old_component, 1);
+    					});
+    					check_outros();
+    				}
+
+    				if (switch_value) {
+    					switch_instance = new switch_value(switch_props(ctx));
+
+    					switch_instance.$$.fragment.c();
+    					transition_in(switch_instance.$$.fragment, 1);
+    					mount_component(switch_instance, div, null);
+    				} else {
+    					switch_instance = null;
+    				}
+    			}
+
+    			else if (switch_value) {
+    				switch_instance.$set(switch_instance_changes);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			if (switch_instance) transition_in(switch_instance.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			if (switch_instance) transition_out(switch_instance.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+
+    			if (switch_instance) destroy_component(switch_instance);
+    			dispose();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_3$3.name, type: "if", source: "(590:2) {#if !isMulti && showSelectedItem }", ctx });
+    	return block;
+    }
+
+    // (596:2) {#if showSelectedItem && isClearable && !isDisabled && !isWaiting}
+    function create_if_block_2$3(ctx) {
+    	var div, svg, path, dispose;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			svg = svg_element("svg");
+    			path = svg_element("path");
+    			attr_dev(path, "fill", "currentColor");
+    			attr_dev(path, "d", "M34.923,37.251L24,26.328L13.077,37.251L9.436,33.61l10.923-10.923L9.436,11.765l3.641-3.641L24,19.047L34.923,8.124 l3.641,3.641L27.641,22.688L38.564,33.61L34.923,37.251z");
+    			add_location(path, file$b, 599, 6, 15692);
+    			attr_dev(svg, "width", "100%");
+    			attr_dev(svg, "height", "100%");
+    			attr_dev(svg, "viewBox", "-2 -2 50 50");
+    			attr_dev(svg, "focusable", "false");
+    			attr_dev(svg, "role", "presentation");
+    			attr_dev(svg, "class", "svelte-1ik40xa");
+    			add_location(svg, file$b, 597, 4, 15584);
+    			attr_dev(div, "class", "clearSelect svelte-1ik40xa");
+    			add_location(div, file$b, 596, 2, 15514);
+    			dispose = listen_dev(div, "click", prevent_default(ctx.handleClear), false, true);
+    		},
+
+    		m: function mount(target_1, anchor) {
+    			insert_dev(target_1, div, anchor);
+    			append_dev(div, svg);
+    			append_dev(svg, path);
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+
+    			dispose();
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_2$3.name, type: "if", source: "(596:2) {#if showSelectedItem && isClearable && !isDisabled && !isWaiting}", ctx });
+    	return block;
+    }
+
+    // (606:2) {#if !isSearchable && !isDisabled && !isWaiting && (showSelectedItem && !isClearable || !showSelectedItem)}
+    function create_if_block_1$4(ctx) {
+    	var div, svg, path;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			svg = svg_element("svg");
+    			path = svg_element("path");
+    			attr_dev(path, "d", "M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z");
+    			add_location(path, file$b, 608, 6, 16176);
+    			attr_dev(svg, "width", "100%");
+    			attr_dev(svg, "height", "100%");
+    			attr_dev(svg, "viewBox", "0 0 20 20");
+    			attr_dev(svg, "focusable", "false");
+    			attr_dev(svg, "class", "css-19bqh2r svelte-1ik40xa");
+    			add_location(svg, file$b, 607, 4, 16079);
+    			attr_dev(div, "class", "indicator svelte-1ik40xa");
+    			add_location(div, file$b, 606, 2, 16051);
+    		},
+
+    		m: function mount(target_1, anchor) {
+    			insert_dev(target_1, div, anchor);
+    			append_dev(div, svg);
+    			append_dev(svg, path);
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1$4.name, type: "if", source: "(606:2) {#if !isSearchable && !isDisabled && !isWaiting && (showSelectedItem && !isClearable || !showSelectedItem)}", ctx });
+    	return block;
+    }
+
+    // (615:2) {#if isWaiting}
+    function create_if_block$7(ctx) {
+    	var div, svg, circle;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			svg = svg_element("svg");
+    			circle = svg_element("circle");
+    			attr_dev(circle, "class", "spinner_path svelte-1ik40xa");
+    			attr_dev(circle, "cx", "50");
+    			attr_dev(circle, "cy", "50");
+    			attr_dev(circle, "r", "20");
+    			attr_dev(circle, "fill", "none");
+    			attr_dev(circle, "stroke", "currentColor");
+    			attr_dev(circle, "stroke-width", "5");
+    			attr_dev(circle, "stroke-miterlimit", "10");
+    			add_location(circle, file$b, 617, 6, 16610);
+    			attr_dev(svg, "class", "spinner_icon svelte-1ik40xa");
+    			attr_dev(svg, "viewBox", "25 25 50 50");
+    			add_location(svg, file$b, 616, 4, 16555);
+    			attr_dev(div, "class", "spinner svelte-1ik40xa");
+    			add_location(div, file$b, 615, 2, 16529);
+    		},
+
+    		m: function mount(target_1, anchor) {
+    			insert_dev(target_1, div, anchor);
+    			append_dev(div, svg);
+    			append_dev(svg, circle);
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$7.name, type: "if", source: "(615:2) {#if isWaiting}", ctx });
+    	return block;
+    }
+
+    function create_fragment$c(ctx) {
+    	var div, t0, input_1, t1, t2, t3, t4, div_class_value, current, dispose;
+
+    	var if_block0 = (ctx.isMulti && ctx.selectedValue && ctx.selectedValue.length > 0) && create_if_block_4$1(ctx);
+
+    	var input_1_levels = [
+    		ctx._inputAttributes,
+    		{ placeholder: ctx.placeholderText },
+    		{ disabled: ctx.isDisabled },
+    		{ style: ctx.inputStyles },
+    		{ class: "svelte-1ik40xa" }
+    	];
+
+    	var input_1_data = {};
+    	for (var i = 0; i < input_1_levels.length; i += 1) {
+    		input_1_data = assign(input_1_data, input_1_levels[i]);
+    	}
+
+    	var if_block1 = (!ctx.isMulti && ctx.showSelectedItem) && create_if_block_3$3(ctx);
+
+    	var if_block2 = (ctx.showSelectedItem && ctx.isClearable && !ctx.isDisabled && !ctx.isWaiting) && create_if_block_2$3(ctx);
+
+    	var if_block3 = (!ctx.isSearchable && !ctx.isDisabled && !ctx.isWaiting && (ctx.showSelectedItem && !ctx.isClearable || !ctx.showSelectedItem)) && create_if_block_1$4(ctx);
+
+    	var if_block4 = (ctx.isWaiting) && create_if_block$7(ctx);
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			if (if_block0) if_block0.c();
+    			t0 = space();
+    			input_1 = element("input");
+    			t1 = space();
+    			if (if_block1) if_block1.c();
+    			t2 = space();
+    			if (if_block2) if_block2.c();
+    			t3 = space();
+    			if (if_block3) if_block3.c();
+    			t4 = space();
+    			if (if_block4) if_block4.c();
+    			set_attributes(input_1, input_1_data);
+    			add_location(input_1, file$b, 579, 2, 15036);
+    			attr_dev(div, "class", div_class_value = "" + ctx.containerClasses + " " + (ctx.hasError ? 'hasError' : '') + " svelte-1ik40xa");
+    			attr_dev(div, "style", ctx.containerStyles);
+    			add_location(div, file$b, 564, 0, 14610);
+
+    			dispose = [
+    				listen_dev(window, "click", ctx.handleWindowClick),
+    				listen_dev(window, "keydown", ctx.handleKeyDown),
+    				listen_dev(window, "resize", ctx.getPosition),
+    				listen_dev(input_1, "input", ctx.input_1_input_handler),
+    				listen_dev(input_1, "focus", ctx.handleFocus),
+    				listen_dev(div, "click", ctx.handleClick)
+    			];
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target_1, anchor) {
+    			insert_dev(target_1, div, anchor);
+    			if (if_block0) if_block0.m(div, null);
+    			append_dev(div, t0);
+    			append_dev(div, input_1);
+
+    			set_input_value(input_1, ctx.filterText);
+
+    			ctx.input_1_binding(input_1);
+    			append_dev(div, t1);
+    			if (if_block1) if_block1.m(div, null);
+    			append_dev(div, t2);
+    			if (if_block2) if_block2.m(div, null);
+    			append_dev(div, t3);
+    			if (if_block3) if_block3.m(div, null);
+    			append_dev(div, t4);
+    			if (if_block4) if_block4.m(div, null);
+    			ctx.div_binding(div);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (ctx.isMulti && ctx.selectedValue && ctx.selectedValue.length > 0) {
+    				if (if_block0) {
+    					if_block0.p(changed, ctx);
+    					transition_in(if_block0, 1);
+    				} else {
+    					if_block0 = create_if_block_4$1(ctx);
+    					if_block0.c();
+    					transition_in(if_block0, 1);
+    					if_block0.m(div, t0);
+    				}
+    			} else if (if_block0) {
+    				group_outros();
+    				transition_out(if_block0, 1, 1, () => {
+    					if_block0 = null;
+    				});
+    				check_outros();
+    			}
+
+    			if (changed.filterText && (input_1.value !== ctx.filterText)) set_input_value(input_1, ctx.filterText);
+
+    			set_attributes(input_1, get_spread_update(input_1_levels, [
+    				(changed._inputAttributes) && ctx._inputAttributes,
+    				(changed.placeholderText) && { placeholder: ctx.placeholderText },
+    				(changed.isDisabled) && { disabled: ctx.isDisabled },
+    				(changed.inputStyles) && { style: ctx.inputStyles },
+    				{ class: "svelte-1ik40xa" }
+    			]));
+
+    			if (!ctx.isMulti && ctx.showSelectedItem) {
+    				if (if_block1) {
+    					if_block1.p(changed, ctx);
+    					transition_in(if_block1, 1);
+    				} else {
+    					if_block1 = create_if_block_3$3(ctx);
+    					if_block1.c();
+    					transition_in(if_block1, 1);
+    					if_block1.m(div, t2);
+    				}
+    			} else if (if_block1) {
+    				group_outros();
+    				transition_out(if_block1, 1, 1, () => {
+    					if_block1 = null;
+    				});
+    				check_outros();
+    			}
+
+    			if (ctx.showSelectedItem && ctx.isClearable && !ctx.isDisabled && !ctx.isWaiting) {
+    				if (!if_block2) {
+    					if_block2 = create_if_block_2$3(ctx);
+    					if_block2.c();
+    					if_block2.m(div, t3);
+    				}
+    			} else if (if_block2) {
+    				if_block2.d(1);
+    				if_block2 = null;
+    			}
+
+    			if (!ctx.isSearchable && !ctx.isDisabled && !ctx.isWaiting && (ctx.showSelectedItem && !ctx.isClearable || !ctx.showSelectedItem)) {
+    				if (!if_block3) {
+    					if_block3 = create_if_block_1$4(ctx);
+    					if_block3.c();
+    					if_block3.m(div, t4);
+    				}
+    			} else if (if_block3) {
+    				if_block3.d(1);
+    				if_block3 = null;
+    			}
+
+    			if (ctx.isWaiting) {
+    				if (!if_block4) {
+    					if_block4 = create_if_block$7(ctx);
+    					if_block4.c();
+    					if_block4.m(div, null);
+    				}
+    			} else if (if_block4) {
+    				if_block4.d(1);
+    				if_block4 = null;
+    			}
+
+    			if ((!current || changed.containerClasses || changed.hasError) && div_class_value !== (div_class_value = "" + ctx.containerClasses + " " + (ctx.hasError ? 'hasError' : '') + " svelte-1ik40xa")) {
+    				attr_dev(div, "class", div_class_value);
+    			}
+
+    			if (!current || changed.containerStyles) {
+    				attr_dev(div, "style", ctx.containerStyles);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block0);
+    			transition_in(if_block1);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block0);
+    			transition_out(if_block1);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+
+    			if (if_block0) if_block0.d();
+    			ctx.input_1_binding(null);
+    			if (if_block1) if_block1.d();
+    			if (if_block2) if_block2.d();
+    			if (if_block3) if_block3.d();
+    			if (if_block4) if_block4.d();
+    			ctx.div_binding(null);
+    			run_all(dispose);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$c.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function instance$c($$self, $$props, $$invalidate) {
+    	
+
+      const dispatch = createEventDispatcher();
+      let { container = undefined, input = undefined, Item: Item$1 = Item, Selection: Selection$1 = Selection, MultiSelection: MultiSelection$1 = MultiSelection, isMulti = false, isDisabled = false, isCreatable = false, isFocused = false, selectedValue = undefined, filterText = '', placeholder = 'Select...', items = [], groupBy = undefined, groupFilter = (groups) => groups } = $$props;
+      let { isGroupHeaderSelectable = false, getGroupHeaderLabel = (option) => {
+        return option.label
+      } } = $$props;
+      let { getOptionLabel = (option, filterText) => {
+        return option.isCreator ? `Create \"${filterText}\"` : option.label;
+      } } = $$props;
+      let { optionIdentifier = 'value', loadOptions = undefined, hasError = false, containerStyles = '', getSelectionLabel = (option) => {
+        if (option) return option.label
+      } } = $$props;
+
+      let { createGroupHeaderItem = (groupValue) => {
+        return {
+          value: groupValue,
+          label: groupValue
+        }
+      } } = $$props;
+
+      let { createItem = (filterText) => {
+        return {
+          value: filterText,
+          label: filterText
+        };
+      } } = $$props;
+
+      let { isSearchable = true, inputStyles = '', isClearable = true, isWaiting = false, listPlacement = 'auto', listOpen = false, list = undefined, isVirtualList = false, loadOptionsInterval = 300, noOptionsMessage = 'No options', hideEmptyState = false, filteredItems = [], inputAttributes = {} } = $$props;
+      
+
+      let target;
+      let activeSelectedValue;
+      let _items = [];
+      let originalItemsClone;
+      let containerClasses = '';
+      let prev_selectedValue;
+      let prev_listOpen;
+      let prev_filterText;
+      let prev_isFocused;
+      let prev_filteredItems;
+
+      async function resetFilter() {
+        await tick();
+        $$invalidate('filterText', filterText = '');
+      }
+
+      const getItems = debounce(async () => {
+        $$invalidate('isWaiting', isWaiting = true);
+        
+        $$invalidate('items', items = await loadOptions(filterText));
+      
+        $$invalidate('isWaiting', isWaiting = false);
+        $$invalidate('isFocused', isFocused = true);
+        $$invalidate('listOpen', listOpen = true);
+      }, loadOptionsInterval);
+
+      let _inputAttributes = {};
+
+      beforeUpdate(() => {
+        if (isMulti && selectedValue && selectedValue.length > 1) {
+          checkSelectedValueForDuplicates();
+        }
+
+        if (!isMulti && selectedValue && prev_selectedValue !== selectedValue) {
+          if (!prev_selectedValue || JSON.stringify(selectedValue[optionIdentifier]) !== JSON.stringify(prev_selectedValue[optionIdentifier])) {
+            dispatch('select', selectedValue);
+          }
+        }
+
+        if (isMulti && JSON.stringify(selectedValue) !== JSON.stringify(prev_selectedValue)) {
+          if (checkSelectedValueForDuplicates()) {
+            dispatch('select', selectedValue);
+          }
+        }
+
+        if (container && listOpen !== prev_listOpen) {
+          if (listOpen) {
+            loadList();
+          } else {
+            removeList();
+          }
+        }
+
+        if (filterText !== prev_filterText) {
+          if (filterText.length > 0) {
+            $$invalidate('isFocused', isFocused = true);
+            $$invalidate('listOpen', listOpen = true);
+
+            if (loadOptions) {
+              getItems();
+            } else {
+              loadList();
+              $$invalidate('listOpen', listOpen = true);
+
+              if (isMulti) {
+                $$invalidate('activeSelectedValue', activeSelectedValue = undefined);
+              }
+            }
+          } else {
+            setList([]);
+          }
+
+          if (list) {
+            list.$set({
+              filterText
+            });
+          }
+        }
+
+        if (isFocused !== prev_isFocused) {
+          if (isFocused || listOpen) {
+            handleFocus();
+          } else {
+            resetFilter();
+            if (input) input.blur();
+          }
+        }
+
+        if (prev_filteredItems !== filteredItems) {
+          let _filteredItems = [...filteredItems];
+
+          if (isCreatable && filterText) {
+            const itemToCreate = {
+              ...createItem(filterText),
+              isCreator: true
+            };
+
+            const existingItemWithFilterValue = _filteredItems.find((item) => {
+              return item[optionIdentifier] === itemToCreate[optionIdentifier];
+            });
+
+            let existingSelectionWithFilterValue;
+
+            if (selectedValue) {
+              if (isMulti) {
+                existingSelectionWithFilterValue = selectedValue.find((selection) => {
+                  return selection[optionIdentifier] === itemToCreate[optionIdentifier];
+                });
+              } else if (selectedValue[optionIdentifier] === itemToCreate[optionIdentifier]) {
+                existingSelectionWithFilterValue = selectedValue;
+              }
+            }
+
+            if (!existingItemWithFilterValue && !existingSelectionWithFilterValue) {
+              _filteredItems = [..._filteredItems, itemToCreate];
+            }
+          }
+
+          setList(_filteredItems);
+        }
+
+        prev_selectedValue = selectedValue;
+        prev_listOpen = listOpen;
+        prev_filterText = filterText;
+        prev_isFocused = isFocused;
+        prev_filteredItems = filteredItems;
+      });
+
+      function checkSelectedValueForDuplicates() {
+        let noDuplicates = true;
+        if (selectedValue) {
+          const ids = [];
+          const uniqueValues = [];
+
+          selectedValue.forEach(val => {
+            if (!ids.includes(val[optionIdentifier])) {
+              ids.push(val[optionIdentifier]);
+              uniqueValues.push(val);
+            } else {
+              noDuplicates = false;
+            }
+          });
+
+          $$invalidate('selectedValue', selectedValue = uniqueValues);
+        }
+        return noDuplicates;
+      }
+
+      async function setList(items) {
+        await tick();
+        if (list) return list.$set({ items })
+        if (loadOptions && items.length > 0) loadList();
+      }
+
+      function handleMultiItemClear(event) {
+        const { detail } = event;
+        const itemToRemove = selectedValue[detail ? detail.i : selectedValue.length - 1];
+
+        if (selectedValue.length === 1) {
+          $$invalidate('selectedValue', selectedValue = undefined);
+        } else {
+          $$invalidate('selectedValue', selectedValue = selectedValue.filter((item) => {
+            return item !== itemToRemove;
+          }));
+        }
+
+        dispatch('clear', itemToRemove);
+        
+        getPosition();
+      }
+
+      async function getPosition() {
+        await tick();
+        if (!target || !container) return;
+        const { top, height, width } = container.getBoundingClientRect();
+
+        target.style['min-width'] = `${width}px`;
+        target.style.width = `auto`;
+        target.style.left = '0';
+
+        if (listPlacement === 'top') {
+          target.style.bottom = `${height + 5}px`;
+        } else {
+          target.style.top = `${height + 5}px`;
+        }
+
+        target = target;
+
+        if (listPlacement === 'auto' && isOutOfViewport(target).bottom) {
+          target.style.top = ``;
+          target.style.bottom = `${height + 5}px`;
+        }
+
+        target.style.visibility = '';
+      }
+
+      function handleKeyDown(e) {
+        if (!isFocused) return;
+
+        switch (e.key) {
+          case 'ArrowDown':
+            e.preventDefault();
+            $$invalidate('listOpen', listOpen = true);
+            $$invalidate('activeSelectedValue', activeSelectedValue = undefined);
+            break;
+          case 'ArrowUp':
+            e.preventDefault();
+            $$invalidate('listOpen', listOpen = true);
+            $$invalidate('activeSelectedValue', activeSelectedValue = undefined);
+            break;
+          case 'Tab':
+            if (!listOpen) $$invalidate('isFocused', isFocused = false);
+            break;
+          case 'Backspace':
+            if (!isMulti || filterText.length > 0) return;
+            if (isMulti && selectedValue && selectedValue.length > 0) {
+              handleMultiItemClear(activeSelectedValue !== undefined ? activeSelectedValue : selectedValue.length - 1);
+              if (activeSelectedValue === 0 || activeSelectedValue === undefined) break;
+              $$invalidate('activeSelectedValue', activeSelectedValue = selectedValue.length > activeSelectedValue ? activeSelectedValue - 1 : undefined);
+            }
+            break;
+          case 'ArrowLeft':
+            if (list) list.$set({ hoverItemIndex: -1 });
+            if (!isMulti || filterText.length > 0) return;
+
+            if (activeSelectedValue === undefined) {
+              $$invalidate('activeSelectedValue', activeSelectedValue = selectedValue.length - 1);
+            } else if (selectedValue.length > activeSelectedValue && activeSelectedValue !== 0) {
+              $$invalidate('activeSelectedValue', activeSelectedValue -= 1);
+            }
+            break;
+          case 'ArrowRight':
+            if (list) list.$set({ hoverItemIndex: -1 });
+            if (!isMulti || filterText.length > 0 || activeSelectedValue === undefined) return;
+            if (activeSelectedValue === selectedValue.length - 1) {
+              $$invalidate('activeSelectedValue', activeSelectedValue = undefined);
+            } else if (activeSelectedValue < selectedValue.length - 1) {
+              $$invalidate('activeSelectedValue', activeSelectedValue += 1);
+            }
+            break;
+        }
+      }
+
+      function handleFocus() {
+        $$invalidate('isFocused', isFocused = true);
+        if (input) input.focus();
+      }
+
+      function removeList() {
+        resetFilter();
+        $$invalidate('activeSelectedValue', activeSelectedValue = undefined);
+
+        if (!list) return;
+        list.$destroy();
+        $$invalidate('list', list = undefined);
+
+        if (!target) return;
+        if (target.parentNode) target.parentNode.removeChild(target);
+        target = undefined;
+
+        $$invalidate('list', list);
+        target = target;
+      }
+
+      function handleWindowClick(event) {
+        if (!container) return;
+        if (container.contains(event.target)) return;
+        $$invalidate('isFocused', isFocused = false);
+        $$invalidate('listOpen', listOpen = false);
+        $$invalidate('activeSelectedValue', activeSelectedValue = undefined);
+        if (input) input.blur();
+      }
+
+      function handleClick() {
+        if (isDisabled) return;
+        $$invalidate('isFocused', isFocused = true);
+        $$invalidate('listOpen', listOpen = !listOpen);
+      }
+
+      function handleClear() {
+        $$invalidate('selectedValue', selectedValue = undefined);
+        $$invalidate('listOpen', listOpen = false);
+        dispatch('clear', selectedValue);
+        handleFocus();
+      }
+
+      async function loadList() {
+        await tick();
+        if (target && list) return;
+
+        const data = {
+          Item: Item$1,
+          filterText,
+          optionIdentifier,
+          noOptionsMessage,
+          hideEmptyState,
+          isCreatable,
+          isVirtualList,
+          selectedValue,
+          isMulti,
+          getGroupHeaderLabel,
+          items: filteredItems
+        };
+
+        if (getOptionLabel) {
+          data.getOptionLabel = getOptionLabel;
+        }
+
+        target = document.createElement('div');
+
+        Object.assign(target.style, {
+          position: 'absolute',
+          'z-index': 2,
+          'visibility': 'hidden'
+        });
+
+        $$invalidate('list', list);
+        target = target;
+        if (container) container.appendChild(target);
+
+        $$invalidate('list', list = new List({
+          target,
+          props: data
+        }));
+
+        list.$on('itemSelected', (event) => {
+          const { detail } = event;
+
+          if (detail) {
+            const item = Object.assign({}, detail);
+
+            if (isMulti) {
+              $$invalidate('selectedValue', selectedValue = selectedValue ? selectedValue.concat([item]) : [item]);
+            } else {
+              $$invalidate('selectedValue', selectedValue = item);
+            }
+
+            resetFilter();
+            $$invalidate('selectedValue', selectedValue), $$invalidate('optionIdentifier', optionIdentifier);
+
+            setTimeout(() => {
+              $$invalidate('listOpen', listOpen = false);
+              $$invalidate('activeSelectedValue', activeSelectedValue = undefined);
+            });
+          }
+        });
+
+        list.$on('itemCreated', (event) => {
+          const { detail } = event;
+          if (isMulti) {
+            $$invalidate('selectedValue', selectedValue = selectedValue || []);
+            $$invalidate('selectedValue', selectedValue = [...selectedValue, createItem(detail)]);
+          } else {
+            $$invalidate('selectedValue', selectedValue = createItem(detail));
+          }
+
+          $$invalidate('filterText', filterText = '');
+          $$invalidate('listOpen', listOpen = false);
+          $$invalidate('activeSelectedValue', activeSelectedValue = undefined);
+          resetFilter();
+        });
+
+        $$invalidate('list', list),
+        target = target;
+        getPosition();
+      }
+
+      onMount(() => {
+        if (isFocused) input.focus();
+        if (listOpen) loadList();
+
+        if (items && items.length > 0) {
+          $$invalidate('originalItemsClone', originalItemsClone = JSON.stringify(items));
+        }
+
+        if (selectedValue) {
+          if (isMulti) {
+            $$invalidate('selectedValue', selectedValue = selectedValue.map(item => {
+              if (typeof item === 'string') {
+                return { value: item, label: item }
+              } else {
+                return item;
+              }
+            }));
+          }
+        }
+      });
+
+      onDestroy(() => {
+        removeList();
+      });
+
+    	const writable_props = ['container', 'input', 'Item', 'Selection', 'MultiSelection', 'isMulti', 'isDisabled', 'isCreatable', 'isFocused', 'selectedValue', 'filterText', 'placeholder', 'items', 'groupBy', 'groupFilter', 'isGroupHeaderSelectable', 'getGroupHeaderLabel', 'getOptionLabel', 'optionIdentifier', 'loadOptions', 'hasError', 'containerStyles', 'getSelectionLabel', 'createGroupHeaderItem', 'createItem', 'isSearchable', 'inputStyles', 'isClearable', 'isWaiting', 'listPlacement', 'listOpen', 'list', 'isVirtualList', 'loadOptionsInterval', 'noOptionsMessage', 'hideEmptyState', 'filteredItems', 'inputAttributes'];
+    	Object_1.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<Select> was created with unknown prop '${key}'`);
+    	});
+
+    	function input_1_input_handler() {
+    		filterText = this.value;
+    		$$invalidate('filterText', filterText);
+    	}
+
+    	function input_1_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			$$invalidate('input', input = $$value);
+    		});
+    	}
+
+    	function div_binding($$value) {
+    		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
+    			$$invalidate('container', container = $$value);
+    		});
+    	}
+
+    	$$self.$set = $$props => {
+    		if ('container' in $$props) $$invalidate('container', container = $$props.container);
+    		if ('input' in $$props) $$invalidate('input', input = $$props.input);
+    		if ('Item' in $$props) $$invalidate('Item', Item$1 = $$props.Item);
+    		if ('Selection' in $$props) $$invalidate('Selection', Selection$1 = $$props.Selection);
+    		if ('MultiSelection' in $$props) $$invalidate('MultiSelection', MultiSelection$1 = $$props.MultiSelection);
+    		if ('isMulti' in $$props) $$invalidate('isMulti', isMulti = $$props.isMulti);
+    		if ('isDisabled' in $$props) $$invalidate('isDisabled', isDisabled = $$props.isDisabled);
+    		if ('isCreatable' in $$props) $$invalidate('isCreatable', isCreatable = $$props.isCreatable);
+    		if ('isFocused' in $$props) $$invalidate('isFocused', isFocused = $$props.isFocused);
+    		if ('selectedValue' in $$props) $$invalidate('selectedValue', selectedValue = $$props.selectedValue);
+    		if ('filterText' in $$props) $$invalidate('filterText', filterText = $$props.filterText);
+    		if ('placeholder' in $$props) $$invalidate('placeholder', placeholder = $$props.placeholder);
+    		if ('items' in $$props) $$invalidate('items', items = $$props.items);
+    		if ('groupBy' in $$props) $$invalidate('groupBy', groupBy = $$props.groupBy);
+    		if ('groupFilter' in $$props) $$invalidate('groupFilter', groupFilter = $$props.groupFilter);
+    		if ('isGroupHeaderSelectable' in $$props) $$invalidate('isGroupHeaderSelectable', isGroupHeaderSelectable = $$props.isGroupHeaderSelectable);
+    		if ('getGroupHeaderLabel' in $$props) $$invalidate('getGroupHeaderLabel', getGroupHeaderLabel = $$props.getGroupHeaderLabel);
+    		if ('getOptionLabel' in $$props) $$invalidate('getOptionLabel', getOptionLabel = $$props.getOptionLabel);
+    		if ('optionIdentifier' in $$props) $$invalidate('optionIdentifier', optionIdentifier = $$props.optionIdentifier);
+    		if ('loadOptions' in $$props) $$invalidate('loadOptions', loadOptions = $$props.loadOptions);
+    		if ('hasError' in $$props) $$invalidate('hasError', hasError = $$props.hasError);
+    		if ('containerStyles' in $$props) $$invalidate('containerStyles', containerStyles = $$props.containerStyles);
+    		if ('getSelectionLabel' in $$props) $$invalidate('getSelectionLabel', getSelectionLabel = $$props.getSelectionLabel);
+    		if ('createGroupHeaderItem' in $$props) $$invalidate('createGroupHeaderItem', createGroupHeaderItem = $$props.createGroupHeaderItem);
+    		if ('createItem' in $$props) $$invalidate('createItem', createItem = $$props.createItem);
+    		if ('isSearchable' in $$props) $$invalidate('isSearchable', isSearchable = $$props.isSearchable);
+    		if ('inputStyles' in $$props) $$invalidate('inputStyles', inputStyles = $$props.inputStyles);
+    		if ('isClearable' in $$props) $$invalidate('isClearable', isClearable = $$props.isClearable);
+    		if ('isWaiting' in $$props) $$invalidate('isWaiting', isWaiting = $$props.isWaiting);
+    		if ('listPlacement' in $$props) $$invalidate('listPlacement', listPlacement = $$props.listPlacement);
+    		if ('listOpen' in $$props) $$invalidate('listOpen', listOpen = $$props.listOpen);
+    		if ('list' in $$props) $$invalidate('list', list = $$props.list);
+    		if ('isVirtualList' in $$props) $$invalidate('isVirtualList', isVirtualList = $$props.isVirtualList);
+    		if ('loadOptionsInterval' in $$props) $$invalidate('loadOptionsInterval', loadOptionsInterval = $$props.loadOptionsInterval);
+    		if ('noOptionsMessage' in $$props) $$invalidate('noOptionsMessage', noOptionsMessage = $$props.noOptionsMessage);
+    		if ('hideEmptyState' in $$props) $$invalidate('hideEmptyState', hideEmptyState = $$props.hideEmptyState);
+    		if ('filteredItems' in $$props) $$invalidate('filteredItems', filteredItems = $$props.filteredItems);
+    		if ('inputAttributes' in $$props) $$invalidate('inputAttributes', inputAttributes = $$props.inputAttributes);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { container, input, Item: Item$1, Selection: Selection$1, MultiSelection: MultiSelection$1, isMulti, isDisabled, isCreatable, isFocused, selectedValue, filterText, placeholder, items, groupBy, groupFilter, isGroupHeaderSelectable, getGroupHeaderLabel, getOptionLabel, optionIdentifier, loadOptions, hasError, containerStyles, getSelectionLabel, createGroupHeaderItem, createItem, isSearchable, inputStyles, isClearable, isWaiting, listPlacement, listOpen, list, isVirtualList, loadOptionsInterval, noOptionsMessage, hideEmptyState, filteredItems, inputAttributes, target, activeSelectedValue, _items, originalItemsClone, containerClasses, prev_selectedValue, prev_listOpen, prev_filterText, prev_isFocused, prev_filteredItems, _inputAttributes, showSelectedItem, placeholderText };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('container' in $$props) $$invalidate('container', container = $$props.container);
+    		if ('input' in $$props) $$invalidate('input', input = $$props.input);
+    		if ('Item' in $$props) $$invalidate('Item', Item$1 = $$props.Item);
+    		if ('Selection' in $$props) $$invalidate('Selection', Selection$1 = $$props.Selection);
+    		if ('MultiSelection' in $$props) $$invalidate('MultiSelection', MultiSelection$1 = $$props.MultiSelection);
+    		if ('isMulti' in $$props) $$invalidate('isMulti', isMulti = $$props.isMulti);
+    		if ('isDisabled' in $$props) $$invalidate('isDisabled', isDisabled = $$props.isDisabled);
+    		if ('isCreatable' in $$props) $$invalidate('isCreatable', isCreatable = $$props.isCreatable);
+    		if ('isFocused' in $$props) $$invalidate('isFocused', isFocused = $$props.isFocused);
+    		if ('selectedValue' in $$props) $$invalidate('selectedValue', selectedValue = $$props.selectedValue);
+    		if ('filterText' in $$props) $$invalidate('filterText', filterText = $$props.filterText);
+    		if ('placeholder' in $$props) $$invalidate('placeholder', placeholder = $$props.placeholder);
+    		if ('items' in $$props) $$invalidate('items', items = $$props.items);
+    		if ('groupBy' in $$props) $$invalidate('groupBy', groupBy = $$props.groupBy);
+    		if ('groupFilter' in $$props) $$invalidate('groupFilter', groupFilter = $$props.groupFilter);
+    		if ('isGroupHeaderSelectable' in $$props) $$invalidate('isGroupHeaderSelectable', isGroupHeaderSelectable = $$props.isGroupHeaderSelectable);
+    		if ('getGroupHeaderLabel' in $$props) $$invalidate('getGroupHeaderLabel', getGroupHeaderLabel = $$props.getGroupHeaderLabel);
+    		if ('getOptionLabel' in $$props) $$invalidate('getOptionLabel', getOptionLabel = $$props.getOptionLabel);
+    		if ('optionIdentifier' in $$props) $$invalidate('optionIdentifier', optionIdentifier = $$props.optionIdentifier);
+    		if ('loadOptions' in $$props) $$invalidate('loadOptions', loadOptions = $$props.loadOptions);
+    		if ('hasError' in $$props) $$invalidate('hasError', hasError = $$props.hasError);
+    		if ('containerStyles' in $$props) $$invalidate('containerStyles', containerStyles = $$props.containerStyles);
+    		if ('getSelectionLabel' in $$props) $$invalidate('getSelectionLabel', getSelectionLabel = $$props.getSelectionLabel);
+    		if ('createGroupHeaderItem' in $$props) $$invalidate('createGroupHeaderItem', createGroupHeaderItem = $$props.createGroupHeaderItem);
+    		if ('createItem' in $$props) $$invalidate('createItem', createItem = $$props.createItem);
+    		if ('isSearchable' in $$props) $$invalidate('isSearchable', isSearchable = $$props.isSearchable);
+    		if ('inputStyles' in $$props) $$invalidate('inputStyles', inputStyles = $$props.inputStyles);
+    		if ('isClearable' in $$props) $$invalidate('isClearable', isClearable = $$props.isClearable);
+    		if ('isWaiting' in $$props) $$invalidate('isWaiting', isWaiting = $$props.isWaiting);
+    		if ('listPlacement' in $$props) $$invalidate('listPlacement', listPlacement = $$props.listPlacement);
+    		if ('listOpen' in $$props) $$invalidate('listOpen', listOpen = $$props.listOpen);
+    		if ('list' in $$props) $$invalidate('list', list = $$props.list);
+    		if ('isVirtualList' in $$props) $$invalidate('isVirtualList', isVirtualList = $$props.isVirtualList);
+    		if ('loadOptionsInterval' in $$props) $$invalidate('loadOptionsInterval', loadOptionsInterval = $$props.loadOptionsInterval);
+    		if ('noOptionsMessage' in $$props) $$invalidate('noOptionsMessage', noOptionsMessage = $$props.noOptionsMessage);
+    		if ('hideEmptyState' in $$props) $$invalidate('hideEmptyState', hideEmptyState = $$props.hideEmptyState);
+    		if ('filteredItems' in $$props) $$invalidate('filteredItems', filteredItems = $$props.filteredItems);
+    		if ('inputAttributes' in $$props) $$invalidate('inputAttributes', inputAttributes = $$props.inputAttributes);
+    		if ('target' in $$props) target = $$props.target;
+    		if ('activeSelectedValue' in $$props) $$invalidate('activeSelectedValue', activeSelectedValue = $$props.activeSelectedValue);
+    		if ('_items' in $$props) $$invalidate('_items', _items = $$props._items);
+    		if ('originalItemsClone' in $$props) $$invalidate('originalItemsClone', originalItemsClone = $$props.originalItemsClone);
+    		if ('containerClasses' in $$props) $$invalidate('containerClasses', containerClasses = $$props.containerClasses);
+    		if ('prev_selectedValue' in $$props) prev_selectedValue = $$props.prev_selectedValue;
+    		if ('prev_listOpen' in $$props) prev_listOpen = $$props.prev_listOpen;
+    		if ('prev_filterText' in $$props) prev_filterText = $$props.prev_filterText;
+    		if ('prev_isFocused' in $$props) prev_isFocused = $$props.prev_isFocused;
+    		if ('prev_filteredItems' in $$props) prev_filteredItems = $$props.prev_filteredItems;
+    		if ('_inputAttributes' in $$props) $$invalidate('_inputAttributes', _inputAttributes = $$props._inputAttributes);
+    		if ('showSelectedItem' in $$props) $$invalidate('showSelectedItem', showSelectedItem = $$props.showSelectedItem);
+    		if ('placeholderText' in $$props) $$invalidate('placeholderText', placeholderText = $$props.placeholderText);
+    	};
+
+    	let showSelectedItem, placeholderText;
+
+    	$$self.$$.update = ($$dirty = { isMulti: 1, isDisabled: 1, isFocused: 1, selectedValue: 1, optionIdentifier: 1, filterText: 1, placeholder: 1, inputAttributes: 1, isSearchable: 1, items: 1, loadOptions: 1, originalItemsClone: 1, getOptionLabel: 1, groupBy: 1, createGroupHeaderItem: 1, isGroupHeaderSelectable: 1, groupFilter: 1 }) => {
+    		if ($$dirty.isMulti || $$dirty.isDisabled || $$dirty.isFocused) { {
+            $$invalidate('containerClasses', containerClasses = `selectContainer`);
+            $$invalidate('containerClasses', containerClasses += isMulti ? ' multiSelect' : '');
+            $$invalidate('containerClasses', containerClasses += isDisabled ? ' disabled' : '');
+            $$invalidate('containerClasses', containerClasses += isFocused ? ' focused' : '');
+          } }
+    		if ($$dirty.selectedValue || $$dirty.optionIdentifier) { {
+            if (typeof selectedValue === 'string') {
+              $$invalidate('selectedValue', selectedValue = { [optionIdentifier]: selectedValue, label: selectedValue });
+            }
+          } }
+    		if ($$dirty.selectedValue || $$dirty.filterText) { $$invalidate('showSelectedItem', showSelectedItem = selectedValue && filterText.length === 0); }
+    		if ($$dirty.selectedValue || $$dirty.placeholder) { $$invalidate('placeholderText', placeholderText = selectedValue ? '' : placeholder); }
+    		if ($$dirty.inputAttributes || $$dirty.isSearchable) { {
+            $$invalidate('_inputAttributes', _inputAttributes = Object.assign(inputAttributes, {
+              autocomplete: 'off',
+              autocorrect: 'off',
+              spellcheck: false
+            }));
+        
+            if (!isSearchable) {
+              $$invalidate('_inputAttributes', _inputAttributes.readonly = true, _inputAttributes);
+            }
+          } }
+    		if ($$dirty.items || $$dirty.loadOptions || $$dirty.filterText || $$dirty.originalItemsClone || $$dirty.isMulti || $$dirty.selectedValue || $$dirty.optionIdentifier || $$dirty.getOptionLabel || $$dirty.groupBy || $$dirty.createGroupHeaderItem || $$dirty.isGroupHeaderSelectable || $$dirty.groupFilter) { {
+            let _filteredItems;
+            let _items = items;
+        
+            if (items && items.length > 0 && typeof items[0] !== 'object') {
+              _items = items.map((item, index) => {
+                return {
+                  index,
+                  value: item,
+                  label: item
+                }
+              });
+            }
+        
+            if (loadOptions && filterText.length === 0 && originalItemsClone) {
+              _filteredItems = JSON.parse(originalItemsClone);
+              _items = JSON.parse(originalItemsClone);
+            } else {
+              _filteredItems = loadOptions ? filterText.length === 0 ? [] : _items : _items.filter(item => {
+        
+                let keepItem = true;
+        
+                if (isMulti && selectedValue) {
+                  keepItem = !selectedValue.find((value) => {
+                    return value[optionIdentifier] === item[optionIdentifier]
+                  });
+                }
+        
+                if (keepItem && filterText.length < 1) return true;
+        
+                return keepItem && getOptionLabel(item, filterText).toLowerCase().includes(filterText.toLowerCase());
+              });
+            }
+        
+            if (groupBy) {
+              const groupValues = [];
+              const groups = {};
+        
+              _filteredItems.forEach((item) => {
+                const groupValue = groupBy(item);
+        
+                if (!groupValues.includes(groupValue)) {
+                  groupValues.push(groupValue);
+                  groups[groupValue] = [];
+        
+                  if(groupValue) {
+                    groups[groupValue].push(Object.assign(
+                      createGroupHeaderItem(groupValue, item), 
+                      { 
+                        id: groupValue, 
+                        isGroupHeader: true, 
+                        isSelectable: isGroupHeaderSelectable
+                      }
+                    ));
+                  }
+                }
+                
+                groups[groupValue].push(Object.assign({ isGroupItem: !!groupValue }, item));
+              });
+        
+              const sortedGroupedItems = [];
+        
+              groupFilter(groupValues).forEach((groupValue) => {
+                sortedGroupedItems.push(...groups[groupValue]);
+              });
+        
+              $$invalidate('filteredItems', filteredItems = sortedGroupedItems);
+            } else {
+              $$invalidate('filteredItems', filteredItems = _filteredItems);
+            }
+          } }
+    	};
+
+    	return {
+    		container,
+    		input,
+    		Item: Item$1,
+    		Selection: Selection$1,
+    		MultiSelection: MultiSelection$1,
+    		isMulti,
+    		isDisabled,
+    		isCreatable,
+    		isFocused,
+    		selectedValue,
+    		filterText,
+    		placeholder,
+    		items,
+    		groupBy,
+    		groupFilter,
+    		isGroupHeaderSelectable,
+    		getGroupHeaderLabel,
+    		getOptionLabel,
+    		optionIdentifier,
+    		loadOptions,
+    		hasError,
+    		containerStyles,
+    		getSelectionLabel,
+    		createGroupHeaderItem,
+    		createItem,
+    		isSearchable,
+    		inputStyles,
+    		isClearable,
+    		isWaiting,
+    		listPlacement,
+    		listOpen,
+    		list,
+    		isVirtualList,
+    		loadOptionsInterval,
+    		noOptionsMessage,
+    		hideEmptyState,
+    		filteredItems,
+    		inputAttributes,
+    		activeSelectedValue,
+    		containerClasses,
+    		_inputAttributes,
+    		handleMultiItemClear,
+    		getPosition,
+    		handleKeyDown,
+    		handleFocus,
+    		handleWindowClick,
+    		handleClick,
+    		handleClear,
+    		showSelectedItem,
+    		placeholderText,
+    		input_1_input_handler,
+    		input_1_binding,
+    		div_binding
+    	};
+    }
+
+    class Select extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$c, create_fragment$c, safe_not_equal, ["container", "input", "Item", "Selection", "MultiSelection", "isMulti", "isDisabled", "isCreatable", "isFocused", "selectedValue", "filterText", "placeholder", "items", "groupBy", "groupFilter", "isGroupHeaderSelectable", "getGroupHeaderLabel", "getOptionLabel", "optionIdentifier", "loadOptions", "hasError", "containerStyles", "getSelectionLabel", "createGroupHeaderItem", "createItem", "isSearchable", "inputStyles", "isClearable", "isWaiting", "listPlacement", "listOpen", "list", "isVirtualList", "loadOptionsInterval", "noOptionsMessage", "hideEmptyState", "filteredItems", "inputAttributes", "handleClear"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Select", options, id: create_fragment$c.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.handleClear === undefined && !('handleClear' in props)) {
+    			console.warn("<Select> was created without expected prop 'handleClear'");
+    		}
+    	}
+
+    	get container() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set container(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get input() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set input(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get Item() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set Item(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get Selection() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set Selection(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get MultiSelection() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set MultiSelection(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get isMulti() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isMulti(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get isDisabled() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isDisabled(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get isCreatable() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isCreatable(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get isFocused() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isFocused(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get selectedValue() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set selectedValue(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get filterText() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set filterText(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get placeholder() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set placeholder(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get items() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set items(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get groupBy() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set groupBy(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get groupFilter() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set groupFilter(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get isGroupHeaderSelectable() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isGroupHeaderSelectable(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get getGroupHeaderLabel() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set getGroupHeaderLabel(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get getOptionLabel() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set getOptionLabel(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get optionIdentifier() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set optionIdentifier(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get loadOptions() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set loadOptions(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get hasError() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set hasError(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get containerStyles() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set containerStyles(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get getSelectionLabel() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set getSelectionLabel(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get createGroupHeaderItem() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set createGroupHeaderItem(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get createItem() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set createItem(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get isSearchable() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isSearchable(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get inputStyles() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set inputStyles(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get isClearable() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isClearable(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get isWaiting() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isWaiting(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get listPlacement() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set listPlacement(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get listOpen() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set listOpen(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get list() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set list(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get isVirtualList() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set isVirtualList(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get loadOptionsInterval() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set loadOptionsInterval(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get noOptionsMessage() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set noOptionsMessage(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get hideEmptyState() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set hideEmptyState(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get filteredItems() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set filteredItems(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get inputAttributes() {
+    		throw new Error("<Select>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set inputAttributes(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get handleClear() {
+    		return this.$$.ctx.handleClear;
+    	}
+
+    	set handleClear(value) {
+    		throw new Error("<Select>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/components/Content.svelte generated by Svelte v3.12.1 */
+
+    const file$c = "src/components/Content.svelte";
+
+    // (62:12) {#if description}
+    function create_if_block$8(ctx) {
+    	var div;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			attr_dev(div, "class", "description");
+    			add_location(div, file$c, 62, 16, 1302);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			div.innerHTML = ctx.description;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if (changed.description) {
+    				div.innerHTML = ctx.description;
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$8.name, type: "if", source: "(62:12) {#if description}", ctx });
+    	return block;
+    }
+
+    function create_fragment$d(ctx) {
+    	var section, div3, div0, h1, t0_value = ctx.workspace.name + "", t0, t1, t2, div2, div1, updating_selectedValue, t3, current;
+
+    	var if_block = (ctx.description) && create_if_block$8(ctx);
+
+    	function select_selectedValue_binding(value) {
+    		ctx.select_selectedValue_binding.call(null, value);
+    		updating_selectedValue = true;
+    		add_flush_callback(() => updating_selectedValue = false);
+    	}
+
+    	let select_props = {
+    		items: ctx.languages,
+    		isClearable: false,
+    		isSearchable: false
+    	};
+    	if (ctx.selectedValue !== void 0) {
+    		select_props.selectedValue = ctx.selectedValue;
+    	}
+    	var select = new Select({ props: select_props, $$inline: true });
+
+    	binding_callbacks.push(() => bind(select, 'selectedValue', select_selectedValue_binding));
+
+    	var rows = new Rows({
+    		props: {
+    		content: ctx.content,
+    		env: ctx.env,
+    		language: ctx.language,
+    		cookiejars: ctx.cookiejars
+    	},
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			section = element("section");
+    			div3 = element("div");
+    			div0 = element("div");
+    			h1 = element("h1");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			if (if_block) if_block.c();
+    			t2 = space();
+    			div2 = element("div");
+    			div1 = element("div");
+    			select.$$.fragment.c();
+    			t3 = space();
+    			rows.$$.fragment.c();
+    			add_location(h1, file$c, 60, 12, 1230);
+    			attr_dev(div0, "class", "left");
+    			add_location(div0, file$c, 59, 8, 1199);
+    			attr_dev(div1, "class", "language-selector svelte-uhjpwm");
+    			add_location(div1, file$c, 66, 12, 1426);
+    			attr_dev(div2, "class", "right");
+    			add_location(div2, file$c, 65, 8, 1394);
+    			attr_dev(div3, "class", "row");
+    			add_location(div3, file$c, 58, 4, 1173);
+    			attr_dev(section, "class", "content svelte-uhjpwm");
+    			add_location(section, file$c, 57, 0, 1143);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, section, anchor);
+    			append_dev(section, div3);
+    			append_dev(div3, div0);
+    			append_dev(div0, h1);
+    			append_dev(h1, t0);
+    			append_dev(div0, t1);
+    			if (if_block) if_block.m(div0, null);
+    			append_dev(div3, t2);
+    			append_dev(div3, div2);
+    			append_dev(div2, div1);
+    			mount_component(select, div1, null);
+    			append_dev(section, t3);
+    			mount_component(rows, section, null);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.workspace) && t0_value !== (t0_value = ctx.workspace.name + "")) {
+    				set_data_dev(t0, t0_value);
+    			}
+
+    			if (ctx.description) {
+    				if (if_block) {
+    					if_block.p(changed, ctx);
+    				} else {
+    					if_block = create_if_block$8(ctx);
+    					if_block.c();
+    					if_block.m(div0, null);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
+    			var select_changes = {};
+    			if (!updating_selectedValue && changed.selectedValue) {
+    				select_changes.selectedValue = ctx.selectedValue;
+    			}
+    			select.$set(select_changes);
+
+    			var rows_changes = {};
+    			if (changed.content) rows_changes.content = ctx.content;
+    			if (changed.env) rows_changes.env = ctx.env;
+    			if (changed.language) rows_changes.language = ctx.language;
+    			if (changed.cookiejars) rows_changes.cookiejars = ctx.cookiejars;
+    			rows.$set(rows_changes);
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(select.$$.fragment, local);
+
+    			transition_in(rows.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(select.$$.fragment, local);
+    			transition_out(rows.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(section);
+    			}
+
+    			if (if_block) if_block.d();
+
+    			destroy_component(select);
+
+    			destroy_component(rows);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$d.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function instance$d($$self, $$props, $$invalidate) {
+    	
+
+      const markdown = new showdown.Converter({
+        simplifiedAutoLink: true,
+        openLinksInNewWindow: true,
+        excludeTrailingPunctuationFromURLs: true,
+        tables: true
+      });
+
+      const languages = [
+        {
+          value: 'curl',
+          label: 'cURL'
+        },
+        {
+          value: 'javascript',
+          label: 'JavaScript/Deno (fetch)'
+        },
+        {
+          value: 'python',
+          label: 'Python (requests)'
+        },
+        {
+          value: 'node',
+          label: 'Node.js (node-fetch)'
+        },
+        {
+          value: 'ruby',
+          label: 'Ruby'
+        },
+        {
+          value: 'php',
+          label: 'PHP'
+        },
+        {
+          value: 'golang',
+          label: 'Go'
+        }
+      ];
+
+      let { env, groups, requests, workspace, cookiejars } = $$props;
+
+      let selectedValue = languages[0];
+
+    	const writable_props = ['env', 'groups', 'requests', 'workspace', 'cookiejars'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<Content> was created with unknown prop '${key}'`);
+    	});
+
+    	function select_selectedValue_binding(value) {
+    		selectedValue = value;
+    		$$invalidate('selectedValue', selectedValue);
+    	}
+
+    	$$self.$set = $$props => {
+    		if ('env' in $$props) $$invalidate('env', env = $$props.env);
+    		if ('groups' in $$props) $$invalidate('groups', groups = $$props.groups);
+    		if ('requests' in $$props) $$invalidate('requests', requests = $$props.requests);
+    		if ('workspace' in $$props) $$invalidate('workspace', workspace = $$props.workspace);
+    		if ('cookiejars' in $$props) $$invalidate('cookiejars', cookiejars = $$props.cookiejars);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { env, groups, requests, workspace, cookiejars, selectedValue, content, description, language };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('env' in $$props) $$invalidate('env', env = $$props.env);
+    		if ('groups' in $$props) $$invalidate('groups', groups = $$props.groups);
+    		if ('requests' in $$props) $$invalidate('requests', requests = $$props.requests);
+    		if ('workspace' in $$props) $$invalidate('workspace', workspace = $$props.workspace);
+    		if ('cookiejars' in $$props) $$invalidate('cookiejars', cookiejars = $$props.cookiejars);
+    		if ('selectedValue' in $$props) $$invalidate('selectedValue', selectedValue = $$props.selectedValue);
+    		if ('content' in $$props) $$invalidate('content', content = $$props.content);
+    		if ('description' in $$props) $$invalidate('description', description = $$props.description);
+    		if ('language' in $$props) $$invalidate('language', language = $$props.language);
+    	};
+
+    	let content, description, language;
+
+    	$$self.$$.update = ($$dirty = { groups: 1, requests: 1, workspace: 1, env: 1, selectedValue: 1 }) => {
+    		if ($$dirty.groups || $$dirty.requests) { $$invalidate('content', content = [...groups, ...requests]); }
+    		if ($$dirty.workspace || $$dirty.env) { $$invalidate('description', description = workspace.description && markdown.makeHtml(applyEnv(workspace.description, env))); }
+    		if ($$dirty.selectedValue) { $$invalidate('language', language = selectedValue.value); }
+    	};
+
+    	return {
+    		languages,
+    		env,
+    		groups,
+    		requests,
+    		workspace,
+    		cookiejars,
+    		selectedValue,
+    		content,
+    		description,
+    		language,
+    		select_selectedValue_binding
+    	};
+    }
+
+    class Content extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$d, create_fragment$d, safe_not_equal, ["env", "groups", "requests", "workspace", "cookiejars"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Content", options, id: create_fragment$d.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.env === undefined && !('env' in props)) {
+    			console.warn("<Content> was created without expected prop 'env'");
+    		}
+    		if (ctx.groups === undefined && !('groups' in props)) {
+    			console.warn("<Content> was created without expected prop 'groups'");
+    		}
+    		if (ctx.requests === undefined && !('requests' in props)) {
+    			console.warn("<Content> was created without expected prop 'requests'");
+    		}
+    		if (ctx.workspace === undefined && !('workspace' in props)) {
+    			console.warn("<Content> was created without expected prop 'workspace'");
+    		}
+    		if (ctx.cookiejars === undefined && !('cookiejars' in props)) {
+    			console.warn("<Content> was created without expected prop 'cookiejars'");
+    		}
+    	}
+
+    	get env() {
+    		throw new Error("<Content>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set env(value) {
+    		throw new Error("<Content>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get groups() {
+    		throw new Error("<Content>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set groups(value) {
+    		throw new Error("<Content>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get requests() {
+    		throw new Error("<Content>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set requests(value) {
+    		throw new Error("<Content>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get workspace() {
+    		throw new Error("<Content>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set workspace(value) {
+    		throw new Error("<Content>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get cookiejars() {
+    		throw new Error("<Content>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set cookiejars(value) {
+    		throw new Error("<Content>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    function applyEnvForObject(object, env) {
+      let obj = object;
+      if (typeof obj === 'object') {
+        obj = JSON.parse(JSON.stringify(object));
+        replaceObjectValues(obj, env);
+      }
+      return obj;
+    }
+
+    function replaceObjectValues(obj, env) {
+      Object.keys(obj).forEach(key => {
+        if (obj[key] !== null) {
+          switch (typeof obj[key]) {
+            case 'object':
+              replaceObjectValues(obj[key], env);
+              break;
+            case 'string':
+              obj[key] = applyEnv(obj[key], env);
+              break;
+          }
+        }
+      });
+    }
+
+    /* src/App.svelte generated by Svelte v3.12.1 */
+
+    const file$d = "src/App.svelte";
+
+    function get_each_context$7(ctx, list, i) {
+    	const child_ctx = Object.create(ctx);
+    	child_ctx.environment = list[i];
+    	child_ctx.idx = i;
+    	return child_ctx;
+    }
+
+    // (440:8) {#each config.environments as environment, idx}
+    function create_each_block$7(ctx) {
+    	var option, t_value = ctx.environment.name + "", t;
+
+    	const block = {
+    		c: function create() {
+    			option = element("option");
+    			t = text(t_value);
+    			option.__value = ctx.idx;
+    			option.value = option.__value;
+    			add_location(option, file$d, 440, 10, 10668);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, option, anchor);
+    			append_dev(option, t);
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((changed.config) && t_value !== (t_value = ctx.environment.name + "")) {
+    				set_data_dev(t, t_value);
+    			}
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(option);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_each_block$7.name, type: "each", source: "(440:8) {#each config.environments as environment, idx}", ctx });
+    	return block;
+    }
+
+    function create_fragment$e(ctx) {
+    	var title_value, t0, header, div1, a0, i0, t1, div0, img0, img0_alt_value, t2, h1, t3_value = ctx.config.workspace.name + "", t3, t4, div4, div2, a1, img1, t5, div3, label, t7, select, t8, a2, i1, t9, section, t10, current, dispose;
+
+    	document.title = title_value = ctx.config.workspace.name;
+    	let each_value = ctx.config.environments;
+
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$7(get_each_context$7(ctx, each_value, i));
+    	}
+
+    	var sidebar = new Sidebar({
+    		props: {
+    		requests: ctx.requests,
+    		groups: ctx.groups,
+    		workspace: ctx.config.workspace,
+    		visible: ctx.menuVisible
+    	},
+    		$$inline: true
+    	});
+
+    	var content = new Content({
+    		props: {
+    		requests: ctx.requests,
+    		groups: ctx.groups,
+    		workspace: ctx.config.workspace,
+    		cookiejars: ctx.config.cookiejars,
+    		env: ctx.env
+    	},
+    		$$inline: true
+    	});
+
+    	const block = {
+    		c: function create() {
+    			t0 = space();
+    			header = element("header");
+    			div1 = element("div");
+    			a0 = element("a");
+    			i0 = element("i");
+    			t1 = space();
+    			div0 = element("div");
+    			img0 = element("img");
+    			t2 = space();
+    			h1 = element("h1");
+    			t3 = text(t3_value);
+    			t4 = space();
+    			div4 = element("div");
+    			div2 = element("div");
+    			a1 = element("a");
+    			img1 = element("img");
+    			t5 = space();
+    			div3 = element("div");
+    			label = element("label");
+    			label.textContent = "Environment:";
+    			t7 = space();
+    			select = element("select");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t8 = space();
+    			a2 = element("a");
+    			i1 = element("i");
+    			t9 = space();
+    			section = element("section");
+    			sidebar.$$.fragment.c();
+    			t10 = space();
+    			content.$$.fragment.c();
+    			attr_dev(i0, "class", "fa fa-bars");
+    			attr_dev(i0, "aria-hidden", "true");
+    			add_location(i0, file$d, 421, 6, 10042);
+    			attr_dev(a0, "href", "javascript:");
+    			attr_dev(a0, "class", "hamburger-toggler");
+    			add_location(a0, file$d, 420, 4, 9960);
+    			attr_dev(img0, "src", "logo.png");
+    			attr_dev(img0, "alt", img0_alt_value = ctx.config.workspace.name);
+    			add_location(img0, file$d, 425, 6, 10127);
+    			attr_dev(div0, "class", "logo");
+    			add_location(div0, file$d, 424, 4, 10102);
+    			attr_dev(h1, "class", "title");
+    			add_location(h1, file$d, 428, 4, 10194);
+    			attr_dev(div1, "class", "header-left");
+    			add_location(div1, file$d, 419, 2, 9930);
+    			attr_dev(img1, "src", "https://insomnia.rest/images/run.svg");
+    			attr_dev(img1, "alt", "Run in Insomnia");
+    			add_location(img1, file$d, 433, 8, 10360);
+    			attr_dev(a1, "href", ctx.runInInsomniaLink);
+    			attr_dev(a1, "target", "_blank");
+    			add_location(a1, file$d, 432, 6, 10307);
+    			attr_dev(div2, "class", "run");
+    			add_location(div2, file$d, 431, 4, 10283);
+    			attr_dev(label, "for", "env");
+    			set_style(label, "display", "inline-block");
+    			add_location(label, file$d, 437, 6, 10491);
+    			if (ctx.envId === void 0) add_render_callback(() => ctx.select_change_handler.call(select));
+    			attr_dev(select, "id", "env");
+    			add_location(select, file$d, 438, 6, 10565);
+    			attr_dev(div3, "class", "environment");
+    			add_location(div3, file$d, 436, 4, 10459);
+    			attr_dev(i1, "class", "fa fa-code");
+    			attr_dev(i1, "aria-hidden", "true");
+    			add_location(i1, file$d, 450, 6, 10937);
+    			attr_dev(a2, "href", "javascript:;");
+    			attr_dev(a2, "class", "example-toggler");
+    			attr_dev(a2, "title", "Toggle request examples");
+    			toggle_class(a2, "inactive", !ctx.exampleVisible);
+    			add_location(a2, file$d, 444, 4, 10763);
+    			attr_dev(div4, "class", "header-right");
+    			add_location(div4, file$d, 430, 2, 10252);
+    			set_style(header, "border-top", "6px solid " + (ctx.color !== null ? ctx.color : '#6a57d5'));
+    			add_location(header, file$d, 418, 0, 9851);
+    			attr_dev(section, "class", "wrapper");
+    			toggle_class(section, "hide-right", !ctx.exampleVisible);
+    			add_location(section, file$d, 455, 0, 11012);
+
+    			dispose = [
+    				listen_dev(a0, "click", ctx.toggleHamburger),
+    				listen_dev(select, "change", ctx.select_change_handler),
+    				listen_dev(a2, "click", ctx.toggleExample)
+    			];
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, header, anchor);
+    			append_dev(header, div1);
+    			append_dev(div1, a0);
+    			append_dev(a0, i0);
+    			append_dev(div1, t1);
+    			append_dev(div1, div0);
+    			append_dev(div0, img0);
+    			append_dev(div1, t2);
+    			append_dev(div1, h1);
+    			append_dev(h1, t3);
+    			append_dev(header, t4);
+    			append_dev(header, div4);
+    			append_dev(div4, div2);
+    			append_dev(div2, a1);
+    			append_dev(a1, img1);
+    			append_dev(div4, t5);
+    			append_dev(div4, div3);
+    			append_dev(div3, label);
+    			append_dev(div3, t7);
+    			append_dev(div3, select);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(select, null);
+    			}
+
+    			select_option(select, ctx.envId);
+
+    			append_dev(div4, t8);
+    			append_dev(div4, a2);
+    			append_dev(a2, i1);
+    			insert_dev(target, t9, anchor);
+    			insert_dev(target, section, anchor);
+    			mount_component(sidebar, section, null);
+    			append_dev(section, t10);
+    			mount_component(content, section, null);
+    			current = true;
+    		},
+
+    		p: function update(changed, ctx) {
+    			if ((!current || changed.config) && title_value !== (title_value = ctx.config.workspace.name)) {
+    				document.title = title_value;
+    			}
+
+    			if ((!current || changed.config) && img0_alt_value !== (img0_alt_value = ctx.config.workspace.name)) {
+    				attr_dev(img0, "alt", img0_alt_value);
+    			}
+
+    			if ((!current || changed.config) && t3_value !== (t3_value = ctx.config.workspace.name + "")) {
+    				set_data_dev(t3, t3_value);
+    			}
+
+    			if (changed.config) {
+    				each_value = ctx.config.environments;
+
+    				let i;
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$7(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(changed, child_ctx);
+    					} else {
+    						each_blocks[i] = create_each_block$7(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(select, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+    				each_blocks.length = each_value.length;
+    			}
+
+    			if (changed.envId) select_option(select, ctx.envId);
+
+    			if (changed.exampleVisible) {
+    				toggle_class(a2, "inactive", !ctx.exampleVisible);
+    			}
+
+    			if (!current || changed.color) {
+    				set_style(header, "border-top", "6px solid " + (ctx.color !== null ? ctx.color : '#6a57d5'));
+    			}
+
+    			var sidebar_changes = {};
+    			if (changed.requests) sidebar_changes.requests = ctx.requests;
+    			if (changed.groups) sidebar_changes.groups = ctx.groups;
+    			if (changed.config) sidebar_changes.workspace = ctx.config.workspace;
+    			if (changed.menuVisible) sidebar_changes.visible = ctx.menuVisible;
+    			sidebar.$set(sidebar_changes);
+
+    			var content_changes = {};
+    			if (changed.requests) content_changes.requests = ctx.requests;
+    			if (changed.groups) content_changes.groups = ctx.groups;
+    			if (changed.config) content_changes.workspace = ctx.config.workspace;
+    			if (changed.config) content_changes.cookiejars = ctx.config.cookiejars;
+    			if (changed.env) content_changes.env = ctx.env;
+    			content.$set(content_changes);
+
+    			if (changed.exampleVisible) {
+    				toggle_class(section, "hide-right", !ctx.exampleVisible);
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(sidebar.$$.fragment, local);
+
+    			transition_in(content.$$.fragment, local);
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(sidebar.$$.fragment, local);
+    			transition_out(content.$$.fragment, local);
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(t0);
+    				detach_dev(header);
+    			}
+
+    			destroy_each(each_blocks, detaching);
+
+    			if (detaching) {
+    				detach_dev(t9);
+    				detach_dev(section);
+    			}
+
+    			destroy_component(sidebar);
+
+    			destroy_component(content);
+
+    			run_all(dispose);
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$e.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    function instance$e($$self, $$props, $$invalidate) {
+    	
+
+      let { config } = $$props;
+
+      let envId = 0;
+
+      const jsonUrl = window.location.origin + window.INSOMNIA_URL;
+      const runInInsomniaLink = `https://insomnia.rest/run/?label=${encodeURIComponent(
+    config.workspace.name
+  )}&uri=${encodeURIComponent(jsonUrl)}`;
+
+      let menuVisible = false;
+      let exampleVisible =
+        (localStorage.getItem('show-examples') || 'true') === 'true';
+
+      function toggleHamburger() {
+        $$invalidate('menuVisible', menuVisible = !menuVisible);
+      }
+
+      function toggleExample() {
+        $$invalidate('exampleVisible', exampleVisible = !exampleVisible);
+        localStorage.setItem('show-examples', exampleVisible);
+      }
+
+    	const writable_props = ['config'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<App> was created with unknown prop '${key}'`);
+    	});
+
+    	function select_change_handler() {
+    		envId = select_value(this);
+    		$$invalidate('envId', envId);
+    	}
+
+    	$$self.$set = $$props => {
+    		if ('config' in $$props) $$invalidate('config', config = $$props.config);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { config, envId, menuVisible, exampleVisible, env, color, requests, groups };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('config' in $$props) $$invalidate('config', config = $$props.config);
+    		if ('envId' in $$props) $$invalidate('envId', envId = $$props.envId);
+    		if ('menuVisible' in $$props) $$invalidate('menuVisible', menuVisible = $$props.menuVisible);
+    		if ('exampleVisible' in $$props) $$invalidate('exampleVisible', exampleVisible = $$props.exampleVisible);
+    		if ('env' in $$props) $$invalidate('env', env = $$props.env);
+    		if ('color' in $$props) $$invalidate('color', color = $$props.color);
+    		if ('requests' in $$props) $$invalidate('requests', requests = $$props.requests);
+    		if ('groups' in $$props) $$invalidate('groups', groups = $$props.groups);
+    	};
+
+    	let env, color, requests, groups;
+
+    	$$self.$$.update = ($$dirty = { config: 1, envId: 1, env: 1 }) => {
+    		if ($$dirty.config || $$dirty.envId) { $$invalidate('env', env = config.environments[envId]); }
+    		if ($$dirty.env) { $$invalidate('color', color = env.color); }
+    		if ($$dirty.config || $$dirty.envId) { $$invalidate('requests', requests = applyEnvForObject(config.requests, config.environments[envId])); }
+    		if ($$dirty.config || $$dirty.envId) { $$invalidate('groups', groups = applyEnvForObject(config.groups, config.environments[envId])); }
+    	};
+
+    	return {
+    		config,
+    		envId,
+    		runInInsomniaLink,
+    		menuVisible,
+    		exampleVisible,
+    		toggleHamburger,
+    		toggleExample,
+    		env,
+    		color,
+    		requests,
+    		groups,
+    		select_change_handler
+    	};
+    }
+
+    class App extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$e, create_fragment$e, safe_not_equal, ["config"]);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "App", options, id: create_fragment$e.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.config === undefined && !('config' in props)) {
+    			console.warn("<App> was created without expected prop 'config'");
+    		}
+    	}
+
+    	get config() {
+    		throw new Error("<App>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set config(value) {
+    		throw new Error("<App>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+    }
+
+    /* src/ErrorPage.svelte generated by Svelte v3.12.1 */
+
+    const file$e = "src/ErrorPage.svelte";
+
+    function create_fragment$f(ctx) {
+    	var t0, div, h1, t2, p0, t3, a, t5, t6, p1;
+
+    	const block = {
+    		c: function create() {
+    			t0 = space();
+    			div = element("div");
+    			h1 = element("h1");
+    			h1.textContent = "Uh-oh!";
+    			t2 = space();
+    			p0 = element("p");
+    			t3 = text("It looks like it's not possible to retrieve the contents of the API documentation\n    at the moment. If you're the owner of this site, make sure that your\n    ");
+    			a = element("a");
+    			a.textContent = "Insomnia JSON file";
+    			t5 = text(" is accessible.");
+    			t6 = space();
+    			p1 = element("p");
+    			p1.textContent = "The developer console of your browser might have more things to say about this error.";
+    			document.title = "Uh-oh!";
+    			add_location(h1, file$e, 5, 2, 81);
+    			attr_dev(a, "href", window.INSOMNIA_URL);
+    			attr_dev(a, "target", "_blank");
+    			add_location(a, file$e, 9, 4, 266);
+    			add_location(p0, file$e, 6, 2, 99);
+    			add_location(p1, file$e, 11, 2, 359);
+    			attr_dev(div, "class", "error-page svelte-8fny4x");
+    			add_location(div, file$e, 4, 0, 54);
+    		},
+
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, div, anchor);
+    			append_dev(div, h1);
+    			append_dev(div, t2);
+    			append_dev(div, p0);
+    			append_dev(p0, t3);
+    			append_dev(p0, a);
+    			append_dev(p0, t5);
+    			append_dev(div, t6);
+    			append_dev(div, p1);
+    		},
+
+    		p: noop,
+    		i: noop,
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(t0);
+    				detach_dev(div);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$f.name, type: "component", source: "", ctx });
+    	return block;
+    }
+
+    class ErrorPage extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, null, create_fragment$f, safe_not_equal, []);
+    		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "ErrorPage", options, id: create_fragment$f.name });
+    	}
+    }
+
+    /**
+     * lodash (Custom Build) <https://lodash.com/>
+     * Build: `lodash modularize exports="npm" -o ./`
+     * Copyright jQuery Foundation and other contributors <https://jquery.org/>
+     * Released under MIT license <https://lodash.com/license>
+     * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+     * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+     */
+
+    /** Used as references for various `Number` constants. */
+    var INFINITY = 1 / 0,
+        MAX_SAFE_INTEGER = 9007199254740991;
+
+    /** `Object#toString` result references. */
+    var argsTag = '[object Arguments]',
+        funcTag = '[object Function]',
+        genTag = '[object GeneratorFunction]',
+        symbolTag = '[object Symbol]';
+
+    /** Detect free variable `global` from Node.js. */
+    var freeGlobal = typeof commonjsGlobal == 'object' && commonjsGlobal && commonjsGlobal.Object === Object && commonjsGlobal;
+
+    /** Detect free variable `self`. */
+    var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+    /** Used as a reference to the global object. */
+    var root = freeGlobal || freeSelf || Function('return this')();
+
+    /**
+     * A faster alternative to `Function#apply`, this function invokes `func`
+     * with the `this` binding of `thisArg` and the arguments of `args`.
+     *
+     * @private
+     * @param {Function} func The function to invoke.
+     * @param {*} thisArg The `this` binding of `func`.
+     * @param {Array} args The arguments to invoke `func` with.
+     * @returns {*} Returns the result of `func`.
+     */
+    function apply(func, thisArg, args) {
+      switch (args.length) {
+        case 0: return func.call(thisArg);
+        case 1: return func.call(thisArg, args[0]);
+        case 2: return func.call(thisArg, args[0], args[1]);
+        case 3: return func.call(thisArg, args[0], args[1], args[2]);
+      }
+      return func.apply(thisArg, args);
+    }
+
+    /**
+     * A specialized version of `_.map` for arrays without support for iteratee
+     * shorthands.
+     *
+     * @private
+     * @param {Array} [array] The array to iterate over.
+     * @param {Function} iteratee The function invoked per iteration.
+     * @returns {Array} Returns the new mapped array.
+     */
+    function arrayMap(array, iteratee) {
+      var index = -1,
+          length = array ? array.length : 0,
+          result = Array(length);
+
+      while (++index < length) {
+        result[index] = iteratee(array[index], index, array);
+      }
+      return result;
+    }
+
+    /**
+     * Appends the elements of `values` to `array`.
+     *
+     * @private
+     * @param {Array} array The array to modify.
+     * @param {Array} values The values to append.
+     * @returns {Array} Returns `array`.
+     */
+    function arrayPush(array, values) {
+      var index = -1,
+          length = values.length,
+          offset = array.length;
+
+      while (++index < length) {
+        array[offset + index] = values[index];
+      }
+      return array;
+    }
+
+    /** Used for built-in method references. */
+    var objectProto = Object.prototype;
+
+    /** Used to check objects for own properties. */
+    var hasOwnProperty = objectProto.hasOwnProperty;
+
+    /**
+     * Used to resolve the
+     * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+     * of values.
+     */
+    var objectToString = objectProto.toString;
+
+    /** Built-in value references. */
+    var Symbol$1 = root.Symbol,
+        propertyIsEnumerable = objectProto.propertyIsEnumerable,
+        spreadableSymbol = Symbol$1 ? Symbol$1.isConcatSpreadable : undefined;
+
+    /* Built-in method references for those with the same name as other `lodash` methods. */
+    var nativeMax = Math.max;
+
+    /**
+     * The base implementation of `_.flatten` with support for restricting flattening.
+     *
+     * @private
+     * @param {Array} array The array to flatten.
+     * @param {number} depth The maximum recursion depth.
+     * @param {boolean} [predicate=isFlattenable] The function invoked per iteration.
+     * @param {boolean} [isStrict] Restrict to values that pass `predicate` checks.
+     * @param {Array} [result=[]] The initial result value.
+     * @returns {Array} Returns the new flattened array.
+     */
+    function baseFlatten(array, depth, predicate, isStrict, result) {
+      var index = -1,
+          length = array.length;
+
+      predicate || (predicate = isFlattenable);
+      result || (result = []);
+
+      while (++index < length) {
+        var value = array[index];
+        if (depth > 0 && predicate(value)) {
+          if (depth > 1) {
+            // Recursively flatten arrays (susceptible to call stack limits).
+            baseFlatten(value, depth - 1, predicate, isStrict, result);
+          } else {
+            arrayPush(result, value);
+          }
+        } else if (!isStrict) {
+          result[result.length] = value;
+        }
+      }
+      return result;
+    }
+
+    /**
+     * The base implementation of `_.pick` without support for individual
+     * property identifiers.
+     *
+     * @private
+     * @param {Object} object The source object.
+     * @param {string[]} props The property identifiers to pick.
+     * @returns {Object} Returns the new object.
+     */
+    function basePick(object, props) {
+      object = Object(object);
+      return basePickBy(object, props, function(value, key) {
+        return key in object;
+      });
+    }
+
+    /**
+     * The base implementation of  `_.pickBy` without support for iteratee shorthands.
+     *
+     * @private
+     * @param {Object} object The source object.
+     * @param {string[]} props The property identifiers to pick from.
+     * @param {Function} predicate The function invoked per property.
+     * @returns {Object} Returns the new object.
+     */
+    function basePickBy(object, props, predicate) {
+      var index = -1,
+          length = props.length,
+          result = {};
+
+      while (++index < length) {
+        var key = props[index],
+            value = object[key];
+
+        if (predicate(value, key)) {
+          result[key] = value;
+        }
+      }
+      return result;
+    }
+
+    /**
+     * The base implementation of `_.rest` which doesn't validate or coerce arguments.
+     *
+     * @private
+     * @param {Function} func The function to apply a rest parameter to.
+     * @param {number} [start=func.length-1] The start position of the rest parameter.
+     * @returns {Function} Returns the new function.
+     */
+    function baseRest(func, start) {
+      start = nativeMax(start === undefined ? (func.length - 1) : start, 0);
+      return function() {
+        var args = arguments,
+            index = -1,
+            length = nativeMax(args.length - start, 0),
+            array = Array(length);
+
+        while (++index < length) {
+          array[index] = args[start + index];
+        }
+        index = -1;
+        var otherArgs = Array(start + 1);
+        while (++index < start) {
+          otherArgs[index] = args[index];
+        }
+        otherArgs[start] = array;
+        return apply(func, this, otherArgs);
+      };
+    }
+
+    /**
+     * Checks if `value` is a flattenable `arguments` object or array.
+     *
+     * @private
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is flattenable, else `false`.
+     */
+    function isFlattenable(value) {
+      return isArray(value) || isArguments(value) ||
+        !!(spreadableSymbol && value && value[spreadableSymbol]);
+    }
+
+    /**
+     * Converts `value` to a string key if it's not a string or symbol.
+     *
+     * @private
+     * @param {*} value The value to inspect.
+     * @returns {string|symbol} Returns the key.
+     */
+    function toKey(value) {
+      if (typeof value == 'string' || isSymbol(value)) {
+        return value;
+      }
+      var result = (value + '');
+      return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
+    }
+
+    /**
+     * Checks if `value` is likely an `arguments` object.
+     *
+     * @static
+     * @memberOf _
+     * @since 0.1.0
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is an `arguments` object,
+     *  else `false`.
+     * @example
+     *
+     * _.isArguments(function() { return arguments; }());
+     * // => true
+     *
+     * _.isArguments([1, 2, 3]);
+     * // => false
+     */
+    function isArguments(value) {
+      // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
+      return isArrayLikeObject(value) && hasOwnProperty.call(value, 'callee') &&
+        (!propertyIsEnumerable.call(value, 'callee') || objectToString.call(value) == argsTag);
+    }
+
+    /**
+     * Checks if `value` is classified as an `Array` object.
+     *
+     * @static
+     * @memberOf _
+     * @since 0.1.0
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is an array, else `false`.
+     * @example
+     *
+     * _.isArray([1, 2, 3]);
+     * // => true
+     *
+     * _.isArray(document.body.children);
+     * // => false
+     *
+     * _.isArray('abc');
+     * // => false
+     *
+     * _.isArray(_.noop);
+     * // => false
+     */
+    var isArray = Array.isArray;
+
+    /**
+     * Checks if `value` is array-like. A value is considered array-like if it's
+     * not a function and has a `value.length` that's an integer greater than or
+     * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
+     *
+     * @static
+     * @memberOf _
+     * @since 4.0.0
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+     * @example
+     *
+     * _.isArrayLike([1, 2, 3]);
+     * // => true
+     *
+     * _.isArrayLike(document.body.children);
+     * // => true
+     *
+     * _.isArrayLike('abc');
+     * // => true
+     *
+     * _.isArrayLike(_.noop);
+     * // => false
+     */
+    function isArrayLike(value) {
+      return value != null && isLength(value.length) && !isFunction(value);
+    }
+
+    /**
+     * This method is like `_.isArrayLike` except that it also checks if `value`
+     * is an object.
+     *
+     * @static
+     * @memberOf _
+     * @since 4.0.0
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is an array-like object,
+     *  else `false`.
+     * @example
+     *
+     * _.isArrayLikeObject([1, 2, 3]);
+     * // => true
+     *
+     * _.isArrayLikeObject(document.body.children);
+     * // => true
+     *
+     * _.isArrayLikeObject('abc');
+     * // => false
+     *
+     * _.isArrayLikeObject(_.noop);
+     * // => false
+     */
+    function isArrayLikeObject(value) {
+      return isObjectLike(value) && isArrayLike(value);
+    }
+
+    /**
+     * Checks if `value` is classified as a `Function` object.
+     *
+     * @static
+     * @memberOf _
+     * @since 0.1.0
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is a function, else `false`.
+     * @example
+     *
+     * _.isFunction(_);
+     * // => true
+     *
+     * _.isFunction(/abc/);
+     * // => false
+     */
+    function isFunction(value) {
+      // The use of `Object#toString` avoids issues with the `typeof` operator
+      // in Safari 8-9 which returns 'object' for typed array and other constructors.
+      var tag = isObject(value) ? objectToString.call(value) : '';
+      return tag == funcTag || tag == genTag;
+    }
+
+    /**
+     * Checks if `value` is a valid array-like length.
+     *
+     * **Note:** This method is loosely based on
+     * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
+     *
+     * @static
+     * @memberOf _
+     * @since 4.0.0
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
+     * @example
+     *
+     * _.isLength(3);
+     * // => true
+     *
+     * _.isLength(Number.MIN_VALUE);
+     * // => false
+     *
+     * _.isLength(Infinity);
+     * // => false
+     *
+     * _.isLength('3');
+     * // => false
+     */
+    function isLength(value) {
+      return typeof value == 'number' &&
+        value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
+    }
+
+    /**
+     * Checks if `value` is the
+     * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+     * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+     *
+     * @static
+     * @memberOf _
+     * @since 0.1.0
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+     * @example
+     *
+     * _.isObject({});
+     * // => true
+     *
+     * _.isObject([1, 2, 3]);
+     * // => true
+     *
+     * _.isObject(_.noop);
+     * // => true
+     *
+     * _.isObject(null);
+     * // => false
+     */
+    function isObject(value) {
+      var type = typeof value;
+      return !!value && (type == 'object' || type == 'function');
+    }
+
+    /**
+     * Checks if `value` is object-like. A value is object-like if it's not `null`
+     * and has a `typeof` result of "object".
+     *
+     * @static
+     * @memberOf _
+     * @since 4.0.0
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+     * @example
+     *
+     * _.isObjectLike({});
+     * // => true
+     *
+     * _.isObjectLike([1, 2, 3]);
+     * // => true
+     *
+     * _.isObjectLike(_.noop);
+     * // => false
+     *
+     * _.isObjectLike(null);
+     * // => false
+     */
+    function isObjectLike(value) {
+      return !!value && typeof value == 'object';
+    }
+
+    /**
+     * Checks if `value` is classified as a `Symbol` primitive or object.
+     *
+     * @static
+     * @memberOf _
+     * @since 4.0.0
+     * @category Lang
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+     * @example
+     *
+     * _.isSymbol(Symbol.iterator);
+     * // => true
+     *
+     * _.isSymbol('abc');
+     * // => false
+     */
+    function isSymbol(value) {
+      return typeof value == 'symbol' ||
+        (isObjectLike(value) && objectToString.call(value) == symbolTag);
+    }
+
+    /**
+     * Creates an object composed of the picked `object` properties.
+     *
+     * @static
+     * @since 0.1.0
+     * @memberOf _
+     * @category Object
+     * @param {Object} object The source object.
+     * @param {...(string|string[])} [props] The property identifiers to pick.
+     * @returns {Object} Returns the new object.
+     * @example
+     *
+     * var object = { 'a': 1, 'b': '2', 'c': 3 };
+     *
+     * _.pick(object, ['a', 'c']);
+     * // => { 'a': 1, 'c': 3 }
+     */
+    var pick = baseRest(function(object, props) {
+      return object == null ? {} : basePick(object, arrayMap(baseFlatten(props, 1), toKey));
+    });
+
+    var lodash_pick = pick;
+
+    const reExampleResponse = /<!--(?:\s+)?RESPONSE(?:\s+)((?:\d){3})?(?:\s+)?-->\n(.|\n)*?<!--(?:\s+)?ENDRESPONSE(?:\s+)?-->/gm;
+
+    const rePathParams = /<!--(?:\s+)?PATH_PARAMS(?:\s+)?-->\n(.|\n)*?<!--(?:\s+)?ENDPATH_PARAMS(?:\s+)?-->/gm;
+
+    function makeExampleResponse(match) {
+      const code = match[1] || null;
+      const value = match[0].slice(match[0].indexOf('>') + 1, match[0].lastIndexOf('<')).trim();
+
+      return { code, value };
+    }
+
+    function makePathParams(match) {
+      const value = match[0].slice(match[0].indexOf('>') + 1, match[0].lastIndexOf('<')).trim();
+      let result = null;
+      try {
+        result = JSON.parse(value);
+      } catch (e) {
+      }
+
+      if (!Array.isArray(result)) {
+        result = [];
+      }
+
+      return result;
+    }
+
+    function buildRequest (requestData) {
+      requestData = lodash_pick(requestData, '_id', 'method', 'name', 'description', 'parameters', 'url', 'authentication', 'body', 'headers', '_type');
+
+      if (!requestData.description) {
+        return requestData;
+      }
+
+      const exampleResponses = [];
+      const pathParams = [];
+
+      let match;
+      // eslint-disable-next-line no-cond-assign
+      while (match = rePathParams.exec(requestData.description)) {
+        pathParams.push(...makePathParams(match));
+      }
+
+      requestData.pathParams = pathParams;
+      requestData.description = requestData.description.replace(rePathParams, '');
+
+      // eslint-disable-next-line no-cond-assign
+      while (match = reExampleResponse.exec(requestData.description)) {
+        exampleResponses.push(makeExampleResponse(match));
+      }
+
+      requestData.exampleResponses = exampleResponses;
+      requestData.description = requestData.description.replace(reExampleResponse, '');
+
+      return requestData;
+    }
+
+    class CuteConfig {
+      constructor(json) {
+        this.json = json;
+        this.id = null;
+
+        this.cute = {
+          workspace: {
+            name: null,
+            description: null
+          },
+          cookiejars: [],
+          environments: [],
+          groups: [],
+          requests: []
+        };
+      }
+
+      metaSort(a, b) {
+        return a.metaSortKey - b.metaSortKey;
+      }
+
+      mapCookiejar(cookiejar) {
+        return lodash_pick(cookiejar, 'name', 'cookies');
+      }
+
+      filterCookiejars() {
+        return this.json.resources
+          .filter(r => r._type === 'cookie_jar')
+          .map(this.mapCookiejar);
+      }
+
+      mapEnvironment(environment) {
+        return lodash_pick(environment, 'color', 'data', 'name');
+      }
+
+      filterEnvironments() {
+        return this.json.resources
+          .filter(r => r._type === 'environment' && !r.isPrivate)
+          .sort(this.metaSort)
+          .map(this.mapEnvironment);
+      }
+
+      filterRequests(groupId = null) {
+        const parentId = groupId || this.id;
+        return this.json.resources
+          .filter(r => r._type === 'request' && r.parentId === parentId && !r.isPrivate)
+          .sort(this.metaSort)
+          .map(buildRequest);
+      }
+
+      deepMapGroups(predicate) {
+        const group = {
+          name: predicate.name,
+          description: predicate.description,
+          _type: predicate._type
+        };
+
+        group.children = this.json.resources
+          .filter(r => r._type === 'request_group' && r.parentId === predicate._id)
+          .sort(this.metaSort)
+          .map(this.deepMapGroups.bind(this));
+
+        group.requests = this.filterRequests(predicate._id);
+
+        return group;
+      }
+
+      filterRootGroups() {
+        const filteredGroups = this.json.resources.filter(r => r._type === 'request_group' && r.parentId === this.id);
+        if (!filteredGroups) {
+          return [];
+        }
+
+        return filteredGroups
+          .sort(this.metaSort)
+          .map(this.deepMapGroups.bind(this));
+      }
+
+      generate() {
+        const workspace = this.json.resources.find(r => r._type === 'workspace');
+        this.id = workspace._id;
+        this.cute.workspace.name = workspace.name;
+        this.cute.workspace.description = workspace.description;
+
+        this.cute.cookiejars = this.filterCookiejars();
+        this.cute.environments = this.filterEnvironments();
+
+        if (this.cute.environments.length > 1) {
+          this.cute.environments = this.cute.environments.slice(1);
+        }
+
+        this.cute.groups = this.filterRootGroups();
+        this.cute.requests = this.filterRequests();
+
+        return this.cute;
+      }
+    }
+
+    async function app() {
+      const root = document.getElementById('app');
+      const rootPath = root.getAttribute('data-root') || '';
+
+      const url =  `${rootPath}/insomnia.json`;
+
+      window.INSOMNIA_URL = url;
+
+      try {
+        // eslint-disable-next-line no-undef
+        const json = await fetch(url, {
+          method: 'GET',
+          credentials: 'same-origin',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+          }
+        }).then(res => res.json());
+
+        const insomniaConfig = new CuteConfig(json).generate();
+
+        return new App({
+          target: root,
+          props: {
+            config: insomniaConfig
+          }
+        });
+      } catch (err) {
+        console.error(err);
+
+        return new ErrorPage({
+          target: root
+        });
+      }
+    }
+
+    var main = app();
+
+    return main;
+
+}());
 //# sourceMappingURL=bundle.js.map
